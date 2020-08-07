@@ -1,14 +1,49 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
-
+import Dashboard from '../pages/Dashboard.vue'
+import Presentation from '../pages/A propos de nous/Presentation.vue';
+import Organisation from '../pages/A propos de nous/Organisation.vue';
+import MduD from '../pages/A propos de nous/Mot du directeur.vue';
+import PdeF from '../pages/A propos de nous/Politique de formation.vue';
+import PdeS from '../pages/A propos de nous/Politique de supervision.vue';
+import Arretes from '../pages/Publications/Textes legislatifs/Arretes.vue';
 Vue.use(VueRouter)
 
-  const routes = [
+const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home
+    name: 'Dashboard',
+    component: Dashboard
+  },
+  {
+    path: '/Presentation',
+    name: 'Presentation',
+    component: Presentation
+  },
+  {
+    path: '/Mot du directeur',
+    name: 'MduD',
+    component: MduD
+  },
+  {
+    path: '/Organisation',
+    name: 'Organisation',
+    component: Organisation
+  },
+  {
+    path: '/Politique de Formation',
+    name: 'PdeF',
+    component: PdeF
+  },
+  {
+    path: '/Politique de Supervision',
+    name: 'PdeS',
+    component: PdeS
+  },
+  {
+    path: '/Arretes',
+    name: 'Arretes',
+    component: Arretes
   },
   {
     path: '/about',
