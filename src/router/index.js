@@ -7,6 +7,20 @@ import MduD from '../pages/A propos de nous/Mot du directeur.vue';
 import PdeF from '../pages/A propos de nous/Politique de formation.vue';
 import PdeS from '../pages/A propos de nous/Politique de supervision.vue';
 import Arretes from '../pages/Publications/Textes legislatifs/Arretes.vue';
+import Decrets from '../pages/Publications/Textes legislatifs/Decret.vue';
+import Lois from '../pages/Publications/Textes legislatifs/Lois.vue';
+import RAD from '../pages/Publications/Textes reglementaires/Reglementation aerotique de Djibouti.vue';
+import AI from '../pages/Publications/Accords/Accords Internationaux.vue';
+import AB from '../pages/Publications/Accords/Accords bilaterales.vue';
+import Directives from '../pages/Publications/Directives.vue';
+import Circulaires from '../pages/Publications/Circulaires.vue';
+import Decisions from '../pages/Publications/Decisions.vue';
+import Reglements from '../pages/Securites/Reglements.vue';
+import Formulaires from '../pages/Securites/Formulaires.vue';
+import Guides from '../pages/Securites/Guides.vue';
+import DirectiveS from '../pages/Securites/Directives.vue';
+import Manuels from "../pages/Securites/Manuels.vue";
+import Procedure from '../pages/Securites/Procedures.vue';
 Vue.use(VueRouter)
 
 const routes = [
@@ -14,6 +28,36 @@ const routes = [
     path: '/',
     name: 'Dashboard',
     component: Dashboard
+  },
+  {
+    path: '/Formulaires',
+    name: 'Formulaires',
+    component: Formulaires
+  },
+  {
+    path: '/Guides',
+    name: 'Guides',
+    component: Guides
+  },
+  {
+    path: '/Procedures',
+    name: 'Procedures',
+    component: Procedure
+  },
+  {
+    path: '/Manuels',
+    name: 'Manuels',
+    component: Manuels
+  },
+  {
+    path: '/Reglements',
+    name: 'Reglements',
+    component: Reglements
+  },
+  {
+    path: '/Directives',
+    name: 'Directives',
+    component: DirectiveS
   },
   {
     path: '/Presentation',
@@ -41,9 +85,49 @@ const routes = [
     component: PdeS
   },
   {
-    path: '/Arretes',
+    path: '/Texte legislatifs/Arretes',
     name: 'Arretes',
     component: Arretes
+  },
+  {
+    path: '/Texte legislatifs/Decrets',
+    name: 'Decrets',
+    component: Decrets
+  },
+  {
+    path: '/Texte legislatifs/Lois',
+    name: 'Lois',
+    component: Lois
+  },
+  {
+    path: '/Textes reglementaires/Reglementation aerotique de Djibouti',
+    name: 'Reglementation aerotique de Djibouti',
+    component: RAD
+  },
+  {
+    path: '/Accords/Accords internationaux',
+    name: 'Accords internationaux',
+    component: AI
+  },
+  {
+    path: '/Accords/Accords bilateraux',
+    name: 'Accords bilateraux',
+    component: AB
+  },
+  {
+    path: '/Directives',
+    name: 'Directives',
+    component: Directives
+  },
+  {
+    path: '/Circulaires',
+    name: 'Circulaires',
+    component: Circulaires
+  },
+  {
+    path: '/Decisions',
+    name: 'Decisions',
+    component: Decisions
   },
   {
     path: '/about',

@@ -8,69 +8,53 @@
       </div>
     </div>
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
-      <a class="navbar-brand img-fluid" href="#">
+      <router-link to="/">
+        <a class="navbar-brand img-fluid" href="#">
         <img src="../assets/casa.png" alt="logo" class="img-fluid logo" />
       </a>
+      </router-link>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              id="navbarDropdown"
-              role="button"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
-              {{ menu2 }}
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <router-link
-                :to="item.route"
-                v-for="(item, index) in sub2"
-                :key="index"
-                ><a class="dropdown-item">{{ item.title }}</a></router-link
-              >
-            </div>
-          </li>
-          <li class="nav-item dropdown" no-caret>
-            <a
-              class="nav-link dropdown-toggle dropdown"
-              dropdown-right
-              id="navbarDropdown"
-              role="button"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
-              {{ menu3 }}
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <div v-for="(item, index) in sub3" :key="index">
-                <b-dropdown v-if="!item.sub" class="small"
-                  :text="item.title"
-                  variant="link"
-                  width="100%" no-caret></b-dropdown>
-                <b-dropdown
-                  v-if="item.sub"
-                  id="dropdown-dropright"
-                  dropright
-                  :text="item.title"
-                  variant="link"
-                  class=" right-0"
-                  width="100%"
+          <li
+            class="nav-item dropdown mr-3"
+            v-for="(menu, index) in menus"
+            :key="index"
+          >
+            <Dropdown placement="bottom-start">
+              <a class="text-dark font-weight-bolder">
+                {{ menu.name }}
+                <Icon type="ios-arrow-down"></Icon>
+              </a>
+
+              <DropdownMenu slot="list">
+                <Dropdown
+                  :style="sub.subCategoryTwo.length === 0 ? 'display:none' : ''"
+                  placement="right-start"
+                  v-for="(sub, index2) in menu.subCategoryOne"
+                  :key="index2"
                 >
-                  <b-dropdown-item
-                    href="#"
-                    v-for="(sub, index2) in item.sub"
-                    :key="index2"
-                    >{{ sub.title }}</b-dropdown-item
-                  >
-                </b-dropdown>
-              </div>
-            </div>
+                  <DropdownItem class="small font-weight-bold text-dark">{{ sub.name }}</DropdownItem>
+                  <DropdownMenu slot="list">
+                    <DropdownItem
+                      class="small font-weight-bold text-dark text-wrap"
+                      v-for="(lastSub, index3) in sub.subCategoryTwo"
+                      :key="index3"
+                      ><router-link class="font-weight-bold text-dark text-wrap" :to="lastSub.path   ? {path:lastSub.path} : {path:'/'+lastSub.name, query:{category:sub.name}} ">
+                        {{ lastSub.name }}</router-link
+                      ></DropdownItem
+                    >
+                  </DropdownMenu>
+                </Dropdown>
+                <DropdownItem
+                class="small font-weight-bold text-dark"
+                  :style="sub.subCategoryTwo.length !== 0 ? 'display:none' : ''"
+                  v-for="(sub, index2) in menu.subCategoryOne"
+                  :key="index2"
+                  ><router-link :to="sub.path" class="text-dark">{{ sub.name }}</router-link></DropdownItem
+                >
+              </DropdownMenu>
+            </Dropdown>
           </li>
         </ul>
       </div>
@@ -82,106 +66,18 @@
 </template>
 
 <script>
+import category from "../services/category.service";
 export default {
   data() {
     return {
-      menu: "Menu",
-      showNavigation: false,
-      showSidepanel: false,
-      menu1: "Acceuil",
-      menu2: "A propos de nous",
-      menu3: "Publications",
-      menu4: "Sécurité",
-      menu5: "Inspection",
-      menu6: "e-Service",
-      menu7: "A propos de nous",
-      sub2: [
-        { title: "Presentation", route: "/Presentation" },
-        { title: "Mot du directeur", route: "/Mot du directeur" },
-        {
-          title: "Organisation",
-          route: "/Organisation",
-        },
-        {
-          title: "Politique de supervision",
-          route: "/Politique de Supervision",
-        },
-        { title: "Politique de formation", route: "/Politique de Formation" },
-      ],
-      sub3: [
-        {
-          title: "Textes legislatifs",
-          sub: [{ title: "Lois" }, { title: "Decrets" }, { title: "Arettés" }],
-          route: "",
-        },
-        {
-          title: "Textes reglementaires",
-          sub: [{ title: "Réglementation aérotique de Djibouti" }],
-          route: "",
-        },
-        {
-          title: "Directives",
-          route: "",
-        },
-        {
-          title: "Circulaires",
-          route: "",
-        },
-        {
-          title: "Décisions",
-          route: "",
-        },
-        {
-          title: "Accords",
-          sub: [
-            { title: "Accords internationaux" },
-            { title: "Accords bilatéraux" },
-          ],
-          route: "",
-        },
-      ],
-      sub4: [
-        { title: "Naviguabilité", route: "" },
-        {
-          title: "Exploitation technique des aéronefs",
-          route: "",
-        },
-        {
-          title: "License du personel",
-          route: "",
-        },
-        {
-          title: "Aérodrome et infrastructure aéroportuaires",
-          route: "",
-        },
-        {
-          title: "Service de l'information aéronautique",
-          route: "",
-        },
-        {
-          title: "Service de la cartographie",
-          route: "",
-        },
-      ],
-      sub5: [{ title: "Audits et Inspections", route: "" }],
-      sub6: [
-        { title: "Contact", route: "" },
-        {
-          title: "Compte rendu volontaire",
-          route: "",
-        },
-        {
-          title: "Demande d'autorisation",
-          route: "",
-        },
-        {
-          title: "Formulaire de notification de sécurité",
-          route: "",
-        },
-      ],
+      menus: [],
     };
   },
-  computed: {},
+  mounted() {
+    category.getCategories().then((data) => {
+      this.menus = data.data;
+    });
+  },
 };
 </script>
 <style lang="css" scoped>
@@ -206,5 +102,8 @@ export default {
 }
 #sidebar-2 {
   transition-duration: 1s;
+}
+.right {
+  width: 400px;
 }
 </style>

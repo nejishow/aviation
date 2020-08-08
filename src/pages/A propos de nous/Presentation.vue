@@ -42,7 +42,7 @@
   </div>
 </template>
 <script>
-import Menu from "../../components/MenuApropo";
+import Menu from "../../components/SideMenu";
 export default {
   components: {
     Menu,

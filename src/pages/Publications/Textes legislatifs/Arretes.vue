@@ -49,7 +49,7 @@
   </div>
 </template>
 <script>
-import Menu from "../../../components/MenuPublications";
+import Menu from "../../../components/SideMenu";
 export default {
   components: {
     Menu,

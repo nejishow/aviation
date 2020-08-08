@@ -1,5 +1,7 @@
 <template>
     <div class="card">
+
+        {{category}}
                 <ul class="list-group text-right">
                     <li class="list-group-item">
                         <router-link to="/Presentation">
@@ -24,6 +26,21 @@
                 </ul>
     </div>
 </template>
+
+<script>
+import CategoryS from "../services/category.service";
+export default {
+  props: ["category", "sous_category"],
+  mounted() {
+    console.log(this.category);
+    if (this.category) {
+      CategoryS.getMenu(this.category).then((data) => {
+        console.log(data.data);
+      });
+    }
+  },
+};
+</script>
 <style lang="css" scoped>
 .list-group .list-group-item {
   border: none;

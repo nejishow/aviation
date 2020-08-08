@@ -13,7 +13,7 @@
   </div>
 </template>
 <script>
-import Menu from "../../components/MenuApropo";
+import Menu from "../../components/SideMenu";
 export default {
   components: {
     Menu,
@@ -21,7 +21,7 @@ export default {
 };
 </script>
 <script>
-import Menu from "../../components/MenuApropo";
+import Menu from "../../components/SideMenu";
 export default {
   components: {
     Menu,

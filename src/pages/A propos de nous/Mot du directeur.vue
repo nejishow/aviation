@@ -2,7 +2,7 @@
   <div>
     <div class="row">
       <div class="col-md-4">
-        <Menu class="card"></Menu>
+        <Menu class="card" :category="test"></Menu>
       </div>
       <div class="col-12 col-md-8">
                 <h3 class="mb-5">Mot du directeur</h3>
@@ -72,10 +72,15 @@
   </div>
 </template>
 <script>
-import Menu from "../../components/MenuApropo";
+import Menu from "../../components/SideMenu";
 export default {
   components: {
     Menu,
+  },
+  data() {
+    return {
+      test: "Voila",
+    };
   },
 };
 </script>
