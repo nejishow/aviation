@@ -5,7 +5,7 @@
         Agence / Publications / Home
       </div>
       <div class="col-md-4">
-        <Menu></Menu>
+        <Menu :sous_category="path"></Menu>
       </div>
       <div class="col-12 col-md-8">
         <h3>Guides</h3>
@@ -63,7 +63,11 @@ export default {
         action: "Download",
       },
     ],
+    path: "",
   }),
+  mounted() {
+    this.path = this.$route.query.category;
+  },
 };
 </script>
 

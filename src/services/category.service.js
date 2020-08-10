@@ -26,5 +26,10 @@ export default {
     getMenu(name) {
         return bannerAdmin.get("/menu/" + name);
 
+    },
+    getMenuS(name) {
+        console.log(name);
+        return bannerAdmin.get("/menuS/" + name);
+
     }
 };

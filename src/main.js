@@ -21,7 +21,7 @@ Vue.use(MdCard)
 Vue.use(MdAvatar)
 Vue.use(MdContent)
 Vue.use(MdRipple)
-Vue.use(axios, VueAxios)
+Vue.use(VueAxios, axios)
 
 new Vue({
   router,

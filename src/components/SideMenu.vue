@@ -2,6 +2,7 @@
     <div class="card">
 
         {{category}}
+        {{sous_category}}
                 <ul class="list-group text-right">
                     <li class="list-group-item">
                         <router-link to="/Presentation">
@@ -32,10 +33,16 @@ import CategoryS from "../services/category.service";
 export default {
   props: ["category", "sous_category"],
   mounted() {
-    console.log(this.category);
     if (this.category) {
-      CategoryS.getMenu(this.category).then((data) => {
-        console.log(data.data);
+      const path = this.category.shift();
+      CategoryS.getMenu(path).then((data) => {
+        console.log(data);
+      });
+    }
+    if (this.sous_category) {
+      console.log(this.sous_category);
+      CategoryS.getMenuS(this.sous_category).then((data) => {
+        console.log(data);
       });
     }
   },

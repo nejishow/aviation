@@ -6,7 +6,7 @@
         {{ path }}
       </div>
       <div class="col-md-4">
-        <Menu></Menu>
+        <Menu :sous_category="path"></Menu>
       </div>
       <div class="col-12 col-md-8">
         <h3>Reglements</h3>
@@ -64,8 +64,11 @@ export default {
         action: "Download",
       },
     ],
-    path: window.location.pathname,
+    path: "",
   }),
+  mounted() {
+    this.path = this.$route.query.category;
+  },
 };
 </script>
 

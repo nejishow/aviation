@@ -63,7 +63,11 @@ export default {
         action: "Download",
       },
     ],
+    path: "",
   }),
+  mounted() {
+    this.path = this.$route.query.category;
+  },
 };
 </script>
 
