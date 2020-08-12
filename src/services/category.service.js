@@ -1,6 +1,6 @@
 import axios from "axios";
 const bannerAdmin = axios.create({
-    baseURL: "http://localhost:3000"
+    baseURL: "http://localhost:3000" // https://aviation-backend.herokuapp.com
 });
 bannerAdmin.interceptors.request.use(config => {
     config.headers.common.Authorization =
@@ -23,13 +23,13 @@ export default {
         return bannerAdmin.get("/allCategory/");
 
     },
-    getMenu(name) {
-        return bannerAdmin.get("/menu/" + name);
+    getMenu(id) {
+        console.log(id);
+        return bannerAdmin.get("/menu/" + id);
 
     },
-    getMenuS(name) {
-        console.log(name);
-        return bannerAdmin.get("/menuS/" + name);
+    getMenuS(id) {
+        return bannerAdmin.get("/menuS/" + id);
 
     }
 };

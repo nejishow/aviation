@@ -5,44 +5,65 @@
         Agence / Publications / Home
       </div>
       <div class="col-md-4">
-        <Menu :sous_category="path"></Menu>
+        <Menu></Menu>
       </div>
       <div class="col-12 col-md-8">
         <h3>Formulaires</h3>
         All publications are considered electronically approved even if they do
         not bear a signature and stamp
 
-        <div class="m-5">
-          <div class="input-group mb-3">
+        <div class=" m-5 p5 d-flex flex-column align-items-center">
+          <div class="input-group w-50">
             <input
-              type="search"
-              class="form-control"
-              placeholder="Rechercher un document"
-              aria-label="Recherche document"
+              type="text"
+              class="form-control border-info input"
+              placeholder="Search"
             />
+            <div class="input-group-append border-info">
+              <button class="input btn-outline-info" type="submit">Go</button>
             </div>
+          </div>
+          <div class="card result w-100" v-show="searchResults.length>0">
+                      <table class="table table-striped table-dark">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Titre</th>
+                <th scope="col">Date de parution</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="(item, index) in searchResults" :key="index">
+                <th><img src="../../assets/pdf.png" width="20" alt="" /></th>
+                <td>{{ item.title }}</td>
+                <td>{{ item.date }}</td>
+                <td><button>Download</button></td>
+              </tr>
+            </tbody>
+          </table>
+          </div>
         </div>
+
         <div class="table card">
-          <md-table v-model="users" md-sort="name" md-sort-order="asc" md-card>
-            <md-table-row slot="md-table-row" slot-scope="{ item }">
-              <md-table-cell md-label="#" md-numeric>
-                <img
-                  src="../../assets/pdf.png"
-                  width="20"
-                  :alt="item.name"
-                />
-              </md-table-cell>
-              <md-table-cell md-label="Nom du fichier" md-sort-by="name">{{
-                item.name
-              }}</md-table-cell>
-              <md-table-cell md-label="Date de publication" md-sort-by="date">{{
-                item.date
-              }}</md-table-cell>
-              <md-table-cell md-label="Action" md-sort-by="title"
-                ><button class="small">{{ item.action }}</button></md-table-cell
-              >
-            </md-table-row>
-          </md-table>
+          <table class="table table-striped table-dark">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Titre</th>
+                <th scope="col">Date de parution</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="(item, index) in data" :key="index">
+                <th><img src="../../assets/pdf.png" width="20" alt="" /></th>
+                <td>{{ item.title }}</td>
+                <td>{{ item.date }}</td>
+                <td><button>Download</button></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
@@ -54,21 +75,47 @@ export default {
   components: {
     Menu,
   },
-  data: () => ({
-    users: [
-      {
-        id: 1,
-        name: "Safety & Security",
-        date: "02/10/2020",
-        action: "Download",
-      },
-    ],
-    path: "",
-  }),
-  mounted() {
-    this.path = this.$route.query.category;
+  data() {
+    return {
+      searchResults: [],
+      data: [
+        {
+          id: 1,
+          title: "Safety & Security",
+          date: "02/10/2020",
+          action: "Download",
+        },
+        {
+          id: 1,
+          title: "Safety & Security",
+          date: "02/10/2020",
+          action: "Download",
+        },
+        {
+          id: 1,
+          title: "Safety & Security",
+          date: "02/10/2020",
+          action: "Download",
+        },
+        {
+          id: 1,
+          title: "Safety & Security",
+          date: "02/10/2020",
+          action: "Download",
+        },
+      ],
+    };
+  },
+  methods: {
+    search(event) {
+      console.log(event);
+    },
   },
 };
 </script>
 
-<style lang="css" scoped></style>
+<style lang="css" scoped>
+.search {
+  border: none;
+}
+</style>

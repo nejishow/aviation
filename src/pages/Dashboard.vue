@@ -61,19 +61,31 @@
           </div>
         </div>
       </div>
-    <div class="row border-top border-bottom pt-5 pb-5 map">
-      <div class="col-12 text-center">
-        <img src="../assets/map.png" alt="map" class="img-fluid" />
+    <div class="row mt-5 ">
+      <div class="col-12">
+          <h4 class="mb-5 card-header bg-info">Location</h4>
+      </div>
+      <div class="col-12 mt-3">
+              <MAP class="mr-auto ml-auto"></MAP>
+
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+import MAP from "../components/Map";
+export default {
+  components: {
+    MAP,
+  },
+};
 </script>
 
-<style lang="css" scoped>
+<style lang="css">
+.row .container. {
+  background: white;
+}
 .map {
   /* Full height */
   height: 100%;

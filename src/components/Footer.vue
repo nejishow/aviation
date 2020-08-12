@@ -13,23 +13,13 @@
       <div class="col-12 col-md-4 text-light">
         <h4>Siège sociale</h4>
         Aviation House, Djibouti International <br />
-        Airport, P.O. Box 30163 -00100 Djibout, <br />
+        Aeroport d'Ambouli, <br />
         <font-awesome-icon :icon="['fas', 'phone']" />
-        +254 020 6827470-5 <br />
+        +253 77 000000 <br />
         <font-awesome-icon :icon="['fas', 'phone']" />
-
-        +254 728 606 570, <br />
-        <font-awesome-icon :icon="['fas', 'phone']" />
-
-        +254 709 725000, <br />
-        <font-awesome-icon :icon="['fas', 'phone']" />
-
-        +254 728 606 586, <br />
-        <font-awesome-icon :icon="['fas', 'mobile']" />
-
-        +254 734 000 491,<br />
-
+        +253 77 000000 <br />
         <font-awesome-icon :icon="['fas', 'envelope']" />
+        aviation@dj.com
       </div>
       <div class="col-12 col-md-4 text-light">
         <h4>Liens rapide</h4>

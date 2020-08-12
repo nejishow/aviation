@@ -12,13 +12,13 @@ import Lois from '../pages/Publications/Textes legislatifs/Lois.vue';
 import RAD from '../pages/Publications/Textes reglementaires/Reglementation aerotique de Djibouti.vue';
 import AI from '../pages/Publications/Accords/Accords Internationaux.vue';
 import AB from '../pages/Publications/Accords/Accords bilaterales.vue';
-import Directives from '../pages/Publications/Directives.vue';
+import DirectiveS from '../pages/Publications/Directives.vue';
 import Circulaires from '../pages/Publications/Circulaires.vue';
 import Decisions from '../pages/Publications/Decisions.vue';
 import Reglements from '../pages/Securites/Reglements.vue';
 import Formulaires from '../pages/Securites/Formulaires.vue';
 import Guides from '../pages/Securites/Guides.vue';
-import DirectiveS from '../pages/Securites/Directives.vue';
+import Directives from '../pages/Securites/Directives.vue';
 import Manuels from "../pages/Securites/Manuels.vue";
 import Procedure from '../pages/Securites/Procedures.vue';
 Vue.use(VueRouter)
@@ -30,33 +30,33 @@ const routes = [
     component: Dashboard
   },
   {
-    path: '/Formulaires',
+    path: '/Formulaires/:category/:id',
     name: 'Formulaires',
     component: Formulaires
   },
   {
-    path: '/Guides',
+    path: '/Guides/:category/:id',
     name: 'Guides',
     component: Guides
   },
   {
-    path: '/Procedures',
+    path: '/Procedures/:category/:id',
     name: 'Procedures',
     component: Procedure
   },
   {
-    path: '/Manuels',
+    path: '/Manuels/:category/:id',
     name: 'Manuels',
     component: Manuels
   },
   {
-    path: '/Reglements',
+    path: '/Reglements/:category/:id',
     name: 'Reglements',
     component: Reglements
   },
   {
     path: '/Directives',
-    name: 'Directives',
+    name: 'DirectiveS',
     component: DirectiveS
   },
   {
@@ -115,7 +115,7 @@ const routes = [
     component: AB
   },
   {
-    path: '/Directives',
+    path: '/Directives/:category/:id',
     name: 'Directives',
     component: Directives
   },

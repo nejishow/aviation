@@ -2,59 +2,435 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-12 social bg-info text-right">
-        <img src="../assets/facebook.png" alt="facebook" width="30" />
-        <img src="../assets/twitter.png" alt="twitter" width="30" />
-        <img src="../assets/youtube.png" alt="youtube" width="30" />
+        <b-button pill class="btn btn-secondary text-white">Francais</b-button>
+        <b-button pill class="btn btn-danger text-white">Englais</b-button>
       </div>
     </div>
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
       <router-link to="/">
         <a class="navbar-brand img-fluid" href="#">
-        <img src="../assets/casa.png" alt="logo" class="img-fluid logo" />
-      </a>
+          <img src="../assets/casa.png" alt="logo" class="img-fluid logo" />
+        </a>
       </router-link>
 
+      <!-- Header French -->
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-          <li
-            class="nav-item dropdown mr-3"
-            v-for="(menu, index) in menus"
-            :key="index"
-          >
-            <Dropdown placement="bottom-start">
-              <a class="text-dark font-weight-bolder">
-                {{ menu.name }}
-                <Icon type="ios-arrow-down"></Icon>
-              </a>
+          <!-- A propos de nous -->
+          <li class="nav-item dropdown">
+            <a
+              id="dropdownMenu1"
+              href="#"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+              class="nav-link dropdown-toggle"
+              >A propos de nous</a
+            >
+            <ul
+              aria-labelledby="dropdownMenu1"
+              class="dropdown-menu border-0 shadow"
+            >
+              <li>
+                <router-link to="/Presentation"
+                  ><a href="#" class="dropdown-item"
+                    >Presentation
+                  </a></router-link
+                >
+              </li>
+              <li>
+                <router-link to="/"
+                  ><a href="#" class="dropdown-item"
+                    >Organisation
+                  </a></router-link
+                >
+              </li>
+              <li>
+                <router-link to="/Mot du directeur"
+                  ><a href="#" class="dropdown-item"
+                    >Mot du directeur
+                  </a></router-link
+                >
+              </li>
+              <li>
+                <router-link to="/"
+                  ><a href="#" class="dropdown-item"
+                    >Politique de formation
+                  </a></router-link
+                >
+              </li>
+              <li>
+                <router-link to="/"
+                  ><a href="#" class="dropdown-item"
+                    >Politique de supervision
+                  </a></router-link
+                >
+              </li>
+            </ul>
+          </li>
+          <!-- Publications -->
 
-              <DropdownMenu slot="list">
-                <Dropdown
-                  :style="sub.subCategoryTwo.length === 0 ? 'display:none' : ''"
-                  placement="right-start"
-                  v-for="(sub, index2) in menu.subCategoryOne"
-                  :key="index2"
+          <li class="nav-item dropdown">
+            <a
+              id="dropdownMenu1"
+              href="#"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+              class="nav-link dropdown-toggle"
+              >Publications</a
+            >
+            <ul
+              aria-labelledby="dropdownMenu1"
+              class="dropdown-menu border-0 shadow"
+            >
+              <!-- Level two dropdown-->
+              <li class="dropdown-submenu">
+                <a
+                  id="dropdownMenu2"
+                  href="#"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  class="dropdown-item dropdown-toggle"
+                  >Texte legislatif</a
                 >
-                  <DropdownItem class="small font-weight-bold text-dark">{{ sub.name }}</DropdownItem>
-                  <DropdownMenu slot="list">
-                    <DropdownItem
-                      class="small font-weight-bold text-dark text-wrap"
-                      v-for="(lastSub, index3) in sub.subCategoryTwo"
-                      :key="index3"
-                      ><router-link class="font-weight-bold text-dark text-wrap" :to="lastSub.path   ? {path:lastSub.path} : {path:'/'+lastSub.name, query:{category:sub.name}} ">
-                        {{ lastSub.name }}</router-link
-                      ></DropdownItem
+                <ul
+                  aria-labelledby="dropdownMenu2"
+                  class="dropdown-menu border-0 shadow"
+                >
+                  <li> <router-link to="/Texte legislatifs/Arretes">
+                    <a tabindex="-1" href="#" class="dropdown-item">Arrêtés</a></router-link>
+                  </li>
+                  <li><router-link to="/Texte legislatifs/Decrets"><a href="#" class="dropdown-item">Décrets</a></router-link></li>
+                  <li><router-link to="/Texte legislatifs/Lois"><a href="#" class="dropdown-item">Lois</a></router-link></li>
+                </ul>
+              </li>
+              <li class="dropdown-submenu">
+                <a
+                  id="dropdownMenu2"
+                  href="#"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  class="dropdown-item dropdown-toggle"
+                  >Texte reglementaires</a
+                >
+                <ul
+                  aria-labelledby="dropdownMenu2"
+                  class="dropdown-menu border-0 shadow"
+                >
+                  <li> <router-link to="/Textes reglementaires/Reglementation aerotique de Djibouti">
+                    <a tabindex="-1" href="#" class="dropdown-item"
+                      >Réglementation aérotique de Djibouti</a
+                    ></router-link>
+                  </li>
+                </ul>
+              </li>
+              <li class="dropdown-submenu">
+                <a
+                  id="dropdownMenu2"
+                  href="#"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="false"
+                  aria-expanded="true"
+                  class="dropdown-item nav-item dropdown-toggle"
+                  >Accords</a
+                >
+                <ul
+                  aria-labelledby="dropdownMenu2"
+                  class="dropdown-menu border-0 shadow"
+                >
+                  <li> <router-link to="/Accords/Accords internationaux">
+                    <a tabindex="-1" href="#" class="dropdown-item"
+                      >Accords internationaux</a
+                    ></router-link>
+                  </li>
+                  <li> <router-link to="/Accords/Accords bilateraux">
+                    <a href="#" class="dropdown-item">Accords bilaterales</a></router-link>
+                  </li>
+                </ul>
+              </li>
+              <!-- End Level two -->
+              <li>
+                <router-link to="/Directives"
+                  ><a href="#" class="dropdown-item"
+                    >Directives
+                  </a></router-link
+                >
+              </li>
+              <li>
+                <router-link to="/Circulaires"
+                  ><a href="#" class="dropdown-item"
+                    >Circulaires
+                  </a></router-link
+                >
+              </li>
+              <li>
+                <router-link to="/Decisions"
+                  ><a href="#" class="dropdown-item">Decisions </a></router-link
+                >
+              </li>
+            </ul>
+          </li>
+
+          <!-- Securité -->
+
+          <li class="nav-item dropdown">
+            <a
+              id="dropdownMenu1"
+              href="#"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+              class="nav-link dropdown-toggle"
+              >Securité</a
+            >
+            <ul
+              aria-labelledby="dropdownMenu1"
+              class="dropdown-menu border-0 shadow"
+            >
+              <!-- Level two dropdown-->
+              <li class="dropdown-submenu">
+                <a
+                  id="dropdownMenu2"
+                  href="#"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  class="dropdown-item dropdown-toggle"
+                  >Naviguabilité</a
+                >
+                <ul
+                  aria-labelledby="dropdownMenu2"
+                  class="dropdown-menu border-0 shadow"
+                >
+                  <li> <router-link :to="{ name: 'Directives', params: { category: 'Naviguabilité', id:'12345' }}">
+                    <a tabindex="-1" href="#" class="dropdown-item"
+                      >Directives</a
+                    > </router-link>
+                  </li>
+                  <li><router-link :to="{ name: 'Formulaires', params: { category: 'Naviguabilité', id:'12345' }}"><a href="#" class="dropdown-item">Formulaires</a></router-link></li>
+                  <li><router-link :to="{ name: 'Guides', params: { category: 'Naviguabilité', id:'12345' }}"><a href="#" class="dropdown-item">Guides</a></router-link></li>
+                  <li><router-link :to="{ name: 'Manuels', params: { category: 'Naviguabilité', id:'12345' }}"><a href="#" class="dropdown-item">Manuels</a></router-link></li>
+                  <li><router-link :to="{ name: 'Procedures', params: { category: 'Naviguabilité', id:'12345' }}"><a href="#" class="dropdown-item">Procedures</a></router-link></li>
+                  <li><router-link :to="{ name: 'Reglements', params: { category: 'Naviguabilité', id:'12345' }}"><a href="#" class="dropdown-item">Reglements</a></router-link></li>
+                </ul>
+              </li>
+              <li class="dropdown-submenu">
+                <a
+                  id="dropdownMenu2"
+                  href="#"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  class="dropdown-item dropdown-toggle"
+                  >Exploitation technique des aéronefs</a
+                >
+                <ul
+                  aria-labelledby="dropdownMenu2"
+                  class="dropdown-menu border-0 shadow"
+                >
+                  <li>
+                    <a tabindex="-1" href="#" class="dropdown-item"
+                      >Directives</a
                     >
-                  </DropdownMenu>
-                </Dropdown>
-                <DropdownItem
-                class="small font-weight-bold text-dark"
-                  :style="sub.subCategoryTwo.length !== 0 ? 'display:none' : ''"
-                  v-for="(sub, index2) in menu.subCategoryOne"
-                  :key="index2"
-                  ><router-link :to="sub.path" class="text-dark">{{ sub.name }}</router-link></DropdownItem
+                  </li>
+                  <li><router-link to=""><a href="#" class="dropdown-item">Formulaires</a></router-link></li>
+                  <li><router-link to=""><a href="#" class="dropdown-item">Guides</a></router-link></li>
+                  <li><router-link to=""><a href="#" class="dropdown-item">Manuels</a></router-link></li>
+                  <li><router-link to=""><a href="#" class="dropdown-item">Procedures</a></router-link></li>
+                  <li><router-link to=""><a href="#" class="dropdown-item">Reglements</a></router-link></li>
+                </ul>
+              </li>
+              <li class="dropdown-submenu">
+                <a
+                  id="dropdownMenu2"
+                  href="#"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  class="dropdown-item dropdown-toggle"
+                  >License du personels</a
                 >
-              </DropdownMenu>
-            </Dropdown>
+                <ul
+                  aria-labelledby="dropdownMenu2"
+                  class="dropdown-menu border-0 shadow"
+                >
+                  <li>
+                    <a tabindex="-1" href="#" class="dropdown-item"
+                      >Directives</a
+                    >
+                  </li>
+                  <li><router-link to=""><a href="#" class="dropdown-item">Formulaires</a></router-link></li>
+                  <li><router-link to=""><a href="#" class="dropdown-item">Guides</a></router-link></li>
+                  <li><router-link to=""><a href="#" class="dropdown-item">Manuels</a></router-link></li>
+                  <li><router-link to=""><a href="#" class="dropdown-item">Procedures</a></router-link></li>
+                  <li><router-link to=""><a href="#" class="dropdown-item">Reglements</a></router-link></li>
+                </ul>
+              </li>
+              <!-- End Level two -->
+              <li class="dropdown-submenu">
+                <a
+                  id="dropdownMenu2"
+                  href="#"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  class="dropdown-item dropdown-toggle"
+                  >Aérodromes et infrastructures portuaires</a
+                >
+                <ul
+                  aria-labelledby="dropdownMenu2"
+                  class="dropdown-menu border-0 shadow"
+                >
+                  <li>
+                    <a tabindex="-1" href="#" class="dropdown-item"
+                      >Directives</a
+                    >
+                  </li>
+                  <li><router-link to=""><a href="#" class="dropdown-item">Formulaires</a></router-link></li>
+                  <li><router-link to=""><a href="#" class="dropdown-item">Guides</a></router-link></li>
+                  <li><router-link to=""><a href="#" class="dropdown-item">Manuels</a></router-link></li>
+                  <li><router-link to=""><a href="#" class="dropdown-item">Procedures</a></router-link></li>
+                  <li><router-link to=""><a href="#" class="dropdown-item">Reglements</a></router-link></li>
+                </ul>
+              </li>
+              <li class="dropdown-submenu">
+                <a
+                  id="dropdownMenu2"
+                  href="#"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  class="dropdown-item dropdown-toggle"
+                  >Service de l'information aérotique</a
+                >
+                <ul
+                  aria-labelledby="dropdownMenu2"
+                  class="dropdown-menu border-0 shadow"
+                >
+                  <li>
+                    <a tabindex="-1" href="#" class="dropdown-item"
+                      >Directives</a
+                    >
+                  </li>
+                  <li><router-link to=""><a href="#" class="dropdown-item">Formulaires</a></router-link></li>
+                  <li><router-link to=""><a href="#" class="dropdown-item">Guides</a></router-link></li>
+                  <li><router-link to=""><a href="#" class="dropdown-item">Manuels</a></router-link></li>
+                  <li><router-link to=""><a href="#" class="dropdown-item">Procedures</a></router-link></li>
+                  <li><router-link to=""><a href="#" class="dropdown-item">Reglements</a></router-link></li>
+                </ul>
+              </li>
+              <li class="dropdown-submenu">
+                <a
+                  id="dropdownMenu2"
+                  href="#"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  class="dropdown-item dropdown-toggle"
+                  >Service de la cartographie</a
+                >
+                <ul
+                  aria-labelledby="dropdownMenu2"
+                  class="dropdown-menu border-0 shadow"
+                >
+                  <li>
+                    <a tabindex="-1" href="#" class="dropdown-item"
+                      >Directives</a
+                    >
+                  </li>
+                  <li><router-link to=""><a href="#" class="dropdown-item">Formulaires</a></router-link></li>
+                  <li><router-link to=""><a href="#" class="dropdown-item">Guides</a></router-link></li>
+                  <li><router-link to=""><a href="#" class="dropdown-item">Manuels</a></router-link></li>
+                  <li><router-link to=""><a href="#" class="dropdown-item">Procedures</a></router-link></li>
+                  <li><router-link to=""><a href="#" class="dropdown-item">Reglements</a></router-link></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+                    <!-- Inspection -->
+          <li class="nav-item dropdown">
+            <a
+              id="dropdownMenu1"
+              href="#"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+              class="nav-link dropdown-toggle"
+              >Inspection</a
+            >
+            <ul
+              aria-labelledby="dropdownMenu1"
+              class="dropdown-menu border-0 shadow"
+            >
+              <li>
+                <router-link to="/"
+                  ><a href="#" class="dropdown-item"
+                    >Audit et Inspection
+                  </a></router-link
+                >
+              </li>
+              <!-- End Level two -->
+            </ul>
+          </li>
+
+
+                    <!-- A propos de nous -->
+          <li class="nav-item dropdown">
+            <a
+              id="dropdownMenu1"
+              href="#"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+              class="nav-link dropdown-toggle"
+              >e-Services</a
+            >
+            <ul
+              aria-labelledby="dropdownMenu1"
+              class="dropdown-menu border-0 shadow"
+            >
+              <li>
+                <router-link to="/"
+                  ><a href="#" class="dropdown-item"
+                    >Contact
+                  </a></router-link
+                >
+              </li>
+              <li>
+                <router-link to="/"
+                  ><a href="#" class="dropdown-item"
+                    >Compte rendu volontaire
+                  </a></router-link
+                >
+              </li>
+              <li>
+                <router-link to="/"
+                  ><a href="#" class="dropdown-item"
+                    >Demande d'autorisation
+                  </a></router-link
+                >
+              </li>
+              <li>
+                <router-link to="/"
+                  ><a href="#" class="dropdown-item"
+                    >Formulaire de notification de securité
+                  </a></router-link
+                >
+              </li>
+            </ul>
           </li>
         </ul>
       </div>
@@ -66,6 +442,7 @@
 </template>
 
 <script>
+import $ from "jquery";
 import category from "../services/category.service";
 export default {
   data() {
@@ -75,8 +452,49 @@ export default {
   },
   mounted() {
     category.getCategories().then((data) => {
+      console.log(data.data);
       this.menus = data.data;
     });
+    $("ul.dropdown-menu[data-toggle='dropdown']").on("mouseleave", function (
+      event
+    ) {
+      event.preventDefault();
+      event.stopPropagation();
+      $(this)
+        .parents("li.nav-item.dropdown.show")
+        .on("hidden.bs.dropdown", () => {
+          $(".dropdown-submenu .show").removeClass("show");
+        });
+    });
+    $("ul.dropdown-menu [data-toggle='dropdown']").on("click", function (
+      event
+    ) {
+      event.preventDefault();
+      event.stopPropagation();
+
+      $(this).siblings().toggleClass("show");
+
+      if (!$(this).next().hasClass("show")) {
+        $(this)
+          .parents(".dropdown-menu")
+          .first()
+          .find(".show")
+          .removeClass("show");
+      }
+      $(this)
+        .parents("li.nav-item.dropdown.show")
+        .on("hidden.bs.dropdown", () => {
+          $(".dropdown-submenu .show").removeClass("show");
+        });
+    });
+  },
+  methods: {
+    async go(id) {
+      await this.$store.dispatch("categoryMenu/fetchCategoryMenu", id);
+    },
+    dropdown() {
+      $(".dropdown-toggle").dropdown("toggle");
+    },
   },
 };
 </script>
@@ -105,5 +523,22 @@ export default {
 }
 .right {
   width: 400px;
+}
+
+.dropdown-submenu {
+  position: relative;
+}
+
+.dropdown-submenu > a:after {
+  float: right;
+  border: none;
+  font-family: "FontAwesome";
+}
+
+.dropdown-submenu > .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: 0px;
+  margin-left: 0px;
 }
 </style>

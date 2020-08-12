@@ -3,7 +3,7 @@
     <Header class="header"></Header>
 
     <router-view />
-        <Footer></Footer>
+        <Footer class="mt-5"></Footer>
 
   </div>
 </template>
