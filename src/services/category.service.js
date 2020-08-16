@@ -1,6 +1,6 @@
 import axios from "axios";
 const bannerAdmin = axios.create({
-    baseURL: "http://localhost:3000" // https://aviation-backend.herokuapp.com
+    baseURL: "https://aviation-backend.herokuapp.com/" // https://aviation-backend.herokuapp.com
 });
 bannerAdmin.interceptors.request.use(config => {
     config.headers.common.Authorization =

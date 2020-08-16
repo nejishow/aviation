@@ -10,7 +10,6 @@ import axios from 'axios';
 import SuiVue from 'semantic-ui-vue';
 import VueAxios from 'vue-axios'
 import Buefy from 'buefy'
-import 'buefy/dist/buefy.css'
 import 'semantic-ui-css/semantic.min.css';
 import { LMap, LTileLayer, LMarker } from 'vue2-leaflet';
 import 'leaflet/dist/leaflet.css';
@@ -20,6 +19,7 @@ import 'vue-material/dist/theme/default.css'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faUserSecret, faPhone, faMobile, faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import 'buefy/dist/buefy.css'
 
 library.add(faUserSecret, faPhone, faMobile, faEnvelope)
 

@@ -1,5 +1,8 @@
 <template>
   <div class="container pb-5">
+    <div class="row mt-5">
+      <Carousel></Carousel>
+    </div>
       <div class="row">
         <div class="col-12 col-md-9 mt-5 news">
           <h4 class="mb-5 card-header bg-info">Actualités</h4>
@@ -75,17 +78,16 @@
 
 <script>
 import MAP from "../components/Map";
+import Carousel from "../components/Carousel";
 export default {
   components: {
     MAP,
+    Carousel,
   },
 };
 </script>
 
 <style lang="css">
-.row .container. {
-  background: white;
-}
 .map {
   /* Full height */
   height: 100%;
