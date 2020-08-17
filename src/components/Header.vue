@@ -100,11 +100,25 @@
                   aria-labelledby="dropdownMenu2"
                   class="dropdown-menu border-0 shadow"
                 >
-                  <li> <router-link to="/Texte legislatifs/Arretes">
-                    <a tabindex="-1" href="#" class="dropdown-item">Arrêtés</a></router-link>
+                  <li>
+                    <router-link to="/Texte legislatifs/Arretes">
+                      <a tabindex="-1" href="#" class="dropdown-item"
+                        >Arrêtés</a
+                      ></router-link
+                    >
                   </li>
-                  <li><router-link to="/Texte legislatifs/Decrets"><a href="#" class="dropdown-item">Décrets</a></router-link></li>
-                  <li><router-link to="/Texte legislatifs/Lois"><a href="#" class="dropdown-item">Lois</a></router-link></li>
+                  <li>
+                    <router-link to="/Texte legislatifs/Decrets"
+                      ><a href="#" class="dropdown-item"
+                        >Décrets</a
+                      ></router-link
+                    >
+                  </li>
+                  <li>
+                    <router-link to="/Texte legislatifs/Lois"
+                      ><a href="#" class="dropdown-item">Lois</a></router-link
+                    >
+                  </li>
                 </ul>
               </li>
               <li class="dropdown-submenu">
@@ -122,10 +136,14 @@
                   aria-labelledby="dropdownMenu2"
                   class="dropdown-menu border-0 shadow"
                 >
-                  <li> <router-link to="/Textes reglementaires/Reglementation aerotique de Djibouti">
-                    <a tabindex="-1" href="#" class="dropdown-item"
-                      >Réglementation aérotique de Djibouti</a
-                    ></router-link>
+                  <li>
+                    <router-link
+                      to="/Textes reglementaires/Reglementation aerotique de Djibouti"
+                    >
+                      <a tabindex="-1" href="#" class="dropdown-item"
+                        >Réglementation aérotique de Djibouti</a
+                      ></router-link
+                    >
                   </li>
                 </ul>
               </li>
@@ -144,13 +162,19 @@
                   aria-labelledby="dropdownMenu2"
                   class="dropdown-menu border-0 shadow"
                 >
-                  <li> <router-link to="/Accords/Accords internationaux">
-                    <a tabindex="-1" href="#" class="dropdown-item"
-                      >Accords internationaux</a
-                    ></router-link>
+                  <li>
+                    <router-link to="/Accords/Accords internationaux">
+                      <a tabindex="-1" href="#" class="dropdown-item"
+                        >Accords internationaux</a
+                      ></router-link
+                    >
                   </li>
-                  <li> <router-link to="/Accords/Accords bilateraux">
-                    <a href="#" class="dropdown-item">Accords bilaterales</a></router-link>
+                  <li>
+                    <router-link to="/Accords/Accords bilateraux">
+                      <a href="#" class="dropdown-item"
+                        >Accords bilaterales</a
+                      ></router-link
+                    >
                   </li>
                 </ul>
               </li>
@@ -209,16 +233,71 @@
                   aria-labelledby="dropdownMenu2"
                   class="dropdown-menu border-0 shadow"
                 >
-                  <li> <router-link :to="{ name: 'Directives', params: { category: 'Naviguabilité', id:'12345' }}">
-                    <a tabindex="-1" href="#" class="dropdown-item"
-                      >Directives</a
-                    > </router-link>
+                  <li>
+                    <router-link
+                      :to="{
+                        name: 'Directives',
+                        params: { category: 'Naviguabilité', id: '12345' },
+                      }"
+                    >
+                      <a tabindex="-1" href="#" class="dropdown-item"
+                        >Directives</a
+                      >
+                    </router-link>
                   </li>
-                  <li><router-link :to="{ name: 'Formulaires', params: { category: 'Naviguabilité', id:'12345' }}"><a href="#" class="dropdown-item">Formulaires</a></router-link></li>
-                  <li><router-link :to="{ name: 'Guides', params: { category: 'Naviguabilité', id:'12345' }}"><a href="#" class="dropdown-item">Guides</a></router-link></li>
-                  <li><router-link :to="{ name: 'Manuels', params: { category: 'Naviguabilité', id:'12345' }}"><a href="#" class="dropdown-item">Manuels</a></router-link></li>
-                  <li><router-link :to="{ name: 'Procedures', params: { category: 'Naviguabilité', id:'12345' }}"><a href="#" class="dropdown-item">Procedures</a></router-link></li>
-                  <li><router-link :to="{ name: 'Reglements', params: { category: 'Naviguabilité', id:'12345' }}"><a href="#" class="dropdown-item">Reglements</a></router-link></li>
+                  <li>
+                    <router-link
+                      :to="{
+                        name: 'Formulaires',
+                        params: { category: 'Naviguabilité', id: '12345' },
+                      }"
+                      ><a href="#" class="dropdown-item"
+                        >Formulaires</a
+                      ></router-link
+                    >
+                  </li>
+                  <li>
+                    <router-link
+                      :to="{
+                        name: 'Guides',
+                        params: { category: 'Naviguabilité', id: '12345' },
+                      }"
+                      ><a href="#" class="dropdown-item">Guides</a></router-link
+                    >
+                  </li>
+                  <li>
+                    <router-link
+                      :to="{
+                        name: 'Manuels',
+                        params: { category: 'Naviguabilité', id: '12345' },
+                      }"
+                      ><a href="#" class="dropdown-item"
+                        >Manuels</a
+                      ></router-link
+                    >
+                  </li>
+                  <li>
+                    <router-link
+                      :to="{
+                        name: 'Procedures',
+                        params: { category: 'Naviguabilité', id: '12345' },
+                      }"
+                      ><a href="#" class="dropdown-item"
+                        >Procedures</a
+                      ></router-link
+                    >
+                  </li>
+                  <li>
+                    <router-link
+                      :to="{
+                        name: 'Reglements',
+                        params: { category: 'Naviguabilité', id: '12345' },
+                      }"
+                      ><a href="#" class="dropdown-item"
+                        >Reglements</a
+                      ></router-link
+                    >
+                  </li>
                 </ul>
               </li>
               <li class="dropdown-submenu">
@@ -241,11 +320,39 @@
                       >Directives</a
                     >
                   </li>
-                  <li><router-link to=""><a href="#" class="dropdown-item">Formulaires</a></router-link></li>
-                  <li><router-link to=""><a href="#" class="dropdown-item">Guides</a></router-link></li>
-                  <li><router-link to=""><a href="#" class="dropdown-item">Manuels</a></router-link></li>
-                  <li><router-link to=""><a href="#" class="dropdown-item">Procedures</a></router-link></li>
-                  <li><router-link to=""><a href="#" class="dropdown-item">Reglements</a></router-link></li>
+                  <li>
+                    <router-link to=""
+                      ><a href="#" class="dropdown-item"
+                        >Formulaires</a
+                      ></router-link
+                    >
+                  </li>
+                  <li>
+                    <router-link to=""
+                      ><a href="#" class="dropdown-item">Guides</a></router-link
+                    >
+                  </li>
+                  <li>
+                    <router-link to=""
+                      ><a href="#" class="dropdown-item"
+                        >Manuels</a
+                      ></router-link
+                    >
+                  </li>
+                  <li>
+                    <router-link to=""
+                      ><a href="#" class="dropdown-item"
+                        >Procedures</a
+                      ></router-link
+                    >
+                  </li>
+                  <li>
+                    <router-link to=""
+                      ><a href="#" class="dropdown-item"
+                        >Reglements</a
+                      ></router-link
+                    >
+                  </li>
                 </ul>
               </li>
               <li class="dropdown-submenu">
@@ -268,11 +375,39 @@
                       >Directives</a
                     >
                   </li>
-                  <li><router-link to=""><a href="#" class="dropdown-item">Formulaires</a></router-link></li>
-                  <li><router-link to=""><a href="#" class="dropdown-item">Guides</a></router-link></li>
-                  <li><router-link to=""><a href="#" class="dropdown-item">Manuels</a></router-link></li>
-                  <li><router-link to=""><a href="#" class="dropdown-item">Procedures</a></router-link></li>
-                  <li><router-link to=""><a href="#" class="dropdown-item">Reglements</a></router-link></li>
+                  <li>
+                    <router-link to=""
+                      ><a href="#" class="dropdown-item"
+                        >Formulaires</a
+                      ></router-link
+                    >
+                  </li>
+                  <li>
+                    <router-link to=""
+                      ><a href="#" class="dropdown-item">Guides</a></router-link
+                    >
+                  </li>
+                  <li>
+                    <router-link to=""
+                      ><a href="#" class="dropdown-item"
+                        >Manuels</a
+                      ></router-link
+                    >
+                  </li>
+                  <li>
+                    <router-link to=""
+                      ><a href="#" class="dropdown-item"
+                        >Procedures</a
+                      ></router-link
+                    >
+                  </li>
+                  <li>
+                    <router-link to=""
+                      ><a href="#" class="dropdown-item"
+                        >Reglements</a
+                      ></router-link
+                    >
+                  </li>
                 </ul>
               </li>
               <!-- End Level two -->
@@ -296,11 +431,39 @@
                       >Directives</a
                     >
                   </li>
-                  <li><router-link to=""><a href="#" class="dropdown-item">Formulaires</a></router-link></li>
-                  <li><router-link to=""><a href="#" class="dropdown-item">Guides</a></router-link></li>
-                  <li><router-link to=""><a href="#" class="dropdown-item">Manuels</a></router-link></li>
-                  <li><router-link to=""><a href="#" class="dropdown-item">Procedures</a></router-link></li>
-                  <li><router-link to=""><a href="#" class="dropdown-item">Reglements</a></router-link></li>
+                  <li>
+                    <router-link to=""
+                      ><a href="#" class="dropdown-item"
+                        >Formulaires</a
+                      ></router-link
+                    >
+                  </li>
+                  <li>
+                    <router-link to=""
+                      ><a href="#" class="dropdown-item">Guides</a></router-link
+                    >
+                  </li>
+                  <li>
+                    <router-link to=""
+                      ><a href="#" class="dropdown-item"
+                        >Manuels</a
+                      ></router-link
+                    >
+                  </li>
+                  <li>
+                    <router-link to=""
+                      ><a href="#" class="dropdown-item"
+                        >Procedures</a
+                      ></router-link
+                    >
+                  </li>
+                  <li>
+                    <router-link to=""
+                      ><a href="#" class="dropdown-item"
+                        >Reglements</a
+                      ></router-link
+                    >
+                  </li>
                 </ul>
               </li>
               <li class="dropdown-submenu">
@@ -323,11 +486,39 @@
                       >Directives</a
                     >
                   </li>
-                  <li><router-link to=""><a href="#" class="dropdown-item">Formulaires</a></router-link></li>
-                  <li><router-link to=""><a href="#" class="dropdown-item">Guides</a></router-link></li>
-                  <li><router-link to=""><a href="#" class="dropdown-item">Manuels</a></router-link></li>
-                  <li><router-link to=""><a href="#" class="dropdown-item">Procedures</a></router-link></li>
-                  <li><router-link to=""><a href="#" class="dropdown-item">Reglements</a></router-link></li>
+                  <li>
+                    <router-link to=""
+                      ><a href="#" class="dropdown-item"
+                        >Formulaires</a
+                      ></router-link
+                    >
+                  </li>
+                  <li>
+                    <router-link to=""
+                      ><a href="#" class="dropdown-item">Guides</a></router-link
+                    >
+                  </li>
+                  <li>
+                    <router-link to=""
+                      ><a href="#" class="dropdown-item"
+                        >Manuels</a
+                      ></router-link
+                    >
+                  </li>
+                  <li>
+                    <router-link to=""
+                      ><a href="#" class="dropdown-item"
+                        >Procedures</a
+                      ></router-link
+                    >
+                  </li>
+                  <li>
+                    <router-link to=""
+                      ><a href="#" class="dropdown-item"
+                        >Reglements</a
+                      ></router-link
+                    >
+                  </li>
                 </ul>
               </li>
               <li class="dropdown-submenu">
@@ -350,17 +541,45 @@
                       >Directives</a
                     >
                   </li>
-                  <li><router-link to=""><a href="#" class="dropdown-item">Formulaires</a></router-link></li>
-                  <li><router-link to=""><a href="#" class="dropdown-item">Guides</a></router-link></li>
-                  <li><router-link to=""><a href="#" class="dropdown-item">Manuels</a></router-link></li>
-                  <li><router-link to=""><a href="#" class="dropdown-item">Procedures</a></router-link></li>
-                  <li><router-link to=""><a href="#" class="dropdown-item">Reglements</a></router-link></li>
+                  <li>
+                    <router-link to=""
+                      ><a href="#" class="dropdown-item"
+                        >Formulaires</a
+                      ></router-link
+                    >
+                  </li>
+                  <li>
+                    <router-link to=""
+                      ><a href="#" class="dropdown-item">Guides</a></router-link
+                    >
+                  </li>
+                  <li>
+                    <router-link to=""
+                      ><a href="#" class="dropdown-item"
+                        >Manuels</a
+                      ></router-link
+                    >
+                  </li>
+                  <li>
+                    <router-link to=""
+                      ><a href="#" class="dropdown-item"
+                        >Procedures</a
+                      ></router-link
+                    >
+                  </li>
+                  <li>
+                    <router-link to=""
+                      ><a href="#" class="dropdown-item"
+                        >Reglements</a
+                      ></router-link
+                    >
+                  </li>
                 </ul>
               </li>
             </ul>
           </li>
 
-                    <!-- Inspection -->
+          <!-- Inspection -->
           <li class="nav-item dropdown">
             <a
               id="dropdownMenu1"
@@ -386,8 +605,7 @@
             </ul>
           </li>
 
-
-                    <!-- A propos de nous -->
+          <!-- e-services -->
           <li class="nav-item dropdown">
             <a
               id="dropdownMenu1"
@@ -404,9 +622,7 @@
             >
               <li>
                 <router-link to="/"
-                  ><a href="#" class="dropdown-item"
-                    >Contact
-                  </a></router-link
+                  ><a href="#" class="dropdown-item">Contact </a></router-link
                 >
               </li>
               <li>
@@ -432,6 +648,8 @@
               </li>
             </ul>
           </li>
+          <li class="nav-item nav-link btn">Documents</li>
+          <li class="nav-item nav-link btn">Gestion</li>
         </ul>
       </div>
     </nav>
@@ -443,7 +661,6 @@
 
 <script>
 import $ from "jquery";
-import category from "../services/category.service";
 export default {
   data() {
     return {
@@ -451,11 +668,7 @@ export default {
     };
   },
   mounted() {
-    category.getCategories().then((data) => {
-      console.log(data.data);
-      this.menus = data.data;
-    });
-    $("ul.dropdown-menu[data-toggle='dropdown']").on("mouseleave", function (
+    $("ul.dropdown-menu[data-toggle='dropdown']").on("mouseleave", function(
       event
     ) {
       event.preventDefault();
@@ -466,15 +679,19 @@ export default {
           $(".dropdown-submenu .show").removeClass("show");
         });
     });
-    $("ul.dropdown-menu [data-toggle='dropdown']").on("click", function (
-      event
-    ) {
+    $("ul.dropdown-menu [data-toggle='dropdown']").on("click", function(event) {
       event.preventDefault();
       event.stopPropagation();
 
-      $(this).siblings().toggleClass("show");
+      $(this)
+        .siblings()
+        .toggleClass("show");
 
-      if (!$(this).next().hasClass("show")) {
+      if (
+        !$(this)
+          .next()
+          .hasClass("show")
+      ) {
         $(this)
           .parents(".dropdown-menu")
           .first()

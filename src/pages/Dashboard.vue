@@ -1,7 +1,10 @@
 <template>
   <div class="container pb-5">
     <div class="row mt-5">
-      <Carousel></Carousel>
+      <div class="col-12">
+              <Carousel></Carousel>
+
+      </div>
     </div>
       <div class="row">
         <div class="col-12 col-md-9 mt-5 news">

@@ -1,148 +1,155 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import Dashboard from '../pages/Dashboard.vue'
-import Presentation from '../pages/A propos de nous/Presentation.vue';
-import Organisation from '../pages/A propos de nous/Organisation.vue';
-import MduD from '../pages/A propos de nous/Mot du directeur.vue';
-import PdeF from '../pages/A propos de nous/Politique de formation.vue';
-import PdeS from '../pages/A propos de nous/Politique de supervision.vue';
-import Arretes from '../pages/Publications/Textes legislatifs/Arretes.vue';
-import Decrets from '../pages/Publications/Textes legislatifs/Decret.vue';
-import Lois from '../pages/Publications/Textes legislatifs/Lois.vue';
-import RAD from '../pages/Publications/Textes reglementaires/Reglementation aerotique de Djibouti.vue';
-import AI from '../pages/Publications/Accords/Accords Internationaux.vue';
-import AB from '../pages/Publications/Accords/Accords bilaterales.vue';
-import DirectiveS from '../pages/Publications/Directives.vue';
-import Circulaires from '../pages/Publications/Circulaires.vue';
-import Decisions from '../pages/Publications/Decisions.vue';
-import Reglements from '../pages/Securites/Reglements.vue';
-import Formulaires from '../pages/Securites/Formulaires.vue';
-import Guides from '../pages/Securites/Guides.vue';
-import Directives from '../pages/Securites/Directives.vue';
+import Vue from "vue";
+import VueRouter from "vue-router";
+import Dashboard from "../pages/Dashboard.vue";
+import Presentation from "../pages/A propos de nous/Presentation.vue";
+import Organisation from "../pages/A propos de nous/Organisation.vue";
+import MduD from "../pages/A propos de nous/Mot du directeur.vue";
+import PdeF from "../pages/A propos de nous/Politique de formation.vue";
+import PdeS from "../pages/A propos de nous/Politique de supervision.vue";
+import Arretes from "../pages/Publications/Textes legislatifs/Arretes.vue";
+import Decrets from "../pages/Publications/Textes legislatifs/Decret.vue";
+import Lois from "../pages/Publications/Textes legislatifs/Lois.vue";
+import RAD from "../pages/Publications/Textes reglementaires/Reglementation aerotique de Djibouti.vue";
+import AI from "../pages/Publications/Accords/Accords Internationaux.vue";
+import AB from "../pages/Publications/Accords/Accords bilaterales.vue";
+import DirectiveS from "../pages/Publications/Directives.vue";
+import Circulaires from "../pages/Publications/Circulaires.vue";
+import Decisions from "../pages/Publications/Decisions.vue";
+import Reglements from "../pages/Securites/Reglements.vue";
+import Formulaires from "../pages/Securites/Formulaires.vue";
+import Guides from "../pages/Securites/Guides.vue";
+import Directives from "../pages/Securites/Directives.vue";
 import Manuels from "../pages/Securites/Manuels.vue";
-import Procedure from '../pages/Securites/Procedures.vue';
-Vue.use(VueRouter)
+import Procedure from "../pages/Securites/Procedures.vue";
+import Login from "../pages/Login.vue";
+Vue.use(VueRouter);
 
 const routes = [
   {
-    path: '/',
-    name: 'Dashboard',
-    component: Dashboard
+    path: "/",
+    name: "Dashboard",
+    component: Dashboard,
   },
   {
-    path: '/Formulaires/:category/:id',
-    name: 'Formulaires',
-    component: Formulaires
+    path: "/login",
+    name: "Login",
+    component: Login,
   },
   {
-    path: '/Guides/:category/:id',
-    name: 'Guides',
-    component: Guides
+    path: "/Formulaires/:category/:id",
+    name: "Formulaires",
+    component: Formulaires,
   },
   {
-    path: '/Procedures/:category/:id',
-    name: 'Procedures',
-    component: Procedure
+    path: "/Guides/:category/:id",
+    name: "Guides",
+    component: Guides,
   },
   {
-    path: '/Manuels/:category/:id',
-    name: 'Manuels',
-    component: Manuels
+    path: "/Procedures/:category/:id",
+    name: "Procedures",
+    component: Procedure,
   },
   {
-    path: '/Reglements/:category/:id',
-    name: 'Reglements',
-    component: Reglements
+    path: "/Manuels/:category/:id",
+    name: "Manuels",
+    component: Manuels,
   },
   {
-    path: '/Directives',
-    name: 'DirectiveS',
-    component: DirectiveS
+    path: "/Reglements/:category/:id",
+    name: "Reglements",
+    component: Reglements,
   },
   {
-    path: '/Presentation',
-    name: 'Presentation',
-    component: Presentation
+    path: "/Directives",
+    name: "DirectiveS",
+    component: DirectiveS,
   },
   {
-    path: '/Mot du directeur',
-    name: 'MduD',
-    component: MduD
+    path: "/Presentation",
+    name: "Presentation",
+    component: Presentation,
   },
   {
-    path: '/Organisation',
-    name: 'Organisation',
-    component: Organisation
+    path: "/Mot du directeur",
+    name: "MduD",
+    component: MduD,
   },
   {
-    path: '/Politique de Formation',
-    name: 'PdeF',
-    component: PdeF
+    path: "/Organisation",
+    name: "Organisation",
+    component: Organisation,
   },
   {
-    path: '/Politique de Supervision',
-    name: 'PdeS',
-    component: PdeS
+    path: "/Politique de Formation",
+    name: "PdeF",
+    component: PdeF,
   },
   {
-    path: '/Texte legislatifs/Arretes',
-    name: 'Arretes',
-    component: Arretes
+    path: "/Politique de Supervision",
+    name: "PdeS",
+    component: PdeS,
   },
   {
-    path: '/Texte legislatifs/Decrets',
-    name: 'Decrets',
-    component: Decrets
+    path: "/Texte legislatifs/Arretes",
+    name: "Arretes",
+    component: Arretes,
   },
   {
-    path: '/Texte legislatifs/Lois',
-    name: 'Lois',
-    component: Lois
+    path: "/Texte legislatifs/Decrets",
+    name: "Decrets",
+    component: Decrets,
   },
   {
-    path: '/Textes reglementaires/Reglementation aerotique de Djibouti',
-    name: 'Reglementation aerotique de Djibouti',
-    component: RAD
+    path: "/Texte legislatifs/Lois",
+    name: "Lois",
+    component: Lois,
   },
   {
-    path: '/Accords/Accords internationaux',
-    name: 'Accords internationaux',
-    component: AI
+    path: "/Textes reglementaires/Reglementation aerotique de Djibouti",
+    name: "Reglementation aerotique de Djibouti",
+    component: RAD,
   },
   {
-    path: '/Accords/Accords bilateraux',
-    name: 'Accords bilateraux',
-    component: AB
+    path: "/Accords/Accords internationaux",
+    name: "Accords internationaux",
+    component: AI,
   },
   {
-    path: '/Directives/:category/:id',
-    name: 'Directives',
-    component: Directives
+    path: "/Accords/Accords bilateraux",
+    name: "Accords bilateraux",
+    component: AB,
   },
   {
-    path: '/Circulaires',
-    name: 'Circulaires',
-    component: Circulaires
+    path: "/Directives/:category/:id",
+    name: "Directives",
+    component: Directives,
   },
   {
-    path: '/Decisions',
-    name: 'Decisions',
-    component: Decisions
+    path: "/Circulaires",
+    name: "Circulaires",
+    component: Circulaires,
   },
   {
-    path: '/about',
-    name: 'About',
+    path: "/Decisions",
+    name: "Decisions",
+    component: Decisions,
+  },
+  {
+    path: "/about",
+    name: "About",
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
-]
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/About.vue"),
+  },
+];
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: "history",
   base: process.env.BASE_URL,
-  routes
-})
+  routes,
+});
 
-export default router
+export default router;
