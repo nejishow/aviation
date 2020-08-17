@@ -1,0 +1,26 @@
+<template>
+  <div class="row mt-5">
+    <div class="col-12">
+      <h1>Gestion des documents</h1>
+    </div>
+    <div class="col-12">
+      <md-tabs>
+        <md-tab id="tab-Intern" md-label="Documents publiques"> <Public></Public> </md-tab>
+        <md-tab id="tab-Public" md-label="Documents en internes">
+          <Intern></Intern>
+        </md-tab>
+      </md-tabs>
+    </div>
+  </div>
+</template>
+
+<script>
+import Intern from "../gestion/DocumentsIntern";
+import Public from "../gestion/DocumentsPublic";
+export default {
+  components: {
+    Intern,
+    Public,
+  },
+};
+</script>

@@ -648,8 +648,8 @@
               </li>
             </ul>
           </li>
-          <li class="nav-item nav-link btn">Documents</li>
-          <li class="nav-item nav-link btn">Gestion</li>
+          <li class="nav-item nav-link btn"><router-link to="/gestionMedia" class="nav-item text-danger font-weight-bolder">Gestion Media</router-link></li>
+          <li class="nav-item nav-link btn"><router-link to="/gestionDocs" class="nav-item text-danger font-weight-bolder">Gestion Documents</router-link></li>
         </ul>
       </div>
     </nav>
@@ -668,7 +668,7 @@ export default {
     };
   },
   mounted() {
-    $("ul.dropdown-menu[data-toggle='dropdown']").on("mouseleave", function(
+    $("ul.dropdown-menu[data-toggle='dropdown']").on("mouseleave", function (
       event
     ) {
       event.preventDefault();
@@ -679,19 +679,15 @@ export default {
           $(".dropdown-submenu .show").removeClass("show");
         });
     });
-    $("ul.dropdown-menu [data-toggle='dropdown']").on("click", function(event) {
+    $("ul.dropdown-menu [data-toggle='dropdown']").on("click", function (
+      event
+    ) {
       event.preventDefault();
       event.stopPropagation();
 
-      $(this)
-        .siblings()
-        .toggleClass("show");
+      $(this).siblings().toggleClass("show");
 
-      if (
-        !$(this)
-          .next()
-          .hasClass("show")
-      ) {
+      if (!$(this).next().hasClass("show")) {
         $(this)
           .parents(".dropdown-menu")
           .first()

@@ -11,6 +11,12 @@ export default {
   getCategories() {
     return category.get("/allCategory/");
   },
+  getSubCategoryOne() {
+    return category.get("/allSubCategoryOne");
+  },
+  getSubCategoryTwo() {
+    return category.get("/allSubCategoryTwo");
+  },
   getMenu(id) {
     console.log(id);
     return category.get("/menu/" + id);

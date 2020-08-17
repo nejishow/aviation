@@ -22,6 +22,8 @@ import Directives from "../pages/Securites/Directives.vue";
 import Manuels from "../pages/Securites/Manuels.vue";
 import Procedure from "../pages/Securites/Procedures.vue";
 import Login from "../pages/Login.vue";
+import Docs from "../pages/gestion/GestionDocuments.vue";
+import Media from "../pages/gestion/GestionMedia.vue";
 Vue.use(VueRouter);
 
 const routes = [
@@ -34,6 +36,16 @@ const routes = [
     path: "/login",
     name: "Login",
     component: Login,
+  },
+  {
+    path: "/gestionDocs",
+    name: "Docs",
+    component: Docs,
+  },
+  {
+    path: "/gestionMedia",
+    name: "Media",
+    component: Media,
   },
   {
     path: "/Formulaires/:category/:id",
