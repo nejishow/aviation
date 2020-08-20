@@ -13,7 +13,7 @@ import Buefy from "buefy";
 import "semantic-ui-css/semantic.min.css";
 import { LMap, LTileLayer, LMarker } from "vue2-leaflet";
 import "leaflet/dist/leaflet.css";
-import { MdCard, MdContent, MdTabs, MdButton } from "vue-material/dist/components";
+import { MdCard, MdContent, MdTabs, MdButton, MdIcon, MdProgress } from "vue-material/dist/components";
 import "vue-material/dist/vue-material.min.css";
 import "vue-material/dist/theme/default.css";
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -25,6 +25,9 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import "buefy/dist/buefy.css";
+import PortalVue from 'portal-vue'
+
+Vue.use(PortalVue)
 
 library.add(faUserSecret, faPhone, faMobile, faEnvelope);
 
@@ -33,6 +36,8 @@ Vue.use(MdCard);
 Vue.use(MdContent);
 Vue.use(MdTabs);
 Vue.use(MdButton);
+Vue.use(MdIcon);
+Vue.use(MdProgress);
 Vue.component("l-map", LMap);
 Vue.component("l-tile-layer", LTileLayer);
 Vue.component("l-marker", LMarker);

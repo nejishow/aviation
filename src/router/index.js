@@ -48,27 +48,27 @@ const routes = [
     component: Media,
   },
   {
-    path: "/Formulaires/:category/:id",
+    path: "/Formulaires/:id",
     name: "Formulaires",
     component: Formulaires,
   },
   {
-    path: "/Guides/:category/:id",
+    path: "/Guides/:id",
     name: "Guides",
     component: Guides,
   },
   {
-    path: "/Procedures/:category/:id",
+    path: "/Procedures/:id",
     name: "Procedures",
     component: Procedure,
   },
   {
-    path: "/Manuels/:category/:id",
+    path: "/Manuels/:id",
     name: "Manuels",
     component: Manuels,
   },
   {
-    path: "/Reglements/:category/:id",
+    path: "/Reglements/:id",
     name: "Reglements",
     component: Reglements,
   },
@@ -133,7 +133,7 @@ const routes = [
     component: AB,
   },
   {
-    path: "/Directives/:category/:id",
+    path: "/Directives/:id",
     name: "Directives",
     component: Directives,
   },

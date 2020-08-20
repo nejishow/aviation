@@ -1,6 +1,7 @@
 import axios from "axios";
 const category = axios.create({
-  baseURL: "https://aviation-backend.herokuapp.com", // https://aviation-backend.herokuapp.com
+  //baseURL: "https://aviation-backend.herokuapp.com", // https://aviation-backend.herokuapp.com
+  baseURL: "http://localhost:3000", // https://aviation-backend.herokuapp.com
 });
 category.interceptors.request.use((config) => {
   config.headers.common.Authorization =
@@ -9,7 +10,7 @@ category.interceptors.request.use((config) => {
 });
 export default {
   getCategories() {
-    return category.get("/allCategory/");
+    return category.get("/allCategory");
   },
   getSubCategoryOne() {
     return category.get("/allSubCategoryOne");

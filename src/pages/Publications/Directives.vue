@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container-fluid">
     <div class="row">
       <div class="col-12 m-5">
         Agence / Publications / Home

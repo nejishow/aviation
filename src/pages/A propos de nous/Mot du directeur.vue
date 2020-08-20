@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container-fluid">
     <div class="row">
       <div class="col-md-4">
         <Menu class="card" :category="test"></Menu>

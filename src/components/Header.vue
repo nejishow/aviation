@@ -2,8 +2,8 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-12 social bg-info text-right">
-        <b-button pill class="btn btn-secondary text-white">Francais</b-button>
-        <b-button pill class="btn btn-danger text-white">Englais</b-button>
+        <b-button pill class="btn btn-secondary text-white">Fr</b-button>
+        <b-button pill class="btn btn-danger text-white">En</b-button>
       </div>
     </div>
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
@@ -237,7 +237,7 @@
                     <router-link
                       :to="{
                         name: 'Directives',
-                        params: { category: 'Naviguabilité', id: '12345' },
+                        params:{id: '5f3aa6cb34512340cc2b824d' },
                       }"
                     >
                       <a tabindex="-1" href="#" class="dropdown-item"
@@ -249,7 +249,7 @@
                     <router-link
                       :to="{
                         name: 'Formulaires',
-                        params: { category: 'Naviguabilité', id: '12345' },
+                        params: {id: '5f3aa6cb34512340cc2b824e'},
                       }"
                       ><a href="#" class="dropdown-item"
                         >Formulaires</a
@@ -260,7 +260,7 @@
                     <router-link
                       :to="{
                         name: 'Guides',
-                        params: { category: 'Naviguabilité', id: '12345' },
+                        params: {id: '5f3aa6cb34512340cc2b824f'},
                       }"
                       ><a href="#" class="dropdown-item">Guides</a></router-link
                     >
@@ -269,7 +269,7 @@
                     <router-link
                       :to="{
                         name: 'Manuels',
-                        params: { category: 'Naviguabilité', id: '12345' },
+                        params: {id: '5f3aa6cb34512340cc2b8250'},
                       }"
                       ><a href="#" class="dropdown-item"
                         >Manuels</a
@@ -280,7 +280,7 @@
                     <router-link
                       :to="{
                         name: 'Procedures',
-                        params: { category: 'Naviguabilité', id: '12345' },
+                        params: {id: '5f3aa6cb34512340cc2b8251'},
                       }"
                       ><a href="#" class="dropdown-item"
                         >Procedures</a
@@ -291,7 +291,7 @@
                     <router-link
                       :to="{
                         name: 'Reglements',
-                        params: { category: 'Naviguabilité', id: '12345' },
+                        params: {id: '5f3aa6cb34512340cc2b8252'},
                       }"
                       ><a href="#" class="dropdown-item"
                         >Reglements</a

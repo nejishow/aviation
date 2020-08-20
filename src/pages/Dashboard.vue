@@ -1,5 +1,5 @@
 <template>
-  <div class="container pb-5">
+  <div class="container-fluid">
     <div class="row mt-5">
       <div class="col-12">
               <Carousel></Carousel>

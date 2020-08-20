@@ -1,6 +1,8 @@
 <template>
-  <div>
-    <VueSlickCarousel :arrows="true" :dots="true">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+            <VueSlickCarousel :arrows="true" :dots="true">
       <div class="">
         <md-card>
           <md-card-media-cover md-solid>
@@ -66,6 +68,8 @@
         </md-card>
       </div>
     </VueSlickCarousel>
+      </div>
+    </div>
   </div>
 </template>
 

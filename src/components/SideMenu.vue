@@ -2,9 +2,9 @@
     <div class="card">
 
                 <ul class="list-group text-right">
-                    <li class="list-group-item" v-for="(category, index) in categories" :key="index">
-                        <router-link to="/Presentation">
-                        {{}}</router-link>
+                    <li class="list-group-item" v-for="(item, index) in menu" :key="index">
+                        <router-link :to="{name:item.name, params: {id:item._id},}">
+                        {{item.name}}</router-link>
                     </li>               
                 </ul>
     </div>
@@ -15,7 +15,7 @@ export default {
   data() {
     return {};
   },
-  props: ["categories"],
+  props: ["menu"],
 };
 </script>
 <style lang="css" scoped>

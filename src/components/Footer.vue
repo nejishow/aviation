@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container-fluid">
     <div class="row bg-info pt-5 pb-5">
       <div class="col-12 col-md-4 text-light d-flex flex-column">
         <a class="navbar-brand img-fluid mb-2" href="#">

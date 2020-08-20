@@ -1,56 +1,82 @@
 import CategoryS from "../services/category.service";
 
 export const state = () => ({
-  categoryMenu: [],
-  subCategoryMenu: [],
+  category: [],
+  subCategoryOne: [],
+  subCategoryTwo: [],
+  breadCrumb1: '',
+  breadCrumb2: '',
+  breadCrumb3: ''
 
 })
 export const getters = {
-  getCategoryMenu(state) {
-    return state.categoryMenu
+  getCategoryOne(state) {
+    return state.subCategoryOne
   },
-  getSubCategoryMenu(state) {
-    return state.subCategoryMenu
+  getCategoryTwo(state) {
+    return state.subCategoryTwo
+  },
+  getCategory(state) {
+    return state.category
+  },
+  getBreadCrumb(state) {
+    return state.breadCrumb
   },
 
 }
 export const mutations = {
-  SET_CategoryMenu(state, categoryMenu) {
-    state.categoryMenu = categoryMenu
+  SET_Category(state, categoryMenu) {
+    state.category = categoryMenu
   },
-  SET_SubCategoryMenu(state, subCategoryMenu) {
-    state.subCategoryMenu = subCategoryMenu
-  }
+  SET_SubCategoryOne(state, subCategoryOne) {
+    state.subCategoryOne = subCategoryOne
+  },
+  SET_SubCategoryTwo(state, subCategoryTwo) {
+    state.subCategoryTwo = subCategoryTwo
+  },
+  SET_B1(state, B1) {
+    state.breadCrumb1 = B1
+  },
+  SET_B2(state, B2) {
+    state.breadCrumb2 = B2
+  },
+  SET_B3(state, B3) {
+    state.breadCrumb3 = B3
+  },
 }
 export const actions = {
-  fetchCategoryMenu({ commit }, id) {
-    return CategoryS.getMenu(id).then(async (response) => {
+  fetchCategory({ commit }) {
+    return CategoryS.getCategories().then(async (response) => {
       const categoryMenu = response.data
-      await categoryMenu.sort((a, b) => {
-        if (a.name > b.name) {
-          return 1
-        }
-        if (b.name > a.name) {
-          return -1
-        }
-        return 0
-      })
-      await commit('SET_CategoryMenu', categoryMenu)
-    })
+      await commit('SET_Category', categoryMenu)
+    });
   },
-  fetchSubCategoryMenu({ commit }, id) {
-    return CategoryS.getMenuS(id).then(async (response) => {
-      const subCat = response.data
-      await subCat.sort((a, b) => {
-        if (a.name > b.name) {
-          return 1
-        }
-        if (b.name > a.name) {
-          return -1
-        }
-        return 0
-      })
-      commit('SET_SubCategoryMenu', subCat)
-    })
+  fetchSubCategoryOne({ commit }) {
+    return CategoryS.getSubCategoryOne().then(async (response) => {
+      const categoryMenu = response.data
+      await commit('SET_SubCategoryOne', categoryMenu)
+    });
+  },
+  fetchSubCategoryTwo({ commit }) {
+    return CategoryS.getSubCategoryTwo().then(async (response) => {
+      const categoryMenu = response.data
+      await commit('SET_SubCategoryTwo', categoryMenu)
+    });
+  },
+  fetchB1({ commit }, B1) {
+    commit('SET_B1', B1)
+  },
+  fetchB2({ commit }, B2) {
+    commit('SET_B2', B2)
+  },
+  fetchB3({ commit }, B3) {
+    commit('SET_B3', B3)
   }
+}
+
+export default {
+  actions,
+  mutations,
+  getters,
+  state
 }
