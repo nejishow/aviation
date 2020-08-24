@@ -60,7 +60,7 @@
                 <th><img src="../../assets/pdf.png" width="20" alt="" /></th>
                 <td>{{ item.name }}</td>
                 <td>{{ item.createdAt }}</td>
-                <td><a :href="item.src" target="_blanc"><button>Download</button></a></td>
+                <td><a :href="item.src" target="_blank"><button>Download</button></a></td>
               </tr>
             </tbody>
           </table>

@@ -1,76 +1,22 @@
 <template>
-  <div class="container-fluid">
+<div class="container-fluid">
     <div class="row">
-      <div class="col-12">
-            <VueSlickCarousel :arrows="true" :dots="true">
-      <div class="">
-        <md-card>
-          <md-card-media-cover md-solid>
-            <md-card-media md-ratio="16:9">
-              <img src="../assets/apropo.png" alt="Skyscraper" />
-            </md-card-media>
+        <div class="col-12 p-5 carousel">
+            <div class="carousel_arrow carousel_arrow_prev ml-2">&lang; </div>
+            <VueSlickCarousel v-bind="settings" v-if="banners.length>0" class="p-3 carousel" ref="carousel">
+                <div class="carousel_div" v-for="(banner, index) in banners" :key="index">
+                    <img :src="banner.url" alt="" class="carousel_img">
+                    <div class="carousel_text">
+                        <h4>{{banner.title}}</h4>
+                        <p>{{banner.description}}</p>
+                    </div>
+                </div>
+            </VueSlickCarousel>
+            <div class="carousel_arrow carousel_arrow_next mr-2">&rang;</div>
 
-            <md-card-area>
-              <md-card-header>
-                <span class="md-title">Solid background</span>
-                <span class="md-subhead"> image</span>
-              </md-card-header>
-            </md-card-area>
-          </md-card-media-cover>
-        </md-card>
-      </div>
-      <div class="carousel">
-        <md-card>
-          <md-card-media-cover md-solid>
-            <md-card-media md-ratio="16:9">
-              <img src="../assets/history.jpg" alt="Skyscraper" />
-            </md-card-media>
-
-            <md-card-area>
-              <md-card-header>
-                <span class="md-title">Solid background</span>
-                <span class="md-subhead"> image</span>
-              </md-card-header>
-            </md-card-area>
-          </md-card-media-cover>
-        </md-card>
-      </div>
-      <div class="carousel">
-        <md-card>
-          <md-card-media-cover md-solid>
-            <md-card-media md-ratio="16:9">
-              <img src="../assets/plane.jpg" alt="Skyscraper" />
-            </md-card-media>
-
-            <md-card-area>
-              <md-card-header>
-                <span class="md-title">Solid background</span>
-                <span class="md-subhead"> image</span>
-              </md-card-header>
-            </md-card-area>
-          </md-card-media-cover>
-        </md-card>
-      </div>
-      <div class="carousel">
-        <md-card>
-          <md-card-media-cover md-solid>
-            <md-card-media md-ratio="16:9">
-              <img src="../assets/wallpaper.jpg" alt="Skyscraper" />
-            </md-card-media>
-
-            <md-card-area>
-              <md-card-header>
-                <span class="md-title">Solid background</span>
-                <span class="md-subhead"> image</span>
-              </md-card-header>
-            </md-card-area>
-          </md-card-media-cover>
-        </md-card>
-      </div>
-    </VueSlickCarousel>
-      </div>
+        </div>
     </div>
-  </div>
+</div>
 </template>
 
 <script>
@@ -78,16 +24,89 @@ import VueSlickCarousel from "vue-slick-carousel";
 import "vue-slick-carousel/dist/vue-slick-carousel.css";
 // optional style for arrows & dots
 import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
+import $ from 'jquery';
 export default {
-  data() {
-    return {};
-  },
-  components: { VueSlickCarousel },
+    data() {
+        return {
+            arrows: true,
+            dots: true,
+            settings: {
+                dots: true,
+                dotsClass: "slick-dots custom-dot-class",
+                edgeFriction: 0.35,
+                infinite: false,
+                arrows: true,
+                speed: 500,
+                slidesToShow: 1,
+                slidesToScroll: 1
+            }
+        };
+    },
+    components: {
+        VueSlickCarousel
+    },
+    computed: {
+        banners() {
+            if (this.$store.state.media.banner.length > 0) {
+                return this.$store.state.media.banner
+            } else {
+                return this.$store.state.media.banner
+            }
+
+        }
+    },
+    mounted() {
+        $('.slick-prev').removeClass('slick-disabled')
+    },
 };
 </script>
-<style lang="css" scoped>
+
+<style lang="scss" scoped>
+.custom-arrow {
+    opacity: .8;
+    background-blend-mode: screen;
+    border-radius: 50%;
+    overflow: hidden;
+    border: solid black 1px;
+}
+
 .carousel {
-  max-height: 100px;
-  width: auto;
+    &_div {
+        position: relative;
+        text-align: center;
+
+    }
+
+    &_img {
+        max-height: 50vh;
+        width: 100%;
+    }
+
+    &_text {
+        position: absolute;
+        z-index: 999;
+        bottom: 0;
+        display: inline-block;
+        left: 0;
+        background: rgba(#0000, .5);
+        width: 100%;
+        color: white;
+    }
+
+    &_arrow {
+        position: absolute;
+        top: 40%;
+        display: inline-block;
+        font-size: 3rem;
+        background: rgba(#fff, .4);
+
+        &_next {
+            right: 0;
+        }
+
+        &_prev {
+            left: 0;
+        }
+    }
 }
 </style>
