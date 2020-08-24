@@ -1,22 +1,12 @@
 <template>
-  <div class="container-fluid">
-    <div class="row mt-5">
-      <div class="col-12">
-              <Carousel></Carousel>
+<div>
 
-      </div>
-    </div>
+    <Carousel></Carousel>
     <News></News>
-    <div class="row mt-5 ">
-      <div class="col-12">
-          <h4 class="mb-5 card-header bg-info">Location</h4>
-      </div>
-      <div class="col-12 mt-3">
-              <MAP class="mr-auto ml-auto"></MAP>
 
-      </div>
-    </div>
-  </div>
+    <MAP class="mr-auto ml-auto"></MAP>
+
+</div>
 </template>
 
 <script>
@@ -24,36 +14,36 @@ import MAP from "../components/Map";
 import Carousel from "../components/Carousel";
 import News from "../components/News";
 export default {
-  components: {
-    MAP,
-    Carousel,
-    News
-  },
+    components: {
+        MAP,
+        Carousel,
+        News
+    },
 };
 </script>
 
 <style lang="css">
 .map {
-  /* Full height */
-  height: 100%;
-  background-image: url(../assets/sky5.jpg);
+    /* Full height */
+    height: 100%;
+    background-image: url(../assets/sky5.jpg);
 
-  /* Create the parallax scrolling effect */
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
+    font-weight: 300;
+    font-size: 42px;
+    color: #526488;
+    word-spacing: 5px;
+    padding-bottom: 15px;
 }
 
 .links {
-  padding-top: 15px;
+    padding-top: 15px;
 }
 </style>
