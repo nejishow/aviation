@@ -21,8 +21,8 @@ export const mutations = {
 }
 export const actions = {
   setDocuments({ commit }) {
-    if (localStorage.getItem('token')) {
       return documentService.getDocuments().then(async (documents) => {
+        console.log(documents);
         await documents.data.sort((a, b) => {
           if (a.name > b.name) {
             return 1;
@@ -41,8 +41,8 @@ export const actions = {
             new Date(doc.createdAt).getFullYear();
         });
         await commit('SET_DOCUMENTS', documents.data)
+        console.log(documents.data);
       })
-    }
   },
   setPublicDocuments({ commit }) {
 

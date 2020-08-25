@@ -89,7 +89,7 @@
             >
           </div>
         </nav>
-        <div class="" v-show="subTwo !== ''">
+        <div class="" v-if="subTwo !== ''">
           <FirebaseUpload
             class=" mt-2 mb-5"
             :isPublicDocumentS2="true"
