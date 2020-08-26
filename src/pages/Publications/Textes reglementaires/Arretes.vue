@@ -8,7 +8,9 @@
             <Menu></Menu>
         </div>
         <div class="col-12 col-md-8">
-            <h3>Reglementation aérotique de Djibouti</h3>
+            <h3>Arretes</h3>
+            All publications are considered electronically approved even if they do
+            not bear a signature and stamp
 
             <div class=" m-5 p5 d-flex flex-column align-items-center">
                 <div class="input-group w-50">
@@ -69,11 +71,11 @@ import Menu from "../../../components/SideMenu";
 export default {
     metaInfo: {
         // if no subcomponents specify a metaInfo.title, this title will be used
-        title: 'Reglementation aérotique de Djibouti',
+        title: 'Arretés',
         meta: [{
             vmid: 'description',
             name: 'description',
-            content: "les reglementations aérotiques de Djibouti"
+            content: "Tous les Arretés"
         }]
     },
     components: {

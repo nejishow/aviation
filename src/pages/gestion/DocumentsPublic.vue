@@ -1,137 +1,105 @@
 <template>
-  <div class="container-fluid">
+<div class="container-fluid">
     <div class="row mt-5">
-      <div class="col-12">
-        <h1>Liste des documents publiques</h1>
-      </div>
-      <div class="col-12">
-                              <strong>Categories:</strong>  
-        <b-form-radio-group id="radio-group-1" name="radio-options">
-          <b-form-radio
-            @change="getSubCategoryOne(category)"
-            v-for="(category, index) in categories"
-            :key="index"
-            :value="category._id"
-            >{{ category.name }}</b-form-radio
-          >
-        </b-form-radio-group>
-      </div>
+        <div class="col-12">
+            <h1>Liste des documents publiques</h1>
+        </div>
+        <div class="col-12">
+            <strong>Categories:</strong>
+            <b-form-radio-group id="radio-group-1" name="radio-options">
+                <b-form-radio @change="getSubCategoryOne(category)" v-for="(category, index) in categories" :key="index" :value="category._id">{{ category.name }}</b-form-radio>
+            </b-form-radio-group>
+        </div>
     </div>
     <div class="row mt-5">
-      <div class="col-12 col-md-4 mt-5" v-show="subCategoryOne.length>0">
-                      <strong>Sous-Categories de niveau 1:</strong>  
+        <div class="col-12 col-md-4 mt-5" v-show="subCategoryOne.length>0">
+            <strong>Sous-Categories de niveau 1:</strong>
 
-        <div
-          class="nav flex-column nav-pills"
-          role="tablist"
-          aria-orientation="vertical"
-        >
-          <a
-            class="nav-link subOne text-dark btn-group btn-outline-info"
-            :id="item._id"
-            role="tab"
-            @click="getSubCategoryTwo(item)"
-            v-for="(item, index) in subCategoryOne"
-            :key="index"
-            >{{ item.name }}</a
-          >
+            <div class="nav flex-column nav-pills" role="tablist" aria-orientation="vertical">
+                <a class="nav-link subOne text-dark btn-group btn-outline-info" :id="item._id" role="tab" @click="getSubCategoryTwo(item)" v-for="(item, index) in subCategoryOne" :key="index">{{ item.name }}</a>
+            </div>
         </div>
-      </div>
-      <div class="col-12 col-md-8 mt-5" v-if="subOneDoc.length > 0">
-        <table class="table">
-          <thead>
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">Fichier</th>
-              <th scope="col">Nom</th>
-              <th scope="col">Suspendre</th>
-              <th scope="col">Re-Publier</th>
-              <th scope="col">Supprimer</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="(doc, index) in subOneDoc" :key="index">
-              <th scope="row">{{ index + 1 }}</th>
-              <td>
-                <img
-                  src="../../assets/pdf.png"
-                  class="img-fluid"
-                  width="30"
-                  alt=""
-                />
-              </td>
-              <td>{{ doc.name }}</td>
-              <td><md-icon>menu</md-icon></td>
-              <td><md-icon>menu</md-icon></td>
-              <td><md-icon>menu</md-icon></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+        <div class="col-12 col-md-8 mt-5" v-if="subOneDoc.length > 0">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Fichier</th>
+                        <th scope="col">Nom</th>
+                        <th scope="col">Suspendre</th>
+                        <th scope="col">Re-Publier</th>
+                        <th scope="col">Supprimer</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="(doc, index) in subOneDoc" :key="index">
+                        <th scope="row">{{ index + 1 }}</th>
+                        <td>
+                            <img src="../../assets/pdf.png" class="img-fluid" width="30" alt="" />
+                        </td>
+                        <td>{{ doc.name }}</td>
+                        <td>
+                            <md-icon>menu</md-icon>
+                        </td>
+                        <td>
+                            <md-icon>menu</md-icon>
+                        </td>
+                        <td>
+                            <md-icon>menu</md-icon>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
     <div class="row">
-      <div class="col-12 mt-5" v-show="subCategoryTwo.length>0">
-                                      <strong>Sous-Categories de niveau 2:</strong>  
+        <div class="col-12 mt-5" v-show="subCategoryTwo.length>0">
+            <strong>Sous-Categories de niveau 2:</strong>
 
-        <nav>
-          <div class="nav nav-tabs" id="nav-tab" role="tablist">
-            <a
-              v-for="(subTwo, index) in subCategoryTwo"
-              :key="index"
-              :id="subTwo._id"
-              @click="getSubTwoName(subTwo)"
-              class="nav-item subTwo nav-link"
-              role="tab"
-              :aria-controls="subTwo.name"
-              aria-selected="false"
-            >
-              {{ subTwo.name }}</a
-            >
-          </div>
-        </nav>
-        <div class="" v-if="subTwo !== ''">
-          <FirebaseUpload
-            class=" mt-2 mb-5"
-            :isPublicDocumentS2="true"
-            :category="category"
-            :subOne="subOne"
-            :subTwo="subTwo"
-          ></FirebaseUpload>
-          <table class="table mb-5">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">Fichier</th>
-                <th scope="col" class="w-50">Nom</th>
-                <th scope="col" class="small">Suspendre</th>
-                <th scope="col" class="small">Re-Publier</th>
-                <th scope="col" class="small">Supprimer</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr v-for="(doc, index) in subTwoDoc" :key="index">
-                <th scope="row">{{ index + 1 }}</th>
-                <td>
-                  <a :href="doc.src" target="_blank">
-                    <img
-                      src="../../assets/pdf.png"
-                      class="img-fluid"
-                      width="30"
-                      alt=""
-                    />
-                  </a>
-                </td>
-                <td>{{ doc.name }}</td>
-                <td><button @click="disableDocument(doc._id)" class="btn btn-group btn-outline-warning" :disabled="!doc.enabled" ><md-icon>visibility_off</md-icon></button></td>
-                <td><button @click="enableDocument(doc._id)" class="btn btn-group btn-outline-success" :disabled="doc.enabled" ><md-icon>visibility</md-icon></button></td>
-                <td><button @click="deleteDocument(doc._id)"  class="btn btn-group btn-outline-danger"  ><md-icon>delete</md-icon></button></td>
-              </tr>
-            </tbody>
-          </table>
+            <nav>
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <a v-for="(subTwo, index) in subCategoryTwo" :key="index" :id="subTwo._id" @click="getSubTwoName(subTwo)" class="nav-item subTwo nav-link" role="tab" :aria-controls="subTwo.name" aria-selected="false">
+                        {{ subTwo.name }}</a>
+                </div>
+            </nav>
+            <div class="" v-if="subTwo !== ''">
+                <FirebaseUpload class=" mt-2 mb-5" :isPublicDocumentS2="true" :category="category" :subOne="subOne" :subTwo="subTwo"></FirebaseUpload>
+                <table class="table mb-5">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Fichier</th>
+                            <th scope="col" class="w-50">Nom</th>
+                            <th scope="col" class="small">Suspendre</th>
+                            <th scope="col" class="small">Re-Publier</th>
+                            <th scope="col" class="small">Supprimer</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="(doc, index) in subTwoDoc" :key="index">
+                            <th scope="row">{{ index + 1 }}</th>
+                            <td>
+                                <a :href="doc.src" target="_blank">
+                                    <img src="../../assets/pdf.png" class="img-fluid" width="30" alt="" />
+                                </a>
+                            </td>
+                            <td>{{ doc.name }}</td>
+                            <td><button @click="disableDocument(doc._id)" class="btn btn-group btn-outline-warning" :disabled="!doc.enabled">
+                                    <md-icon>visibility_off</md-icon>
+                                </button></td>
+                            <td><button @click="enableDocument(doc._id)" class="btn btn-group btn-outline-success" :disabled="doc.enabled">
+                                    <md-icon>visibility</md-icon>
+                                </button></td>
+                            <td><button @click="deleteDocument(doc._id)" class="btn btn-group btn-outline-danger">
+                                    <md-icon>delete</md-icon>
+                                </button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
+</div>
 </template>
 
 <script>
@@ -139,84 +107,85 @@
 import FirebaseUpload from "../../components/FirebaseUpload";
 import $ from "jquery";
 export default {
-  components: {
-    FirebaseUpload,
-  },
-  data() {
-    return {
-      subCategoryOne: [],
-      subCategoryTwo: [],
-      subOneDoc: [],
-      subTwoDoc: [],
-      category: "",
-      subOne: "",
-      subTwo: "",
-    };
-  },
-  methods: {
-    async getSubCategoryOne(item) {
-      this.subCategoryOne = [];
-      this.subCategoryTwo = [];
-      this.subOneDoc = [];
-      this.category = item;
-      this.subOne = "";
-      this.subTwo = "";
 
-      await this.allsubCategoryOne.forEach((element) => {
-        if (element.idParent === item._id) {
-          this.subCategoryOne.push(element);
-        }
-      });
+    components: {
+        FirebaseUpload,
     },
-    getSubCategoryTwo(item) {
-      $(".subOne").removeClass("bg-info text-light").addClass("text-dark");
-      $("#" + item._id)
-        .addClass("bg-info text-light")
-        .removeClass("text-dark");
-      this.subOne = item;
-      this.subTwo = "";
-      this.subCategoryTwo = [];
-      this.allsubCategoryTwo.forEach((element) => {
-        if (element.idParent === item._id) {
-          this.subCategoryTwo.push(element);
-        }
-      });
+    data() {
+        return {
+            subCategoryOne: [],
+            subCategoryTwo: [],
+            subOneDoc: [],
+            subTwoDoc: [],
+            category: "",
+            subOne: "",
+            subTwo: "",
+        };
     },
-    async getSubTwoName(item) {
-      $(".subTwo").removeClass("active border-danger");
-      $("#" + item._id).addClass("active border-danger");
-      this.subTwo = item;
-      this.subTwoDoc = [];
+    methods: {
+        async getSubCategoryOne(item) {
+            this.subCategoryOne = [];
+            this.subCategoryTwo = [];
+            this.subOneDoc = [];
+            this.category = item;
+            this.subOne = "";
+            this.subTwo = "";
 
-      await this.allDocuments.forEach((element) => {
-        if (element.idParent === this.subTwo._id) {
-          this.subTwoDoc.push(element);
-        }
-      });
+            await this.allsubCategoryOne.forEach((element) => {
+                if (element.idParent === item._id) {
+                    this.subCategoryOne.push(element);
+                }
+            });
+        },
+        getSubCategoryTwo(item) {
+            $(".subOne").removeClass("bg-info text-light").addClass("text-dark");
+            $("#" + item._id)
+                .addClass("bg-info text-light")
+                .removeClass("text-dark");
+            this.subOne = item;
+            this.subTwo = "";
+            this.subCategoryTwo = [];
+            this.allsubCategoryTwo.forEach((element) => {
+                if (element.idParent === item._id) {
+                    this.subCategoryTwo.push(element);
+                }
+            });
+        },
+        async getSubTwoName(item) {
+            $(".subTwo").removeClass("active border-danger");
+            $("#" + item._id).addClass("active border-danger");
+            this.subTwo = item;
+            this.subTwoDoc = [];
+
+            await this.allDocuments.forEach((element) => {
+                if (element.idParent === this.subTwo._id) {
+                    this.subTwoDoc.push(element);
+                }
+            });
+        },
+        disableDocument(id) {
+            this.$store.dispatch("disableOneDocument", id);
+        },
+        enableDocument(id) {
+            this.$store.dispatch("enableOneDocument", id);
+        },
+        deleteDocument(id) {
+            this.$store.dispatch("deleteOneDocument", id);
+        },
     },
-    disableDocument(id) {
-      this.$store.dispatch("disableOneDocument", id);
+    computed: {
+        allDocuments() {
+            return this.$store.state.documents.documents;
+        },
+        categories() {
+            return this.$store.state.category.category;
+        },
+        allsubCategoryOne() {
+            return this.$store.state.category.subCategoryOne;
+        },
+        allsubCategoryTwo() {
+            return this.$store.state.category.subCategoryTwo;
+        },
     },
-    enableDocument(id) {
-      this.$store.dispatch("enableOneDocument", id);
-    },
-    deleteDocument(id) {
-      this.$store.dispatch("deleteOneDocument", id);
-    },
-  },
-  computed: {
-    allDocuments() {
-      return this.$store.state.documents.documents;
-    },
-    categories() {
-      return this.$store.state.category.category;
-    },
-    allsubCategoryOne() {
-      return this.$store.state.category.subCategoryOne;
-    },
-    allsubCategoryTwo() {
-      return this.$store.state.category.subCategoryTwo;
-    },
-  },
 };
 </script>

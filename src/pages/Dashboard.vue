@@ -14,6 +14,15 @@ import MAP from "../components/Map";
 import Carousel from "../components/Carousel";
 import News from "../components/News";
 export default {
+    metaInfo: {
+        // if no subcomponents specify a metaInfo.title, this title will be used
+        title: 'Acceuil',
+        meta: [{
+            vmid: 'description',
+            name: 'description',
+            content: "Authorité de l'Aviation Civile de Djibouti"
+        }]
+    },
     components: {
         MAP,
         Carousel,

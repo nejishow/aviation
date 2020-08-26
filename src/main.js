@@ -27,7 +27,12 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import "buefy/dist/buefy.css";
 import PortalVue from 'portal-vue'
 import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
+import VueMeta from 'vue-meta'
 
+Vue.use(VueMeta,{
+  refreshOnceOnNavigation: true
+
+})
 
 Vue.use(PortalVue)
 

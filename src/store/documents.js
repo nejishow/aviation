@@ -22,7 +22,6 @@ export const mutations = {
 export const actions = {
   setDocuments({ commit }) {
       return documentService.getDocuments().then(async (documents) => {
-        console.log(documents);
         await documents.data.sort((a, b) => {
           if (a.name > b.name) {
             return 1;
@@ -41,7 +40,6 @@ export const actions = {
             new Date(doc.createdAt).getFullYear();
         });
         await commit('SET_DOCUMENTS', documents.data)
-        console.log(documents.data);
       })
   },
   setPublicDocuments({ commit }) {
@@ -93,7 +91,25 @@ export const actions = {
   }
 }
 
-export default {
+export default {     metaInfo: {
+        // if no subcomponents specify a metaInfo.title, this title will be used
+        bodyAttrs: {
+            class: ['dark-mode', 'mobile']
+        },
+        meta: [{
+                charset: 'utf-8'
+            },
+            {
+                name: 'viewport',
+                content: 'width=device-width, initial-scale=1'
+            },
+            {
+                'http-equiv': "Content-Type",
+                content: "text/html; charset=utf-8"
+            },
+
+        ]
+    },
   actions,
   mutations,
   getters,

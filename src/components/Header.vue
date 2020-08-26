@@ -313,15 +313,14 @@
                         </li>
                     </ul>
                 </li>
-              
-              
+
                 <!-- Securité -->
 
                 <li class="nav-item dropdown">
                     <a id="dropdownMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">Sureté</a>
                     <ul aria-labelledby="dropdownMenu1" class="dropdown-menu ">
                         <!-- Level two dropdown-->
-                                             <li>
+                        <li>
                             <router-link to="/"><a href="#" class="dropdown-item">Sureté
                                 </a></router-link>
                         </li>
@@ -374,53 +373,17 @@
 </template>
 
 <script>
-import $ from "jquery";
 export default {
+
     data() {
         return {
             menus: [],
         };
     },
-    mounted() {
-        $("ul.dropdown-menu[data-toggle='dropdown']").on("mouseleave", function (
-            event
-        ) {
-            event.preventDefault();
-            event.stopPropagation();
-            $(this)
-                .parents("li.nav-item.dropdown.show")
-                .on("hidden.bs.dropdown", () => {
-                    $(".dropdown-submenu .show").removeClass("show");
-                });
-        });
-        $("ul.dropdown-menu [data-toggle='dropdown']").on("click", function (
-            event
-        ) {
-            event.preventDefault();
-            event.stopPropagation();
 
-            $(this).siblings().toggleClass("show");
-
-            if (!$(this).next().hasClass("show")) {
-                $(this)
-                    .parents(".dropdown-menu")
-                    .first()
-                    .find(".show")
-                    .removeClass("show");
-            }
-            $(this)
-                .parents("li.nav-item.dropdown.show")
-                .on("hidden.bs.dropdown", () => {
-                    $(".dropdown-submenu .show").removeClass("show");
-                });
-        });
-    },
     methods: {
         async go(id) {
             await this.$store.dispatch("categoryMenu/fetchCategoryMenu", id);
-        },
-        dropdown() {
-            $(".dropdown-toggle").dropdown("toggle");
         },
     },
 };

@@ -14,6 +14,32 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import $ from 'jquery';
 export default {
+    metaInfo: {
+        // if no subcomponents specify a metaInfo.title, this title will be used
+        title: "Aviation Civile de Djibouti",
+        titleTemplate: '%s | AACD',
+
+        bodyAttrs: {
+            class: ['dark-mode', 'mobile']
+        },
+        meta: [{
+                charset: 'utf-8'
+            },
+            {
+                name: 'viewport',
+                content: 'width=device-width, initial-scale=1'
+            },
+            {
+                'http-equiv': "Content-Type",
+                content: "text/html; charset=utf-8"
+            },
+            {
+                vmid: 'description',
+                name: 'description',
+                content: "Authorité de l'Aviation Civile de Djibouti"
+            }
+        ]
+    },
     components: {
         Header,
         Footer,
@@ -28,6 +54,6 @@ export default {
         this.$store.dispatch("fetchSubCategoryTwo");
         $('html').css('overflow', 'hidden');
 
-    },
+    }
 };
 </script>

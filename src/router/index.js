@@ -1,13 +1,14 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
+
 import Dashboard from "../pages/Dashboard.vue";
 import Presentation from "../pages/A propos de nous/Presentation.vue";
 import Organisation from "../pages/A propos de nous/Organisation.vue";
 import MduD from "../pages/A propos de nous/Mot du directeur.vue";
 import PdeF from "../pages/A propos de nous/Politique de formation.vue";
 import PdeS from "../pages/A propos de nous/Politique de supervision.vue";
-import Arretes from "../pages/Publications/Textes legislatifs/Arretes.vue";
-import Decrets from "../pages/Publications/Textes legislatifs/Decret.vue";
+import Arretes from "../pages/Publications/Textes reglementaires/Arretes.vue";
+import Decrets from "../pages/Publications/Textes reglementaires/Decret.vue";
 import Lois from "../pages/Publications/Textes legislatifs/Lois.vue";
 import RAD from "../pages/Publications/Textes reglementaires/Reglementation aerotique de Djibouti.vue";
 import AI from "../pages/Publications/Accords/Accords Internationaux.vue";
@@ -24,6 +25,7 @@ import Procedure from "../pages/Securites/Procedures.vue";
 import Login from "../pages/Login.vue";
 import Docs from "../pages/gestion/GestionDocuments.vue";
 import Media from "../pages/gestion/GestionMedia.vue";
+
 Vue.use(VueRouter);
 
 const routes = [
@@ -108,12 +110,12 @@ const routes = [
     component: Arretes,
   },
   {
-    path: "/Texte legislatifs/Decrets",
+    path: "/Texte reglementaires/Decrets",
     name: "Decrets",
     component: Decrets,
   },
   {
-    path: "/Texte legislatifs/Lois",
+    path: "/Texte reglementaires/Lois",
     name: "Lois",
     component: Lois,
   },

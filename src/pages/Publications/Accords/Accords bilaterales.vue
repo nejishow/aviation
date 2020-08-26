@@ -9,8 +9,7 @@
       </div>
       <div class="col-12 col-md-8">
         <h3>Accords bilateraux</h3>
-        All publications are considered electronically approved even if they do
-        not bear a signature and stamp
+        
 
         <div class=" m-5 p5 d-flex flex-column align-items-center">
           <div class="input-group w-50">
@@ -71,7 +70,25 @@
 </template>
 <script>
 import Menu from "../../../components/SideMenu";
-export default {
+export default {     metaInfo: {
+        // if no subcomponents specify a metaInfo.title, this title will be used
+        bodyAttrs: {
+            class: ['dark-mode', 'mobile']
+        },
+        meta: [{
+                charset: 'utf-8'
+            },
+            {
+                name: 'viewport',
+                content: 'width=device-width, initial-scale=1'
+            },
+            {
+                'http-equiv': "Content-Type",
+                content: "text/html; charset=utf-8"
+            },
+
+        ]
+    },
   components: {
     Menu,
   },
