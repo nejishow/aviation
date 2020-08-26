@@ -18,6 +18,20 @@
 import Banner from "./Banner";
 import News from "./News";
 export default {
+       // metaInfo() {
+    //     // if no subcomponents specify a metaInfo.title, this title will be used
+    //     return {
+    //         meta: [{
+    //                 name: 'robots',
+    //                 content: "noindex"
+    //             },
+    //             {
+    //                 name: 'googlebot',
+    //                 content: "noindex"
+    //             }
+    //         ]
+    //     }
+    // },
     components: {
         Banner,
         News,

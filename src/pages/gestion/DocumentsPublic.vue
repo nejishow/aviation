@@ -107,7 +107,20 @@
 import FirebaseUpload from "../../components/FirebaseUpload";
 import $ from "jquery";
 export default {
-
+   // metaInfo() {
+    //     // if no subcomponents specify a metaInfo.title, this title will be used
+    //     return {
+    //         meta: [{
+    //                 name: 'robots',
+    //                 content: "noindex"
+    //             },
+    //             {
+    //                 name: 'googlebot',
+    //                 content: "noindex"
+    //             }
+    //         ]
+    //     }
+    // },
     components: {
         FirebaseUpload,
     },
