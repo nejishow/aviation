@@ -32,20 +32,20 @@
 <script>
 import authService from "../services/auth.service";
 export default {
-   // metaInfo() {
-    //     // if no subcomponents specify a metaInfo.title, this title will be used
-    //     return {
-    //         meta: [{
-    //                 name: 'robots',
-    //                 content: "noindex"
-    //             },
-    //             {
-    //                 name: 'googlebot',
-    //                 content: "noindex"
-    //             }
-    //         ]
-    //     }
-    // },
+    metaInfo() {
+        // if no subcomponents specify a metaInfo.title, this title will be used
+        return {
+            meta: [{
+                    name: 'robots',
+                    content: "noindex"
+                },
+                {
+                    name: 'googlebot',
+                    content: "noindex"
+                }
+            ]
+        }
+    },
     data() {
         return {
             email: "",
@@ -65,12 +65,20 @@ export default {
                     password
                 })
                 .then((data) => {
-                    localStorage.setItem("name", data.data.user.name);
+                    this.$store.dispatch("setUser", data.data.user)
                     localStorage.setItem("token", data.data.token);
+                    localStorage.setItem("id", data.data.user._id);
+                    this.$router.push({
+                        path: '/'
+                    })
                 })
                 .catch((error) => {
                     this.loading = false;
                     this.error = error.response.data;
+                    this.$router.push({
+                        path: '/'
+                    })
+
                 });
         },
     },

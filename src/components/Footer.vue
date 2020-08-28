@@ -27,7 +27,7 @@
         La nation <br />
         Air Djibouti <br />
         Aeroport de Djibouti <br />
-        <router-link to="/login">
+        <router-link to="/login" v-show="!user._id">
           <a class="btn btn-group text-light small btn-secondary">Sign In</a>
         </router-link>
       </div>
@@ -40,6 +40,15 @@
   </div>
 </template>
 
+<script>
+export default {
+  computed: {
+    user() {
+      return this.$store.state.user
+    }
+  }
+}
+</script>
 <style lang="css" scoped>
 @media (min-width: 770px) {
   .logo {

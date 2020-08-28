@@ -1,6 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-
+import store from '../store/index';
 import Dashboard from "../pages/Dashboard.vue";
 import Presentation from "../pages/A propos de nous/Presentation.vue";
 import Organisation from "../pages/A propos de nous/Organisation.vue";
@@ -25,10 +25,16 @@ import Procedure from "../pages/Securites/Procedures.vue";
 import Login from "../pages/Login.vue";
 import Docs from "../pages/gestion/GestionDocuments.vue";
 import Media from "../pages/gestion/GestionMedia.vue";
-
+import DocIntern from '../pages/gestion/DocumentInternView.vue';
+import Contact from '../pages/Contact.vue';
 Vue.use(VueRouter);
 
 const routes = [
+  {
+    path: "/contact",
+    name: "Contact",
+    component: Contact,
+  },
   {
     path: "/",
     name: "Dashboard",
@@ -38,16 +44,49 @@ const routes = [
     path: "/login",
     name: "Login",
     component: Login,
+    beforeEnter: (to, from, next) => {
+      if (to.name === "Login" && localStorage.getItem('token')) {
+        next({ name: "Dashboard" })
+      } else {
+        next()
+      }
+    }
   },
   {
     path: "/gestionDocs",
     name: "Docs",
     component: Docs,
+    beforeEnter: (to, from, next) => {
+      if (to.name === "Docs" && !store.state.user.isAdmin) {
+        next({ name: "Login" })
+      } else {
+        next()
+      }
+    }
+  },
+  {
+    path: "/docIntern",
+    name: "DocIntern",
+    component: DocIntern,
+    beforeEnter: (to, from, next) => {
+      if (to.name === "DocIntern" && !store.state.user._id) {
+        next({ name: "Login" })
+      } else {
+        next()
+      }
+    }
   },
   {
     path: "/gestionMedia",
     name: "Media",
     component: Media,
+    beforeEnter: (to, from, next) => {
+      if (to.name === "Media" && !store.state.user.isAdmin) {
+        next({ name: "Login" })
+      } else {
+        next()
+      }
+    }
   },
   {
     path: "/Formulaires/:id",

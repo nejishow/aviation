@@ -2,8 +2,11 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-12 social bg-info text-right">
-            <b-button pill class="btn btn-secondary text-white">Fr</b-button>
-            <b-button pill class="btn btn-danger text-white">En</b-button>
+            <b-button to="/contact" pill class="btn bg-light text-white">
+                <img src="../assets/mail.png" width="20" alt="">
+            </b-button>
+            <b-button pill class="btn btn-danger text-white">Fr</b-button>
+            <b-button pill class="btn btn-success text-white">En</b-button>
         </div>
     </div>
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
@@ -357,11 +360,17 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item nav-link btn">
-                    <router-link to="/gestionMedia" class="nav-item text-danger font-weight-bolder">Gestion Media</router-link>
+                <li class="nav-item nav-link btn" v-show="user.isAdmin">
+                    <router-link to="/gestionMedia" class="nav-item text-primary font-weight-bolder">Gestion Media</router-link>
                 </li>
-                <li class="nav-item nav-link btn">
-                    <router-link to="/gestionDocs" class="nav-item text-danger font-weight-bolder">Gestion Documents</router-link>
+                <li class="nav-item nav-link btn" v-show="user.isAdmin">
+                    <router-link to="/gestionDocs" class="nav-item text-primary font-weight-bolder">Gestion Documents</router-link>
+                </li>
+                <li class="nav-item nav-link btn" v-show="user._id">
+                    <router-link to="/docIntern" class="nav-item text-primary font-weight-bolder">Documents Internes</router-link>
+                </li>
+                <li class="nav-item nav-link btn" v-show="user._id">
+                    <button class="btn-group btn-outline-danger btn nav-item" @click="logout">Sign out</button>
                 </li>
             </ul>
         </div>
@@ -374,120 +383,123 @@
 
 <script>
 export default {
-
-    data() {
-        return {
-            menus: [],
-        };
+  data() {
+    return {
+      menus: [],
+    };
+  },
+  computed: {
+    user() {
+      return this.$store.state.user;
     },
-
-    methods: {
-        async go(id) {
-            await this.$store.dispatch("categoryMenu/fetchCategoryMenu", id);
-        },
+  },
+  methods: {
+    logout() {
+      this.$store.dispatch("logout");
     },
+  },
 };
 </script>
 
 <style lang="scss" scoped>
 .socialBottom {
-    min-height: 5px;
+  min-height: 5px;
 }
 
 .navbar {
-    width: 100%;
+  width: 100%;
 }
 
 .tabTitle {
-    color: #005ba1;
+  color: #005ba1;
 }
 
 @media (min-width: 770px) {
-    .logo {
-        width: 200px;
-    }
+  .logo {
+    width: 200px;
+  }
 }
 
 @media (max-width: 769px) {
-    .logo {
-        width: 100px;
-    }
+  .logo {
+    width: 100px;
+  }
 }
 
 #sidebar-2 {
-    transition-duration: 1s;
+  transition-duration: 1s;
 }
 
 .right {
-    width: 400px;
+  width: 400px;
 }
 
 .dropdown-submenu {
-    // tres important sinn le sous menu n'est pas adjacent au menu
-    position: relative;
+  // tres important sinn le sous menu n'est pas adjacent au menu
+  position: relative;
 }
 
-.dropdown-submenu>.dropdown-menu {
-    // c'est ce qui met le sous menu a droite
-    top: 0;
-    left: 100%;
-    margin-top: 0px;
-    margin-left: 0px;
-    border-radius: 0%;
+.dropdown-submenu > .dropdown-menu {
+  // c'est ce qui met le sous menu a droite
+  top: 0;
+  left: 100%;
+  margin-top: 0px;
+  margin-left: 0px;
+  border-radius: 0%;
 }
 
-.dropdown-submenu:hover>.dropdown-menu {
-    display: block; // c'st lui qui le truc hoverable
+.dropdown-submenu:hover > .dropdown-menu {
+  display: block; // c'st lui qui le truc hoverable
 }
 
-.nav-item>a:after {
-    // c'est  pour la fleche du nav
-    //    display: block;
-    content: " ";
-    float: right;
-    width: 0;
-    height: 0;
-    border-color: transparent;
-    // border-style: solid;
-    // border-width: 5px 0 5px 5px;
-    // margin-top: 5px;
-    // margin-right: -10px;
+.nav-item > a:after {
+  // c'est  pour la fleche du nav
+  //    display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  // border-style: solid;
+  // border-width: 5px 0 5px 5px;
+  // margin-top: 5px;
+  // margin-right: -10px;
 }
 
-.dropdown-submenu>a:after {
-    // c'est tjr pour la fleche
-    display: block;
-    content: " ";
-    float: right;
-    width: 0;
-    height: 0;
-    border-color: transparent;
-    border-style: solid;
-    border-width: 5px 0 5px 5px;
-    margin-top: 5px;
-    margin-right: -10px;
+.dropdown-submenu > a:after {
+  // c'est tjr pour la fleche
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  margin-top: 5px;
+  margin-right: -10px;
 }
 
-.dropdown-submenu:hover>a:after {
-    // la fleche
-    border-left-color: red;
+.dropdown-submenu:hover > a:after {
+  // la fleche
+  border-left-color: red;
 }
 
 .dropdown-item {
-    list-style: none;
-    font-size: 1.6;
+  list-style: none;
+  font-size: 1.6;
+  color: black;
+  text-decoration: none;
+
+  &:link,
+  &:visited,
+  &:active {
     color: black;
-    text-decoration: none;
+  }
 
-    &:link,
-    &:visited,
-    &:active {
-        color: black;
-    }
-
-    &:hover {
-        text-transform: uppercase;
-        color: black;
-    }
+  &:hover {
+    text-transform: uppercase;
+    color: black;
+  }
 }
 </style>

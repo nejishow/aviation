@@ -63,16 +63,12 @@
                 </div>
             </nav>
             <div class="" v-if="subTwo !== ''">
-                <FirebaseUpload class=" mt-2 mb-5" :isPrivateDocument2="true" :category="category" :subOne="subOne" :subTwo="subTwo"></FirebaseUpload>
                 <table class="table mb-5">
                     <thead>
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Fichier</th>
                             <th scope="col" class="w-50">Nom</th>
-                            <th scope="col" class="small">Suspendre</th>
-                            <th scope="col" class="small">Re-Publier</th>
-                            <th scope="col" class="small">Supprimer</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -84,15 +80,6 @@
                                 </a>
                             </td>
                             <td>{{ doc.name }}</td>
-                            <td><button @click="disableDocument(doc._id)" class="btn btn-group btn-outline-warning" :disabled="!doc.enabled">
-                                    <md-icon>visibility_off</md-icon>
-                                </button></td>
-                            <td><button @click="enableDocument(doc._id)" class="btn btn-group btn-outline-success" :disabled="doc.enabled">
-                                    <md-icon>visibility</md-icon>
-                                </button></td>
-                            <td><button @click="deleteDocument(doc._id)" class="btn btn-group btn-outline-danger">
-                                    <md-icon>delete</md-icon>
-                                </button></td>
                         </tr>
                     </tbody>
                 </table>
@@ -104,7 +91,6 @@
 
 <script>
 //import documentService from "../../services/document.service";
-import FirebaseUpload from "../../components/FirebaseUpload";
 import $ from "jquery";
 export default {
    metaInfo() {
@@ -120,9 +106,6 @@ export default {
                 }
             ]
         }
-    },
-    components: {
-        FirebaseUpload,
     },
     data() {
         return {
@@ -171,20 +154,10 @@ export default {
             this.subTwoDoc = [];
 
             await this.allDocuments.forEach((element) => {
-                console.log(element.idParent, this.subTwo._id);
                 if (element.idParent === this.subTwo._id) {
                     this.subTwoDoc.push(element);
                 }
             });
-        },
-        disableDocument(id) {
-            this.$store.dispatch("disableOneDocument", id);
-        },
-        enableDocument(id) {
-            this.$store.dispatch("enableOneDocument", id);
-        },
-        deleteDocument(id) {
-            this.$store.dispatch("deleteOneDocument", id);
         },
     },
     computed: {

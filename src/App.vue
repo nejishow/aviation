@@ -37,6 +37,11 @@ export default {
                 vmid: 'description',
                 name: 'description',
                 content: "Authorité de l'Aviation Civile de Djibouti"
+            },
+                        {
+                vmid: 'keywords',
+                name: 'keywords',
+                content: "authorite, aviation, djibouti, civile, civil, airport, air, djibouti,"
             }
         ]
     },
@@ -52,6 +57,7 @@ export default {
         this.$store.dispatch("fetchCategory");
         this.$store.dispatch("fetchSubCategoryOne");
         this.$store.dispatch("fetchSubCategoryTwo");
+        this.$store.dispatch("getUser");
         $('html').css('overflow', 'hidden');
 
     }

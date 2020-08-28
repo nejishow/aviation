@@ -20,20 +20,25 @@
 import Intern from "../gestion/DocumentsIntern";
 import Public from "../gestion/DocumentsPublic";
 export default {
-       // metaInfo() {
-    //     // if no subcomponents specify a metaInfo.title, this title will be used
-    //     return {
-    //         meta: [{
-    //                 name: 'robots',
-    //                 content: "noindex"
-    //             },
-    //             {
-    //                 name: 'googlebot',
-    //                 content: "noindex"
-    //             }
-    //         ]
-    //     }
-    // },
+    computed: {
+        isAdmin() {
+            return this.$store.state.user.isAdmin
+        }
+    },
+    metaInfo() {
+        // if no subcomponents specify a metaInfo.title, this title will be used
+        return {
+            meta: [{
+                    name: 'robots',
+                    content: "noindex"
+                },
+                {
+                    name: 'googlebot',
+                    content: "noindex"
+                }
+            ]
+        }
+    },
     components: {
         Intern,
         Public,

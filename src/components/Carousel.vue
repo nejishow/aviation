@@ -2,7 +2,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-12 p-5 carousel">
-            <div class="carousel_arrow carousel_arrow_prev ml-2">&lang; </div>
+            <div @click="prev" class="carousel_arrow carousel_arrow_prev ml-2">&lang; </div>
             <VueSlickCarousel v-bind="settings" v-if="banners.length>0" class="p-3 carousel" ref="carousel">
                 <div class="carousel_div" v-for="(banner, index) in banners" :key="index">
                     <img :src="banner.url" alt="" class="carousel_img">
@@ -12,7 +12,7 @@
                     </div>
                 </div>
             </VueSlickCarousel>
-            <div class="carousel_arrow carousel_arrow_next mr-2">&rang;</div>
+            <div @click="next" class="carousel_arrow carousel_arrow_next mr-2">&rang;</div>
 
         </div>
     </div>
@@ -24,89 +24,99 @@ import VueSlickCarousel from "vue-slick-carousel";
 import "vue-slick-carousel/dist/vue-slick-carousel.css";
 // optional style for arrows & dots
 import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
-import $ from 'jquery';
+import $ from "jquery";
 export default {
-    data() {
-        return {
-            arrows: true,
-            dots: true,
-            settings: {
-                dots: true,
-                dotsClass: "slick-dots custom-dot-class",
-                edgeFriction: 0.35,
-                infinite: false,
-                arrows: true,
-                speed: 500,
-                slidesToShow: 1,
-                slidesToScroll: 1
-            }
-        };
+  data() {
+    return {
+      arrows: true,
+      dots: true,
+      settings: {
+        dots: true,
+        dotsClass: "slick-dots custom-dot-class",
+        edgeFriction: 0.35,
+        infinite: true,
+        arrows: false,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      },
+    };
+  },
+  components: {
+    VueSlickCarousel,
+  },
+  computed: {
+    banners() {
+      if (this.$store.state.media.banner.length > 0) {
+        return this.$store.state.media.banner;
+      } else {
+        return this.$store.state.media.banner;
+      }
     },
-    components: {
-        VueSlickCarousel
+  },
+  methods: {
+    prev() {
+      this.$refs.carousel.prev();
     },
-    computed: {
-        banners() {
-            if (this.$store.state.media.banner.length > 0) {
-                return this.$store.state.media.banner
-            } else {
-                return this.$store.state.media.banner
-            }
-
-        }
+    next() {
+      this.$refs.carousel.next();
     },
-    mounted() {
-        $('.slick-prev').removeClass('slick-disabled')
-    },
+  },
+  mounted() {
+    $(".slick-prev").removeClass("slick-disabled");
+  },
 };
 </script>
 
 <style lang="scss" scoped>
 .custom-arrow {
-    opacity: .8;
-    background-blend-mode: screen;
-    border-radius: 50%;
-    overflow: hidden;
-    border: solid black 1px;
+  opacity: 0.8;
+  background-blend-mode: screen;
+  border-radius: 50%;
+  overflow: hidden;
+  border: solid black 1px;
 }
 
 .carousel {
-    &_div {
-        position: relative;
-        text-align: center;
+  &_div {
+    position: relative;
+    text-align: center;
+  }
 
+  &_img {
+    max-height: 50vh;
+    width: 100%;
+  }
+
+  &_text {
+    position: absolute;
+    z-index: 999;
+    bottom: 0;
+    display: inline-block;
+    left: 0;
+    background: rgba(#0000, 0.5);
+    width: 100%;
+    color: white;
+  }
+
+  &_arrow {
+    position: absolute;
+    top: 40%;
+    display: inline-block;
+    font-size: 3rem;
+    background: rgba(#fff, 0.4);
+    cursor: pointer;
+    &:hover {
+      color: blue;
     }
 
-    &_img {
-        max-height: 50vh;
-        width: 100%;
+    &_next {
+      right: 0;
     }
 
-    &_text {
-        position: absolute;
-        z-index: 999;
-        bottom: 0;
-        display: inline-block;
-        left: 0;
-        background: rgba(#0000, .5);
-        width: 100%;
-        color: white;
+    &_prev {
+      left: 0;
     }
-
-    &_arrow {
-        position: absolute;
-        top: 40%;
-        display: inline-block;
-        font-size: 3rem;
-        background: rgba(#fff, .4);
-
-        &_next {
-            right: 0;
-        }
-
-        &_prev {
-            left: 0;
-        }
-    }
+  }
 }
 </style>
