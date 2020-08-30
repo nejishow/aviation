@@ -57,6 +57,9 @@ export const actions = {
         }
         return 0;
       });
+      await response.data.forEach(element => {
+        element.createdAt = new Date(element.createdAt).getDate() +'/'+ (new Date(element.createdAt).getMonth()+1) +'/'+ new Date(element.createdAt).getFullYear()
+      });
       await commit('SET_NEWS', response.data)
     })
   },

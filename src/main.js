@@ -29,9 +29,12 @@ import PortalVue from 'portal-vue'
 import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
 import VueMeta from 'vue-meta'
 
-Vue.use(VueMeta,{
+Vue.use(VueMeta, {
+  keyName: 'metaInfo',
+  attribute: 'data-vue-meta',
+  ssrAttribute: 'data-vue-meta-server-rendered',
+  tagIDKeyName: 'vmid',
   refreshOnceOnNavigation: true
-
 })
 
 Vue.use(PortalVue)

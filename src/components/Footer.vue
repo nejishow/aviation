@@ -6,7 +6,7 @@
           <img src="../assets/casa.png" alt="logo" class="img-fluid logo" />
         </a>
         <span
-          >Regulation and oversight of Aviation Safety & Security; Economic
+          >Regulation and oversight of Aviation Safety and Security; Economic
           regulation of Air Services and development of Civil Aviation.</span
         >
       </div>

@@ -28,7 +28,7 @@
                                 </a></router-link>
                         </li>
                         <li>
-                            <router-link to="/"><a href="#" class="dropdown-item">Organisation
+                            <router-link to="/Organisation"><a href="#" class="dropdown-item">Organisation
                                 </a></router-link>
                         </li>
                         <li>
@@ -36,11 +36,11 @@
                                 </a></router-link>
                         </li>
                         <li>
-                            <router-link to="/"><a href="#" class="dropdown-item">Politique de formation
+                            <router-link to="/Politique de Formation"><a href="#" class="dropdown-item">Politique de formation
                                 </a></router-link>
                         </li>
                         <li>
-                            <router-link to="/"><a href="#" class="dropdown-item">Politique de supervision
+                            <router-link to="/Politique de Supervision"><a href="#" class="dropdown-item">Politique de supervision
                                 </a></router-link>
                         </li>
                     </ul>

@@ -16,7 +16,7 @@ import News from "../components/News";
 export default {
     metaInfo: {
         // if no subcomponents specify a metaInfo.title, this title will be used
-        title: 'Acceuil',
+        title: "Aviation Civile de Djibouti",
         meta: [{
             vmid: 'description',
             name: 'description',
