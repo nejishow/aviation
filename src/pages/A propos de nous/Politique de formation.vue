@@ -1,9 +1,7 @@
 <template>
   <div class="container-fluid">
     <div class="row">
-      <div class="col-md-4">
-        <Menu></Menu>
-      </div>
+
       <div class="col-12 col-md-8">
         <h3>Politique de Formation</h3>
       </div>
@@ -12,7 +10,6 @@
 </template>
 
 <script>
-import Menu from "../../components/SideMenu";
 export default {
   metaInfo() {
     return {
@@ -27,9 +24,6 @@ export default {
         },
       ],
     };
-  },
-  components: {
-    Menu,
   },
 };
 </script>

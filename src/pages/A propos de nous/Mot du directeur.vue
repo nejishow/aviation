@@ -1,9 +1,6 @@
 <template>
   <div class="container-fluid">
     <div class="row">
-      <div class="col-md-4">
-        <Menu class="card" :category="test"></Menu>
-      </div>
       <div class="col-12 col-md-8">
         <h3 class="mb-5 mt-5">Mot du directeur</h3>
 
@@ -21,7 +18,7 @@
               <md-card-header>
                 <span class="md-title font-weight-bold">Daoud Ali Abdou</span>
                 <span class="md-subhead font-weight-bold"
-                  >Directeur de l'authorité de l'aviation civile de
+                  >Directeur de l'Autorité de l'aviation civile de
                   Djibouti</span
                 >
               </md-card-header>
@@ -80,7 +77,6 @@
 </template>
 
 <script>
-import Menu from "../../components/SideMenu";
 export default {
   metaInfo() {
     // if no subcomponents specify a metaInfo.title, this title will be used
@@ -91,13 +87,10 @@ export default {
           vmid: "description",
           name: "description",
           content:
-            "Mr. Daoud Ali Abdou est le directeur par interim de l'Authorité de l'Aviation Civile de Djibouti",
+            " Mot du directeur de l'aviation civile de djibouti, Mr. Daoud Ali Abdou est le directeur par interim de l'Autorité de l'Aviation Civile de Djibouti",
         },
       ],
     };
-  },
-  components: {
-    Menu,
   },
   data() {
     return {

@@ -22,30 +22,30 @@ export default new Vuex.Store({
   },
   actions: {
     setUser({ commit }, user) {
-        commit('SET_USER', user)
+      commit('SET_USER', user)
     },
     getUser({ commit }) {
       const id = localStorage.getItem('id')
       const token = localStorage.getItem('token')
-      return auth.getUser(token, id).then((data)=>{
+      return auth.getUser(token, id).then((data) => {
         const user = data.data
         if (user._id) {
           commit('SET_USER', user)
         } else {
           commit('SET_USER', {})
           localStorage.clear()
-      }
-    });
-  },    
-  logout({ commit }) {
-      auth.logout().then(()=>{
+        }
+      });
+    },
+    logout({ commit }) {
+      auth.logout().then(() => {
         commit('SET_USER', {})
         localStorage.clear()
-      }).catch(()=>{
+      }).catch(() => {
         commit('SET_USER', {})
         localStorage.clear()
       })
-  }
+    }
   },
   modules: {
     documents,

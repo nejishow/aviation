@@ -1,5 +1,73 @@
 <template>
 <div class="container-fluid">
+    <div>
+        <b-sidebar class="sidebar" id="sidebar-1" title="Menu">
+            <b-list-group>
+                <b-list-group-item>
+                    <router-link to="/">{{ menu1 }}</router-link>
+                </b-list-group-item>
+                <b-list-group-item v-b-toggle.sidebar-2>{{
+            menu2
+          }}</b-list-group-item>
+                <b-list-group-item v-b-toggle.sidebar-3>{{
+            menu3
+          }}</b-list-group-item>
+                <b-list-group-item v-b-toggle.sidebar-4>{{
+            menu4
+          }}</b-list-group-item>
+                <b-list-group-item v-b-toggle.sidebar-5>{{
+            menu5
+          }}</b-list-group-item>
+                <b-list-group-item v-b-toggle.sidebar-6>{{
+            menu6
+          }}</b-list-group-item>
+                <b-list-group-item v-b-toggle.sidebar-6>{{menu7}}</b-list-group-item>
+            </b-list-group>
+        </b-sidebar>
+        <b-sidebar class="sidebar" id="sidebar-2" :title="menu2" shadow bg-variant="dark" text-variant="light">
+            <b-list-group class="bg-dark">
+                <b-list-group-item v-for="(item, index) in sub2" :key="index">
+                    <router-link :to="item.router">{{ item.title }}</router-link>
+                </b-list-group-item>
+            </b-list-group>
+        </b-sidebar>
+        <b-sidebar class="sidebar" id="sidebar-3" :title="menu3" shadow bg-variant="dark" text-variant="light">
+            <b-list-group class="bg-dark">
+                <b-list-group-item v-b-toggle.sub-sidebar-3 v-for="(item, index) in sub3" :key="index" href="#">
+                    <router-link :to="item.router">{{ item.title }}</router-link>
+                </b-list-group-item>
+            </b-list-group>
+        </b-sidebar>
+
+        <b-sidebar class="sidebar" id="sidebar-4" :title="menu4" shadow bg-variant="dark" text-variant="light">
+            <b-list-group class="bg-dark">
+                <b-list-group-item v-for="(item, index) in sub4" :key="index" href="#">
+                    <router-link :to="item.router">{{ item.title }}</router-link>
+                </b-list-group-item>
+            </b-list-group>
+        </b-sidebar>
+        <b-sidebar class="sidebar" id="sidebar-5" :title="menu5" shadow bg-variant="dark" text-variant="light">
+            <b-list-group class="bg-dark">
+                <b-list-group-item v-for="(item, index) in sub5" :key="index" href="#">
+                    <router-link :to="item.router">{{ item.title }}</router-link>
+                </b-list-group-item>
+            </b-list-group>
+        </b-sidebar>
+        <b-sidebar class="sidebar" id="sidebar-6" :title="menu6" shadow bg-variant="dark" text-variant="light">
+            <b-list-group class="bg-dark">
+                <b-list-group-item v-for="(item, index) in sub6" :key="index" href="#">
+                    <router-link :to="item.router">{{ item.title }}</router-link>
+                </b-list-group-item>
+            </b-list-group>
+        </b-sidebar>
+        <b-sidebar class="sidebar" id="sidebar-7" :title="menu6" shadow bg-variant="dark" text-variant="light">
+            <b-list-group class="bg-dark">
+                <b-list-group-item v-for="(item, index) in sub7" :key="index" href="#">
+                    <router-link :to="item.router">{{ item.title }}</router-link>
+                </b-list-group-item>
+            </b-list-group>
+        </b-sidebar>
+    </div>
     <div class="row">
         <div class="col-12 social bg-info text-right">
             <b-button to="/contact" pill class="btn bg-light text-white">
@@ -15,6 +83,8 @@
                 <img src="../assets/casa.png" alt="logo" class="img-fluid logo" />
             </a>
         </router-link>
+
+        <b-navbar-toggle v-b-toggle.sidebar-1 target=""></b-navbar-toggle>
 
         <!-- Header French -->
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -55,7 +125,7 @@
                             <a id="dropdownMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">Texte legislatif</a>
                             <ul aria-labelledby="dropdownMenu2" class="dropdown-menu ">
                                 <li>
-                                    <router-link to="/Texte legislatifs/Lois"><a href="#" class="dropdown-item">Lois</a></router-link>
+                                    <router-link to="/Textes legislatifs/Lois"><a href="#" class="dropdown-item">Lois</a></router-link>
                                 </li>
                             </ul>
                         </li>
@@ -67,11 +137,11 @@
                                         <a tabindex="-1" href="#" class="dropdown-item">Réglementation aérotique de Djibouti</a></router-link>
                                 </li>
                                 <li>
-                                    <router-link to="/Texte legislatifs/Arretes">
+                                    <router-link to="/Textes reglementaires/Arretes">
                                         <a tabindex="-1" href="#" class="dropdown-item">Arrêtés</a></router-link>
                                 </li>
                                 <li>
-                                    <router-link to="/Texte legislatifs/Decrets"><a href="#" class="dropdown-item">Décrets</a></router-link>
+                                    <router-link to="/Textes reglementaires/Decrets"><a href="#" class="dropdown-item">Décrets</a></router-link>
                                 </li>
                             </ul>
                         </li>
@@ -324,11 +394,11 @@
                     <ul aria-labelledby="dropdownMenu1" class="dropdown-menu ">
                         <!-- Level two dropdown-->
                         <li>
-                            <router-link to="/"><a href="#" class="dropdown-item">Sureté
+                            <router-link to="/Surete"><a href="#" class="dropdown-item">Sureté
                                 </a></router-link>
                         </li>
                         <li>
-                            <router-link to="/"><a href="#" class="dropdown-item">Facilitation
+                            <router-link to="/Facilitation"><a href="#" class="dropdown-item">Facilitation
                                 </a></router-link>
                         </li>
                     </ul>
@@ -339,7 +409,7 @@
                     <a id="dropdownMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">Inspection</a>
                     <ul aria-labelledby="dropdownMenu1" class="dropdown-menu ">
                         <li>
-                            <router-link to="/"><a href="#" class="dropdown-item">Audit et Inspection
+                            <router-link to="/Audit et Inspection"><a href="#" class="dropdown-item">Audit et Inspection
                                 </a></router-link>
                         </li>
                         <!-- End Level two -->
@@ -351,11 +421,11 @@
                     <a id="dropdownMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">e-Services</a>
                     <ul aria-labelledby="dropdownMenu1" class="dropdown-menu ">
                         <li>
-                            <router-link to="/"><a href="#" class="dropdown-item">Formulaire de compte rendu
+                            <router-link to="/Formulaire de compte rendu"><a href="#" class="dropdown-item">Formulaire de compte rendu
                                 </a></router-link>
                         </li>
                         <li>
-                            <router-link to="/"><a href="#" class="dropdown-item">Demande d'autorisation de vol
+                            <router-link to="/Demande autorisation"><a href="#" class="dropdown-item">Demande d'autorisation de vol
                                 </a></router-link>
                         </li>
                     </ul>
@@ -375,8 +445,8 @@
             </ul>
         </div>
     </nav>
-    <div class="row socialBottom">
-        <div class="col-12 socialBottom bg-success"></div>
+    <div class="row border">
+        <div class="socialBottom bg-success"></div>
     </div>
 </div>
 </template>
@@ -385,7 +455,126 @@
 export default {
   data() {
     return {
-      menus: [],
+      menu: "Menu",
+      menu1: "Acceuil",
+      menu2: "A propos de nous",
+      menu3: "Publications",
+      menu4: "Securité",
+      menu5: "Sureté",
+      menu6: "Inspection",
+      menu7: "e-Services",
+      sub2: [
+        {
+          title: "Presentation",
+          router: "/Presentation",
+        },
+        {
+          title: "Mot du directeur",
+          router: "/Mot du directeur",
+        },
+        {
+          title: "Organisation",
+          router: "/Organisation",
+        },
+        {
+          title: "Politique de supervision",
+          router: "/Politique de Supervision",
+        },
+        {
+          title: "Politique de formation",
+          router: "Politique de Formation",
+        },
+      ],
+      sub3: [
+        {
+          title: "Textes legislatifs",
+          router: "/Textes legislatifs/Lois",
+        },
+        {
+          title: "Textes reglementaires",
+          router: "/Textes reglementaires",
+        },
+      ],
+      sub4: [
+        {
+          title: "Navigabilité",
+          router: "/securite/5f3aa3413c2c433e946dcca6",
+        },
+        {
+          title: "Exploitation technique des aeronefs",
+          router: "/securite/5f3aa7e234512340cc2b8253",
+        },
+        {
+          title: "License du personel",
+          router: "/securite/5f3aa7f034512340cc2b8254",
+        },
+        {
+          title: "Aérodrome et infrastructures aéroportuaires",
+          router: "/securite/5f3aa7fe34512340cc2b8255",
+        },
+        {
+          title: "Service de l'information aéronautique et de la cartographie",
+          router: "/securite/5f3aa80a34512340cc2b8256",
+        },
+        {
+          title: "Communication, naviguation et surveillance",
+          router: "/securite/5f535bbc1dc9dc44eceead5c",
+        },
+        {
+          title: "Gestion de l'espace aérien",
+          router: "/securite/5f535bcd1dc9dc44eceead5d",
+        },
+        {
+          title: "Service metéorologique",
+          router: "/securite/5f535bd91dc9dc44eceead5e",
+        },
+      ],
+      sub5: [
+        {
+          title: "Service 1",
+          router: "",
+        },
+        {
+          title: "Service 2",
+          router: "",
+        },
+        {
+          title: "Service 3",
+          router: "",
+        },
+        {
+          title: "Service 4",
+          router: "",
+        },
+      ],
+      sub6: [
+        {
+          title: "Service 1",
+          router: "",
+        },
+        {
+          title: "Service 2",
+          router: "",
+        },
+        {
+          title: "Service 3",
+          router: "",
+        },
+        {
+          title: "Service 4",
+          router: "",
+        },
+      ],
+      sub7: [
+        {
+          title: "Formulaire de compte rendu",
+          router: "",
+        },
+        {
+          title: "Demande d'autorisation de vol",
+          router: "",
+        },
+      ],
     };
   },
   computed: {
@@ -403,7 +592,8 @@ export default {
 
 <style lang="scss" scoped>
 .socialBottom {
-  min-height: 5px;
+  height: 0.5rem;
+  width: 100%;
 }
 
 .navbar {
@@ -501,5 +691,9 @@ export default {
     text-transform: uppercase;
     color: black;
   }
+}
+
+.sidebar {
+  transition: all 2s;
 }
 </style>

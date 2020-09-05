@@ -1,9 +1,7 @@
 <template>
   <div class="container-fluid">
     <div class="row">
-      <div class="col-md-4">
-        <Menu></Menu>
-      </div>
+
       <div class="col-12 col-md-8">
         <h3>Organisation</h3>
         <p>
@@ -27,20 +25,17 @@
 </template>
 
 <script>
-import Menu from "../../components/SideMenu";
 export default {
   metaInfo: {
     // if no subcomponents specify a metaInfo.title, this title will be used
-      title: "Organisation",
-      meta: [
-        {
-          vmid: "description",
-          name: "description",
-          content:"Organisation de l'Authorité de l'Aviation Civile de Djibouti"        },
-      ],
-  },
-  components: {
-    Menu,
+    title: "Organisation",
+    meta: [
+      {
+        vmid: "description",
+        name: "description",
+        content: "Organisation de l'Autorité de l'Aviation Civile de Djibouti",
+      },
+    ],
   },
 };
 </script>

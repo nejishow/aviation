@@ -4,9 +4,7 @@
         <div class="col-12 m-5">
             Agence / Publications / Home
         </div>
-        <div class="col-md-4">
-            <Menu></Menu>
-        </div>
+
         <div class="col-12 col-md-8">
             <h3>Accords bilateraux</h3>
 
@@ -65,65 +63,64 @@
 </template>
 
 <script>
-import Menu from "../../../components/SideMenu";
 export default {
-    metaInfo() {
-        // if no subcomponents specify a metaInfo.title, this title will be used
-        return {
-            meta: [{
-                    name: 'robots',
-                    content: "noindex"
-                },
-                {
-                    name: 'googlebot',
-                    content: "noindex"
-                }
-            ]
-        }
-    },
-    components: {
-        Menu,
-    },
-    data() {
-        return {
-            searchResults: [],
-            data: [{
-                    id: 1,
-                    title: "Safety & Security",
-                    date: "02/10/2020",
-                    action: "Download",
-                },
-                {
-                    id: 1,
-                    title: "Safety & Security",
-                    date: "02/10/2020",
-                    action: "Download",
-                },
-                {
-                    id: 1,
-                    title: "Safety & Security",
-                    date: "02/10/2020",
-                    action: "Download",
-                },
-                {
-                    id: 1,
-                    title: "Safety & Security",
-                    date: "02/10/2020",
-                    action: "Download",
-                },
-            ],
-        };
-    },
-    methods: {
-        search(event) {
-            console.log(event);
+  metaInfo() {
+    // if no subcomponents specify a metaInfo.title, this title will be used
+    return {
+      meta: [
+        {
+          name: "robots",
+          content: "noindex",
         },
+        {
+          name: "googlebot",
+          content: "noindex",
+        },
+      ],
+    };
+  },
+
+  data() {
+    return {
+      searchResults: [],
+      data: [
+        {
+          id: 1,
+          title: "Safety & Security",
+          date: "02/10/2020",
+          action: "Download",
+        },
+        {
+          id: 1,
+          title: "Safety & Security",
+          date: "02/10/2020",
+          action: "Download",
+        },
+        {
+          id: 1,
+          title: "Safety & Security",
+          date: "02/10/2020",
+          action: "Download",
+        },
+        {
+          id: 1,
+          title: "Safety & Security",
+          date: "02/10/2020",
+          action: "Download",
+        },
+      ],
+    };
+  },
+  methods: {
+    search(event) {
+      console.log(event);
     },
+  },
 };
 </script>
 
 <style lang="css" scoped>
 .search {
-    border: none;
+  border: none;
 }
 </style>

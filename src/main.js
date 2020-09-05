@@ -7,10 +7,8 @@ import { BootstrapVue } from "bootstrap-vue";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
 import axios from "axios";
-import SuiVue from "semantic-ui-vue";
 import VueAxios from "vue-axios";
 import Buefy from "buefy";
-import "semantic-ui-css/semantic.min.css";
 import { LMap, LTileLayer, LMarker } from "vue2-leaflet";
 import "leaflet/dist/leaflet.css";
 import { MdCard, MdContent, MdTabs, MdButton, MdIcon, MdProgress } from "vue-material/dist/components";
@@ -28,6 +26,7 @@ import "buefy/dist/buefy.css";
 import PortalVue from 'portal-vue'
 import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
 import VueMeta from 'vue-meta'
+import vuetify from './plugins/vuetify';
 
 Vue.use(VueMeta, {
   keyName: 'metaInfo',
@@ -54,12 +53,12 @@ Vue.component("l-marker", LMarker);
 
 Vue.use(Buefy);
 Vue.use(BootstrapVue);
-Vue.use(SuiVue);
 
 Vue.use(VueAxios, axios);
 
 new Vue({
   router,
   store,
+  vuetify,
   render: (h) => h(App)
 }).$mount("#app");

@@ -20,7 +20,7 @@ export default {
         meta: [{
             vmid: 'description',
             name: 'description',
-            content: "Authorité de l'Aviation Civile de Djibouti"
+            content: "Autorité de l'Aviation Civile de Djibouti"
         }]
     },
     components: {

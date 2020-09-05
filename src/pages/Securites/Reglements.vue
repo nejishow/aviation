@@ -63,150 +63,150 @@
 </template>
 
 <script>
-import Menu from "../../components/SideMenu";
 export default {
-    metaInfo() {
-        const category = this.b2
-        return {
-            title() {
-                return 'Réglements - ' + category
-            },
-            meta: [{
-                vmid: 'description',
-                name: 'description',
-                content: "Tous les reglements relatifs à: " + category
-            }]
-        }
+  metaInfo() {
+    const category = this.b2;
+    return {
+      title() {
+        return "Réglements - " + category;
+      },
+      meta: [
+        {
+          vmid: "description",
+          name: "description",
+          content: "Tous les reglements relatifs à: " + category,
+        },
+      ],
+    };
+  },
+
+  data() {
+    return {
+      searchResults: [],
+      data: [
+        {
+          id: 1,
+          title: "Safety & Security",
+          date: "02/10/2020",
+          action: "Download",
+        },
+        {
+          id: 1,
+          title: "Safety & Security",
+          date: "02/10/2020",
+          action: "Download",
+        },
+        {
+          id: 1,
+          title: "Safety & Security",
+          date: "02/10/2020",
+          action: "Download",
+        },
+        {
+          id: 1,
+          title: "Safety & Security",
+          date: "02/10/2020",
+          action: "Download",
+        },
+      ],
+      idDirectives: "",
+      menu: [],
+      errorSearch: "",
+    };
+  },
+  computed: {
+    b1() {
+      return this.$store.state.category.breadCrumb1;
     },
-    components: {
-        Menu,
+    b2() {
+      return this.$store.state.category.breadCrumb2;
     },
-    data() {
-        return {
-            searchResults: [],
-            data: [{
-                    id: 1,
-                    title: "Safety & Security",
-                    date: "02/10/2020",
-                    action: "Download",
-                },
-                {
-                    id: 1,
-                    title: "Safety & Security",
-                    date: "02/10/2020",
-                    action: "Download",
-                },
-                {
-                    id: 1,
-                    title: "Safety & Security",
-                    date: "02/10/2020",
-                    action: "Download",
-                },
-                {
-                    id: 1,
-                    title: "Safety & Security",
-                    date: "02/10/2020",
-                    action: "Download",
-                },
-            ],
-            idDirectives: "",
-            menu: [],
-            errorSearch: "",
-        };
-    },
-    computed: {
-        b1() {
-            return this.$store.state.category.breadCrumb1;
-        },
-        b2() {
-            return this.$store.state.category.breadCrumb2;
-        },
-        b3() {
-            if (this.$store.state.category.subCategoryTwo !== []) {
-                this.fetchBreadCrumb();
-                this.fetchMenu();
-            }
-            return this.$store.state.category.breadCrumb3;
-        },
-        documents() {
-            return this.$store.state.documents.publicDocuments;
-        },
-        sortedDocuments() {
-            if (this.documents.lenght > 0) {
-                let sorted = this.documents.filter((doc) => {
-                    return doc.idParent === this.$route.params.id;
-                });
-                return sorted;
-            } else {
-                let sorted = this.documents.filter((doc) => {
-                    return doc.idParent === this.$route.params.id;
-                });
-                return sorted;
-            }
-        },
-    },
-    methods: {
-        search(event) {
-            this.searchResults = [];
-            const nameFile = event.target.value.toLowerCase().trim();
-            if (nameFile !== "") {
-                this.sortedDocuments.forEach((doc) => {
-                    const docName = doc.name.toLowerCase().trim();
-                    if (docName.includes(nameFile)) {
-                        this.searchResults.push(doc);
-                    }
-                });
-                if (this.searchResults.length < 1) {
-                    this.errorSearch = "Pas de resultat pour '" + nameFile + "'";
-                }
-            }
-        },
-        enleve() {
-            this.searchResults = [];
-            this.errorSearch = "";
-        },
-        fetchBreadCrumb() {
-            this.$store.state.category.subCategoryTwo.forEach((subTwo) => {
-                if (subTwo._id === this.$route.params.id) {
-                    this.$store.dispatch("fetchB3", subTwo.name);
-                    this.$store.state.category.subCategoryOne.forEach((subOne) => {
-                        if (subOne._id === subTwo.idParent) {
-                            this.$store.dispatch("fetchB2", subOne.name);
-                            this.$store.state.category.category.forEach((cat) => {
-                                if (cat._id === subOne.idParent) {
-                                    this.$store.dispatch("fetchB1", cat.name);
-                                }
-                            });
-                        }
-                    });
-                }
-            });
-        },
-        fetchMenu() {
-            this.menu = [];
-            const subTwo = this.$store.state.category.subCategoryTwo.filter(
-                (element) => element._id === this.$route.params.id
-            );
-            this.$store.state.category.subCategoryTwo.forEach((sub) => {
-                if (sub.idParent === subTwo[0].idParent) {
-                    this.menu.push(sub);
-                }
-            });
-        },
-    },
-    mounted() {
+    b3() {
+      if (this.$store.state.category.subCategoryTwo !== []) {
         this.fetchBreadCrumb();
         this.fetchMenu();
+      }
+      return this.$store.state.category.breadCrumb3;
     },
+    documents() {
+      return this.$store.state.documents.publicDocuments;
+    },
+    sortedDocuments() {
+      if (this.documents.lenght > 0) {
+        let sorted = this.documents.filter((doc) => {
+          return doc.idParent === this.$route.params.id;
+        });
+        return sorted;
+      } else {
+        let sorted = this.documents.filter((doc) => {
+          return doc.idParent === this.$route.params.id;
+        });
+        return sorted;
+      }
+    },
+  },
+  methods: {
+    search(event) {
+      this.searchResults = [];
+      const nameFile = event.target.value.toLowerCase().trim();
+      if (nameFile !== "") {
+        this.sortedDocuments.forEach((doc) => {
+          const docName = doc.name.toLowerCase().trim();
+          if (docName.includes(nameFile)) {
+            this.searchResults.push(doc);
+          }
+        });
+        if (this.searchResults.length < 1) {
+          this.errorSearch = "Pas de resultat pour '" + nameFile + "'";
+        }
+      }
+    },
+    enleve() {
+      this.searchResults = [];
+      this.errorSearch = "";
+    },
+    fetchBreadCrumb() {
+      this.$store.state.category.subCategoryTwo.forEach((subTwo) => {
+        if (subTwo._id === this.$route.params.id) {
+          this.$store.dispatch("fetchB3", subTwo.name);
+          this.$store.state.category.subCategoryOne.forEach((subOne) => {
+            if (subOne._id === subTwo.idParent) {
+              this.$store.dispatch("fetchB2", subOne.name);
+              this.$store.state.category.category.forEach((cat) => {
+                if (cat._id === subOne.idParent) {
+                  this.$store.dispatch("fetchB1", cat.name);
+                }
+              });
+            }
+          });
+        }
+      });
+    },
+    fetchMenu() {
+      this.menu = [];
+      const subTwo = this.$store.state.category.subCategoryTwo.filter(
+        (element) => element._id === this.$route.params.id
+      );
+      this.$store.state.category.subCategoryTwo.forEach((sub) => {
+        if (sub.idParent === subTwo[0].idParent) {
+          this.menu.push(sub);
+        }
+      });
+    },
+  },
+  mounted() {
+    this.fetchBreadCrumb();
+    this.fetchMenu();
+  },
 };
 </script>
 
 <style lang="css" scoped>
 .search {
-    border-radius: 100px;
-    /* mozilla */
-    -moz-border-radius: 100px;
-    /* webkit */
-    -webkit-border-radius: 100px;
+  border-radius: 100px;
+  /* mozilla */
+  -moz-border-radius: 100px;
+  /* webkit */
+  -webkit-border-radius: 100px;
 }
 </style>
