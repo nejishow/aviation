@@ -122,7 +122,7 @@
                     <ul aria-labelledby="dropdownMenu1" class="dropdown-menu ">
                         <!-- Level two dropdown-->
                         <li class="dropdown-submenu">
-                            <a id="dropdownMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">Texte legislatif</a>
+                            <a @click="goTo('5f57966756cc341290c683d2','Recherches et sauvetages')" id="dropdownMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">Texte legislatif</a>
                             <ul aria-labelledby="dropdownMenu2" class="dropdown-menu ">
                                 <li>
                                     <router-link to="/Textes legislatifs/Lois"><a href="#" class="dropdown-item">Lois</a></router-link>
@@ -130,8 +130,7 @@
                             </ul>
                         </li>
                         <li class="dropdown-submenu">
-                            <a id="dropdownMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">Texte reglementaires</a>
-                            <ul aria-labelledby="dropdownMenu2" class="dropdown-menu ">
+                            <a @click="goTo('5f57966756cc341290c683d2','Recherches et sauvetages')" id="dropdownMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">Texte reglementaires</a>                            <ul aria-labelledby="dropdownMenu2" class="dropdown-menu ">
                                 <li>
                                     <router-link to="/Textes reglementaires/Reglementation aerotique de Djibouti">
                                         <a tabindex="-1" href="#" class="dropdown-item">Réglementation aérotique de Djibouti</a></router-link>
@@ -167,7 +166,7 @@
                     <ul aria-labelledby="dropdownMenu1" class="dropdown-menu ">
                         <!-- Level two dropdown-->
                         <li class="dropdown-submenu">
-                            <a id="dropdownMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle link">Navigabilité</a>
+                            <a @click="goTo('5f57966756cc341290c683d2','Recherches et sauvetages')" id="dropdownMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle link">Navigabilité</a>
                             <ul aria-labelledby="dropdownMenu2" class="dropdown-menu ">
                                 <li>
                                     <router-link :to="{
@@ -202,7 +201,7 @@
                             </ul>
                         </li>
                         <li class="dropdown-submenu">
-                            <a id="dropdownMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">Exploitation technique des aéronefs</a>
+                            <a @click="goTo('5f57966756cc341290c683d2','Recherches et sauvetages')" id="dropdownMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">Exploitation technique des aéronefs</a>
                             <ul aria-labelledby="dropdownMenu2" class="dropdown-menu ">
                                 <li>
                                     <router-link :to="{
@@ -237,7 +236,7 @@
                             </ul>
                         </li>
                         <li class="dropdown-submenu">
-                            <a id="dropdownMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">License du personels</a>
+                            <a @click="goTo('5f57966756cc341290c683d2','Recherches et sauvetages')" id="dropdownMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">License du personels</a>
                             <ul aria-labelledby="dropdownMenu2" class="dropdown-menu ">
                                 <li>
                                     <router-link :to="{
@@ -273,8 +272,8 @@
                         </li>
                         <!-- End Level two -->
                         <li class="dropdown-submenu">
-                            <a id="dropdownMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">Aérodromes et infrastructures portuaires</a>
-                            <ul aria-labelledby="dropdownMenu2" class="dropdown-menu ">
+                            <a @click="goTo('5f57966756cc341290c683d2','Recherches et sauvetages')" id="dropdownMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">Aérodromes et infrastructures portuaires</a>
+                                                        <ul aria-labelledby="dropdownMenu2" class="dropdown-menu ">
                                 <li>
                                     <router-link :to="{
                         name: 'Formulaires',
@@ -308,7 +307,7 @@
                             </ul>
                         </li>
                         <li class="dropdown-submenu">
-                            <a id="dropdownMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">Service de l'information aéronautique et de la cartographie</a>
+                            <a @click="goTo('5f57966756cc341290c683d2','Recherches et sauvetages')" id="dropdownMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">Service de l'information aéronautique et de la cartographie</a>
                             <ul aria-labelledby="dropdownMenu2" class="dropdown-menu ">
                                 <li>
                                     <router-link :to="{
@@ -343,7 +342,7 @@
                             </ul>
                         </li>
                         <li class="dropdown-submenu">
-                            <a id="dropdownMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">Communication, naviguation et surveillance</a>
+                            <a @click="goTo('5f57966756cc341290c683d2','Recherches et sauvetages')" id="dropdownMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">Communication, naviguation et surveillance</a>
                             <ul aria-labelledby="dropdownMenu2" class="dropdown-menu ">
                                 <li>
                                     <router-link :to="{
@@ -378,126 +377,190 @@
                             </ul>
                         </li>
                         <li class="dropdown-submenu">
-                            <a id="dropdownMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">Gestion de l'espace aérien</a>
+                            <a @click="goTo('5f57966756cc341290c683d2','Recherches et sauvetages')" id="dropdownMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">Gestion de l'espace aérien</a>
                             <ul aria-labelledby="dropdownMenu2" class="dropdown-menu ">
                                 <li>
                                     <router-link :to="{
                         name: 'Formulaires',
-                        params: {id: '5f535bcd1dc9dc44eceead5d'},
+                        params: {id: '5f58f66747a3152af4d2e315'},
                       }"><a href="#" class="dropdown-item">Formulaires</a></router-link>
                                 </li>
                                 <li>
                                     <router-link :to="{
                         name: 'Guides',
-                        params: {id: '5f535bcd1dc9dc44eceead5d'},
+                        params: {id: '5f58f66747a3152af4d2e316'},
                       }"><a href="#" class="dropdown-item">Guides</a></router-link>
                                 </li>
                                 <li>
                                     <router-link :to="{
                         name: 'Manuels',
-                        params: {id: '5f535bcd1dc9dc44eceead5d'},
+                        params: {id: '5f58f66747a3152af4d2e317'},
                       }"><a href="#" class="dropdown-item">Manuels</a></router-link>
                                 </li>
                                 <li>
                                     <router-link :to="{
                         name: 'Procedures',
-                        params: {id: '5f535bcd1dc9dc44eceead5d'},
+                        params: {id: '5f58f66747a3152af4d2e318'},
                       }"><a href="#" class="dropdown-item">Procedures</a></router-link>
                                 </li>
                                 <li>
                                     <router-link :to="{
                         name: 'Reglements',
-                        params: {id: '5f535bcd1dc9dc44eceead5d'},
+                        params: {id: '5f58f66747a3152af4d2e319'},
                       }"><a href="#" class="dropdown-item">Reglements</a></router-link>
                                 </li>
                             </ul>
                         </li>
                         <li class="dropdown-submenu">
-                            <a id="dropdownMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">Service métérorologique</a>
-                            <ul aria-labelledby="dropdownMenu2" class="dropdown-menu ">
-                                <li>
-                                    <router-link :to="{
+                            <a @click="goTo('5f57966756cc341290c683d2','Recherches et sauvetages')" id="dropdownMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">Service métérorologique</a>
+                                <ul aria-labelledby="dropdownMenu2" class="dropdown-menu ">
+                                    <li>
+                                        <router-link :to="{
                         name: 'Formulaires',
-                        params: {id: '5f535bd91dc9dc44eceead5e'},
+                        params: {id: '5f58f77f47a3152af4d2e31a'},
                       }"><a href="#" class="dropdown-item">Formulaires</a></router-link>
-                                </li>
-                                <li>
-                                    <router-link :to="{
+                                    </li>
+                                    <li>
+                                        <router-link :to="{
                         name: 'Guides',
-                        params: {id: '5f535bd91dc9dc44eceead5e'},
+                        params: {id: '5f58f77f47a3152af4d2e31b'},
                       }"><a href="#" class="dropdown-item">Guides</a></router-link>
-                                </li>
-                                <li>
-                                    <router-link :to="{
+                                    </li>
+                                    <li>
+                                        <router-link :to="{
                         name: 'Manuels',
-                        params: {id: '5f535bd91dc9dc44eceead5e'},
+                        params: {id: '5f58f77f47a3152af4d2e31c'},
                       }"><a href="#" class="dropdown-item">Manuels</a></router-link>
-                                </li>
-                                <li>
-                                    <router-link :to="{
+                                    </li>
+                                    <li>
+                                        <router-link :to="{
                         name: 'Procedures',
-                        params: {id: '5f535bd91dc9dc44eceead5e'},
+                        params: {id: '5f58f77f47a3152af4d2e31d'},
                       }"><a href="#" class="dropdown-item">Procedures</a></router-link>
-                                </li>
-                                <li>
-                                    <router-link :to="{
+                                    </li>
+                                    <li>
+                                        <router-link :to="{
                         name: 'Reglements',
-                        params: {id: '5f535bd91dc9dc44eceead5e'},
+                        params: {id: '5f58f77f47a3152af4d2e31e'},
                       }"><a href="#" class="dropdown-item">Reglements</a></router-link>
-                                </li>
-                            </ul>
+                                    </li>
+                                </ul>
                         </li>
                         <li class="dropdown-submenu">
-                            <a id="dropdownMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">Recherches et sauvetages</a>
-                            <ul aria-labelledby="dropdownMenu2" class="dropdown-menu ">
-                                <li>
-                                    <router-link :to="{
+                          <a @click="goTo('5f57966756cc341290c683d2','Recherches et sauvetages')" id="dropdownMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">Recherches et sauvetages</a>
+                                <ul aria-labelledby="dropdownMenu2" class="dropdown-menu ">
+                                    <li>
+                                        <router-link :to="{
                         name: 'Formulaires',
-                        params: {id: '5f57966756cc341290c683d2'},
+                        params: {id: '5f585a81b1398d47641a5ec4'},
                       }"><a href="#" class="dropdown-item">Formulaires</a></router-link>
-                                </li>
-                                <li>
-                                    <router-link :to="{
+                                    </li>
+                                    <li>
+                                        <router-link :to="{
                         name: 'Guides',
-                        params: {id: '5f57966756cc341290c683d2'},
+                        params: {id: '5f585a81b1398d47641a5ec5'},
                       }"><a href="#" class="dropdown-item">Guides</a></router-link>
-                                </li>
-                                <li>
-                                    <router-link :to="{
+                                    </li>
+                                    <li>
+                                        <router-link :to="{
                         name: 'Manuels',
-                        params: {id: '5f57966756cc341290c683d2'},
+                        params: {id: '5f585a81b1398d47641a5ec6'},
                       }"><a href="#" class="dropdown-item">Manuels</a></router-link>
-                                </li>
-                                <li>
-                                    <router-link :to="{
+                                    </li>
+                                    <li>
+                                        <router-link :to="{
                         name: 'Procedures',
-                        params: {id: '5f57966756cc341290c683d2'},
+                        params: {id: '5f585a81b1398d47641a5ec7'},
                       }"><a href="#" class="dropdown-item">Procedures</a></router-link>
-                                </li>
-                                <li>
-                                    <router-link :to="{
+                                    </li>
+                                    <li>
+                                        <router-link :to="{
                         name: 'Reglements',
-                        params: {id: '5f57966756cc341290c683d2'},
+                        params: {id: '5f585a81b1398d47641a5ec8'},
                       }"><a href="#" class="dropdown-item">Reglements</a></router-link>
-                                </li>
-                            </ul>
+                                    </li>
+                                </ul>
                         </li>
                     </ul>
                 </li>
 
-                <!-- Securité -->
+                <!-- Sureté -->
 
                 <li class="nav-item dropdown">
                     <a id="dropdownMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">Sureté</a>
                     <ul aria-labelledby="dropdownMenu1" class="dropdown-menu ">
                         <!-- Level two dropdown-->
-                        <li>
-                            <router-link to="/Surete"><a href="#" class="dropdown-item">Sureté
+                        <li class="dropdown-submenu">
+                            <router-link to="/Surete"><a @click="goTo('5f57966756cc341290c683d2','Recherches et sauvetages')" id="dropdownMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle link">Sureté
                                 </a></router-link>
+                            <ul aria-labelledby="dropdownMenu2" class="dropdown-menu ">
+                                <li>
+                                    <router-link :to="{
+                        name: 'Formulaires',
+                        params: {id: '5f585a81b1398d47641a5ec4'},
+                      }"><a href="#" class="dropdown-item">Formulaires</a></router-link>
+                                </li>
+                                <li>
+                                    <router-link :to="{
+                        name: 'Guides',
+                        params: {id: '5f585a81b1398d47641a5ec5'},
+                      }"><a href="#" class="dropdown-item">Guides</a></router-link>
+                                </li>
+                                <li>
+                                    <router-link :to="{
+                        name: 'Manuels',
+                        params: {id: '5f585a81b1398d47641a5ec6'},
+                      }"><a href="#" class="dropdown-item">Manuels</a></router-link>
+                                </li>
+                                <li>
+                                    <router-link :to="{
+                        name: 'Procedures',
+                        params: {id: '5f585a81b1398d47641a5ec7'},
+                      }"><a href="#" class="dropdown-item">Procedures</a></router-link>
+                                </li>
+                                <li>
+                                    <router-link :to="{
+                        name: 'Reglements',
+                        params: {id: '5f585a81b1398d47641a5ec8'},
+                      }"><a href="#" class="dropdown-item">Reglements</a></router-link>
+                                </li>
+                            </ul>
                         </li>
-                        <li>
-                            <router-link to="/Facilitation"><a href="#" class="dropdown-item">Facilitation
-                                </a></router-link>
+                        <li class="dropdown-submenu">
+                            <a @click="goTo('5f57966756cc341290c683d2','Recherches et sauvetages')" id="dropdownMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">Facilitation
+                                </a>
+                            <ul aria-labelledby="dropdownMenu2" class="dropdown-menu ">
+                                <li>
+                                    <router-link :to="{
+                        name: 'Formulaires',
+                        params: {id: '5f585a81b1398d47641a5ec4'},
+                      }"><a href="#" class="dropdown-item">Formulaires</a></router-link>
+                                </li>
+                                <li>
+                                    <router-link :to="{
+                        name: 'Guides',
+                        params: {id: '5f585a81b1398d47641a5ec5'},
+                      }"><a href="#" class="dropdown-item">Guides</a></router-link>
+                                </li>
+                                <li>
+                                    <router-link :to="{
+                        name: 'Manuels',
+                        params: {id: '5f585a81b1398d47641a5ec6'},
+                      }"><a href="#" class="dropdown-item">Manuels</a></router-link>
+                                </li>
+                                <li>
+                                    <router-link :to="{
+                        name: 'Procedures',
+                        params: {id: '5f585a81b1398d47641a5ec7'},
+                      }"><a href="#" class="dropdown-item">Procedures</a></router-link>
+                                </li>
+                                <li>
+                                    <router-link :to="{
+                        name: 'Reglements',
+                        params: {id: '5f585a81b1398d47641a5ec8'},
+                      }"><a href="#" class="dropdown-item">Reglements</a></router-link>
+                                </li>
+                            </ul>
                         </li>
                     </ul>
                 </li>
@@ -543,7 +606,7 @@
             </ul>
         </div>
     </nav>
-    <div class="row border">
+    <div class="row">
         <div class="socialBottom bg-success"></div>
     </div>
 </div>
@@ -687,6 +750,9 @@ export default {
   methods: {
     logout() {
       this.$store.dispatch("logout");
+    },
+    goTo(id, name) {
+      this.$router.push({ path: "/" + name, query: { id } });
     },
   },
 };

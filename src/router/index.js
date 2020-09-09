@@ -34,6 +34,7 @@ import FCR from '../pages/eService/formulaire_cr.vue';
 import Surete from '../pages/surete/surete.vue';
 import Facilitation from '../pages/surete/facilitation.vue';
 import AuditInspection from '../pages/inspection/audit_inspection.vue';
+import SubMenu from '../pages/SubMenu.vue';
 Vue.use(VueRouter);
 
 const routes = [
@@ -229,6 +230,11 @@ const routes = [
     path: "/Audit et Inspection",
     name: "Audit et Inspection",
     component: AuditInspection,
+  },
+  {
+    path: "/:name",
+    name: "SubMenu",
+    component: SubMenu,
   },
 
 ];

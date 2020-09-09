@@ -1,5 +1,5 @@
 <template>
-<div class="container-fluid">
+<div class="container">
     <div class="row">
         <div class="col-12 col-md-8">
             <h3>Toutes les réglementations aérotiques de l'Autorité de l'Aviation Civile de Djibouti</h3>

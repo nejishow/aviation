@@ -1,5 +1,5 @@
 <template>
-<div class="container-fluid">
+<div class="container">
     <div class="row">
         <div class="col-12 social bg-info text-right">
             <b-button pill class="btn btn-secondary text-white">Fr</b-button>

@@ -1,5 +1,6 @@
 <template>
-<div class="row">
+<div class="container">
+    <div class="row">
     <div class="col-12 col-md-4">
         <router-link to="/Textes reglementaires/Reglementation aerotique de Djibouti">
             <div class="card text-left">
@@ -30,6 +31,7 @@
             </div>
         </router-link>
     </div>
+</div>
 </div>
 </template>
 

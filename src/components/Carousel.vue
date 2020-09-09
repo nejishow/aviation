@@ -1,5 +1,5 @@
 <template>
-<div class="container-fluid">
+<div class="container">
     <div class="row">
         <div v-if="banners.length>0" class="col-12">
             <div @click="prev" class="carousel_arrow carousel_arrow_prev ml-2">&lang; </div>

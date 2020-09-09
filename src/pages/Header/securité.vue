@@ -1,5 +1,6 @@
 <template>
-<div class="row">
+<div class="container">
+  <div class="row">
     <div class="col-12 col-md-4" v-for="(item, index) in subCategory" :key="index">
         <router-link :to="{
                         name: 'Directives',
@@ -14,6 +15,7 @@
         </router-link>
     </div>
 
+</div>
 </div>
 </template>
 

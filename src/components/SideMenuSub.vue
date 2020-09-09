@@ -1,9 +1,9 @@
 <template>
-<div class="card">
+<div class="">
 
-    <ul class="list-group">
+    <ul class="list-group text-left">
         <li class="list-group-item" v-for="(item, index) in menu" :key="index">
-            <router-link :to="{name:item.name, params: {id:item._id},}">
+            <router-link :to="{path:'/'+item.name, query: {id:item._id},}">
                 {{item.name}}</router-link>
         </li>
     </ul>
