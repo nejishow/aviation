@@ -187,6 +187,7 @@ export default {
       const subTwo = this.$store.state.category.subCategoryTwo.filter(
         (element) => element._id === this.$route.params.id
       );
+      console.log(subTwo);
       this.$store.state.category.subCategoryTwo.forEach((sub) => {
         if (sub.idParent === subTwo[0].idParent) {
           this.menu.push(sub);
