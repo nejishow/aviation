@@ -20,6 +20,7 @@
             <Menu :menu="menu"></Menu>
         </div>
         <div class="col-12 col-md-8">
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat illum nulla, nisi quam soluta odio earum reprehenderit animi veritatis ipsam, rerum eligendi facilis quo atque assumenda ducimus voluptatum deserunt esse?</p>
             <div class=" m-5 p5 d-flex flex-column align-items-center">
                 <input type="text" class=" border-danger w-100 search input" placeholder="Search" v-on:keyup.enter="search" v-on:keyup.delete="enleve" />
                 <div class="card result mt-2" v-show="searchResults.length > 0">
@@ -27,13 +28,12 @@
                         <thead>
                             <tr>
                                 <th scope="col">Titre</th>
-                                <th scope="col">Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr v-for="(item, index) in sortedDocuments" :key="index">
-                            <td><a :href="item.src" target="_blank">{{ item.name }}</a></td>
-                            <td><a :href="item.src"><img src="../../assets/download.png" width="30" alt="download"></a></td>
+                            <td><li>
+                              <a :href="item.src" target="_blank">{{ item.name }}</a></li></td>
                         </tr>
                         </tbody>
                     </table>
@@ -46,13 +46,12 @@
                     <thead>
                         <tr>
                             <th scope="col">Titre</th>
-                            <th scope="col">Telecharger</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr v-for="(item, index) in sortedDocuments" :key="index">
-                            <td><a :href="item.src" target="_blank">{{ item.name }}</a></td>
-                            <td><a :href="item.src" :download="item.name"><img src="../../assets/download.png" width="30" alt="download"/></a></td>
+                            <td><li>
+                              <a :href="item.src" target="_blank">{{ item.name }}</a></li></td>
                         </tr>
                     </tbody>
                 </table>

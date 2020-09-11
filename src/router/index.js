@@ -27,12 +27,9 @@ import Docs from "../pages/gestion/GestionDocuments.vue";
 import Media from "../pages/gestion/GestionMedia.vue";
 import DocIntern from '../pages/gestion/DocumentInternView.vue';
 import Contact from '../pages/Contact.vue';
-import TR from '../pages/Header/texte_reglementaire.vue';
 import Securite from '../pages/Header/securité.vue';
 import DA from '../pages/eService/demande_autorisation.vue';
 import FCR from '../pages/eService/formulaire_cr.vue';
-import Surete from '../pages/surete/surete.vue';
-import Facilitation from '../pages/surete/facilitation.vue';
 import AuditInspection from '../pages/inspection/audit_inspection.vue';
 import SubMenu from '../pages/SubMenu.vue';
 Vue.use(VueRouter);
@@ -158,7 +155,7 @@ const routes = [
   },
   {
     path: "/Textes reglementaires/Arretes",
-    name: "Arretes",
+    name: "Arretés",
     component: Arretes,
   },
   {
@@ -168,13 +165,8 @@ const routes = [
   },
   {
     path: "/Textes reglementaires/Reglementation aerotique de Djibouti",
-    name: "Reglementation aerotique de Djibouti",
+    name: "Reglementation aérotique de Djibouti",
     component: RAD,
-  },
-  {
-    path: "/Textes reglementaires",
-    name: "TR",
-    component: TR,
   },
   {
     path: "/Textes legislatifs/Lois",
@@ -215,16 +207,6 @@ const routes = [
     path: "/Formulaire de compte rendu",
     name: "Formulaire CR",
     component: FCR,
-  },
-  {
-    path: "/Surete",
-    name: "Surete",
-    component: Surete,
-  },
-  {
-    path: "/Facilitation",
-    name: "Facilitation",
-    component: Facilitation,
   },
   {
     path: "/Audit et Inspection",

@@ -38,12 +38,12 @@ export default new Vuex.Store({
       });
     },
     logout({ commit }) {
+      localStorage.clear()
+
       auth.logout().then(() => {
         commit('SET_USER', {})
-        localStorage.clear()
       }).catch(() => {
         commit('SET_USER', {})
-        localStorage.clear()
       })
     }
   },

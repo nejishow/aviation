@@ -1,5 +1,6 @@
 <template>
-<div class="row mt-5">
+<div class="container-fluid">
+    <div class="row mt-5">
     <div class="col-12">
         <md-tabs>
             <md-tab md-label="Bannieres">
@@ -12,29 +13,16 @@
         </md-tabs>
     </div>
 </div>
+</div>
 </template>
 
 <script>
 import Banner from "./Banner";
 import News from "./News";
 export default {
-       metaInfo() {
-        // if no subcomponents specify a metaInfo.title, this title will be used
-        return {
-            meta: [{
-                    name: 'robots',
-                    content: "noindex"
-                },
-                {
-                    name: 'googlebot',
-                    content: "noindex"
-                }
-            ]
-        }
-    },
-    components: {
-        Banner,
-        News,
-    },
+  components: {
+    Banner,
+    News,
+  },
 };
 </script>

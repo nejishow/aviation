@@ -1,7 +1,8 @@
 <template>
-<div class="row">
+<div class="container">
+    <div class="row">
     <div class="col-6">
-        <FirebaseUpload :isBanner="true"></FirebaseUpload>
+        <FirebaseUpload :isBanner="bannier"></FirebaseUpload>
     </div>
     <div class="col-12 mt-5">
         <h2>Mes bannieres</h2>
@@ -17,9 +18,10 @@
             </thead>
             <tbody>
                 <tr v-for="(banner, index) in banniere" :key="index">
-                    <td scope="row"><img width="50" :src="banner.url" /></td>
+                    <td scope="row"><img width="150" :src="banner.url" /></td>
                     <td><input type="text" :value="banner.title" /></td>
-                    <td><textarea type="text" :value="banner.description" /></td>
+                    <td>
+                    <textarea name="" id="" :value="banner.description" cols="30" rows="5"></textarea></td>
             <td>Modifier</td>
             <td>Supprimer</td>
           </tr>
@@ -27,34 +29,26 @@
       </table>
     </div>
   </div>
+</div>
 </template>
 
 <script>
 import FirebaseUpload from "../../components/FirebaseUpload";
 
 export default {
-   metaInfo() {
-        // if no subcomponents specify a metaInfo.title, this title will be used
-        return {
-            meta: [{
-                    name: 'robots',
-                    content: "noindex"
-                },
-                {
-                    name: 'googlebot',
-                    content: "noindex"
-                }
-            ]
-        }
+  components: {
+    FirebaseUpload,
+  },
+  data() {
+    return {
+      bannier: true,
+    };
+  },
+  mounted() {},
+  computed: {
+    banniere() {
+      return this.$store.state.media.banner;
     },
-    components: {
-        FirebaseUpload,
-    },
-    mounted() {},
-    computed: {
-        banniere() {
-            return this.$store.state.media.banner;
-        },
-    },
+  },
 };
 </script>

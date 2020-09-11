@@ -1,10 +1,11 @@
 <template>
-<div class="row">
+<div class="container-fluid">
+    <div class="row">
     <div class="col-12">
-        <FirebaseUpload :isNews="true"></FirebaseUpload>
+        <FirebaseUpload  :isBanner="false" :isNews="true"></FirebaseUpload>
     </div>
     <div class="col-12 mt-5">
-        <h2>Mes articles</h2>
+        <h2 class="h2">Les articles</h2>
         <table class="table table-bordered">
             <thead class="thead-dark">
                 <tr>
@@ -21,7 +22,7 @@
                     <td scope="row"><img width="50" :src="news.url" /></td>
                     <td><input type="text" :value="news.title" /></td>
                     <td><textarea type="text" :value="news.description" /></td>
-            <td><textarea type="text" :value="news.content" /></td>
+            <td><textarea rows="10" cols="50" class="border mb-5" type="text" :value="news.content" /></td>
             <td>Modifier</td>
             <td>Supprimer</td>
           </tr>
@@ -29,33 +30,35 @@
       </table>
     </div>
     </div>
+</div>
 </template>
 
 <script>
 import FirebaseUpload from "../../components/FirebaseUpload";
 
 export default {
-   metaInfo() {
-        // if no subcomponents specify a metaInfo.title, this title will be used
-        return {
-            meta: [{
-                    name: 'robots',
-                    content: "noindex"
-                },
-                {
-                    name: 'googlebot',
-                    content: "noindex"
-                }
-            ]
-        }
-    },
-    components: {
-        FirebaseUpload,
-    },
-    computed: {
-        Allnews() {
-            return this.$store.state.media.news;
+  metaInfo() {
+    // if no subcomponents specify a metaInfo.title, this title will be used
+    return {
+      meta: [
+        {
+          name: "robots",
+          content: "noindex",
         },
+        {
+          name: "googlebot",
+          content: "noindex",
+        },
+      ],
+    };
+  },
+  components: {
+    FirebaseUpload,
+  },
+  computed: {
+    Allnews() {
+      return this.$store.state.media.news;
     },
+  },
 };
 </script>

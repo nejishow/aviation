@@ -1,56 +1,64 @@
 <template>
+<div>
+      <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 ">
+                <div class="title-box">
+                    <h1 class="title">{{b3}}</h1>
+                </div>
+            </div>
+        </div>
+    </div>
 <div class="container">
     <div class="row">
+        <div class="col-12">
+            <span>{{ b1 }}</span>
+            <span> / {{ b2 }}</span>
+            <span v-show="b3 !== ''"> / {{ b3 }}</span>
+        </div>
+        <div class="col-md-4">
+            <Menu :menu="menu"></Menu>
+        </div>
         <div class="col-12 col-md-8">
-            <h3>Toutes les lois de l'Autorité de l'Aviation Civile de Djibouti</h3>
-
             <div class=" m-5 p5 d-flex flex-column align-items-center">
-                <input type="text" class=" border-danger w-50 search input" placeholder="Search" v-on:keyup.enter="search" v-on:keyup.delete="enleve" />
-                <div class="card result w-100 mt-2" v-show="searchResults.length > 0">
+                <input type="text" class=" border-danger w-100 search input" placeholder="Search" v-on:keyup.enter="search" v-on:keyup.delete="enleve" />
+                <div class="card result mt-2" v-show="searchResults.length > 0">
                     <table class="table table-striped table-dark">
                         <thead>
                             <tr>
-                                <th scope="col">#</th>
                                 <th scope="col">Titre</th>
-                                <th scope="col">Date de parution</th>
-                                <th scope="col">Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr v-for="(item, index) in searchResults" :key="index">
-                                <th><img src="../../../assets/pdf.png" width="20" alt="" /></th>
-                                <td>{{ item.name }}</td>
-                                <td>{{ item.createdAt }}</td>
-                                <td><button>Download</button></td>
-                            </tr>
+                            <tr v-for="(item, index) in sortedDocuments" :key="index">
+                            <td><li>
+                              <a :href="item.src" target="_blank">{{ item.name }}</a></li></td>
+                        </tr>
                         </tbody>
                     </table>
                 </div>
                 <span class="border-bottom border-danger" v-show="errorSearch!==''">{{errorSearch}}</span>
             </div>
 
-            <div class="table card">
+            <div class="table">
                 <table class="table table-striped table-dark">
                     <thead>
                         <tr>
-                            <th scope="col">#</th>
                             <th scope="col">Titre</th>
-                            <th scope="col">Date de parution</th>
-                            <th scope="col">Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr v-for="(item, index) in sortedDocuments" :key="index">
-                            <th><img src="../../../assets/pdf.png" width="20" alt="" /></th>
-                            <td>{{ item.name }}</td>
-                            <td>{{ item.createdAt }}</td>
-                            <td><a :href="item.src" target="_blank"><button>Download</button></a></td>
+                            <td>
+                              <li>
+                              <a :href="item.src" target="_blank">{{ item.name }}</a></li></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
+</div>
 </div>
 </template>
 
@@ -76,10 +84,24 @@ export default {
       idDirectives: "",
       menu: [],
       errorSearch: "",
+      subTwo: {},
     };
   },
   computed: {
+    b1() {
+      return this.$store.state.category.breadCrumb1;
+    },
+    b2() {
+      return this.$store.state.category.breadCrumb2;
+    },
+    b3() {
+      if (this.$store.state.category.subCategoryTwo !== []) {
+        this.fetchBreadCrumb();
+      }
+      return this.$store.state.category.breadCrumb3;
+    },
     documents() {
+      this.fetchBreadCrumb();
       return this.$store.state.documents.publicDocuments;
     },
     sortedDocuments() {
@@ -116,12 +138,88 @@ export default {
       this.searchResults = [];
       this.errorSearch = "";
     },
+    fetchBreadCrumb() {
+      this.$store.state.category.subCategoryTwo.forEach((subTwo) => {
+        if (subTwo._id === "5f537259daa6914e7c573565") {
+          this.subTwo = subTwo;
+          this.$store.dispatch("fetchB3", subTwo.name);
+          this.$store.state.category.subCategoryOne.forEach((subOne) => {
+            if (subOne._id === subTwo.idParent) {
+              this.$store.dispatch("fetchB2", subOne.name);
+              this.$store.state.category.category.forEach((cat) => {
+                if (cat._id === subOne.idParent) {
+                  this.$store.dispatch("fetchB1", cat.name);
+                }
+              });
+            }
+          });
+        }
+      });
+    },
   },
-  mounted() {},
+  mounted() {
+    this.fetchBreadCrumb();
+  },
 };
 </script>
 
-<style lang="css" scoped>
+
+<style lang="scss" scoped>
+@media (min-width: 500px) and (max-width: 769px) {
+  .title-box {
+    max-height: 25vh;
+    .title {
+      bottom: 5vh;
+      left: 5vh;
+      font-size: 1.5rem !important;
+    }
+  }
+}
+@media (min-width: 1020px) and (max-width: 1500px) {
+  .title-box {
+    max-height: 25vh;
+    .title {
+      bottom: 5vh;
+      left: 5vh;
+    }
+  }
+}
+@media (max-width: 499px) {
+  .title-box {
+    max-height: 15vh;
+    .title {
+      font-size: 1rem !important;
+    }
+  }
+  .sideMenu {
+    display: none;
+  }
+}
+.title-box {
+  position: relative;
+  height: 40vh;
+  border: solid 2px black;
+  background-image: url("https://i.twic.pics/v1/https://www.explo.com/media/catalog/product/cache/1/thumbnail/9df78eab33525d08d6e5fb8d27136e95/a/1/a144-djibouti-pcp.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  .title {
+    position: absolute;
+    bottom: 1vh;
+    left: 1vh;
+    font-size: 2rem;
+    text-transform: uppercase;
+    color: white;
+  }
+
+  .title-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-height: 50vh;
+    min-width: 100%;
+  }
+}
 .search {
   border-radius: 100px;
   /* mozilla */

@@ -20,6 +20,7 @@ import {
   faPhone,
   faMobile,
   faEnvelope,
+  faFax, faInbox
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import "buefy/dist/buefy.css";
@@ -38,7 +39,7 @@ Vue.use(VueMeta, {
 
 Vue.use(PortalVue)
 
-library.add(faUserSecret, faPhone, faMobile, faEnvelope);
+library.add(faUserSecret, faPhone, faMobile, faEnvelope, faFax, faInbox);
 
 Vue.component("font-awesome-icon", FontAwesomeIcon);
 Vue.use(MdCard);

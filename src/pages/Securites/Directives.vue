@@ -18,18 +18,12 @@
                     <table class="table table-striped table-dark">
                         <thead>
                             <tr>
-                                <th scope="col">#</th>
                                 <th scope="col">Titre</th>
-                                <th scope="col">Date de parution</th>
-                                <th scope="col">Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr v-for="(item, index) in searchResults" :key="index">
-                                <th><img src="../../assets/pdf.png" width="20" alt="" /></th>
                                 <td>{{ item.name }}</td>
-                                <td>{{ item.createdAt }}</td>
-                                <td><button>Download</button></td>
                             </tr>
                         </tbody>
                     </table>

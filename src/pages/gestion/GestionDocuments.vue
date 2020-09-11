@@ -1,5 +1,6 @@
 <template>
-<div class="row mt-5">
+<div class="container-fluid">
+    <div class="row mt-5">
     <div class="col-12">
         <h1>Gestion des documents</h1>
     </div>
@@ -14,34 +15,36 @@
         </md-tabs>
     </div>
 </div>
+</div>
 </template>
 
 <script>
 import Intern from "../gestion/DocumentsIntern";
 import Public from "../gestion/DocumentsPublic";
 export default {
-    computed: {
-        isAdmin() {
-            return this.$store.state.user.isAdmin
-        }
+  computed: {
+    isAdmin() {
+      return this.$store.state.user.isAdmin;
     },
-    metaInfo() {
-        // if no subcomponents specify a metaInfo.title, this title will be used
-        return {
-            meta: [{
-                    name: 'robots',
-                    content: "noindex"
-                },
-                {
-                    name: 'googlebot',
-                    content: "noindex"
-                }
-            ]
-        }
-    },
-    components: {
-        Intern,
-        Public,
-    },
+  },
+  metaInfo() {
+    // if no subcomponents specify a metaInfo.title, this title will be used
+    return {
+      meta: [
+        {
+          name: "robots",
+          content: "noindex",
+        },
+        {
+          name: "googlebot",
+          content: "noindex",
+        },
+      ],
+    };
+  },
+  components: {
+    Intern,
+    Public,
+  },
 };
 </script>

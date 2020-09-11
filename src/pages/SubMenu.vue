@@ -122,7 +122,7 @@ export default {
         }
       );
       this.$store.state.category.subCategoryOne.forEach((sub) => {
-        if (sub.idParent == subOne[0].idParent) {
+        if (sub.idParent == subOne[0].idParent && sub.name !== "Accords") {
           this.menu.push(sub);
         }
       });

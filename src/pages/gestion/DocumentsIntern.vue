@@ -107,103 +107,103 @@
 import FirebaseUpload from "../../components/FirebaseUpload";
 import $ from "jquery";
 export default {
-   metaInfo() {
-        // if no subcomponents specify a metaInfo.title, this title will be used
-        return {
-            meta: [{
-                    name: 'robots',
-                    content: "noindex"
-                },
-                {
-                    name: 'googlebot',
-                    content: "noindex"
-                }
-            ]
+  metaInfo() {
+    // if no subcomponents specify a metaInfo.title, this title will be used
+    return {
+      meta: [
+        {
+          name: "robots",
+          content: "noindex",
+        },
+        {
+          name: "googlebot",
+          content: "noindex",
+        },
+      ],
+    };
+  },
+  components: {
+    FirebaseUpload,
+  },
+  data() {
+    return {
+      subCategoryOne: [],
+      subCategoryTwo: [],
+      subOneDoc: [],
+      subTwoDoc: [],
+      category: "",
+      subOne: "",
+      subTwo: "",
+    };
+  },
+  methods: {
+    async getSubCategoryOne(item) {
+      this.subCategoryOne = [];
+      this.subCategoryTwo = [];
+      this.subOneDoc = [];
+      this.category = item;
+      this.subOne = "";
+      this.subTwo = "";
+
+      await this.allsubCategoryOne.forEach((element) => {
+        if (element.idParent === item._id) {
+          this.subCategoryOne.push(element);
         }
+      });
     },
-    components: {
-        FirebaseUpload,
+    getSubCategoryTwo(item) {
+      $(".subOne").removeClass("bg-info text-light").addClass("text-dark");
+      $("#" + item._id)
+        .addClass("bg-info text-light")
+        .removeClass("text-dark");
+      this.subOne = item;
+      this.subTwo = "";
+      this.subCategoryTwo = [];
+      this.allsubCategoryTwo.forEach((element) => {
+        if (element.idParent === item._id) {
+          this.subCategoryTwo.push(element);
+        }
+      });
     },
-    data() {
-        return {
-            subCategoryOne: [],
-            subCategoryTwo: [],
-            subOneDoc: [],
-            subTwoDoc: [],
-            category: "",
-            subOne: "",
-            subTwo: "",
-        };
-    },
-    methods: {
-        async getSubCategoryOne(item) {
-            this.subCategoryOne = [];
-            this.subCategoryTwo = [];
-            this.subOneDoc = [];
-            this.category = item;
-            this.subOne = "";
-            this.subTwo = "";
+    async getSubTwoName(item) {
+      $(".subTwo").removeClass("active border-danger");
+      $("#" + item._id).addClass("active border-danger");
+      this.subTwo = item;
+      this.subTwoDoc = [];
 
-            await this.allsubCategoryOne.forEach((element) => {
-                if (element.idParent === item._id) {
-                    this.subCategoryOne.push(element);
-                }
-            });
-        },
-        getSubCategoryTwo(item) {
-            $(".subOne").removeClass("bg-info text-light").addClass("text-dark");
-            $("#" + item._id)
-                .addClass("bg-info text-light")
-                .removeClass("text-dark");
-            this.subOne = item;
-            this.subTwo = "";
-            this.subCategoryTwo = [];
-            this.allsubCategoryTwo.forEach((element) => {
-                if (element.idParent === item._id) {
-                    this.subCategoryTwo.push(element);
-                }
-            });
-        },
-        async getSubTwoName(item) {
-            $(".subTwo").removeClass("active border-danger");
-            $("#" + item._id).addClass("active border-danger");
-            this.subTwo = item;
-            this.subTwoDoc = [];
-
-            await this.allDocuments.forEach((element) => {
-                console.log(element.idParent, this.subTwo._id);
-                if (element.idParent === this.subTwo._id) {
-                    this.subTwoDoc.push(element);
-                }
-            });
-        },
-        disableDocument(id) {
-            this.$store.dispatch("disableOneDocument", id);
-        },
-        enableDocument(id) {
-            this.$store.dispatch("enableOneDocument", id);
-        },
-        deleteDocument(id) {
-            this.$store.dispatch("deleteOneDocument", id);
-        },
+      await this.allDocuments.forEach((element) => {
+        if (element.idParent === this.subTwo._id) {
+          this.subTwoDoc.push(element);
+        }
+      });
     },
-    computed: {
-        allDocuments() {
-            let docs = this.$store.state.documents.documents.filter((docs) => {
-                return docs.isIntern;
-            });
-            return docs;
-        },
-        categories() {
-            return this.$store.state.category.category;
-        },
-        allsubCategoryOne() {
-            return this.$store.state.category.subCategoryOne;
-        },
-        allsubCategoryTwo() {
-            return this.$store.state.category.subCategoryTwo;
-        },
+    disableDocument(id) {
+      this.$store.dispatch("disableOneDocument", id);
     },
+    enableDocument(id) {
+      this.$store.dispatch("enableOneDocument", id);
+    },
+    deleteDocument(id) {
+      this.$store.dispatch("deleteOneDocument", id);
+    },
+  },
+  computed: {
+    allDocuments() {
+      let docs = this.$store.state.documents.documents.filter((docs) => {
+        return docs.isIntern;
+      });
+      return docs;
+    },
+    categories() {
+      return this.$store.state.category.category;
+    },
+    allsubCategoryOne() {
+      return this.$store.state.category.subCategoryOne;
+    },
+    allsubCategoryTwo() {
+      return this.$store.state.category.subCategoryTwo;
+    },
+  },
 };
 </script>
 

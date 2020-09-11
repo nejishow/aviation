@@ -2,19 +2,21 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <div>
+            <div class="d-flex flex-column">
                 {{ message }}:
                 <input v-show="!isBanner && !isNews" class="input" type="text" placeholder="Nom du document" v-model="document.name" />
-                <div v-show="isBanner">
+                <div v-if="isBanner" class="d-flex flex-column">
                     <label>Titre: </label><input class="input" type="text" v-model="banner.title" />
                     <label>Description: </label><input class="input" type="text" v-model="banner.description" />
-                </div> <br>
-                <div v-show="isNews">
-                    <label>Titre: </label><input class="input" type="text" v-model="news.title" />
-                    <label>Description: </label><input class="input" type="text" v-model="news.description" />
-                    <label>Contenu: </label> <br>
-                    <textarea rows="10" cols="100" class="input w-50" type="text" v-model="news.content" height="300px" />
-                    </div> <br>
+                </div>
+                <div v-if="isNews" class="d-flex flex-column">
+                    <label>Titre: </label>
+                    <input class="input" type="text" v-model="news.title" />
+                    <label>Description: </label>
+                    <input class="input" type="text" v-model="news.description" />
+                    <label>Contenu: </label>
+                    <textarea rows="10" cols="100" class="border mb-5" type="text" v-model="news.content" />
+                    </div>
 
           <input
             type="file"
@@ -100,6 +102,7 @@ export default {
   ],
   data() {
     return {
+      extension: "",
       document: {
         src: "",
         idParent: "",
@@ -146,8 +149,10 @@ export default {
       //this.picture = null;
       if (this.isNews || this.isBanner) {
         this.imageData = event.target.files[0];
+        this.extension = event.target.files[0].name.split(".").pop();
       } else {
         this.documentData = event.target.files[0];
+        this.extension = event.target.files[0].name.split(".").pop();
       }
     },
     onUpload() {
@@ -161,7 +166,9 @@ export default {
               "/" +
               this.subOne.name +
               "/" +
-              this.document.name
+              this.document.name +
+              "." +
+              this.extension
           )
           .put(this.documentData);
         storageRef.on(
@@ -213,7 +220,9 @@ export default {
               "/" +
               this.subTwo.name +
               "/" +
-              this.document.name
+              this.document.name +
+              "." +
+              this.extension
           )
           .put(this.documentData);
         storageRef.on(
@@ -269,7 +278,9 @@ export default {
               "/" +
               this.subOne.name +
               "/" +
-              this.document.name
+              this.document.name +
+              "." +
+              this.extension
           )
           .put(this.documentData);
         storageRef.on(
@@ -331,7 +342,9 @@ export default {
               "/" +
               this.subTwo.name +
               "/" +
-              this.document.name
+              this.document.name +
+              "." +
+              this.extension
           )
           .put(this.documentData);
         storageRef.on(
@@ -379,7 +392,7 @@ export default {
         this.errorButton = false;
         const storageRef = firebase
           .storage()
-          .ref("banners/" + this.banner.title)
+          .ref("banners/" + this.banner.title + "." + this.extension)
           .put(this.imageData);
         storageRef.on(
           "state_changed",
@@ -421,7 +434,7 @@ export default {
         this.errorButton = false;
         const storageRef = firebase
           .storage()
-          .ref("news/" + this.news.title)
+          .ref("news/" + this.news.title + "." + this.extension)
           .put(this.imageData);
         storageRef.on(
           "state_changed",

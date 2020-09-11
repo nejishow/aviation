@@ -122,7 +122,7 @@
                     <ul aria-labelledby="dropdownMenu1" class="dropdown-menu ">
                         <!-- Level two dropdown-->
                         <li class="dropdown-submenu">
-                            <a @click="goTo('5f57966756cc341290c683d2','Recherches et sauvetages')" id="dropdownMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">Texte legislatif</a>
+                            <a @click="goTo('5f53706c838ed6002be47d36','Textes legislatifs')" id="dropdownMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">Texte legislatif</a>
                             <ul aria-labelledby="dropdownMenu2" class="dropdown-menu ">
                                 <li>
                                     <router-link to="/Textes legislatifs/Lois"><a href="#" class="dropdown-item">Lois</a></router-link>
@@ -130,7 +130,7 @@
                             </ul>
                         </li>
                         <li class="dropdown-submenu">
-                            <a @click="goTo('5f57966756cc341290c683d2','Recherches et sauvetages')" id="dropdownMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">Texte reglementaires</a>                            <ul aria-labelledby="dropdownMenu2" class="dropdown-menu ">
+                            <a @click="goTo('5f53707658ac040039a1a6c0','Textes reglementaires')" id="dropdownMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">Texte reglementaires</a>                            <ul aria-labelledby="dropdownMenu2" class="dropdown-menu ">
                                 <li>
                                     <router-link to="/Textes reglementaires/Reglementation aerotique de Djibouti">
                                         <a tabindex="-1" href="#" class="dropdown-item">Réglementation aérotique de Djibouti</a></router-link>
@@ -166,7 +166,7 @@
                     <ul aria-labelledby="dropdownMenu1" class="dropdown-menu ">
                         <!-- Level two dropdown-->
                         <li class="dropdown-submenu">
-                            <a @click="goTo('5f57966756cc341290c683d2','Recherches et sauvetages')" id="dropdownMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle link">Navigabilité</a>
+                            <a @click="goTo('5f3aa3413c2c433e946dcca6','Navigabilité')" id="dropdownMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle link">Navigabilité</a>
                             <ul aria-labelledby="dropdownMenu2" class="dropdown-menu ">
                                 <li>
                                     <router-link :to="{
@@ -201,7 +201,7 @@
                             </ul>
                         </li>
                         <li class="dropdown-submenu">
-                            <a @click="goTo('5f57966756cc341290c683d2','Recherches et sauvetages')" id="dropdownMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">Exploitation technique des aéronefs</a>
+                            <a @click="goTo('5f3aa7e234512340cc2b8253','Exploitation technique des aéronefs')" id="dropdownMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">Exploitation technique des aéronefs</a>
                             <ul aria-labelledby="dropdownMenu2" class="dropdown-menu ">
                                 <li>
                                     <router-link :to="{
@@ -236,7 +236,7 @@
                             </ul>
                         </li>
                         <li class="dropdown-submenu">
-                            <a @click="goTo('5f57966756cc341290c683d2','Recherches et sauvetages')" id="dropdownMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">License du personels</a>
+                            <a @click="goTo('5f3aa7f034512340cc2b8254','License du personel')" id="dropdownMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">License du personels</a>
                             <ul aria-labelledby="dropdownMenu2" class="dropdown-menu ">
                                 <li>
                                     <router-link :to="{
@@ -272,7 +272,7 @@
                         </li>
                         <!-- End Level two -->
                         <li class="dropdown-submenu">
-                            <a @click="goTo('5f57966756cc341290c683d2','Recherches et sauvetages')" id="dropdownMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">Aérodromes et infrastructures portuaires</a>
+                            <a @click="goTo('5f3aa7fe34512340cc2b8255','Aérodrome et infrastructures aéroportuaires')" id="dropdownMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">Aérodromes et infrastructures portuaires</a>
                                                         <ul aria-labelledby="dropdownMenu2" class="dropdown-menu ">
                                 <li>
                                     <router-link :to="{
@@ -307,7 +307,7 @@
                             </ul>
                         </li>
                         <li class="dropdown-submenu">
-                            <a @click="goTo('5f57966756cc341290c683d2','Recherches et sauvetages')" id="dropdownMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">Service de l'information aéronautique et de la cartographie</a>
+                            <a @click="goTo('5f3aa80a34512340cc2b8256','Service de l\'information aéronautique et de la cartographie')" id="dropdownMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">Service de l'information aéronautique et de la cartographie</a>
                             <ul aria-labelledby="dropdownMenu2" class="dropdown-menu ">
                                 <li>
                                     <router-link :to="{
@@ -342,7 +342,7 @@
                             </ul>
                         </li>
                         <li class="dropdown-submenu">
-                            <a @click="goTo('5f57966756cc341290c683d2','Recherches et sauvetages')" id="dropdownMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">Communication, naviguation et surveillance</a>
+                            <a @click="goTo('5f535bbc1dc9dc44eceead5c','Communication, naviguation et surveillance')" id="dropdownMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">Communication, naviguation et surveillance</a>
                             <ul aria-labelledby="dropdownMenu2" class="dropdown-menu ">
                                 <li>
                                     <router-link :to="{
@@ -377,7 +377,7 @@
                             </ul>
                         </li>
                         <li class="dropdown-submenu">
-                            <a @click="goTo('5f57966756cc341290c683d2','Recherches et sauvetages')" id="dropdownMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">Gestion de l'espace aérien</a>
+                            <a @click="goTo('5f535bcd1dc9dc44eceead5d','Gestion de l\'espace aérien')" id="dropdownMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">Gestion de l'espace aérien</a>
                             <ul aria-labelledby="dropdownMenu2" class="dropdown-menu ">
                                 <li>
                                     <router-link :to="{
@@ -412,7 +412,7 @@
                             </ul>
                         </li>
                         <li class="dropdown-submenu">
-                            <a @click="goTo('5f57966756cc341290c683d2','Recherches et sauvetages')" id="dropdownMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">Service métérorologique</a>
+                            <a @click="goTo('5f535bd91dc9dc44eceead5e','Service metéorologique')" id="dropdownMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">Service métérorologique</a>
                                 <ul aria-labelledby="dropdownMenu2" class="dropdown-menu ">
                                     <li>
                                         <router-link :to="{
@@ -491,8 +491,8 @@
                     <ul aria-labelledby="dropdownMenu1" class="dropdown-menu ">
                         <!-- Level two dropdown-->
                         <li class="dropdown-submenu">
-                            <router-link to="/Surete"><a @click="goTo('5f57966756cc341290c683d2','Recherches et sauvetages')" id="dropdownMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle link">Sureté
-                                </a></router-link>
+                            <a @click="goTo('5f535d6433d82b0034f95ee8','Sureté')" id="dropdownMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle link">Sureté
+                                </a>
                             <ul aria-labelledby="dropdownMenu2" class="dropdown-menu ">
                                 <li>
                                     <router-link :to="{
@@ -527,37 +527,37 @@
                             </ul>
                         </li>
                         <li class="dropdown-submenu">
-                            <a @click="goTo('5f57966756cc341290c683d2','Recherches et sauvetages')" id="dropdownMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">Facilitation
+                            <a @click="goTo('5f535d69c0161b0045e05444','Facilitation')" id="dropdownMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">Facilitation
                                 </a>
                             <ul aria-labelledby="dropdownMenu2" class="dropdown-menu ">
                                 <li>
                                     <router-link :to="{
                         name: 'Formulaires',
-                        params: {id: '5f585a81b1398d47641a5ec4'},
+                        params: {id: '5f5b409c638e43228cf0a56f'},
                       }"><a href="#" class="dropdown-item">Formulaires</a></router-link>
                                 </li>
                                 <li>
                                     <router-link :to="{
                         name: 'Guides',
-                        params: {id: '5f585a81b1398d47641a5ec5'},
+                        params: {id: '5f5b409c638e43228cf0a570'},
                       }"><a href="#" class="dropdown-item">Guides</a></router-link>
                                 </li>
                                 <li>
                                     <router-link :to="{
                         name: 'Manuels',
-                        params: {id: '5f585a81b1398d47641a5ec6'},
+                        params: {id: '5f5b409c638e43228cf0a571'},
                       }"><a href="#" class="dropdown-item">Manuels</a></router-link>
                                 </li>
                                 <li>
                                     <router-link :to="{
                         name: 'Procedures',
-                        params: {id: '5f585a81b1398d47641a5ec7'},
+                        params: {id: '5f5b409c638e43228cf0a572'},
                       }"><a href="#" class="dropdown-item">Procedures</a></router-link>
                                 </li>
                                 <li>
                                     <router-link :to="{
                         name: 'Reglements',
-                        params: {id: '5f585a81b1398d47641a5ec8'},
+                        params: {id: '5f5b409c638e43228cf0a573'},
                       }"><a href="#" class="dropdown-item">Reglements</a></router-link>
                                 </li>
                             </ul>
@@ -601,7 +601,12 @@
                     <router-link to="/docIntern" class="nav-item text-primary font-weight-bolder">Documents Internes</router-link>
                 </li>
                 <li class="nav-item nav-link btn" v-show="user._id">
-                    <button class="btn-group btn-outline-danger btn nav-item" @click="logout">Sign out</button>
+                    <button class="btn-group btn-outline-danger btn nav-item" @click="logout" v-if="!loading">Sign out</button>
+                    <button class="btn btn-group btn-outline-danger" v-else>
+                    <div class="spinner-border" role="status">
+                        <span class="sr-only small">Loading...</span>
+                    </div>
+                </button>
                 </li>
             </ul>
         </div>
@@ -745,6 +750,13 @@ export default {
   computed: {
     user() {
       return this.$store.state.user;
+    },
+    loading() {
+      if (localStorage.getItem("token")) {
+        return false;
+      } else {
+        return true;
+      }
     },
   },
   methods: {

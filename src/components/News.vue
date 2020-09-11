@@ -1,5 +1,6 @@
 <template>
-<div class="row mb-5">
+<div class="container">
+  <div class="row mb-5">
     <div class="col-12 col-md-9 mt-5 news">
         <h4 class="mb-5 card-header bg-info">Actualités</h4>
         <div class="row" v-if="news.length>0">
@@ -63,6 +64,7 @@
             </ul>
         </div>
     </div>
+</div>
 </div>
 </template>
 

@@ -19,10 +19,7 @@
                     <table class="table table-striped table-dark">
                         <thead>
                             <tr>
-                                <th scope="col">#</th>
                                 <th scope="col">Titre</th>
-                                <th scope="col">Date de parution</th>
-                                <th scope="col">Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -30,7 +27,6 @@
                                 <th><img src="../../../assets/pdf.png" width="20" alt="" /></th>
                                 <td>{{ item.title }}</td>
                                 <td>{{ item.date }}</td>
-                                <td><button>Download</button></td>
                             </tr>
                         </tbody>
                     </table>
