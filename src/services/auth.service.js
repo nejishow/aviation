@@ -1,8 +1,8 @@
 import axios from "axios";
 const auth = axios.create({
-  // baseURL: "https://aviation-backend.herokuapp.com", // https://aviation-backend.herokuapp.com
+  baseURL: "https://aviation-backend.herokuapp.com", // https://aviation-backend.herokuapp.com
 
-  baseURL: "http://localhost:3000", // https://aviation-backend.herokuapp.com
+  //baseURL: "http://localhost:3000", // https://aviation-backend.herokuapp.com
 
 });
 auth.interceptors.request.use((config) => {

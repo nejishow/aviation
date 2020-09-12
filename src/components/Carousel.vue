@@ -95,7 +95,7 @@ export default {
     }
 
     &_img {
-      max-height: 50vh;
+      max-height: 23vh !important;
       width: 100%;
     }
 
@@ -105,8 +105,7 @@ export default {
     }
   }
 }
-
-@media (min-width: 551px) and (max-width: 1000px) {
+@media (min-width: 770px) and (max-width: 1024px) {
   .custom-arrow,
   .carousel_arrow,
   .carousel_arrow_prev {
@@ -114,7 +113,7 @@ export default {
   }
 
   .carousel {
-    max-height: 40vh !important;
+    max-height: 35vh !important;
     text-align: center;
     padding-right: 0rem !important;
     padding-left: 0rem !important;
@@ -125,7 +124,36 @@ export default {
     }
 
     &_img {
-      max-height: 50vh;
+      max-height: 30vh !important;
+      width: 100%;
+    }
+
+    &_text {
+      font-size: 0.7rem;
+      text-align: left;
+    }
+  }
+}
+@media (min-width: 551px) and (max-width: 769px) {
+  .custom-arrow,
+  .carousel_arrow,
+  .carousel_arrow_prev {
+    display: none !important;
+  }
+
+  .carousel {
+    max-height: 30vh !important;
+    text-align: center;
+    padding-right: 0rem !important;
+    padding-left: 0rem !important;
+    &_div {
+      position: relative;
+      text-align: center;
+      max-width: 1000px;
+    }
+
+    &_img {
+      max-height: 25vh;
       width: 100%;
     }
 
@@ -162,7 +190,7 @@ export default {
 }
 
 .carousel {
-  height: 60vh;
+  height: 40vh;
   padding-right: 1rem;
   padding-left: 1rem;
 
@@ -172,7 +200,7 @@ export default {
   }
 
   &_img {
-    max-height: 50vh;
+    max-height: 35vh;
     width: 100%;
   }
 

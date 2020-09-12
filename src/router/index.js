@@ -32,6 +32,7 @@ import DA from '../pages/eService/demande_autorisation.vue';
 import FCR from '../pages/eService/formulaire_cr.vue';
 import AuditInspection from '../pages/inspection/audit_inspection.vue';
 import SubMenu from '../pages/SubMenu.vue';
+import Article from '../pages/Articles.vue';
 Vue.use(VueRouter);
 
 const routes = [
@@ -217,6 +218,11 @@ const routes = [
     path: "/:name",
     name: "SubMenu",
     component: SubMenu,
+  },
+  {
+    path: "/Article/:id",
+    name: "Article",
+    component: Article,
   },
 
 ];

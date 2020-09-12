@@ -1,10 +1,7 @@
 <template>
 <div>
     <Header class="header"></Header>
-    <div class="">
         <router-view />
-
-    </div>
     <Footer class="mt-5"></Footer>
 </div>
 </template>

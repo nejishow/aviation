@@ -12,8 +12,6 @@
                 <div v-if="isNews" class="d-flex flex-column">
                     <label>Titre: </label>
                     <input class="input" type="text" v-model="news.title" />
-                    <label>Description: </label>
-                    <input class="input" type="text" v-model="news.description" />
                     <label>Contenu: </label>
                     <textarea rows="10" cols="100" class="border mb-5" type="text" v-model="news.content" />
                     </div>
@@ -115,7 +113,6 @@ export default {
       },
       news: {
         title: "",
-        description: "",
         url: "",
         content: "",
       },

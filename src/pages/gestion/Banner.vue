@@ -6,7 +6,7 @@
     </div>
     <div class="col-12 mt-5">
         <h2>Mes bannieres</h2>
-        <table class="table table-bordered">
+        <table class="table table-bordered" v-if="banniere.length>0">
             <thead class="thead-dark">
                 <tr>
                     <th scope="col">Image</th>
