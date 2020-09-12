@@ -5,7 +5,7 @@
     </div>
     <div class="col-12">
         <md-tabs>
-            <md-tab id="tab-Intern" md-label="OVH">
+            <md-tab id="tab-Intern" md-label="OVF">
             </md-tab>
             <md-tab id="tab-Public" md-label="Landing">
             </md-tab>

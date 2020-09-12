@@ -1,7 +1,7 @@
 <template>
 <div class="container-fluid">
     <div>
-        <b-sidebar class="sidebar" id="sidebar-1" title="Menu">
+        <b-sidebar class="sidebar text-dark bg-dark" id="sidebar-1" title="Menu">
             <b-list-group>
                 <b-list-group-item>
                     <router-link to="/">{{ menu1 }}</router-link>
@@ -21,47 +21,47 @@
                 <b-list-group-item v-b-toggle.sidebar-6>{{
             menu6
           }}</b-list-group-item>
-                <b-list-group-item v-b-toggle.sidebar-6>{{menu7}}</b-list-group-item>
+                <b-list-group-item v-b-toggle.sidebar-7>{{menu7}}</b-list-group-item>
             </b-list-group>
         </b-sidebar>
-        <b-sidebar class="sidebar" id="sidebar-2" :title="menu2" shadow bg-variant="dark" text-variant="light">
+        <b-sidebar class="sidebar text-dark bg-info" id="sidebar-2" :title="menu2" shadow  text-variant="dark">
             <b-list-group class="bg-dark">
                 <b-list-group-item v-for="(item, index) in sub2" :key="index">
                     <router-link :to="item.router">{{ item.title }}</router-link>
                 </b-list-group-item>
             </b-list-group>
         </b-sidebar>
-        <b-sidebar class="sidebar" id="sidebar-3" :title="menu3" shadow bg-variant="dark" text-variant="light">
-            <b-list-group class="bg-dark">
+        <b-sidebar class="sidebar text-dark bg-dark" id="sidebar-3" :title="menu3" shadow  text-variant="dark">
+            <b-list-group class="bg-light">
                 <b-list-group-item v-b-toggle.sub-sidebar-3 v-for="(item, index) in sub3" :key="index" href="#">
                     <router-link :to="item.router">{{ item.title }}</router-link>
                 </b-list-group-item>
             </b-list-group>
         </b-sidebar>
 
-        <b-sidebar class="sidebar" id="sidebar-4" :title="menu4" shadow bg-variant="dark" text-variant="light">
-            <b-list-group class="bg-dark">
+        <b-sidebar class="sidebar text-dark bg-dark" id="sidebar-4" :title="menu4" shadow  text-variant="dark">
+            <b-list-group class="bg-light">
                 <b-list-group-item v-for="(item, index) in sub4" :key="index" href="#">
                     <router-link :to="item.router">{{ item.title }}</router-link>
                 </b-list-group-item>
             </b-list-group>
         </b-sidebar>
-        <b-sidebar class="sidebar" id="sidebar-5" :title="menu5" shadow bg-variant="dark" text-variant="light">
-            <b-list-group class="bg-dark">
+        <b-sidebar class="sidebar text-dark bg-dark" id="sidebar-5" :title="menu5" shadow  text-variant="dark">
+            <b-list-group class="bg-light">
                 <b-list-group-item v-for="(item, index) in sub5" :key="index" href="#">
                     <router-link :to="item.router">{{ item.title }}</router-link>
                 </b-list-group-item>
             </b-list-group>
         </b-sidebar>
-        <b-sidebar class="sidebar" id="sidebar-6" :title="menu6" shadow bg-variant="dark" text-variant="light">
-            <b-list-group class="bg-dark">
+        <b-sidebar class="sidebar text-dark bg-dark" id="sidebar-6" :title="menu6" shadow  text-variant="dark">
+            <b-list-group class="bg-light">
                 <b-list-group-item v-for="(item, index) in sub6" :key="index" href="#">
                     <router-link :to="item.router">{{ item.title }}</router-link>
                 </b-list-group-item>
             </b-list-group>
         </b-sidebar>
-        <b-sidebar class="sidebar" id="sidebar-7" :title="menu6" shadow bg-variant="dark" text-variant="light">
-            <b-list-group class="bg-dark">
+        <b-sidebar class="sidebar text-dark bg-dark" id="sidebar-7" :title="menu7" shadow  text-variant="dark">
+            <b-list-group class="bg-light">
                 <b-list-group-item v-for="(item, index) in sub7" :key="index" href="#">
                     <router-link :to="item.router">{{ item.title }}</router-link>
                 </b-list-group-item>
@@ -648,101 +648,97 @@ export default {
         },
         {
           title: "Politique de formation",
-          router: "Politique de Formation",
+          router: "/Politique de Formation",
         },
       ],
       sub3: [
         {
           title: "Textes legislatifs",
-          router: "/Textes legislatifs/Lois",
+          router: "/Textes legislatifs?id=5f53706c838ed6002be47d36",
         },
         {
           title: "Textes reglementaires",
-          router: "/Textes reglementaires",
+          router: "/Textes reglementaires?id=5f53707658ac040039a1a6c0",
+        },
+        {
+          title: "Directives",
+          router: "/Directives",
+        },
+        {
+          title: "Circulaires",
+          router: "/Circulaires",
+        },
+        {
+          title: "Decisions",
+          router: "/Decisions",
         },
       ],
       sub4: [
         {
           title: "Navigabilité",
-          router: "/securite/5f3aa3413c2c433e946dcca6",
+          router: "/Navigabilité?id=5f3aa3413c2c433e946dcca6",
         },
         {
           title: "Exploitation technique des aeronefs",
-          router: "/securite/5f3aa7e234512340cc2b8253",
+          router:
+            "/Exploitation technique des aéronefs?id=5f3aa7e234512340cc2b8253",
         },
         {
           title: "License du personel",
-          router: "/securite/5f3aa7f034512340cc2b8254",
+          router: "/License du personel?id=5f3aa7f034512340cc2b8254",
         },
         {
           title: "Aérodrome et infrastructures aéroportuaires",
-          router: "/securite/5f3aa7fe34512340cc2b8255",
+          router:
+            "/Aérodrome et infrastructures aéroportuaires?id=5f3aa7fe34512340cc2b8255",
         },
         {
           title: "Service de l'information aéronautique et de la cartographie",
-          router: "/securite/5f3aa80a34512340cc2b8256",
+          router:
+            "/Service de l'information aéronautique et de la cartographie?id=5f3aa80a34512340cc2b8256",
         },
         {
           title: "Communication, naviguation et surveillance",
-          router: "/securite/5f535bbc1dc9dc44eceead5c",
+          router:
+            "/Communication, naviguation et surveillance?id=5f535bbc1dc9dc44eceead5c",
         },
         {
           title: "Gestion de l'espace aérien",
-          router: "/securite/5f535bcd1dc9dc44eceead5d",
+          router: "/Gestion de l'espace aérien?id=5f535bcd1dc9dc44eceead5d",
         },
         {
           title: "Service metéorologique",
-          router: "/securite/5f535bd91dc9dc44eceead5e",
+          router: "/Service metéorologique?id=5f535bd91dc9dc44eceead5e",
         },
         {
           title: "Recherches et sauvetages",
-          router: "/securite/5f57966756cc341290c683d2",
+          router: "/Recherches et sauvetages?id=5f57966756cc341290c683d2",
         },
       ],
       sub5: [
         {
-          title: "Service 1",
-          router: "",
+          title: "Sureté",
+          router: "/Sureté?id=5f535d6433d82b0034f95ee8",
         },
         {
-          title: "Service 2",
-          router: "",
-        },
-        {
-          title: "Service 3",
-          router: "",
-        },
-        {
-          title: "Service 4",
-          router: "",
+          title: "Facilitation",
+          router: "/Facilitation?id=5f535d69c0161b0045e05444",
         },
       ],
       sub6: [
         {
-          title: "Service 1",
-          router: "",
-        },
-        {
-          title: "Service 2",
-          router: "",
-        },
-        {
-          title: "Service 3",
-          router: "",
-        },
-        {
-          title: "Service 4",
-          router: "",
+          title: "Audit et Inspection",
+          router: "/Audit et Inspection",
         },
       ],
       sub7: [
         {
           title: "Formulaire de compte rendu",
-          router: "",
+          router: "/Formulaire de compte rendu",
         },
         {
           title: "Demande d'autorisation de vol",
-          router: "",
+          router: "/Demande autorisation",
         },
       ],
     };

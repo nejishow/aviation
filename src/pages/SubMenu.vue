@@ -16,8 +16,8 @@
                 <span>{{ b1 }}</span>
                 <span> / {{ b2 }}</span>
             </div>
-            <div class="col-md-4 sideMenu">
-                <Menu :menu="menu"></Menu>
+            <div class="col-md-4 sideMenu border">
+                <Menu :menu="menu" :apropo="false">0"></Menu>
             </div>
             <div class="col">
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore quisquam reprehenderit modi debitis repellendus, obcaecati cumque temporibus doloremque illo magnam mollitia voluptatum quidem praesentium sed excepturi commodi quis veniam perspiciatis.</p>

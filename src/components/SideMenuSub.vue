@@ -9,7 +9,7 @@
     </ul>
 
     
-    <ul class="list-group text-left" v-if="apropo">
+    <ul class="list-group text-left" v-else>
         <li class="list-group-item">
             <router-link :to="{path:'/Mot du directeur'}" class="path">
                 Mot du directeur</router-link>
@@ -39,7 +39,7 @@ export default {
   data() {
     return {};
   },
-  props: ["apropo"],
+  props: ["apropo", "menu"],
 };
 </script>
 
