@@ -15,7 +15,7 @@
                 <span>A propos de nous</span>
                 <span> / Politique de formation</span>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 sideMenu">
                 <Menu :apropo="apropo"></Menu>
             </div>
             <div class="col-12 col-md-8">
@@ -107,6 +107,9 @@ export default {
       left: 5vh;
       font-size: 1.5rem !important;
     }
+  }
+      .sideMenu {
+    display: none;
   }
 }
 

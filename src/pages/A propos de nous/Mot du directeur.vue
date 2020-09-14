@@ -15,7 +15,7 @@
                 <span>A propos de nous</span>
                 <span> / Mot du directeur</span>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 sideMenu">
                 <Menu :apropo="apropo"></Menu>
             </div>
             <div class="col-12 col-md-8">
@@ -170,6 +170,9 @@ export default {
       font-size: 1.5rem !important;
     }
   }
+    .sideMenu {
+    display: none;
+  }
 }
 
 @media (min-width: 1020px) and (max-width: 1500px) {
@@ -191,7 +194,9 @@ export default {
       font-size: 1rem !important;
     }
   }
-
+  .ceo {
+  max-width: 100% !important;
+}
   .sideMenu {
     display: none;
   }

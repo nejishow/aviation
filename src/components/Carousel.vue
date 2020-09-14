@@ -153,7 +153,7 @@ export default {
     }
 
     &_img {
-      max-height: 25vh;
+      max-height: 25vh !important;
       width: 100%;
     }
 
@@ -190,7 +190,7 @@ export default {
 }
 
 .carousel {
-  height: 40vh;
+  height: 50vh;
   padding-right: 1rem;
   padding-left: 1rem;
 
@@ -200,7 +200,7 @@ export default {
   }
 
   &_img {
-    max-height: 35vh;
+    max-height: 45vh;
     width: 100%;
   }
 

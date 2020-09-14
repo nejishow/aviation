@@ -58,8 +58,8 @@ export default {
 .md_card {
   max-height: 30vh;
   max-width: 100%;
-  box-shadow: 0 0.2rem 0.5rem rgba(#000000, 0.7);
-
+  border: .4px solid rgba(163, 160, 160, 0.63);
+  cursor: pointer;
   .header {
     max-height: 20%;
     padding-left: 1rem;
