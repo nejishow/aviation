@@ -36,7 +36,7 @@ export default {
 };
 </script>
 
-<style lang="css" scoped>
+<style lang="scss" scoped>
 .map-container {
   position: absolute;
   width: 100%;
@@ -44,15 +44,10 @@ export default {
   left: 0;
   bottom: 0;
 }
-
-@media (max-width: 499px) {
-}
-
 .map {
   max-width: 1000px;
   margin: 0 auto;
   height: 500px;
-  border: solid black;
 }
 
 @media (min-width: 500px) and (max-width: 769px) {
@@ -60,12 +55,10 @@ export default {
     max-width: 1000px;
     margin: 0 auto;
     height: 500px;
-    border: solid black;
   }
 }
 
 .map-frame {
-  border: 2px solid black;
   height: 100%;
 }
 
@@ -74,5 +67,6 @@ export default {
   height: 100%;
   left: 0;
   bottom: 0;
+  z-index: 0;
 }
 </style>

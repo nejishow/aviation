@@ -1,5 +1,4 @@
 <template>
-<div class="container-fluid">
     <div class="row">
         <div v-if="banners.length>0" class="col-12">
             <div @click="prev" class="carousel_arrow carousel_arrow_prev ml-2">&lang; </div>
@@ -19,11 +18,10 @@
             </VueSlickCarousel>
             <div @click="next" class="carousel_arrow carousel_arrow_next mr-2">&rang;</div>
         </div>
-        <div v-else class="col-12 p-5">
+        <div v-else class="col-12">
             <v-skeleton-loader class="mx-auto skeleton" max-height="500px" max-width="1000px" type="card"></v-skeleton-loader>
         </div>
     </div>
-</div>
 </template>
 
 <script>
@@ -76,100 +74,20 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@media (max-width: 550px) {
-  .custom-arrow,
-  .carousel_arrow,
-  .carousel_arrow_prev {
-    display: none !important;
-  }
-
-  .carousel {
-    max-height: 25vh !important;
-    text-align: center;
-    padding-right: 0rem !important;
-    padding-left: 0rem !important;
-    &_div {
-      position: relative;
-      text-align: center;
-      max-width: 1000px;
-    }
-
-    &_img {
-      max-height: 23vh !important;
-      width: 100%;
-    }
-
-    &_text {
-      font-size: 0.7rem;
-      text-align: left;
-    }
-  }
+@import '../sass/main.scss';
+.col-12{
+  margin: 0;
+  padding: 0;
 }
-@media (min-width: 770px) and (max-width: 1024px) {
-  .custom-arrow,
-  .carousel_arrow,
-  .carousel_arrow_prev {
-    display: none !important;
-  }
-
-  .carousel {
-    max-height: 35vh !important;
-    text-align: center;
-    padding-right: 0rem !important;
-    padding-left: 0rem !important;
-    &_div {
-      position: relative;
-      text-align: center;
-      max-width: 1000px;
-    }
-
-    &_img {
-      max-height: 30vh !important;
-      width: 100%;
-    }
-
-    &_text {
-      font-size: 0.7rem;
-      text-align: left;
-    }
-  }
-}
-@media (min-width: 551px) and (max-width: 769px) {
-  .custom-arrow,
-  .carousel_arrow,
-  .carousel_arrow_prev {
-    display: none !important;
-  }
-
-  .carousel {
-    max-height: 30vh !important;
-    text-align: center;
-    padding-right: 0rem !important;
-    padding-left: 0rem !important;
-    &_div {
-      position: relative;
-      text-align: center;
-      max-width: 1000px;
-    }
-
-    &_img {
-      max-height: 25vh !important;
-      width: 100%;
-    }
-
-    &_text {
-      font-size: 0.7rem;
-      text-align: left;
-    }
-  }
-}
-
 .custom-arrow {
   opacity: 0.8;
   background-blend-mode: screen;
   border-radius: 50%;
   overflow: hidden;
   border: solid black 1px;
+  @include respond(tablet){
+    display: none;
+  }
 }
 
 .slick-active {
@@ -177,6 +95,7 @@ export default {
 
   .custom-dot {
     background-color: blue;
+    
   }
 }
 
@@ -193,6 +112,11 @@ export default {
   height: 50vh;
   padding-right: 1rem;
   padding-left: 1rem;
+  @include respond(tablet){
+      height: 30vh;
+        padding-right: 1rem;
+  padding-left: 1rem;
+  }
 
   &_div {
     position: relative;
@@ -202,6 +126,9 @@ export default {
   &_img {
     max-height: 45vh;
     width: 100%;
+    @include respond(tablet){
+   max-height: 27vh;
+    }
   }
 
   &_text {
@@ -222,8 +149,13 @@ export default {
     top: 40%;
     display: inline-block;
     font-size: 3rem;
-    background: rgba(#fff, 0.4);
     cursor: pointer;
+    z-index: 1;
+    color: white;
+    transform: scale(1.4);
+    @include respond(tablet){
+      display: none;
+    }
 
     &:hover {
       color: blue;
@@ -231,10 +163,12 @@ export default {
 
     &_next {
       right: 0;
+      padding-right:3rem;
+
     }
 
     &_prev {
-      left: 0;
+      padding-left:3rem;
     }
   }
 }

@@ -1,7 +1,7 @@
 <template>
-    <div class="md_card d-flex flex-column" v-if="news" @click="goTo(news._id)">
+    <div class="md_card" v-if="news" @click="goTo(news._id)">
         <div class="header">
-            <div class="small font-weight-bold">{{ news.title }}</div>
+            <div class="small">{{ news.title }}</div>
             <div class="small">{{ news.createdAt }}</div>
         </div>
 
@@ -26,35 +26,9 @@ export default {
 };
 </script>
 
-<style lang="scss">
-@media (min-width: 500px) and (max-width: 769px) {
-}
+<style lang="scss" scoped>
+@import '../sass/main.scss';
 
-@media (min-width: 770px) and (max-width: 1024px) {
-  .md_card {
-    height: 15vh !important;
-    .media {
-      padding-top: 0.5rem;
-      max-height: 100%;
-
-      .newsImage {
-        height: 10vh !important;
-        max-width: 40% !important;
-      }
-
-      .description {
-        max-width: 100%;
-        height: 10vh;
-      }
-    }
-  }
-}
-
-@media (max-width: 499px) {
-  .md_card {
-    height: 30vh !important;
-  }
-}
 .md_card {
   max-height: 30vh;
   max-width: 100%;

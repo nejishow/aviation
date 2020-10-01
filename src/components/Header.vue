@@ -80,7 +80,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <router-link to="/">
             <a class="navbar-brand img-fluid" href="#">
-                <img src="../assets/casa.png" alt="logo" class="img-fluid logo" />
+                <img src="../assets/casa.png" alt="logo" class="logo" />
             </a>
         </router-link>
 
@@ -767,6 +767,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../sass/main.scss';
+
+.logo{
+  width: 10rem;
+}
 .socialBottom {
   height: 0.5rem;
   width: 100%;
@@ -780,17 +785,6 @@ export default {
   color: #005ba1;
 }
 
-@media (min-width: 770px) {
-  .logo {
-    width: 200px;
-  }
-}
-
-@media (max-width: 769px) {
-  .logo {
-    width: 100px;
-  }
-}
 
 #sidebar-2 {
   transition-duration: 1s;
