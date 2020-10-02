@@ -601,12 +601,7 @@
                     <router-link to="/docIntern" class="nav-item text-primary font-weight-bolder">Documents Internes</router-link>
                 </li>
                 <li class="nav-item nav-link btn" v-show="user._id">
-                    <button class="btn-group btn-outline-danger btn nav-item" @click="logout" v-if="!loading">Sign out</button>
-                    <button class="btn btn-group btn-outline-danger" v-else>
-                    <div class="spinner-border" role="status">
-                        <span class="sr-only small">Loading...</span>
-                    </div>
-                </button>
+                    <button class="btn-group btn-outline-danger btn nav-item" @click="logout" >Sign out</button>
                 </li>
             </ul>
         </div>
@@ -767,9 +762,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../sass/main.scss';
+@import "../sass/main.scss";
 
-.logo{
+.logo {
   width: 10rem;
 }
 .socialBottom {
@@ -784,7 +779,6 @@ export default {
 .tabTitle {
   color: #005ba1;
 }
-
 
 #sidebar-2 {
   transition-duration: 1s;

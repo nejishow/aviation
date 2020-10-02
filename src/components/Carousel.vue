@@ -74,8 +74,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../sass/main.scss';
-.col-12{
+@import "../sass/main.scss";
+.col-12 {
   margin: 0;
   padding: 0;
 }
@@ -85,7 +85,7 @@ export default {
   border-radius: 50%;
   overflow: hidden;
   border: solid black 1px;
-  @include respond(tablet){
+  @include respond(tablet) {
     display: none;
   }
 }
@@ -95,7 +95,6 @@ export default {
 
   .custom-dot {
     background-color: blue;
-    
   }
 }
 
@@ -112,10 +111,11 @@ export default {
   height: 50vh;
   padding-right: 1rem;
   padding-left: 1rem;
-  @include respond(tablet){
-      height: 30vh;
-        padding-right: 1rem;
-  padding-left: 1rem;
+  margin-top: 2rem;
+  @include respond(tablet) {
+    height: 30vh;
+    padding-right: 1rem;
+    padding-left: 1rem;
   }
 
   &_div {
@@ -124,10 +124,12 @@ export default {
   }
 
   &_img {
-    max-height: 45vh;
+    max-height: 47vh;
+    min-height: 47vh;
     width: 100%;
-    @include respond(tablet){
-   max-height: 27vh;
+    @include respond(tablet) {
+      max-height: 27vh;
+      min-height: 27vh;
     }
   }
 
@@ -153,22 +155,21 @@ export default {
     z-index: 1;
     color: white;
     transform: scale(1.4);
-    @include respond(tablet){
+    @include respond(tablet) {
       display: none;
     }
 
     &:hover {
-      color: blue;
+      color: rgb(25, 104, 206);
     }
 
     &_next {
       right: 0;
-      padding-right:3rem;
-
+      padding-right: 3rem;
     }
 
     &_prev {
-      padding-left:3rem;
+      padding-left: 3rem;
     }
   }
 }

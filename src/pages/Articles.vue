@@ -1,6 +1,5 @@
 <template>
 <div>
-    <div class="container-fluid">
         <div class="row">
             <div class="col-12 ">
                 <div class="title-box">
@@ -8,8 +7,6 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="container">
         <div class="row">
             <div class="col-12" v-if="news">
                 <div class="news-box">
@@ -24,17 +21,16 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-12 col-md-6">
+        <div class="row mt-5">
+            <div class="col-12 col-md-6" v-if="prev">
                 <h1 class="h5">Article precèdent</h1>
                 <News :news="prev"></News>
             </div>
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-md-6" v-if="next">
                 <h1 class="h5">Article suivant</h1>
                <News :news="next"></News>
             </div>
         </div>
-    </div>
 </div>
 </template>
 
@@ -77,90 +73,23 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@media (min-width: 500px) and (max-width: 769px) {
-  .title-box {
-    max-height: 25vh;
-
-    .title {
-      bottom: 5vh;
-      left: 5vh;
-      font-size: 1.5rem !important;
-    }
-  }
-
-  .news-box {
-    &_image {
-      max-width: 50% !important;
-      min-width: 50% !important;
-      max-height: 30vh !important;
-      min-height: 30vh !important;
-      margin-right: 1rem;
-    }
-
-    &_title {
-      margin-bottom: 1rem !important;
-    }
-  }
-}
-
-@media (min-width: 1020px) and (max-width: 1500px) {
-  .title-box {
-    max-height: 25vh;
-
-    .title {
-      bottom: 5vh;
-      left: 5vh;
-    }
-  }
-
-  .news-box {
-    &_image {
-      max-width: 50% !important;
-      min-width: 50% !important;
-      max-height: 30vh !important;
-      min-height: 30vh !important;
-      margin-right: 1rem;
-    }
-
-    &_title {
-      margin-bottom: 1rem !important;
-    }
-  }
-}
-
-@media (max-width: 499px) {
-  .title-box {
-    max-height: 15vh;
-
-    .title {
-      font-size: 1rem !important;
-    }
-  }
-
-  .news-box {
-    &_image {
-      max-width: 100% !important;
-      min-width: 100% !important;
-      max-height: 30vh !important;
-      min-height: 30vh !important;
-      float: none !important;
-    }
-
-    &_title {
-      margin-bottom: 1rem !important;
-    }
-  }
-}
-
+@import "../sass/main.scss";
 .news-box {
+  width: 100%;
   &_image {
     float: left;
-    max-width: 40%;
-    min-width: 40%;
-    max-height: 50vh;
-    min-height: 50vh;
-    border: solid 1px black;
-    margin-right: 1rem;
+    width: 40%;
+    height: 50vh;
+    @include respond(tablet-land) {
+      float: left;
+      width: 40%;
+      height: 30vh;
+    }
+    @include respond(tablet) {
+      float: none;
+      width: 100%;
+      height: 50vh;
+    }
   }
 
   &_title {

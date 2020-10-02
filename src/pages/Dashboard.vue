@@ -80,8 +80,6 @@ export default {
 .map {
   /* Full height */
   height: 100%;
-  background-image: url(../assets/sky5.jpg);
-
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
   background-position: center;

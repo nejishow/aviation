@@ -4,7 +4,9 @@
         <div class="col-12">
             <div class="d-flex flex-column">
                 {{ message }}:
-                <input v-show="!isBanner && !isNews" class="input" type="text" placeholder="Nom du document" v-model="document.name" />
+                <input v-show="!isBanner && !isNews" class="input" type="text" placeholder="Nom du document" v-model="document.name" readonly />
+                
+                
                 <div v-if="isBanner" class="d-flex flex-column">
                     <label>Titre: </label><input class="input" type="text" v-model="banner.title" />
                     <label>Description: </label><input class="input" type="text" v-model="banner.description" />
@@ -60,7 +62,7 @@
           <img class="preview" :src="picture" />
           <br />
           <button
-            v-if="!loading"
+            v-if="!loading && document.name"
             @click="onUpload"
             class="btn small btn-group btn-outline-success"
           >
@@ -105,15 +107,18 @@ export default {
         src: "",
         idParent: "",
         name: "",
+        ref: "",
       },
       banner: {
         title: "",
         description: "",
         url: "",
+        ref: "",
       },
       news: {
         title: "",
         url: "",
+        ref: "",
         content: "",
       },
       imageData: null,
@@ -149,6 +154,7 @@ export default {
         this.extension = event.target.files[0].name.split(".").pop();
       } else {
         this.documentData = event.target.files[0];
+        this.document.name = event.target.files[0].name.split(".").shift();
         this.extension = event.target.files[0].name.split(".").pop();
       }
     },
@@ -184,6 +190,14 @@ export default {
               .then(async (url) => {
                 this.document.src = url;
                 this.document.idParent = this.subOne._id;
+                this.document.ref =
+                  this.category.name +
+                  "/" +
+                  this.subOne.name +
+                  "/" +
+                  this.document.name +
+                  "." +
+                  this.extension;
                 await this.$store
                   .dispatch("addDocument", this.document)
                   .then(() => {
@@ -238,6 +252,16 @@ export default {
               .then(async (url) => {
                 this.document.src = url;
                 this.document.idParent = this.subTwo._id;
+                this.document.ref =
+                  this.category.name +
+                  "/" +
+                  this.subOne.name +
+                  "/" +
+                  this.subTwo.name +
+                  "/" +
+                  this.document.name +
+                  "." +
+                  this.extension;
                 await this.$store
                   .dispatch("addDocument", this.document)
                   .then(() => {
@@ -263,6 +287,7 @@ export default {
         let document = {
           name: this.document.name,
           src: "",
+          ref: "",
           isInter: true,
         };
         this.loading = true;
@@ -297,6 +322,15 @@ export default {
                 document.src = url;
                 document.isIntern = true;
                 document.idParent = this.subOne._id;
+                document.ref =
+                  "document internes/" +
+                  this.category.name +
+                  "/" +
+                  this.subOne.name +
+                  "/" +
+                  this.document.name +
+                  "." +
+                  this.extension;
 
                 await this.$store
                   .dispatch("addDocument", document)
@@ -325,6 +359,7 @@ export default {
         let document = {
           name: this.document.name,
           src: "",
+          ref: "",
           isInter: true,
         };
         this.loading = true;
@@ -361,6 +396,17 @@ export default {
                 document.src = url;
                 document.isIntern = true;
                 document.idParent = this.subTwo._id;
+                document.ref =
+                  "document internes/" +
+                  this.category.name +
+                  "/" +
+                  this.subOne.name +
+                  "/" +
+                  this.subTwo.name +
+                  "/" +
+                  this.document.name +
+                  "." +
+                  this.extension;
                 await this.$store
                   .dispatch("addDocument", document)
                   .then(async () => {
@@ -406,6 +452,8 @@ export default {
               .getDownloadURL()
               .then(async (url) => {
                 this.banner.url = url;
+                this.banner.ref =
+                  "banners/" + this.banner.title + "." + this.extension;
                 await this.$store
                   .dispatch("addBanner", this.banner)
                   .then(() => {
@@ -448,6 +496,8 @@ export default {
               .getDownloadURL()
               .then(async (url) => {
                 this.news.url = url;
+                this.news.ref =
+                  "news/" + this.news.title + "." + this.extension;
                 await this.$store
                   .dispatch("addNews", this.news)
                   .then(() => {

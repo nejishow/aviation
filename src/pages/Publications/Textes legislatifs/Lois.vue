@@ -102,7 +102,10 @@ export default {
     },
     documents() {
       this.fetchBreadCrumb();
-      return this.$store.state.documents.publicDocuments;
+      let docs = this.$store.state.documents.publicDocuments.filter((docs) => {
+        return !docs.isIntern;
+      });
+      return docs;
     },
     sortedDocuments() {
       if (this.documents.length > 0) {
