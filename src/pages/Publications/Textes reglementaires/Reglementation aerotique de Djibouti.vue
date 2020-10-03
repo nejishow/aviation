@@ -114,13 +114,23 @@ export default {
     },
     sortedDocuments() {
       if (this.documents.lenght > 0) {
-        let sorted = this.documents.filter((doc) => {
-          return doc.idParent === "5f537251daa6914e7c573564";
+        let sorted = [];
+        this.documents.forEach((doc) => {
+          this.$store.state.category.subCategoryTwo.forEach((subTwo) => {
+            if (doc.idParent === subTwo._id && subTwo.name === "Reglements") {
+              sorted.push(doc);
+            }
+          });
         });
         return sorted;
       } else {
-        let sorted = this.documents.filter((doc) => {
-          return doc.idParent === "5f537251daa6914e7c573564";
+        let sorted = [];
+        this.documents.forEach((doc) => {
+          this.$store.state.category.subCategoryTwo.forEach((subTwo) => {
+            if (doc.idParent === subTwo._id && subTwo.name === "Reglements") {
+              sorted.push(doc);
+            }
+          });
         });
         return sorted;
       }

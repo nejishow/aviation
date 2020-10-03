@@ -93,90 +93,97 @@
 //import documentService from "../../services/document.service";
 import $ from "jquery";
 export default {
-   metaInfo() {
-        // if no subcomponents specify a metaInfo.title, this title will be used
-        return {
-            meta: [{
-                    name: 'robots',
-                    content: "noindex"
-                },
-                {
-                    name: 'googlebot',
-                    content: "noindex"
-                }
-            ]
+  metaInfo() {
+    // if no subcomponents specify a metaInfo.title, this title will be used
+    return {
+      meta: [
+        {
+          name: "robots",
+          content: "noindex",
+        },
+        {
+          name: "googlebot",
+          content: "noindex",
+        },
+      ],
+    };
+  },
+  data() {
+    return {
+      subCategoryOne: [],
+      subCategoryTwo: [],
+      subOneDoc: [],
+      subTwoDoc: [],
+      category: "",
+      subOne: "",
+      subTwo: "",
+    };
+  },
+  methods: {
+    async getSubCategoryOne(item) {
+      this.subCategoryOne = [];
+      this.subCategoryTwo = [];
+      this.subOneDoc = [];
+      this.category = item;
+      this.subOne = "";
+      this.subTwo = "";
+
+      await this.allsubCategoryOne.forEach((element) => {
+        if (element.idParent === item._id) {
+          this.subCategoryOne.push(element);
         }
+      });
     },
-    data() {
-        return {
-            subCategoryOne: [],
-            subCategoryTwo: [],
-            subOneDoc: [],
-            subTwoDoc: [],
-            category: "",
-            subOne: "",
-            subTwo: "",
-        };
+    getSubCategoryTwo(item) {
+      $(".subOne").removeClass("bg-info text-light").addClass("text-dark");
+      $("#" + item._id)
+        .addClass("bg-info text-light")
+        .removeClass("text-dark");
+      this.subOne = item;
+      this.subTwo = "";
+      this.subCategoryTwo = [];
+      this.allsubCategoryTwo.forEach((element) => {
+        if (
+          element.idParent === item._id &&
+          element.name !== "Reglementation aérotique de Djibouti"
+        ) {
+          this.subCategoryTwo.push(element);
+        }
+      });
     },
-    methods: {
-        async getSubCategoryOne(item) {
-            this.subCategoryOne = [];
-            this.subCategoryTwo = [];
-            this.subOneDoc = [];
-            this.category = item;
-            this.subOne = "";
-            this.subTwo = "";
+    async getSubTwoName(item) {
+      $(".subTwo").removeClass("active border-danger");
+      $("#" + item._id).addClass("active border-danger");
+      this.subTwo = item;
+      this.subTwoDoc = [];
 
-            await this.allsubCategoryOne.forEach((element) => {
-                if (element.idParent === item._id) {
-                    this.subCategoryOne.push(element);
-                }
-            });
-        },
-        getSubCategoryTwo(item) {
-            $(".subOne").removeClass("bg-info text-light").addClass("text-dark");
-            $("#" + item._id)
-                .addClass("bg-info text-light")
-                .removeClass("text-dark");
-            this.subOne = item;
-            this.subTwo = "";
-            this.subCategoryTwo = [];
-            this.allsubCategoryTwo.forEach((element) => {
-                if (element.idParent === item._id) {
-                    this.subCategoryTwo.push(element);
-                }
-            });
-        },
-        async getSubTwoName(item) {
-            $(".subTwo").removeClass("active border-danger");
-            $("#" + item._id).addClass("active border-danger");
-            this.subTwo = item;
-            this.subTwoDoc = [];
-
-            await this.allDocuments.forEach((element) => {
-                if (element.idParent === this.subTwo._id) {
-                    this.subTwoDoc.push(element);
-                }
-            });
-        },
+      await this.allDocuments.forEach((element) => {
+        if (element.idParent === this.subTwo._id) {
+          this.subTwoDoc.push(element);
+        }
+      });
     },
-    computed: {
-        allDocuments() {
-            let docs = this.$store.state.documents.documents.filter((docs) => {
-                return docs.isIntern;
-            });
-            return docs;
-        },
-        categories() {
-            return this.$store.state.category.category;
-        },
-        allsubCategoryOne() {
-            return this.$store.state.category.subCategoryOne;
-        },
-        allsubCategoryTwo() {
-            return this.$store.state.category.subCategoryTwo;
-        },
+  },
+  computed: {
+    allDocuments() {
+      let docs = this.$store.state.documents.documents.filter((docs) => {
+        return docs.isIntern;
+      });
+      return docs;
     },
+    categories() {
+      let categories = this.$store.state.category.category.filter((cat) => {
+        return cat.name !== "A propos de nous" && cat.name !== "e-Services";
+      });
+      return categories;
+    },
+    allsubCategoryOne() {
+      return this.$store.state.category.subCategoryOne;
+    },
+    allsubCategoryTwo() {
+      return this.$store.state.category.subCategoryTwo;
+    },
+  },
 };
 </script>
 

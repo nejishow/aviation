@@ -167,7 +167,10 @@ export default {
       this.subTwo = "";
       this.subCategoryTwo = [];
       this.allsubCategoryTwo.forEach((element) => {
-        if (element.idParent === item._id) {
+        if (
+          element.idParent === item._id &&
+          element.name !== "Reglementation aérotique de Djibouti"
+        ) {
           this.subCategoryTwo.push(element);
         }
       });
@@ -231,7 +234,10 @@ export default {
       return docs;
     },
     categories() {
-      return this.$store.state.category.category;
+      let categories = this.$store.state.category.category.filter((cat) => {
+        return cat.name !== "A propos de nous" && cat.name !== "e-Services";
+      });
+      return categories;
     },
     allsubCategoryOne() {
       return this.$store.state.category.subCategoryOne;

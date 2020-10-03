@@ -15,8 +15,8 @@
             civilaviaton@intnet.dj
             </div>
         </div>
-        <div class="col-12 col-md-8">
-            <Map></Map>
+        <div class="col-12 col-md-8 map">
+              <Map></Map>
         </div>
     </div>
 </template>
@@ -34,6 +34,9 @@ export default {
 @import "../sass/main.scss";
 
 .contact {
+  padding: 2rem;
+}
+.map {
   padding: 2rem;
 }
 </style>
