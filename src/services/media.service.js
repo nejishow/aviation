@@ -1,8 +1,8 @@
 import axios from "axios";
 const media = axios.create({
-    //  baseURL: "https://aviation-backend.herokuapp.com", // https://aviation-backend.herokuapp.com
+    baseURL: "https://aviation-backend.herokuapp.com", // https://aviation-backend.herokuapp.com
 
-    baseURL: "http://localhost:3000", // https://aviation-backend.herokuapp.com
+    // baseURL: "http://localhost:3000", // https://aviation-backend.herokuapp.com
 });
 media.interceptors.request.use((config) => {
     config.headers.common.Authorization =
