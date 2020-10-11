@@ -1364,19 +1364,19 @@ export default {
   color: white;
   text-align: right;
 
-  &_language{
+  &_language {
     &,
     &:link,
-    &:visited{
+    &:visited,
+    &:active {
       text-decoration: none;
       color: inherit;
     }
-    &:hover{
-      color: rgb(13, 168, 34);
+    &:hover {
+      color: black !important;
     }
   }
   .contact {
-
     &_img {
       width: 2rem;
       color: white;
@@ -1452,7 +1452,8 @@ export default {
 
 .dropdown-submenu:hover > a:after {
   // la fleche
-  border-left-color: red;
+  // border-left-color: red;
+  display: none;
 }
 
 .dropdown-item {

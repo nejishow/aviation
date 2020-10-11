@@ -75,10 +75,6 @@ export default {
 
 <style lang="scss" scoped>
 @import "../sass/main.scss";
-.col-12 {
-  margin: 0;
-  padding: 0;
-}
 .custom-arrow {
   opacity: 0.8;
   background-blend-mode: screen;
@@ -154,7 +150,6 @@ export default {
     cursor: pointer;
     z-index: 1;
     color: white;
-    transform: scale(1.4);
     @include respond(tablet) {
       display: none;
     }

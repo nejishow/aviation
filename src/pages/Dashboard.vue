@@ -1,6 +1,5 @@
 <template>
 <div>
-
     <Carousel></Carousel>
     <div class="container">
         <div class="row mb-5">
