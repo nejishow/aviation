@@ -19,7 +19,7 @@
             <font-awesome-icon :icon="['fas', 'inbox']" />
             2609 <br />
             <font-awesome-icon :icon="['fas', 'envelope']" />
-            civilaviaton@intnet.dj
+            civilaviation@intnet.dj
         </div>
         <div class="col-12 col-md-4 d-flex flex-column text-light">
             <h4 class="h4">Liens rapide</h4>

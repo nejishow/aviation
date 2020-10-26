@@ -28,7 +28,6 @@ import PortalVue from 'portal-vue'
 import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
 import VueMeta from 'vue-meta'
 import vuetify from './plugins/vuetify';
-
 Vue.use(VueMeta, {
   keyName: 'metaInfo',
   attribute: 'data-vue-meta',

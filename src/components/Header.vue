@@ -250,7 +250,7 @@
                       to="/Textes reglementaires/Reglementation aerotique de Djibouti"
                     >
                       <a tabindex="-1" href="#" class="dropdown-item"
-                        >Réglementation aérotique de Djibouti</a
+                        >Réglementation aéronautique de Djibouti</a
                       ></router-link
                     >
                   </li>
@@ -1159,30 +1159,30 @@
               </li>
             </ul>
           </li>
-          <li class="nav-item nav-link btn" v-show="user.isAdmin">
+          <li class="nav-item nav-link gestion " v-show="user.isAdmin">
             <router-link
               to="/gestionMedia"
               class="nav-item text-primary font-weight-bolder"
               >Gestion Media</router-link
             >
           </li>
-          <li class="nav-item nav-link btn" v-show="user.isAdmin">
+          <li class="nav-item  nav-link" v-show="user.isAdmin">
             <router-link
               to="/gestionDocs"
               class="nav-item text-primary font-weight-bolder"
               >Gestion Documents</router-link
             >
           </li>
-          <li class="nav-item nav-link btn" v-show="user._id">
+          <li class="nav-item nav-link" v-show="user._id">
             <router-link
               to="/docIntern"
               class="nav-item text-primary font-weight-bolder"
               >Documents Internes</router-link
             >
           </li>
-          <li class="nav-item nav-link btn" v-show="user._id">
+          <li class="nav-item  nav-link" v-show="user._id">
             <button
-              class="btn-group btn-outline-danger btn nav-item"
+              class="btn-group btn-outline-danger"
               @click="logout"
             >
               Sign out
@@ -1466,6 +1466,7 @@ export default {
   &:visited,
   &:active {
     color: black;
+    text-decoration: none;
   }
 
   &:hover {
