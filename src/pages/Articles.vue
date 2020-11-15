@@ -100,7 +100,6 @@ export default {
 .title-box {
   position: relative;
   height: 40vh;
-  border: solid 2px black;
   background-image: url("../assets/article.jpeg");
   background-repeat: no-repeat;
   background-size: cover;

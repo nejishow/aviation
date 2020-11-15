@@ -1,66 +1,135 @@
 <template>
-<div>
-      <div class="container-fluid">
-        <div class="row">
-            <div class="col-12 ">
-                <div class="title-box">
-                    <h1 class="title">{{b3}}</h1>
-                </div>
-            </div>
+  <div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12 ">
+          <div class="title-box">
+            <h1 class="title">{{ b3 }}</h1>
+          </div>
         </div>
+      </div>
     </div>
-<div class="container">
-    <div class="row">
+    <div class="container">
+      <div class="row">
         <div class="col-12">
-            <span>{{ b1 }}</span>
-            <span> / {{ b2 }}</span>
-            <span v-show="b3 !== ''"> / {{ b3 }}</span>
+          <span>{{ b1 }}</span>
+          <span> / {{ b2 }}</span>
+          <span v-show="b3 !== ''"> / {{ b3 }}</span>
         </div>
         <div class="col-md-4">
-            <Menu :menu="menu"></Menu>
+          <Menu :menu="menu"></Menu>
         </div>
         <div class="col-12 col-md-8">
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat illum nulla, nisi quam soluta odio earum reprehenderit animi veritatis ipsam, rerum eligendi facilis quo atque assumenda ducimus voluptatum deserunt esse?</p>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat
+            illum nulla, nisi quam soluta odio earum reprehenderit animi
+            veritatis ipsam, rerum eligendi facilis quo atque assumenda ducimus
+            voluptatum deserunt esse?
+          </p>
 
-            <div class=" m-5 p5 d-flex flex-column align-items-center">
-                <input type="text" class=" border-danger w-100 search input" placeholder="Search" v-on:keyup.enter="search" v-on:keyup.delete="enleve" />
-                <div class="card result mt-2" v-show="searchResults.length > 0">
-                    <table class="table table-striped table-dark">
-                        <thead>
-                            <tr>
-                                <th scope="col">Titre</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr v-for="(item, index) in sortedDocuments" :key="index">
-                            <td><li>
-                              <a :href="item.src" target="_blank">{{ item.name }}</a></li></td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <span class="border-bottom border-danger" v-show="errorSearch!==''">{{errorSearch}}</span>
+          <div class=" m-5 p5 d-flex flex-column align-items-center">
+            <input
+              type="text"
+              class=" border-danger w-100 search input"
+              placeholder="Search"
+              v-on:keyup.enter="search"
+              v-on:keyup.delete="enleve"
+            />
+            <div class="card result mt-2" v-show="searchResults.length > 0">
+              <table class="table table-striped table-dark">
+                <thead>
+                  <tr>
+                    <th scope="col">Titre</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr v-for="(item, index) in searchResults" :key="index">
+                    <td>
+                      <li>
+                        <a :href="item.src" target="_blank">{{ item.name }}</a>
+                      </li>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
+            <span
+              class="border-bottom border-danger"
+              v-show="errorSearch !== ''"
+              >{{ errorSearch }}</span
+            >
+          </div>
 
-            <div class="table">
-                <table class="table table-striped table-dark">
+          <div class="table" data-app>
+            <v-container fluid>
+              <v-data-iterator
+                :items="sortedDocuments"
+                :items-per-page.sync="itemsPerPage"
+                :page="page"
+                :sort-by="sortBy.toLowerCase()"
+                :sort-desc="sortDesc"
+                hide-default-footer
+              >
+                <template v-slot:default="props">
+                  <table class="table table-striped table-dark">
                     <thead>
-                        <tr>
-                            <th scope="col">Titre</th>
-                        </tr>
+                      <tr>
+                        <th scope="col">Titre</th>
+                      </tr>
                     </thead>
                     <tbody>
-                        <tr v-for="(item, index) in sortedDocuments" :key="index">
-                            <td><li>
-                              <a :href="item.src" target="_blank">{{ item.name }}</a></li></td>
-                        </tr>
+                      <tr v-for="(doc, index) in props.items" :key="index">
+                        <td>
+                          <li>
+                            <a :href="doc.src" target="_blank">{{
+                              doc.name
+                            }}</a>
+                          </li>
+                        </td>
+                      </tr>
                     </tbody>
-                </table>
-            </div>
+                  </table>
+                </template>
+                <template v-slot:footer>
+                  <div class="table-footer">
+
+                    <div>
+                      <span
+                        class="mr-4
+            grey--text"
+                      >
+                        Page {{ page }} / {{ numberOfPages }}
+                      </span>
+                      <v-btn
+                        small
+                        fab
+                        dark
+                        color="#E6EE9C"
+                        class="mr-1"
+                        @click="formerPage"
+                      >
+                        <v-icon>mdi-chevron-left</v-icon>
+                      </v-btn>
+                      <v-btn
+                        small
+                        fab
+                        dark
+                        color="#E6EE9C"
+                        class="ml-1"
+                        @click="nextPage"
+                      >
+                        <v-icon>mdi-chevron-right</v-icon>
+                      </v-btn>
+                    </div>
+                  </div>
+                </template>
+              </v-data-iterator>
+            </v-container>
+          </div>
         </div>
+      </div>
     </div>
-</div>
-</div>
+  </div>
 </template>
 
 <script>
@@ -86,14 +155,23 @@ export default {
   },
   data() {
     return {
-      searchResults: [],
+  searchResults: [],
       idDirectives: "",
       menu: [],
       errorSearch: "",
       subTwo: {},
+      sortDesc: false,
+      page: 1,
+      sortBy: "name",
+      itemsPerPage: 6,
+      itemsPerPageArray: [4, 8, 12],
+
     };
   },
   computed: {
+    numberOfPages() {
+      return Math.ceil(this.sortedDocuments.length / this.itemsPerPage);
+    },
     b1() {
       return this.$store.state.category.breadCrumb1;
     },
@@ -135,6 +213,7 @@ export default {
         this.sortedDocuments.forEach((doc) => {
           const docName = doc.name.toLowerCase().trim();
           if (docName.includes(nameFile)) {
+            console.log(docName, nameFile);
             this.searchResults.push(doc);
           }
         });
@@ -175,6 +254,15 @@ export default {
           this.menu.push(sub);
         }
       });
+    },
+    nextPage() {
+      if (this.page + 1 <= this.numberOfPages) this.page += 1;
+    },
+    formerPage() {
+      if (this.page - 1 >= 1) this.page -= 1;
+    },
+    updateItemsPerPage(number) {
+      this.itemsPerPage = number;
     },
   },
   mounted() {
@@ -218,7 +306,6 @@ export default {
 .title-box {
   position: relative;
   height: 40vh;
-  border: solid 2px black;
   background-image: url("https://i.twic.pics/v1/https://www.explo.com/media/catalog/product/cache/1/thumbnail/9df78eab33525d08d6e5fb8d27136e95/a/1/a144-djibouti-pcp.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -246,5 +333,12 @@ export default {
   -moz-border-radius: 100px;
   /* webkit */
   -webkit-border-radius: 100px;
+}
+.table-footer {
+  border-top: solid 1px grey;
+  padding-top: 2rem;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
 }
 </style>

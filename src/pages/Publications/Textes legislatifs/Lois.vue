@@ -30,7 +30,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr v-for="(item, index) in sortedDocuments" :key="index">
+                            <tr v-for="(item, index) in searchResults" :key="index">
                             <td><li>
                               <a :href="item.src" target="_blank">{{ item.name }}</a></li></td>
                         </tr>
@@ -80,14 +80,22 @@ export default {
 
   data() {
     return {
-      searchResults: [],
+  searchResults: [],
       idDirectives: "",
       menu: [],
       errorSearch: "",
       subTwo: {},
+      sortDesc: false,
+      page: 1,
+      sortBy: "name",
+      itemsPerPage: 6,
+      itemsPerPageArray: [4, 8, 12],
     };
   },
   computed: {
+    numberOfPages() {
+      return Math.ceil(this.sortedDocuments.length / this.itemsPerPage);
+    },
     b1() {
       return this.$store.state.category.breadCrumb1;
     },
@@ -158,6 +166,14 @@ export default {
           });
         }
       });
+    },    nextPage() {
+      if (this.page + 1 <= this.numberOfPages) this.page += 1;
+    },
+    formerPage() {
+      if (this.page - 1 >= 1) this.page -= 1;
+    },
+    updateItemsPerPage(number) {
+      this.itemsPerPage = number;
     },
   },
   mounted() {
@@ -201,7 +217,6 @@ export default {
 .title-box {
   position: relative;
   height: 40vh;
-  border: solid 2px black;
   background-image: url("https://i.twic.pics/v1/https://www.explo.com/media/catalog/product/cache/1/thumbnail/9df78eab33525d08d6e5fb8d27136e95/a/1/a144-djibouti-pcp.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -229,5 +244,12 @@ export default {
   -moz-border-radius: 100px;
   /* webkit */
   -webkit-border-radius: 100px;
+}
+.table-footer {
+  border-top: solid 1px grey;
+  padding-top: 2rem;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
 }
 </style>

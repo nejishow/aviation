@@ -1,18 +1,16 @@
 <template>
-    <div class="md_card" v-if="news" @click="goTo(news._id)">
-        <div class="header">
-            <div class="small">{{ news.title }}</div>
-            <div class="small">{{ news.createdAt }}</div>
-        </div>
-
-        <div class="media" >
-            <img :src="news.url"  :alt="news.title" class="newsImage" />
-
-            <div v-html="news.content" class="small description">
-               
-            </div>
-        </div>
+  <div class="md_card" v-if="news" @click="goTo(news._id)">
+    <div class="header">
+      <div class="small">{{ news.title }}</div>
+      <div class="small">{{ news.createdAt }}</div>
     </div>
+
+    <div class="media">
+      <img :src="news.url" :alt="news.title" class="newsImage" />
+
+      <div v-html="news.content" class="small description"></div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -27,12 +25,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../sass/main.scss';
+@import "../sass/main.scss";
 
 .md_card {
   max-height: 30vh;
   max-width: 100%;
-  border: .4px solid rgba(163, 160, 160, 0.63);
+  border: 0.4px solid rgba(163, 160, 160, 0.63);
   cursor: pointer;
   .header {
     max-height: 20%;
@@ -54,12 +52,14 @@ export default {
       padding-left: 0.5rem;
       max-width: 100%;
       max-height: 20vh !important;
-      text-overflow: ellipsis; // This is where the magic happens
+      text-overflow: ellipsis;
+      white-space: nowrap;
       overflow: hidden;
 
       &_text {
+        text-overflow: ellipsis;
+        white-space: nowrap;
         overflow: hidden;
-        text-overflow: ellipsis; // This is where the magic happens
       }
     }
   }

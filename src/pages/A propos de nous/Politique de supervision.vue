@@ -140,7 +140,11 @@ export default {
       searchResults: [],
       idDirectives: "",
       menu: [],
-      errorSearch: "",
+      errorSearch: "",      sortDesc: false,
+      page: 1,
+      sortBy: "name",
+      itemsPerPage: 6,
+      itemsPerPageArray: [4, 8, 12],
       apropo: true,
     };
   },
@@ -231,7 +235,6 @@ export default {
 .title-box {
   position: relative;
   height: 40vh;
-  border: solid 2px black;
   background-image: url("https://i.twic.pics/v1/https://www.explo.com/media/catalog/product/cache/1/thumbnail/9df78eab33525d08d6e5fb8d27136e95/a/1/a144-djibouti-pcp.jpg");
   background-repeat: no-repeat;
   background-size: cover;

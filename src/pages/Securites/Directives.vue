@@ -79,10 +79,17 @@ export default {
       searchResults: [],
       idDirectives: "",
       menu: [],
-      errorSearch: "",
+      errorSearch: "",      sortDesc: false,
+      page: 1,
+      sortBy: "name",
+      itemsPerPage: 6,
+      itemsPerPageArray: [4, 8, 12],
     };
   },
   computed: {
+    numberOfPages() {
+      return Math.ceil(this.sortedDocuments.length / this.itemsPerPage);
+    },
     b1() {
       return this.$store.state.category.breadCrumb1;
     },
@@ -164,6 +171,15 @@ export default {
         }
       });
     },
+    nextPage() {
+      if (this.page + 1 <= this.numberOfPages) this.page += 1;
+    },
+    formerPage() {
+      if (this.page - 1 >= 1) this.page -= 1;
+    },
+    updateItemsPerPage(number) {
+      this.itemsPerPage = number;
+    },
   },
   mounted() {
     this.fetchBreadCrumb();
@@ -179,5 +195,12 @@ export default {
   -moz-border-radius: 100px;
   /* webkit */
   -webkit-border-radius: 100px;
+}
+.table-footer {
+  border-top: solid 1px grey;
+  padding-top: 2rem;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
 }
 </style>
