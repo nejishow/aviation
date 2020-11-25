@@ -132,9 +132,7 @@
         <a class="social_language" @click="switchLang('french')"
           >Francais</a
         >/
-        <a class="social_language" @click="switchLang('eng')"
-          >English</a
-        >
+        <a class="social_language" @click="switchLang('eng')">English</a>
       </div>
     </div>
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
@@ -149,7 +147,7 @@
       <!-- Header French -->
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-          <!-- A propos de nous -->
+          <!-- About us -->
           <li class="nav-item dropdown">
             <a
               id="dropdownMenu1"
@@ -158,7 +156,7 @@
               aria-haspopup="true"
               aria-expanded="false"
               class="nav-link dropdown-toggle"
-              >A propos de nous</a
+              >About us</a
             >
             <ul aria-labelledby="dropdownMenu1" class="dropdown-menu ">
               <li>
@@ -176,23 +174,23 @@
                 >
               </li>
               <li>
-                <router-link to="/Mot du directeur"
+                <router-link to="/A word from the director"
                   ><a href="#" class="dropdown-item"
-                    >Mot du directeur
+                    >A word from the director
                   </a></router-link
                 >
               </li>
               <li>
-                <router-link to="/Politique de Formation"
+                <router-link to="/Training policy"
                   ><a href="#" class="dropdown-item"
-                    >Politique de formation
+                    >Training policy
                   </a></router-link
                 >
               </li>
               <li>
-                <router-link to="/Politique de Supervision"
+                <router-link to="/Supervion policy"
                   ><a href="#" class="dropdown-item"
-                    >Politique de supervision
+                    >Supervion policy
                   </a></router-link
                 >
               </li>
@@ -224,12 +222,12 @@
                   aria-haspopup="true"
                   aria-expanded="false"
                   class="dropdown-item dropdown-toggle"
-                  >Texte legislatif</a
+                  >Legislative texts</a
                 >
                 <ul aria-labelledby="dropdownMenu2" class="dropdown-menu ">
                   <li>
                     <router-link to="/Textes legislatifs/Lois"
-                      ><a href="#" class="dropdown-item">Lois</a></router-link
+                      ><a href="#" class="dropdown-item">Laws</a></router-link
                     >
                   </li>
                 </ul>
@@ -246,29 +244,29 @@
                   aria-haspopup="true"
                   aria-expanded="false"
                   class="dropdown-item dropdown-toggle"
-                  >Texte reglementaires</a
+                  >Regulatory texts</a
                 >
                 <ul aria-labelledby="dropdownMenu2" class="dropdown-menu ">
                   <li>
                     <router-link
-                      to="/Textes reglementaires/Reglementation aerotique de Djibouti"
+                      to="/Textes reglementaires/Djibouti aeronautical regulations"
                     >
                       <a tabindex="-1" href="#" class="dropdown-item"
-                        >Réglementation aéronautique de Djibouti</a
+                        >Djibouti aeronautical regulations</a
                       ></router-link
                     >
                   </li>
                   <li>
                     <router-link to="/Textes reglementaires/Arretes">
                       <a tabindex="-1" href="#" class="dropdown-item"
-                        >Arrêtés</a
+                        >Orders</a
                       ></router-link
                     >
                   </li>
                   <li>
                     <router-link to="/Textes reglementaires/Decrets"
                       ><a href="#" class="dropdown-item"
-                        >Décrets</a
+                        >Decrees</a
                       ></router-link
                     >
                   </li>
@@ -276,17 +274,15 @@
               </li>
               <!-- End Level two -->
               <li>
-                <router-link to="/Directives"
+                <router-link to="/Guidelines"
                   ><a href="#" class="dropdown-item"
-                    >Directives
+                    >Guidelines
                   </a></router-link
                 >
               </li>
               <li>
-                <router-link to="/Circulaires"
-                  ><a href="#" class="dropdown-item"
-                    >Circulaires
-                  </a></router-link
+                <router-link to="/Circulars"
+                  ><a href="#" class="dropdown-item">Circulars </a></router-link
                 >
               </li>
               <li>
@@ -297,7 +293,7 @@
             </ul>
           </li>
 
-          <!-- Securité -->
+          <!-- Security -->
 
           <li class="nav-item dropdown">
             <a
@@ -307,13 +303,13 @@
               aria-haspopup="true"
               aria-expanded="false"
               class="nav-link dropdown-toggle"
-              >Securité</a
+              >Security</a
             >
             <ul aria-labelledby="dropdownMenu1" class="dropdown-menu ">
               <!-- Level two dropdown-->
               <li class="dropdown-submenu">
                 <a
-                  @click="goTo('5f3aa3413c2c433e946dcca6', 'Navigabilité')"
+                  @click="goTo('5f3aa3413c2c433e946dcca6', 'navigability')"
                   id="dropdownMenu2"
                   href="#"
                   role="button"
@@ -321,7 +317,7 @@
                   aria-haspopup="true"
                   aria-expanded="false"
                   class="dropdown-item dropdown-toggle link"
-                  >Navigabilité</a
+                  >navigability</a
                 >
                 <ul aria-labelledby="dropdownMenu2" class="dropdown-menu ">
                   <li>
@@ -330,9 +326,7 @@
                         name: 'Formulaires',
                         params: { id: '5f3aa6cb34512340cc2b824e' },
                       }"
-                      ><a href="#" class="dropdown-item"
-                        >Formulaires</a
-                      ></router-link
+                      ><a href="#" class="dropdown-item">Forms</a></router-link
                     >
                   </li>
                   <li>
@@ -351,7 +345,7 @@
                         params: { id: '5f3aa6cb34512340cc2b8250' },
                       }"
                       ><a href="#" class="dropdown-item"
-                        >Manuels</a
+                        >Manuals</a
                       ></router-link
                     >
                   </li>
@@ -373,7 +367,7 @@
                         params: { id: '5f3aa6cb34512340cc2b8252' },
                       }"
                       ><a href="#" class="dropdown-item"
-                        >Reglements</a
+                        >Regulations</a
                       ></router-link
                     >
                   </li>
@@ -384,7 +378,7 @@
                   @click="
                     goTo(
                       '5f3aa7e234512340cc2b8253',
-                      'Exploitation technique des aéronefs'
+                      'Technical operation of aircraft'
                     )
                   "
                   id="dropdownMenu2"
@@ -394,7 +388,7 @@
                   aria-haspopup="true"
                   aria-expanded="false"
                   class="dropdown-item dropdown-toggle"
-                  >Exploitation technique des aéronefs</a
+                  >Technical operation of aircraft</a
                 >
                 <ul aria-labelledby="dropdownMenu2" class="dropdown-menu ">
                   <li>
@@ -403,9 +397,7 @@
                         name: 'Formulaires',
                         params: { id: '5f3aa8fe34512340cc2b825a' },
                       }"
-                      ><a href="#" class="dropdown-item"
-                        >Formulaires</a
-                      ></router-link
+                      ><a href="#" class="dropdown-item">Forms</a></router-link
                     >
                   </li>
                   <li>
@@ -424,7 +416,7 @@
                         params: { id: '5f3aa8fe34512340cc2b825c' },
                       }"
                       ><a href="#" class="dropdown-item"
-                        >Manuels</a
+                        >Manuals</a
                       ></router-link
                     >
                   </li>
@@ -446,7 +438,7 @@
                         params: { id: '5f3aa8fe34512340cc2b825e' },
                       }"
                       ><a href="#" class="dropdown-item"
-                        >Reglements</a
+                        >Regulations</a
                       ></router-link
                     >
                   </li>
@@ -464,7 +456,7 @@
                   aria-haspopup="true"
                   aria-expanded="false"
                   class="dropdown-item dropdown-toggle"
-                  >License du personels</a
+                  >Staff license</a
                 >
                 <ul aria-labelledby="dropdownMenu2" class="dropdown-menu ">
                   <li>
@@ -473,9 +465,7 @@
                         name: 'Formulaires',
                         params: { id: '5f3aa91c34512340cc2b8260' },
                       }"
-                      ><a href="#" class="dropdown-item"
-                        >Formulaires</a
-                      ></router-link
+                      ><a href="#" class="dropdown-item">Forms</a></router-link
                     >
                   </li>
                   <li>
@@ -494,7 +484,7 @@
                         params: { id: '5f3aa7f034512340cc2b8254' },
                       }"
                       ><a href="#" class="dropdown-item"
-                        >Manuels</a
+                        >Manuals</a
                       ></router-link
                     >
                   </li>
@@ -516,7 +506,7 @@
                         params: { id: '5f3aa91c34512340cc2b8264' },
                       }"
                       ><a href="#" class="dropdown-item"
-                        >Reglements</a
+                        >Regulations</a
                       ></router-link
                     >
                   </li>
@@ -538,7 +528,7 @@
                   aria-haspopup="true"
                   aria-expanded="false"
                   class="dropdown-item dropdown-toggle"
-                  >Aérodromes et infrastructures portuaires</a
+                  >Aerodromes and port infrastructures</a
                 >
                 <ul aria-labelledby="dropdownMenu2" class="dropdown-menu ">
                   <li>
@@ -547,9 +537,7 @@
                         name: 'Formulaires',
                         params: { id: '5f3aa94334512340cc2b8266' },
                       }"
-                      ><a href="#" class="dropdown-item"
-                        >Formulaires</a
-                      ></router-link
+                      ><a href="#" class="dropdown-item">Forms</a></router-link
                     >
                   </li>
                   <li>
@@ -568,7 +556,7 @@
                         params: { id: '5f3aa94334512340cc2b8268' },
                       }"
                       ><a href="#" class="dropdown-item"
-                        >Manuels</a
+                        >Manuals</a
                       ></router-link
                     >
                   </li>
@@ -590,7 +578,7 @@
                         params: { id: '5f3aa94334512340cc2b826a' },
                       }"
                       ><a href="#" class="dropdown-item"
-                        >Reglements</a
+                        >Regulations</a
                       ></router-link
                     >
                   </li>
@@ -611,8 +599,7 @@
                   aria-haspopup="true"
                   aria-expanded="false"
                   class="dropdown-item dropdown-toggle"
-                  >Service de l'information aéronautique et de la
-                  cartographie</a
+                  >Aeronautical Information Service and cartography</a
                 >
                 <ul aria-labelledby="dropdownMenu2" class="dropdown-menu ">
                   <li>
@@ -621,9 +608,7 @@
                         name: 'Formulaires',
                         params: { id: '5f3aa95b34512340cc2b826c' },
                       }"
-                      ><a href="#" class="dropdown-item"
-                        >Formulaires</a
-                      ></router-link
+                      ><a href="#" class="dropdown-item">Forms</a></router-link
                     >
                   </li>
                   <li>
@@ -642,7 +627,7 @@
                         params: { id: '5f3aa95b34512340cc2b826e' },
                       }"
                       ><a href="#" class="dropdown-item"
-                        >Manuels</a
+                        >Manuals</a
                       ></router-link
                     >
                   </li>
@@ -664,7 +649,7 @@
                         params: { id: '5f3aa95b34512340cc2b8270' },
                       }"
                       ><a href="#" class="dropdown-item"
-                        >Reglements</a
+                        >Regulations</a
                       ></router-link
                     >
                   </li>
@@ -675,7 +660,7 @@
                   @click="
                     goTo(
                       '5f535bbc1dc9dc44eceead5c',
-                      'Communication, naviguation et surveillance'
+                      'Communication, navigation and surveillance'
                     )
                   "
                   id="dropdownMenu2"
@@ -685,7 +670,7 @@
                   aria-haspopup="true"
                   aria-expanded="false"
                   class="dropdown-item dropdown-toggle"
-                  >Communication, naviguation et surveillance</a
+                  >Communication, navigation and surveillance</a
                 >
                 <ul aria-labelledby="dropdownMenu2" class="dropdown-menu ">
                   <li>
@@ -694,9 +679,7 @@
                         name: 'Formulaires',
                         params: { id: '5f585dfdb1398d47641a5ece' },
                       }"
-                      ><a href="#" class="dropdown-item"
-                        >Formulaires</a
-                      ></router-link
+                      ><a href="#" class="dropdown-item">Forms</a></router-link
                     >
                   </li>
                   <li>
@@ -715,7 +698,7 @@
                         params: { id: '5f585d9eb1398d47641a5ecb' },
                       }"
                       ><a href="#" class="dropdown-item"
-                        >Manuels</a
+                        >Manuals</a
                       ></router-link
                     >
                   </li>
@@ -737,7 +720,7 @@
                         params: { id: '5f585d9eb1398d47641a5ecd' },
                       }"
                       ><a href="#" class="dropdown-item"
-                        >Reglements</a
+                        >Regulations</a
                       ></router-link
                     >
                   </li>
@@ -758,7 +741,7 @@
                   aria-haspopup="true"
                   aria-expanded="false"
                   class="dropdown-item dropdown-toggle"
-                  >Gestion de l'espace aérien</a
+                  >Airspace management</a
                 >
                 <ul aria-labelledby="dropdownMenu2" class="dropdown-menu ">
                   <li>
@@ -767,9 +750,7 @@
                         name: 'Formulaires',
                         params: { id: '5f58f66747a3152af4d2e315' },
                       }"
-                      ><a href="#" class="dropdown-item"
-                        >Formulaires</a
-                      ></router-link
+                      ><a href="#" class="dropdown-item">Forms</a></router-link
                     >
                   </li>
                   <li>
@@ -788,7 +769,7 @@
                         params: { id: '5f58f66747a3152af4d2e317' },
                       }"
                       ><a href="#" class="dropdown-item"
-                        >Manuels</a
+                        >Manuals</a
                       ></router-link
                     >
                   </li>
@@ -810,7 +791,7 @@
                         params: { id: '5f58f66747a3152af4d2e319' },
                       }"
                       ><a href="#" class="dropdown-item"
-                        >Reglements</a
+                        >Regulations</a
                       ></router-link
                     >
                   </li>
@@ -828,7 +809,7 @@
                   aria-haspopup="true"
                   aria-expanded="false"
                   class="dropdown-item dropdown-toggle"
-                  >Service métérorologique</a
+                  >Meteorological service</a
                 >
                 <ul aria-labelledby="dropdownMenu2" class="dropdown-menu ">
                   <li>
@@ -837,9 +818,7 @@
                         name: 'Formulaires',
                         params: { id: '5f58f77f47a3152af4d2e31a' },
                       }"
-                      ><a href="#" class="dropdown-item"
-                        >Formulaires</a
-                      ></router-link
+                      ><a href="#" class="dropdown-item">Forms</a></router-link
                     >
                   </li>
                   <li>
@@ -858,7 +837,7 @@
                         params: { id: '5f58f77f47a3152af4d2e31c' },
                       }"
                       ><a href="#" class="dropdown-item"
-                        >Manuels</a
+                        >Manuals</a
                       ></router-link
                     >
                   </li>
@@ -880,7 +859,7 @@
                         params: { id: '5f58f77f47a3152af4d2e31e' },
                       }"
                       ><a href="#" class="dropdown-item"
-                        >Reglements</a
+                        >Regulations</a
                       ></router-link
                     >
                   </li>
@@ -889,7 +868,7 @@
               <li class="dropdown-submenu">
                 <a
                   @click="
-                    goTo('5f57966756cc341290c683d2', 'Recherches et sauvetages')
+                    goTo('5f57966756cc341290c683d2', 'Searches and rescues')
                   "
                   id="dropdownMenu2"
                   href="#"
@@ -898,7 +877,7 @@
                   aria-haspopup="true"
                   aria-expanded="false"
                   class="dropdown-item dropdown-toggle"
-                  >Recherches et sauvetages</a
+                  >Searches and rescues</a
                 >
                 <ul aria-labelledby="dropdownMenu2" class="dropdown-menu ">
                   <li>
@@ -907,9 +886,7 @@
                         name: 'Formulaires',
                         params: { id: '5f585a81b1398d47641a5ec4' },
                       }"
-                      ><a href="#" class="dropdown-item"
-                        >Formulaires</a
-                      ></router-link
+                      ><a href="#" class="dropdown-item">Forms</a></router-link
                     >
                   </li>
                   <li>
@@ -928,7 +905,7 @@
                         params: { id: '5f585a81b1398d47641a5ec6' },
                       }"
                       ><a href="#" class="dropdown-item"
-                        >Manuels</a
+                        >Manuals</a
                       ></router-link
                     >
                   </li>
@@ -950,7 +927,7 @@
                         params: { id: '5f585a81b1398d47641a5ec8' },
                       }"
                       ><a href="#" class="dropdown-item"
-                        >Reglements</a
+                        >Regulations</a
                       ></router-link
                     >
                   </li>
@@ -959,7 +936,7 @@
             </ul>
           </li>
 
-          <!-- Sureté -->
+          <!-- Safety -->
 
           <li class="nav-item dropdown">
             <a
@@ -969,13 +946,13 @@
               aria-haspopup="true"
               aria-expanded="false"
               class="nav-link dropdown-toggle"
-              >Sureté</a
+              >Safety</a
             >
             <ul aria-labelledby="dropdownMenu1" class="dropdown-menu ">
               <!-- Level two dropdown-->
               <li class="dropdown-submenu">
                 <a
-                  @click="goTo('5f535d6433d82b0034f95ee8', 'Sureté')"
+                  @click="goTo('5f535d6433d82b0034f95ee8', 'Safety')"
                   id="dropdownMenu2"
                   href="#"
                   role="button"
@@ -983,7 +960,7 @@
                   aria-haspopup="true"
                   aria-expanded="false"
                   class="dropdown-item dropdown-toggle link"
-                  >Sureté
+                  >Safety
                 </a>
                 <ul aria-labelledby="dropdownMenu2" class="dropdown-menu ">
                   <li>
@@ -992,9 +969,7 @@
                         name: 'Formulaires',
                         params: { id: '5f585a81b1398d47641a5ec4' },
                       }"
-                      ><a href="#" class="dropdown-item"
-                        >Formulaires</a
-                      ></router-link
+                      ><a href="#" class="dropdown-item">Forms</a></router-link
                     >
                   </li>
                   <li>
@@ -1013,7 +988,7 @@
                         params: { id: '5f585a81b1398d47641a5ec6' },
                       }"
                       ><a href="#" class="dropdown-item"
-                        >Manuels</a
+                        >Manuals</a
                       ></router-link
                     >
                   </li>
@@ -1035,7 +1010,7 @@
                         params: { id: '5f585a81b1398d47641a5ec8' },
                       }"
                       ><a href="#" class="dropdown-item"
-                        >Reglements</a
+                        >Regulations</a
                       ></router-link
                     >
                   </li>
@@ -1060,9 +1035,7 @@
                         name: 'Formulaires',
                         params: { id: '5f5b409c638e43228cf0a56f' },
                       }"
-                      ><a href="#" class="dropdown-item"
-                        >Formulaires</a
-                      ></router-link
+                      ><a href="#" class="dropdown-item">Forms</a></router-link
                     >
                   </li>
                   <li>
@@ -1081,7 +1054,7 @@
                         params: { id: '5f5b409c638e43228cf0a571' },
                       }"
                       ><a href="#" class="dropdown-item"
-                        >Manuels</a
+                        >Manuals</a
                       ></router-link
                     >
                   </li>
@@ -1103,7 +1076,7 @@
                         params: { id: '5f5b409c638e43228cf0a573' },
                       }"
                       ><a href="#" class="dropdown-item"
-                        >Reglements</a
+                        >Regulations</a
                       ></router-link
                     >
                   </li>
@@ -1148,16 +1121,16 @@
             >
             <ul aria-labelledby="dropdownMenu1" class="dropdown-menu ">
               <li>
-                <router-link to="/Formulaire de compte rendu"
+                <router-link to="/Report form"
                   ><a href="#" class="dropdown-item"
-                    >Formulaire de compte rendu
+                    >Report form
                   </a></router-link
                 >
               </li>
               <li>
                 <router-link to="/Demande autorisation"
                   ><a href="#" class="dropdown-item"
-                    >Demande d'autorisation de vol
+                    >Flight authorization request
                   </a></router-link
                 >
               </li>
@@ -1203,11 +1176,11 @@ export default {
   data() {
     return {
       menu: "Menu",
-      menu1: "Acceuil",
-      menu2: "A propos de nous",
+      menu1: "Home",
+      menu2: "About us",
       menu3: "Publications",
-      menu4: "Securité",
-      menu5: "Sureté",
+      menu4: "Security",
+      menu5: "Safety",
       menu6: "Inspection",
       menu7: "e-Services",
       sub2: [
@@ -1216,20 +1189,20 @@ export default {
           router: "/Presentation",
         },
         {
-          title: "Mot du directeur",
-          router: "/Mot du directeur",
+          title: "A word from the director",
+          router: "/A word from the director",
         },
         {
           title: "Organisation",
           router: "/Organisation",
         },
         {
-          title: "Politique de supervision",
-          router: "/Politique de Supervision",
+          title: "Supervion policy",
+          router: "/Supervion policy",
         },
         {
-          title: "Politique de formation",
-          router: "/Politique de Formation",
+          title: "Training policy",
+          router: "/Training policy",
         },
       ],
       sub3: [
@@ -1242,12 +1215,12 @@ export default {
           router: "/Textes reglementaires?id=5f53707658ac040039a1a6c0",
         },
         {
-          title: "Directives",
-          router: "/Directives",
+          title: "Guidelines",
+          router: "/Guidelines",
         },
         {
-          title: "Circulaires",
-          router: "/Circulaires",
+          title: "Circulars",
+          router: "/Circulars",
         },
         {
           title: "Decisions",
@@ -1256,13 +1229,13 @@ export default {
       ],
       sub4: [
         {
-          title: "Navigabilité",
-          router: "/Navigabilité?id=5f3aa3413c2c433e946dcca6",
+          title: "navigability",
+          router: "/navigability?id=5f3aa3413c2c433e946dcca6",
         },
         {
           title: "Exploitation technique des aeronefs",
           router:
-            "/Exploitation technique des aéronefs?id=5f3aa7e234512340cc2b8253",
+            "/Technical operation of aircraft?id=5f3aa7e234512340cc2b8253",
         },
         {
           title: "License du personel",
@@ -1279,27 +1252,27 @@ export default {
             "/Service de l'information aéronautique et de la cartographie?id=5f3aa80a34512340cc2b8256",
         },
         {
-          title: "Communication, naviguation et surveillance",
+          title: "Communication, navigation and surveillance",
           router:
-            "/Communication, naviguation et surveillance?id=5f535bbc1dc9dc44eceead5c",
+            "/Communication, navigation and surveillance?id=5f535bbc1dc9dc44eceead5c",
         },
         {
-          title: "Gestion de l'espace aérien",
-          router: "/Gestion de l'espace aérien?id=5f535bcd1dc9dc44eceead5d",
+          title: "Airspace management",
+          router: "/Airspace management?id=5f535bcd1dc9dc44eceead5d",
         },
         {
           title: "Service metéorologique",
           router: "/Service metéorologique?id=5f535bd91dc9dc44eceead5e",
         },
         {
-          title: "Recherches et sauvetages",
-          router: "/Recherches et sauvetages?id=5f57966756cc341290c683d2",
+          title: "Searches and rescues",
+          router: "/Searches and rescues?id=5f57966756cc341290c683d2",
         },
       ],
       sub5: [
         {
-          title: "Sureté",
-          router: "/Sureté?id=5f535d6433d82b0034f95ee8",
+          title: "Safety",
+          router: "/Safety?id=5f535d6433d82b0034f95ee8",
         },
         {
           title: "Facilitation",
@@ -1314,11 +1287,11 @@ export default {
       ],
       sub7: [
         {
-          title: "Formulaire de compte rendu",
-          router: "/Formulaire de compte rendu",
+          title: "Report form",
+          router: "/Report form",
         },
         {
-          title: "Demande d'autorisation de vol",
+          title: "Flight authorization request",
           router: "/Demande autorisation",
         },
       ],
@@ -1340,11 +1313,11 @@ export default {
     logout() {
       this.$store.dispatch("logout");
     },
-    goTo(id, name) {
-      this.$router.push({ path: "/" + name, query: { id } });
-    },
     switchLang(lang) {
       this.$store.dispatch("setLang", lang);
+    },
+    goTo(id, name) {
+      this.$router.push({ path: "/" + name, query: { id } });
     },
   },
 };

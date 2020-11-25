@@ -6,7 +6,7 @@
             <span> / {{ b2 }}</span>
             <span v-show="b3 !== ''"> / {{ b3 }}</span>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 sideMenu">
             <Menu :menu="menu"></Menu>
         </div>
         <div class="col-12 col-md-8">

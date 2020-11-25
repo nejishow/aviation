@@ -15,7 +15,7 @@
             <span>{{ b1 }}</span>
             <span> / {{ b2 }}</span>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 sideMenu">
             <Menu :menu="menu"></Menu>
         </div>
         <div class="col-12 col-md-8">
@@ -146,6 +146,9 @@ export default {
     };
   },
   computed: {
+        numberOfPages() {
+      return Math.ceil(this.sortedDocuments.length / this.itemsPerPage);
+    },
     b1() {
       return this.$store.state.category.breadCrumb1;
     },
@@ -245,6 +248,8 @@ export default {
       left: 5vh;
       font-size: 1.5rem !important;
     }
+  }  .sideMenu {
+    display: none;
   }
 }
 @media (min-width: 1020px) and (max-width: 1500px) {

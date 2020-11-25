@@ -1,6 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import store from '../store/index';
+import store from "../store/index";
 import Dashboard from "../pages/Dashboard.vue";
 import Presentation from "../pages/A propos de nous/Presentation.vue";
 import Organisation from "../pages/A propos de nous/Organisation.vue";
@@ -25,19 +25,20 @@ import Procedure from "../pages/Securites/Procedures.vue";
 import Login from "../pages/Login.vue";
 import Docs from "../pages/gestion/GestionDocuments.vue";
 import Media from "../pages/gestion/GestionMedia.vue";
-import DocIntern from '../pages/gestion/DocumentInternView.vue';
-import Contact from '../pages/Contact.vue';
-import Securite from '../pages/Header/securité.vue';
-import DA from '../pages/eService/demande_autorisation.vue';
-import FCR from '../pages/eService/formulaire_cr.vue';
-import AuditInspection from '../pages/inspection/audit_inspection.vue';
-import SubMenu from '../pages/SubMenu.vue';
-import Article from '../pages/Articles.vue';
+import DocIntern from "../pages/gestion/DocumentInternView.vue";
+import Contact from "../pages/Contact.vue";
+import Securite from "../pages/Header/securité.vue";
+import DA from "../pages/eService/demande_autorisation.vue";
+import FCR from "../pages/eService/formulaire_cr.vue";
+import AuditInspection from "../pages/inspection/audit_inspection.vue";
+import SubMenu from "../pages/SubMenu.vue";
+import Article from "../pages/Articles.vue";
 Vue.use(VueRouter);
 
 const routes = [
   {
     path: "/contact",
+    alias: ["/ceciestuntest"],
     name: "Contact",
     component: Contact,
   },
@@ -51,12 +52,12 @@ const routes = [
     name: "Login",
     component: Login,
     beforeEnter: (to, from, next) => {
-      if (to.name === "Login" && localStorage.getItem('token')) {
-        next({ name: "Dashboard" })
+      if (to.name === "Login" && localStorage.getItem("token")) {
+        next({ alias: ["/ceciestuntest"], name: "Dashboard" });
       } else {
-        next()
+        next();
       }
-    }
+    },
   },
   {
     path: "/gestionDocs",
@@ -64,11 +65,11 @@ const routes = [
     component: Docs,
     beforeEnter: (to, from, next) => {
       if (to.name === "Docs" && !store.state.user.isAdmin) {
-        next({ name: "Login" })
+        next({ alias: ["/ceciestuntest"], name: "Login" });
       } else {
-        next()
+        next();
       }
-    }
+    },
   },
   {
     path: "/docIntern",
@@ -76,11 +77,11 @@ const routes = [
     component: DocIntern,
     beforeEnter: (to, from, next) => {
       if (to.name === "DocIntern" && !store.state.user._id) {
-        next({ name: "Login" })
+        next({ alias: ["/ceciestuntest"], name: "Login" });
       } else {
-        next()
+        next();
       }
-    }
+    },
   },
   {
     path: "/gestionMedia",
@@ -88,11 +89,11 @@ const routes = [
     component: Media,
     beforeEnter: (to, from, next) => {
       if (to.name === "Media" && !store.state.user.isAdmin) {
-        next({ name: "Login" })
+        next({ alias: ["/ceciestuntest"], name: "Login" });
       } else {
-        next()
+        next();
       }
-    }
+    },
   },
   {
     path: "/securite/:id",
@@ -126,6 +127,7 @@ const routes = [
   },
   {
     path: "/Directives",
+    alias: ['/Guidelines'],
     name: "DirectiveS",
     component: DirectiveS,
   },
@@ -136,6 +138,7 @@ const routes = [
   },
   {
     path: "/Mot du directeur",
+    alias: ["/A word from the director"],
     name: "MduD",
     component: MduD,
   },
@@ -146,11 +149,13 @@ const routes = [
   },
   {
     path: "/Politique de Formation",
+    alias: ["/Training policy"],
     name: "PdeF",
     component: PdeF,
   },
   {
     path: "/Politique de Supervision",
+    alias: ["/Supervion policy"],
     name: "PdeS",
     component: PdeS,
   },
@@ -165,7 +170,7 @@ const routes = [
     component: Decrets,
   },
   {
-    path: "/Textes reglementaires/Reglementation aerotique de Djibouti",
+    path: "/Textes reglementaires/Djibouti aeronautical regulations",
     name: "Reglementation aérotique de Djibouti",
     component: RAD,
   },
@@ -186,11 +191,13 @@ const routes = [
   },
   {
     path: "/Directives/:id",
+    alias: ["/Guidelines"],
     name: "Directives",
     component: Directives,
   },
   {
     path: "/Circulaires",
+    alias: ["/Circulars"],
     name: "Circulaires",
     component: Circulaires,
   },
@@ -206,6 +213,7 @@ const routes = [
   },
   {
     path: "/Formulaire de compte rendu",
+    alias: ["/Report form"],
     name: "Formulaire CR",
     component: FCR,
   },
@@ -224,7 +232,6 @@ const routes = [
     name: "Article",
     component: Article,
   },
-
 ];
 
 const router = new VueRouter({

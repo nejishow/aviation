@@ -1,44 +1,62 @@
 <template>
-<div>
-      <div class="container-fluid">
-        <div class="row">
-            <div class="col-12 ">
-                <div class="title-box">
-                    <h1 class="title">{{b2}}</h1>
-                </div>
-            </div>
+  <div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12 ">
+          <div class="title-box">
+            <h1 class="title">{{ b2 }}</h1>
+          </div>
         </div>
+      </div>
     </div>
-<div class="container">
-    <div class="row">
+    <div class="container">
+      <div class="row">
         <div class="col-12">
-            <span>{{ b1 }}</span>
-            <span> / {{ b2 }}</span>
+          <span>{{ b1 }}</span>
+          <span> / {{ b2 }}</span>
         </div>
-        <div class="col-md-4">
-            <Menu :menu="menu"></Menu>
+        <div class="col-md-4 sideMenu">
+          <Menu :menu="menu"></Menu>
         </div>
         <div class="col-12 col-md-8">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla eaque facere neque fuga inventore optio deserunt, sequi voluptates sit, placeat fugit cupiditate necessitatibus adipisci, delectus soluta nesciunt eos! Neque, explicabo.</p>
-            <div class=" m-5 p5 d-flex flex-column align-items-center">
-                <input type="text" class=" border-danger w-100 search input" placeholder="Search" v-on:keyup.enter="search" v-on:keyup.delete="enleve" />
-                <div class="card result mt-2" v-show="searchResults.length > 0">
-                    <table class="table table-striped table-dark">
-                        <thead>
-                            <tr>
-                                <th scope="col">Titre</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr v-for="(item, index) in searchResults" :key="index">
-                            <td><li>
-                              <a :href="item.src" target="_blank">{{ item.name }}</a></li></td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <span class="border-bottom border-danger" v-show="errorSearch!==''">{{errorSearch}}</span>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla eaque
+            facere neque fuga inventore optio deserunt, sequi voluptates sit,
+            placeat fugit cupiditate necessitatibus adipisci, delectus soluta
+            nesciunt eos! Neque, explicabo.
+          </p>
+          <div class=" m-5 p5 d-flex flex-column align-items-center">
+            <input
+              type="text"
+              class=" border-danger w-100 search input"
+              placeholder="Search"
+              v-on:keyup.enter="search"
+              v-on:keyup.delete="enleve"
+            />
+            <div class="card result mt-2" v-show="searchResults.length > 0">
+              <table class="table table-striped table-dark">
+                <thead>
+                  <tr>
+                    <th scope="col">Titre</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr v-for="(item, index) in searchResults" :key="index">
+                    <td>
+                      <li>
+                        <a :href="item.src" target="_blank">{{ item.name }}</a>
+                      </li>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
+            <span
+              class="border-bottom border-danger"
+              v-show="errorSearch !== ''"
+              >{{ errorSearch }}</span
+            >
+          </div>
 
           <div class="table" data-app>
             <v-container fluid>
@@ -72,7 +90,6 @@
                 </template>
                 <template v-slot:footer>
                   <div class="table-footer">
-
                     <div>
                       <span
                         class="mr-4
@@ -107,9 +124,9 @@
             </v-container>
           </div>
         </div>
+      </div>
     </div>
-</div>
-</div>
+  </div>
 </template>
 
 <script>
@@ -137,7 +154,8 @@ export default {
       searchResults: [],
       idDirectives: "",
       menu: [],
-      errorSearch: "",      sortDesc: false,
+      errorSearch: "",
+      sortDesc: false,
       page: 1,
       sortBy: "name",
       itemsPerPage: 6,
@@ -145,6 +163,9 @@ export default {
     };
   },
   computed: {
+        numberOfPages() {
+      return Math.ceil(this.sortedDocuments.length / this.itemsPerPage);
+    },
     b1() {
       return this.$store.state.category.breadCrumb1;
     },
@@ -218,7 +239,8 @@ export default {
           this.menu.push(sub);
         }
       });
-    },    nextPage() {
+    },
+    nextPage() {
       if (this.page + 1 <= this.numberOfPages) this.page += 1;
     },
     formerPage() {
@@ -235,7 +257,6 @@ export default {
 };
 </script>
 
-
 <style lang="scss" scoped>
 @media (min-width: 500px) and (max-width: 769px) {
   .title-box {
@@ -245,6 +266,9 @@ export default {
       left: 5vh;
       font-size: 1.5rem !important;
     }
+  }
+  .sideMenu {
+    display: none;
   }
 }
 @media (min-width: 1020px) and (max-width: 1500px) {

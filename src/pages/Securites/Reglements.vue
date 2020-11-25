@@ -16,7 +16,7 @@
           <span> / {{ b2 }}</span>
           <span v-show="b3 !== ''"> / {{ b3 }}</span>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 sideMenu">
           <Menu :menu="menu"></Menu>
         </div>
         <div class="col-12 col-md-8">
@@ -281,6 +281,8 @@ export default {
       left: 5vh;
       font-size: 1.5rem !important;
     }
+  }  .sideMenu {
+    display: none;
   }
 }
 @media (min-width: 1020px) and (max-width: 1500px) {

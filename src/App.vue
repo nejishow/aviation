@@ -1,6 +1,7 @@
 <template>
 <div>
-    <Header class="header"></Header>
+    <Header class="header" v-if="lang=='french'"></Header>
+    <HeaderEng class="header" v-else></HeaderEng>
         <router-view />
     <Footer class="mt-5"></Footer>
 </div>
@@ -8,6 +9,7 @@
 
 <script>
 import Header from "./components/Header";
+import HeaderEng from "./components/HeaderEng";
 import Footer from "./components/Footer";
 export default {
   metaInfo: {
@@ -46,7 +48,13 @@ export default {
   },
   components: {
     Header,
+    HeaderEng,
     Footer,
+  },
+  computed: {
+    lang() {
+      return this.$store.state.lang
+    }
   },
   mounted() {
     this.$store.dispatch("getBanners");

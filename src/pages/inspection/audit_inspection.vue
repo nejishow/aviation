@@ -69,6 +69,9 @@ export default {
     };
   },
   computed: {
+        numberOfPages() {
+      return Math.ceil(this.sortedDocuments.length / this.itemsPerPage);
+    },
     b1() {
       return this.$store.state.category.breadCrumb1;
     },

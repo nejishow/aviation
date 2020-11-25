@@ -8,21 +8,31 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    user: {}
+    user: {},
+    lang:'french'
   },
   getters: {
     getUser(state) {
       return state.user
+    },
+    getLang(state) {
+      return state.lang
     },
   },
   mutations: {
     SET_USER(state, user) {
       state.user = user
     },
+    SET_LANG(state, lang) {
+      state.lang = lang
+    },
   },
   actions: {
     setUser({ commit }, user) {
       commit('SET_USER', user)
+    },
+    setLang({ commit }, lang) {
+      commit('SET_LANG', lang)
     },
     getUser({ commit }) {
       const id = localStorage.getItem('id')
