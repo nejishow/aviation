@@ -1,15 +1,192 @@
 <template>
-<div class="row mt-5">
-    <div class="col-12">
-        <h1>Demande d'autorisation de vol</h1>
+  <div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12 ">
+          <div class="title-box">
+            <h1 class="title">Demande d'autorisation de vol</h1>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="col-12">
-        <md-tabs>
-            <md-tab id="tab-Intern" md-label="OVF">
-            </md-tab>
-            <md-tab id="tab-Public" md-label="Landing">
-            </md-tab>
-        </md-tabs>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <span>{{ b1 }}</span>
+          <span> / {{ b2 }}</span>
+        </div>
+        <div class="col-md-4 sideMenu">
+          <Menu :menu="menu"></Menu>
+        </div>
+        <div class="col-12 col-md-8">
+          <md-tabs>
+            <md-tab id="tab-Intern" md-label="OVF"> </md-tab>
+            <md-tab id="tab-Public" md-label="Landing"> </md-tab>
+          </md-tabs>
+        </div>
+      </div>
     </div>
-</div>
+  </div>
 </template>
+
+<script>
+import Menu from "../../components/SideMenuSub";
+export default {
+  components: {
+    Menu,
+  },
+  metaInfo: {
+    // if no subcomponents specify a metaInfo.title, this title will be used
+    title: "Demande d'autorisation de vol",
+    meta: [
+      {
+        vmid: "description",
+        name: "description",
+        content:
+          "Demande d'autorisation de vol de l'Autorité de l'Aviation Civile de Djibouti",
+      },
+    ],
+  },
+  data() {
+    return {
+      searchResults: [],
+      idDirectives: "",
+      menu: [],
+      errorSearch: "",
+      sortDesc: false,
+      page: 1,
+      sortBy: "name",
+      itemsPerPage: 6,
+      itemsPerPageArray: [4, 8, 12],
+      apropo: true,
+    };
+  },
+  computed: {
+    b1() {
+      return this.$store.state.category.breadCrumb1;
+    },
+    b2() {
+      return this.$store.state.category.breadCrumb2;
+    },
+  },
+  methods: {
+    fetchBreadCrumb() {
+      this.$store.state.category.subCategoryOne.forEach((subOne) => {
+        if (subOne._id === "5f535dd18a6f16001f5f1f4f") {
+          this.subOne = subOne;
+          this.$store.dispatch("fetchB2", subOne.name);
+          this.$store.state.category.category.forEach((cat) => {
+            if (cat._id === subOne.idParent) {
+              this.$store.dispatch("fetchB1", cat.name);
+            }
+          });
+        }
+      });
+    },
+    fetchMenu() {
+      this.menu = [];
+      const subOne = this.$store.state.category.subCategoryOne.filter(
+        (element) => {
+          return element._id === "5f535dd18a6f16001f5f1f4f";
+        }
+      );
+      this.$store.state.category.subCategoryOne.forEach((sub) => {
+        if (sub.idParent == subOne[0].idParent) {
+          this.menu.push(sub);
+        }
+      });
+    },
+  },
+  mounted() {
+    this.fetchBreadCrumb();
+    this.fetchMenu();
+  },
+};
+</script>
+
+<style lang="scss" scoped>
+@media (min-width: 500px) and (max-width: 769px) {
+  .title-box {
+    max-height: 25vh;
+
+    .title {
+      bottom: 5vh;
+      left: 5vh;
+      font-size: 1.5rem !important;
+    }
+  }
+  .sideMenu {
+    display: none;
+  }
+}
+
+@media (min-width: 1020px) and (max-width: 1500px) {
+  .title-box {
+    max-height: 25vh;
+
+    .title {
+      bottom: 5vh;
+      left: 5vh;
+    }
+  }
+}
+
+@media (max-width: 499px) {
+  .title-box {
+    max-height: 15vh;
+
+    .title {
+      font-size: 1rem !important;
+    }
+  }
+
+  .sideMenu {
+    display: none;
+  }
+}
+
+.title-box {
+  position: relative;
+  height: 40vh;
+  background-image: url("https://i.twic.pics/v1/https://www.explo.com/media/catalog/product/cache/1/thumbnail/9df78eab33525d08d6e5fb8d27136e95/a/1/a144-djibouti-pcp.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  .title {
+    position: absolute;
+    bottom: 1vh;
+    left: 1vh;
+    font-size: 2rem;
+    text-transform: uppercase;
+    color: white;
+  }
+
+  .title-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-height: 50vh;
+    min-width: 100%;
+  }
+}
+
+.search {
+  border-radius: 100px;
+  /* mozilla */
+  -moz-border-radius: 100px;
+  /* webkit */
+  -webkit-border-radius: 100px;
+}
+.table-footer {
+  border-top: solid 1px grey;
+  padding-top: 2rem;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.ceo {
+  width: 500px;
+}
+</style>
