@@ -228,11 +228,15 @@ export default {
       const subTwo = this.$store.state.category.subCategoryTwo.filter(
         (element) => element._id === "5f537242daa6914e7c573562"
       );
-      this.$store.state.category.subCategoryTwo.forEach((sub) => {
-        if (sub.idParent === subTwo[0].idParent) {
-          this.menu.push(sub);
-        }
-      });
+     if (subTwo.length === 0) {
+        return this.$router.push({ name: "404" });
+      } else {
+        this.$store.state.category.subCategoryTwo.forEach((sub) => {
+          if (sub.idParent === subTwo[0].idParent) {
+            this.menu.push(sub);
+          }
+        });
+      }
     },    nextPage() {
       if (this.page + 1 <= this.numberOfPages) this.page += 1;
     },

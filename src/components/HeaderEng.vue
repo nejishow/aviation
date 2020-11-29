@@ -1100,7 +1100,7 @@
               <li>
                 <router-link to="/Audit et Inspection"
                   ><a href="#" class="dropdown-item"
-                    >Audit et Inspection
+                    >Audit and Inspection
                   </a></router-link
                 >
               </li>

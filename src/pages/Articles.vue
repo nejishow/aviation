@@ -1,37 +1,37 @@
 <template>
-<div>
-        <div class="row">
-            <div class="col-12 ">
-                <div class="title-box">
-                    <h1 class="title">Articles</h1>
-                </div>
-            </div>
+  <div>
+    <div class="row">
+      <div class="col-12 ">
+        <div class="title-box">
+          <h1 class="title">Articles</h1>
         </div>
-        <div class="row">
-            <div class="col-12" v-if="news">
-                <div class="news-box">
-                    <img :src="news.url" :alt="news.title" class="news-box_image">
-                    <div class="news-box_content">
-                        <div class="news-box_title d-flex flex-column">
-                            <h1 class="h1">{{news.title}}</h1>
-                            <strong>{{news.createdAt}}</strong>
-                        </div>
-                        <div v-html='news.content'></div>
-                    </div>
-                </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12" v-if="news">
+        <div class="news-box">
+          <img :src="news.url" :alt="news.title" class="news-box_image" />
+          <div class="news-box_content">
+            <div class="news-box_title d-flex flex-column">
+              <h1 class="h1">{{ news.title }}</h1>
+              <strong>{{ news.createdAt }}</strong>
             </div>
+            <div v-html="news.content"></div>
+          </div>
         </div>
-        <div class="row mt-5">
-            <div class="col-12 col-md-6" v-if="prev">
-                <h1 class="h5">Article precèdent</h1>
-                <News :news="prev"></News>
-            </div>
-            <div class="col-12 col-md-6" v-if="next">
-                <h1 class="h5">Article suivant</h1>
-               <News :news="next"></News>
-            </div>
-        </div>
-</div>
+      </div>
+    </div>
+    <div class="row mt-5">
+      <div class="col-12 col-md-6" v-if="prev">
+        <h1 class="h5">Article precèdent</h1>
+        <News :news="prev"></News>
+      </div>
+      <div class="col-12 col-md-6" v-if="next">
+        <h1 class="h5">Article suivant</h1>
+        <News :news="next"></News>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -48,7 +48,12 @@ export default {
       const article = this.Allnews.filter((x) => {
         return x._id === this.$route.params.id;
       });
-      return article[0];
+      if (article.length === 0) {
+        this.goError()
+        return article[0];
+      } else {
+        return article[0];
+      }
     },
     prev() {
       let result = {};
@@ -68,6 +73,11 @@ export default {
       }
       return result;
     },
+  },
+  methods: {
+    goError() {
+      this.$router.push({name:"404"})
+    }
   },
 };
 </script>

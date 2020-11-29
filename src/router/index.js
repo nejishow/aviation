@@ -33,6 +33,7 @@ import FCR from "../pages/eService/formulaire_cr.vue";
 import AuditInspection from "../pages/inspection/audit_inspection.vue";
 import SubMenu from "../pages/SubMenu.vue";
 import Article from "../pages/Articles.vue";
+import PageNotFound from '../pages/PageNotFound.vue';
 Vue.use(VueRouter);
 
 const routes = [
@@ -171,6 +172,7 @@ const routes = [
   },
   {
     path: "/Textes reglementaires/Djibouti aeronautical regulations",
+    alias: ["/Textes reglementaires/Reglementation aerotique de Djibouti"],
     name: "Reglementation aérotique de Djibouti",
     component: RAD,
   },
@@ -232,6 +234,9 @@ const routes = [
     name: "Article",
     component: Article,
   },
+  { path: "/404", name:'404', component: PageNotFound },
+  { path: "*", name:'Error', component: PageNotFound },
+
 ];
 
 const router = new VueRouter({
