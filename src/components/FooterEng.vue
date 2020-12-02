@@ -5,11 +5,11 @@
             <a class="navbar-brand img-fluid mb-2" href="#">
                 <img src="../assets/casa.png" alt="logo" class="img-fluid logo" />
             </a>
-            <h1><strong class="text-light">Autorité de l'aviation civile de Djibouti</strong></h1>
-            <p>Réglementation et supervision de la sécurité et de la sûreté de l'aviation.</p>
+            <h1><strong class="text-light">Djibouti Civil Aviation Authority</strong></h1>
+            <p>Aviation safety and security regulation and supervision.</p>
         </div>
         <div class="col-12 col-md-4 text-light">
-            <h2 class="h4">Siège social</h2>
+            <h2 class="h4">Head office</h2>
             Aéroport international de Djibouti (Ambouli) <br />
             Autorité de l'aviation civile<br />
             <font-awesome-icon :icon="['fas', 'phone']" />
@@ -22,7 +22,7 @@
             civilaviation@intnet.dj
         </div>
         <div class="col-12 col-md-4 d-flex flex-column text-light">
-            <h4 class="h4">Liens rapide</h4>
+            <h4 class="h4">Quick links</h4>
             <a href="#" class="text-light">Aeroport de Djibouti</a>
             <a href="#" class="text-light"> Air Djibouti
             </a> <a href="#" class="text-light mb-5"> La nation </a>
@@ -34,7 +34,7 @@
     </div>
     <div class="row bg-success">
         <div class="col-12 text-center medium text-light pb-3">
-            Autorité de l'Aviation Civile de Djibouti © 2020
+            Djibouti Civil Aviation Authority © 2020
         </div>
     </div>
 </div>

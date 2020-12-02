@@ -35,7 +35,7 @@
                     </md-card-media-cover>
                 </md-card>
                 <md-card>
-                    <md-card-content>
+                    <md-card-content class="justify">
                         It is a particular honor for me to welcome you all-ECAA website
                         visitors, to take a look at our recently revised website that
                         displays the overall picture of the Authority. Ethiopia is one of
@@ -167,6 +167,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.justify{
+  text-align: justify;
+}
 @media (min-width: 500px) and (max-width: 769px) {
   .title-box {
     max-height: 25vh;

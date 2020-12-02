@@ -162,21 +162,21 @@
               <li>
                 <router-link to="/Presentation"
                   ><a href="#" class="dropdown-item"
-                    >Presentation
+                    >About us
                   </a></router-link
                 >
               </li>
               <li>
-                <router-link to="/Organisation"
+                <router-link to="/Organization"
                   ><a href="#" class="dropdown-item"
-                    >Organisation
+                    >Organization
                   </a></router-link
                 >
               </li>
               <li>
-                <router-link to="/A word from the director"
+                <router-link to="/General director's commitment"
                   ><a href="#" class="dropdown-item"
-                    >A word from the director
+                    >General director's commitment
                   </a></router-link
                 >
               </li>
@@ -188,9 +188,9 @@
                 >
               </li>
               <li>
-                <router-link to="/Supervion policy"
+                <router-link to="/Supervision policy"
                   ><a href="#" class="dropdown-item"
-                    >Supervion policy
+                    >Oversight policy
                   </a></router-link
                 >
               </li>
@@ -222,7 +222,7 @@
                   aria-haspopup="true"
                   aria-expanded="false"
                   class="dropdown-item dropdown-toggle"
-                  >Legislative texts</a
+                  >Legislations</a
                 >
                 <ul aria-labelledby="dropdownMenu2" class="dropdown-menu ">
                   <li>
@@ -244,7 +244,7 @@
                   aria-haspopup="true"
                   aria-expanded="false"
                   class="dropdown-item dropdown-toggle"
-                  >Regulatory texts</a
+                  >Regulations</a
                 >
                 <ul aria-labelledby="dropdownMenu2" class="dropdown-menu ">
                   <li>
@@ -274,9 +274,9 @@
               </li>
               <!-- End Level two -->
               <li>
-                <router-link to="/Guidelines"
+                <router-link to="/Directives"
                   ><a href="#" class="dropdown-item"
-                    >Guidelines
+                    >Directives
                   </a></router-link
                 >
               </li>
@@ -293,7 +293,7 @@
             </ul>
           </li>
 
-          <!-- Security -->
+          <!-- Safety -->
 
           <li class="nav-item dropdown">
             <a
@@ -303,13 +303,13 @@
               aria-haspopup="true"
               aria-expanded="false"
               class="nav-link dropdown-toggle"
-              >Security</a
+              >Safety</a
             >
             <ul aria-labelledby="dropdownMenu1" class="dropdown-menu ">
               <!-- Level two dropdown-->
               <li class="dropdown-submenu">
                 <a
-                  @click="goTo('5f3aa3413c2c433e946dcca6', 'navigability')"
+                  @click="goTo('5f3aa3413c2c433e946dcca6', 'Airworthiness')"
                   id="dropdownMenu2"
                   href="#"
                   role="button"
@@ -317,7 +317,7 @@
                   aria-haspopup="true"
                   aria-expanded="false"
                   class="dropdown-item dropdown-toggle link"
-                  >navigability</a
+                  >Airworthiness</a
                 >
                 <ul aria-labelledby="dropdownMenu2" class="dropdown-menu ">
                   <li>
@@ -378,7 +378,7 @@
                   @click="
                     goTo(
                       '5f3aa7e234512340cc2b8253',
-                      'Technical operation of aircraft'
+                      'Aircraft operations'
                     )
                   "
                   id="dropdownMenu2"
@@ -388,7 +388,7 @@
                   aria-haspopup="true"
                   aria-expanded="false"
                   class="dropdown-item dropdown-toggle"
-                  >Technical operation of aircraft</a
+                  >Aircraft operations</a
                 >
                 <ul aria-labelledby="dropdownMenu2" class="dropdown-menu ">
                   <li>
@@ -447,7 +447,7 @@
               <li class="dropdown-submenu">
                 <a
                   @click="
-                    goTo('5f3aa7f034512340cc2b8254', 'License du personel')
+                    goTo('5f3aa7f034512340cc2b8254', 'Personnel licensing')
                   "
                   id="dropdownMenu2"
                   href="#"
@@ -456,7 +456,7 @@
                   aria-haspopup="true"
                   aria-expanded="false"
                   class="dropdown-item dropdown-toggle"
-                  >Staff license</a
+                  >Personnel licensing</a
                 >
                 <ul aria-labelledby="dropdownMenu2" class="dropdown-menu ">
                   <li>
@@ -518,7 +518,7 @@
                   @click="
                     goTo(
                       '5f3aa7fe34512340cc2b8255',
-                      'Aérodrome et infrastructures aéroportuaires'
+                      'Aerdromes and ground aids'
                     )
                   "
                   id="dropdownMenu2"
@@ -528,7 +528,7 @@
                   aria-haspopup="true"
                   aria-expanded="false"
                   class="dropdown-item dropdown-toggle"
-                  >Aerodromes and port infrastructures</a
+                  >Aerdromes and ground aids</a
                 >
                 <ul aria-labelledby="dropdownMenu2" class="dropdown-menu ">
                   <li>
@@ -741,7 +741,7 @@
                   aria-haspopup="true"
                   aria-expanded="false"
                   class="dropdown-item dropdown-toggle"
-                  >Airspace management</a
+                  >Air traffic management</a
                 >
                 <ul aria-labelledby="dropdownMenu2" class="dropdown-menu ">
                   <li>
@@ -800,7 +800,7 @@
               <li class="dropdown-submenu">
                 <a
                   @click="
-                    goTo('5f535bd91dc9dc44eceead5e', 'Service metéorologique')
+                    goTo('5f535bd91dc9dc44eceead5e', 'Meterogical service')
                   "
                   id="dropdownMenu2"
                   href="#"
@@ -868,7 +868,7 @@
               <li class="dropdown-submenu">
                 <a
                   @click="
-                    goTo('5f57966756cc341290c683d2', 'Searches and rescues')
+                    goTo('5f57966756cc341290c683d2', 'Searche and rescue')
                   "
                   id="dropdownMenu2"
                   href="#"
@@ -877,7 +877,7 @@
                   aria-haspopup="true"
                   aria-expanded="false"
                   class="dropdown-item dropdown-toggle"
-                  >Searches and rescues</a
+                  >Search and rescue</a
                 >
                 <ul aria-labelledby="dropdownMenu2" class="dropdown-menu ">
                   <li>
@@ -946,13 +946,13 @@
               aria-haspopup="true"
               aria-expanded="false"
               class="nav-link dropdown-toggle"
-              >Safety</a
+              >Security</a
             >
             <ul aria-labelledby="dropdownMenu1" class="dropdown-menu ">
               <!-- Level two dropdown-->
               <li class="dropdown-submenu">
                 <a
-                  @click="goTo('5f535d6433d82b0034f95ee8', 'Safety')"
+                  @click="goTo('5f535d6433d82b0034f95ee8', 'Security')"
                   id="dropdownMenu2"
                   href="#"
                   role="button"
@@ -960,7 +960,7 @@
                   aria-haspopup="true"
                   aria-expanded="false"
                   class="dropdown-item dropdown-toggle link"
-                  >Safety
+                  >Security
                 </a>
                 <ul aria-labelledby="dropdownMenu2" class="dropdown-menu ">
                   <li>
@@ -1121,16 +1121,16 @@
             >
             <ul aria-labelledby="dropdownMenu1" class="dropdown-menu ">
               <li>
-                <router-link to="/Report form"
+                <router-link to="/Occurrence report"
                   ><a href="#" class="dropdown-item"
-                    >Report form
+                    >Occurrence report
                   </a></router-link
                 >
               </li>
               <li>
                 <router-link to="/Demande autorisation"
                   ><a href="#" class="dropdown-item"
-                    >Flight authorization request
+                    >Flight permit request
                   </a></router-link
                 >
               </li>
@@ -1179,26 +1179,26 @@ export default {
       menu1: "Home",
       menu2: "About us",
       menu3: "Publications",
-      menu4: "Security",
+      menu4: "Safety",
       menu5: "Safety",
       menu6: "Inspection",
       menu7: "e-Services",
       sub2: [
         {
-          title: "Presentation",
-          router: "/Presentation",
+          title: "About us",
+          router: "/About us",
         },
         {
-          title: "A word from the director",
-          router: "/A word from the director",
+          title: "General director's commitment",
+          router: "/General director's commitment",
         },
         {
-          title: "Organisation",
+          title: "Organization",
           router: "/Organisation",
         },
         {
-          title: "Supervion policy",
-          router: "/Supervion policy",
+          title: "Supervision policy",
+          router: "/Supervision policy",
         },
         {
           title: "Training policy",
@@ -1207,16 +1207,16 @@ export default {
       ],
       sub3: [
         {
-          title: "Textes legislatifs",
+          title: "Legislations",
           router: "/Textes legislatifs?id=5f53706c838ed6002be47d36",
         },
         {
-          title: "Textes reglementaires",
+          title: "Regulations",
           router: "/Textes reglementaires?id=5f53707658ac040039a1a6c0",
         },
         {
-          title: "Guidelines",
-          router: "/Guidelines",
+          title: "Directives",
+          router: "/Directives",
         },
         {
           title: "Circulars",
@@ -1229,27 +1229,27 @@ export default {
       ],
       sub4: [
         {
-          title: "navigability",
-          router: "/navigability?id=5f3aa3413c2c433e946dcca6",
+          title: "Airworthiness",
+          router: "/Airworthiness?id=5f3aa3413c2c433e946dcca6",
         },
         {
-          title: "Exploitation technique des aeronefs",
+          title: "Aircraft operations",
           router:
-            "/Technical operation of aircraft?id=5f3aa7e234512340cc2b8253",
+            "/Aircraft operations?id=5f3aa7e234512340cc2b8253",
         },
         {
-          title: "License du personel",
-          router: "/License du personel?id=5f3aa7f034512340cc2b8254",
+          title: "Personnel licensing",
+          router: "/Personnel licensing?id=5f3aa7f034512340cc2b8254",
         },
         {
-          title: "Aérodrome et infrastructures aéroportuaires",
+          title: "Aerdromes and ground aid",
           router:
-            "/Aérodrome et infrastructures aéroportuaires?id=5f3aa7fe34512340cc2b8255",
+            "/Aerdromes and ground aid?id=5f3aa7fe34512340cc2b8255",
         },
         {
-          title: "Service de l'information aéronautique et de la cartographie",
+          title: "Aeronautical information service and cartography",
           router:
-            "/Service de l'information aéronautique et de la cartographie?id=5f3aa80a34512340cc2b8256",
+            "/Aeronautical information service and cartography?id=5f3aa80a34512340cc2b8256",
         },
         {
           title: "Communication, navigation and surveillance",
@@ -1261,17 +1261,17 @@ export default {
           router: "/Airspace management?id=5f535bcd1dc9dc44eceead5d",
         },
         {
-          title: "Service metéorologique",
-          router: "/Service metéorologique?id=5f535bd91dc9dc44eceead5e",
+          title: "Meteorogical service",
+          router: "/Meterogical service?id=5f535bd91dc9dc44eceead5e",
         },
         {
-          title: "Searches and rescues",
-          router: "/Searches and rescues?id=5f57966756cc341290c683d2",
+          title: "Searche and rescue",
+          router: "/Searche and rescue?id=5f57966756cc341290c683d2",
         },
       ],
       sub5: [
         {
-          title: "Safety",
+          title: "Security",
           router: "/Safety?id=5f535d6433d82b0034f95ee8",
         },
         {
@@ -1287,11 +1287,11 @@ export default {
       ],
       sub7: [
         {
-          title: "Report form",
-          router: "/Report form",
+          title: "Occurrence report",
+          router: "/Occurrence report",
         },
         {
-          title: "Flight authorization request",
+          title: "Flight permit request",
           router: "/Demande autorisation",
         },
       ],

@@ -139,7 +139,7 @@ const routes = [
   },
   {
     path: "/Mot du directeur",
-    alias: ["/A word from the director"],
+    alias: ["/General director's commitment"],
     name: "MduD",
     component: MduD,
   },
@@ -177,7 +177,7 @@ const routes = [
     component: RAD,
   },
   {
-    path: "/Textes legislatifs/Lois",
+    path: "/Legislations/Lois",
     name: "Lois",
     component: Lois,
   },
@@ -215,7 +215,7 @@ const routes = [
   },
   {
     path: "/Formulaire de compte rendu",
-    alias: ["/Report form"],
+    alias: ["/Occurrence report"],
     name: "Formulaire CR",
     component: FCR,
   },

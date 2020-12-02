@@ -41,6 +41,7 @@
             </div>
         </div>
         <MAP class="mr-auto ml-auto"></MAP>
+        <Partenaire></Partenaire>
 
     </div>
 </div>
@@ -50,6 +51,7 @@
 import MAP from "../components/Map";
 import Carousel from "../components/Carousel";
 import News from "../components/News";
+import Partenaire from '../components/Partenaire.vue';
 export default {
   metaInfo: {
     // if no subcomponents specify a metaInfo.title, this title will be used
@@ -70,6 +72,7 @@ export default {
   components: {
     MAP,
     Carousel,
+    Partenaire,
     News,
   },
 };

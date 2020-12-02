@@ -18,7 +18,7 @@
             <div class="col-md-4 sideMenu">
                 <Menu :apropo="apropo"></Menu>
             </div>
-            <div class="col-12 col-md-8">
+            <div class="col-12 col-md-8 justify">
               <h1 class="h3 title">POLITIQUE ET ENGAGEMENT DU DIRECTEUR GENERAL
 
 EN MATIERE DE FORMATION</h1>
@@ -144,6 +144,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.justify{
+  text-align: justify;
+}
 @media (min-width: 500px) and (max-width: 769px) {
   .title-box {
     max-height: 25vh;

@@ -3,7 +3,8 @@
     <Header class="header" v-if="lang=='french'"></Header>
     <HeaderEng class="header" v-else></HeaderEng>
         <router-view />
-    <Footer class="mt-5"></Footer>
+    <Footer class="mt-5"  v-if="lang=='french'"></Footer>
+    <FooterEng class="mt-5"  v-else></FooterEng>
 </div>
 </template>
 
@@ -11,6 +12,7 @@
 import Header from "./components/Header";
 import HeaderEng from "./components/HeaderEng";
 import Footer from "./components/Footer";
+import FooterEng from "./components/FooterEng";
 export default {
   metaInfo: {
     // if no subcomponents specify a metaInfo.title, this title will be used
@@ -50,6 +52,7 @@ export default {
     Header,
     HeaderEng,
     Footer,
+    FooterEng,
   },
   computed: {
     lang() {

@@ -215,7 +215,7 @@
               <li class="dropdown-submenu">
                 <a
                   @click="
-                    goTo('5f53706c838ed6002be47d36', 'Textes legislatifs')
+                    goTo('5f53706c838ed6002be47d36', 'Legislations')
                   "
                   id="dropdownMenu2"
                   href="#"
@@ -224,11 +224,11 @@
                   aria-haspopup="true"
                   aria-expanded="false"
                   class="dropdown-item dropdown-toggle"
-                  >Texte legislatif</a
+                  >Legislations</a
                 >
                 <ul aria-labelledby="dropdownMenu2" class="dropdown-menu ">
                   <li>
-                    <router-link to="/Textes legislatifs/Lois"
+                    <router-link to="/Legislations/Lois"
                       ><a href="#" class="dropdown-item">Lois</a></router-link
                     >
                   </li>
@@ -538,7 +538,7 @@
                   aria-haspopup="true"
                   aria-expanded="false"
                   class="dropdown-item dropdown-toggle"
-                  >Aérodromes et infrastructures portuaires</a
+                  >Aérodromes et infrastructures aéroportuaires</a
                 >
                 <ul aria-labelledby="dropdownMenu2" class="dropdown-menu ">
                   <li>
@@ -675,7 +675,7 @@
                   @click="
                     goTo(
                       '5f535bbc1dc9dc44eceead5c',
-                      'Communication, naviguation et surveillance'
+                      'Communication, navigation et surveillance'
                     )
                   "
                   id="dropdownMenu2"
@@ -685,7 +685,7 @@
                   aria-haspopup="true"
                   aria-expanded="false"
                   class="dropdown-item dropdown-toggle"
-                  >Communication, naviguation et surveillance</a
+                  >Communication, navigation et surveillance</a
                 >
                 <ul aria-labelledby="dropdownMenu2" class="dropdown-menu ">
                   <li>
@@ -828,7 +828,7 @@
                   aria-haspopup="true"
                   aria-expanded="false"
                   class="dropdown-item dropdown-toggle"
-                  >Service métérorologique</a
+                  >Service météorologique</a
                 >
                 <ul aria-labelledby="dropdownMenu2" class="dropdown-menu ">
                   <li>
@@ -1234,8 +1234,8 @@ export default {
       ],
       sub3: [
         {
-          title: "Textes legislatifs",
-          router: "/Textes legislatifs?id=5f53706c838ed6002be47d36",
+          title: "Legislations",
+          router: "/Legislations?id=5f53706c838ed6002be47d36",
         },
         {
           title: "Textes reglementaires",
@@ -1279,9 +1279,9 @@ export default {
             "/Service de l'information aéronautique et de la cartographie?id=5f3aa80a34512340cc2b8256",
         },
         {
-          title: "Communication, naviguation et surveillance",
+          title: "Communication, navigation et surveillance",
           router:
-            "/Communication, naviguation et surveillance?id=5f535bbc1dc9dc44eceead5c",
+            "/Communication, navigation et surveillance?id=5f535bbc1dc9dc44eceead5c",
         },
         {
           title: "Gestion de l'espace aérien",
