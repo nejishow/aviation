@@ -1,5 +1,4 @@
 <template>
-<div class="row partenaires">
     <div class="col-12">
         <VueSlickCarousel v-bind="settings" class="carousel" ref="carousel">
             <div class="carousel-box">
@@ -28,15 +27,9 @@
                     <img :src="require('../assets/qatar.png')" class="image" alt="la poste de djibouti" />
                 </div>
             </div>
-            <div class="carousel-box">
-                <div class="carousel-box-content">
-                    <img :src="require('../assets/casa.png')" class="image" alt="la poste de djibouti" />
-                </div>
-            </div>
         </VueSlickCarousel>
 
     </div>
-</div>
 </template>
 
 <script>
@@ -59,7 +52,7 @@ export default {
         autoplay: true,
         infinite: true,
         speed: 500,
-        slidesToShow: 6,
+        slidesToShow: 5,
         swipeToSlide: true,
       },
       windowWidth: window.innerHeight,
