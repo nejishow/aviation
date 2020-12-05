@@ -321,6 +321,28 @@
                   <li>
                     <router-link
                       :to="{
+                        name: 'Reglements',
+                        params: { id: '5f3aa6cb34512340cc2b8252' },
+                      }"
+                      ><a href="#" class="dropdown-item"
+                        >Reglements</a
+                      ></router-link
+                    >
+                  </li>
+                  <li>
+                    <router-link
+                      :to="{
+                        name: 'Procedures',
+                        params: { id: '5f3aa6cb34512340cc2b8251' },
+                      }"
+                      ><a href="#" class="dropdown-item"
+                        >Procedures</a
+                      ></router-link
+                    >
+                  </li>
+                  <li>
+                    <router-link
+                      :to="{
                         name: 'Formulaires',
                         params: { id: '5f3aa6cb34512340cc2b824e' },
                       }"
@@ -349,28 +371,6 @@
                       ></router-link
                     >
                   </li>
-                  <li>
-                    <router-link
-                      :to="{
-                        name: 'Procedures',
-                        params: { id: '5f3aa6cb34512340cc2b8251' },
-                      }"
-                      ><a href="#" class="dropdown-item"
-                        >Procedures</a
-                      ></router-link
-                    >
-                  </li>
-                  <li>
-                    <router-link
-                      :to="{
-                        name: 'Reglements',
-                        params: { id: '5f3aa6cb34512340cc2b8252' },
-                      }"
-                      ><a href="#" class="dropdown-item"
-                        >Reglements</a
-                      ></router-link
-                    >
-                  </li>
                 </ul>
               </li>
               <li class="dropdown-submenu">
@@ -391,6 +391,28 @@
                   >Exploitation technique des aéronefs</a
                 >
                 <ul aria-labelledby="dropdownMenu2" class="dropdown-menu ">
+                  <li>
+                    <router-link
+                      :to="{
+                        name: 'Reglements',
+                        params: { id: '5f3aa8fe34512340cc2b825e' },
+                      }"
+                      ><a href="#" class="dropdown-item"
+                        >Reglements</a
+                      ></router-link
+                    >
+                  </li>
+                  <li>
+                    <router-link
+                      :to="{
+                        name: 'Procedures',
+                        params: { id: '5f3aa8fe34512340cc2b825d' },
+                      }"
+                      ><a href="#" class="dropdown-item"
+                        >Procedures</a
+                      ></router-link
+                    >
+                  </li>
                   <li>
                     <router-link
                       :to="{
@@ -422,28 +444,6 @@
                       ></router-link
                     >
                   </li>
-                  <li>
-                    <router-link
-                      :to="{
-                        name: 'Procedures',
-                        params: { id: '5f3aa8fe34512340cc2b825d' },
-                      }"
-                      ><a href="#" class="dropdown-item"
-                        >Procedures</a
-                      ></router-link
-                    >
-                  </li>
-                  <li>
-                    <router-link
-                      :to="{
-                        name: 'Reglements',
-                        params: { id: '5f3aa8fe34512340cc2b825e' },
-                      }"
-                      ><a href="#" class="dropdown-item"
-                        >Reglements</a
-                      ></router-link
-                    >
-                  </li>
                 </ul>
               </li>
               <li class="dropdown-submenu">
@@ -461,6 +461,28 @@
                   >License du personels</a
                 >
                 <ul aria-labelledby="dropdownMenu2" class="dropdown-menu ">
+                  <li>
+                    <router-link
+                      :to="{
+                        name: 'Reglements',
+                        params: { id: '5f3aa91c34512340cc2b8264' },
+                      }"
+                      ><a href="#" class="dropdown-item"
+                        >Reglements</a
+                      ></router-link
+                    >
+                  </li>
+                  <li>
+                    <router-link
+                      :to="{
+                        name: 'Procedures',
+                        params: { id: '5f3aa91c34512340cc2b8263' },
+                      }"
+                      ><a href="#" class="dropdown-item"
+                        >Procedures</a
+                      ></router-link
+                    >
+                  </li>
                   <li>
                     <router-link
                       :to="{
@@ -492,28 +514,6 @@
                       ></router-link
                     >
                   </li>
-                  <li>
-                    <router-link
-                      :to="{
-                        name: 'Procedures',
-                        params: { id: '5f3aa91c34512340cc2b8263' },
-                      }"
-                      ><a href="#" class="dropdown-item"
-                        >Procedures</a
-                      ></router-link
-                    >
-                  </li>
-                  <li>
-                    <router-link
-                      :to="{
-                        name: 'Reglements',
-                        params: { id: '5f3aa91c34512340cc2b8264' },
-                      }"
-                      ><a href="#" class="dropdown-item"
-                        >Reglements</a
-                      ></router-link
-                    >
-                  </li>
                 </ul>
               </li>
               <!-- End Level two -->
@@ -535,6 +535,28 @@
                   >Aérodromes et infrastructures aéroportuaires</a
                 >
                 <ul aria-labelledby="dropdownMenu2" class="dropdown-menu ">
+                  <li>
+                    <router-link
+                      :to="{
+                        name: 'Reglements',
+                        params: { id: '5f3aa94334512340cc2b826a' },
+                      }"
+                      ><a href="#" class="dropdown-item"
+                        >Reglements</a
+                      ></router-link
+                    >
+                  </li>
+                  <li>
+                    <router-link
+                      :to="{
+                        name: 'Procedures',
+                        params: { id: '5f3aa94334512340cc2b8269' },
+                      }"
+                      ><a href="#" class="dropdown-item"
+                        >Procedures</a
+                      ></router-link
+                    >
+                  </li>
                   <li>
                     <router-link
                       :to="{
@@ -566,28 +588,6 @@
                       ></router-link
                     >
                   </li>
-                  <li>
-                    <router-link
-                      :to="{
-                        name: 'Procedures',
-                        params: { id: '5f3aa94334512340cc2b8269' },
-                      }"
-                      ><a href="#" class="dropdown-item"
-                        >Procedures</a
-                      ></router-link
-                    >
-                  </li>
-                  <li>
-                    <router-link
-                      :to="{
-                        name: 'Reglements',
-                        params: { id: '5f3aa94334512340cc2b826a' },
-                      }"
-                      ><a href="#" class="dropdown-item"
-                        >Reglements</a
-                      ></router-link
-                    >
-                  </li>
                 </ul>
               </li>
               <li class="dropdown-submenu">
@@ -609,6 +609,28 @@
                   cartographie</a
                 >
                 <ul aria-labelledby="dropdownMenu2" class="dropdown-menu ">
+                  <li>
+                    <router-link
+                      :to="{
+                        name: 'Reglements',
+                        params: { id: '5f3aa95b34512340cc2b8270' },
+                      }"
+                      ><a href="#" class="dropdown-item"
+                        >Reglements</a
+                      ></router-link
+                    >
+                  </li>
+                  <li>
+                    <router-link
+                      :to="{
+                        name: 'Procedures',
+                        params: { id: '5f3aa95b34512340cc2b826f' },
+                      }"
+                      ><a href="#" class="dropdown-item"
+                        >Procedures</a
+                      ></router-link
+                    >
+                  </li>
                   <li>
                     <router-link
                       :to="{
@@ -640,28 +662,6 @@
                       ></router-link
                     >
                   </li>
-                  <li>
-                    <router-link
-                      :to="{
-                        name: 'Procedures',
-                        params: { id: '5f3aa95b34512340cc2b826f' },
-                      }"
-                      ><a href="#" class="dropdown-item"
-                        >Procedures</a
-                      ></router-link
-                    >
-                  </li>
-                  <li>
-                    <router-link
-                      :to="{
-                        name: 'Reglements',
-                        params: { id: '5f3aa95b34512340cc2b8270' },
-                      }"
-                      ><a href="#" class="dropdown-item"
-                        >Reglements</a
-                      ></router-link
-                    >
-                  </li>
                 </ul>
               </li>
               <li class="dropdown-submenu">
@@ -682,6 +682,28 @@
                   >Communication, navigation et surveillance</a
                 >
                 <ul aria-labelledby="dropdownMenu2" class="dropdown-menu ">
+                  <li>
+                    <router-link
+                      :to="{
+                        name: 'Reglements',
+                        params: { id: '5f585d9eb1398d47641a5ecd' },
+                      }"
+                      ><a href="#" class="dropdown-item"
+                        >Reglements</a
+                      ></router-link
+                    >
+                  </li>
+                  <li>
+                    <router-link
+                      :to="{
+                        name: 'Procedures',
+                        params: { id: '5f585d9eb1398d47641a5ecc' },
+                      }"
+                      ><a href="#" class="dropdown-item"
+                        >Procedures</a
+                      ></router-link
+                    >
+                  </li>
                   <li>
                     <router-link
                       :to="{
@@ -713,28 +735,6 @@
                       ></router-link
                     >
                   </li>
-                  <li>
-                    <router-link
-                      :to="{
-                        name: 'Procedures',
-                        params: { id: '5f585d9eb1398d47641a5ecc' },
-                      }"
-                      ><a href="#" class="dropdown-item"
-                        >Procedures</a
-                      ></router-link
-                    >
-                  </li>
-                  <li>
-                    <router-link
-                      :to="{
-                        name: 'Reglements',
-                        params: { id: '5f585d9eb1398d47641a5ecd' },
-                      }"
-                      ><a href="#" class="dropdown-item"
-                        >Reglements</a
-                      ></router-link
-                    >
-                  </li>
                 </ul>
               </li>
               <li class="dropdown-submenu">
@@ -755,6 +755,28 @@
                   >Gestion de l'espace aérien</a
                 >
                 <ul aria-labelledby="dropdownMenu2" class="dropdown-menu ">
+                  <li>
+                    <router-link
+                      :to="{
+                        name: 'Reglements',
+                        params: { id: '5f58f66747a3152af4d2e319' },
+                      }"
+                      ><a href="#" class="dropdown-item"
+                        >Reglements</a
+                      ></router-link
+                    >
+                  </li>
+                  <li>
+                    <router-link
+                      :to="{
+                        name: 'Procedures',
+                        params: { id: '5f58f66747a3152af4d2e318' },
+                      }"
+                      ><a href="#" class="dropdown-item"
+                        >Procedures</a
+                      ></router-link
+                    >
+                  </li>
                   <li>
                     <router-link
                       :to="{
@@ -786,28 +808,6 @@
                       ></router-link
                     >
                   </li>
-                  <li>
-                    <router-link
-                      :to="{
-                        name: 'Procedures',
-                        params: { id: '5f58f66747a3152af4d2e318' },
-                      }"
-                      ><a href="#" class="dropdown-item"
-                        >Procedures</a
-                      ></router-link
-                    >
-                  </li>
-                  <li>
-                    <router-link
-                      :to="{
-                        name: 'Reglements',
-                        params: { id: '5f58f66747a3152af4d2e319' },
-                      }"
-                      ><a href="#" class="dropdown-item"
-                        >Reglements</a
-                      ></router-link
-                    >
-                  </li>
                 </ul>
               </li>
               <li class="dropdown-submenu">
@@ -825,6 +825,28 @@
                   >Service météorologique</a
                 >
                 <ul aria-labelledby="dropdownMenu2" class="dropdown-menu ">
+                  <li>
+                    <router-link
+                      :to="{
+                        name: 'Reglements',
+                        params: { id: '5f58f77f47a3152af4d2e31e' },
+                      }"
+                      ><a href="#" class="dropdown-item"
+                        >Reglements</a
+                      ></router-link
+                    >
+                  </li>
+                  <li>
+                    <router-link
+                      :to="{
+                        name: 'Procedures',
+                        params: { id: '5f58f77f47a3152af4d2e31d' },
+                      }"
+                      ><a href="#" class="dropdown-item"
+                        >Procedures</a
+                      ></router-link
+                    >
+                  </li>
                   <li>
                     <router-link
                       :to="{
@@ -856,28 +878,6 @@
                       ></router-link
                     >
                   </li>
-                  <li>
-                    <router-link
-                      :to="{
-                        name: 'Procedures',
-                        params: { id: '5f58f77f47a3152af4d2e31d' },
-                      }"
-                      ><a href="#" class="dropdown-item"
-                        >Procedures</a
-                      ></router-link
-                    >
-                  </li>
-                  <li>
-                    <router-link
-                      :to="{
-                        name: 'Reglements',
-                        params: { id: '5f58f77f47a3152af4d2e31e' },
-                      }"
-                      ><a href="#" class="dropdown-item"
-                        >Reglements</a
-                      ></router-link
-                    >
-                  </li>
                 </ul>
               </li>
               <li class="dropdown-submenu">
@@ -895,6 +895,28 @@
                   >Recherches et sauvetages</a
                 >
                 <ul aria-labelledby="dropdownMenu2" class="dropdown-menu ">
+                  <li>
+                    <router-link
+                      :to="{
+                        name: 'Reglements',
+                        params: { id: '5f585a81b1398d47641a5ec8' },
+                      }"
+                      ><a href="#" class="dropdown-item"
+                        >Reglements</a
+                      ></router-link
+                    >
+                  </li>
+                  <li>
+                    <router-link
+                      :to="{
+                        name: 'Procedures',
+                        params: { id: '5f585a81b1398d47641a5ec7' },
+                      }"
+                      ><a href="#" class="dropdown-item"
+                        >Procedures</a
+                      ></router-link
+                    >
+                  </li>
                   <li>
                     <router-link
                       :to="{
@@ -923,28 +945,6 @@
                       }"
                       ><a href="#" class="dropdown-item"
                         >Manuels</a
-                      ></router-link
-                    >
-                  </li>
-                  <li>
-                    <router-link
-                      :to="{
-                        name: 'Procedures',
-                        params: { id: '5f585a81b1398d47641a5ec7' },
-                      }"
-                      ><a href="#" class="dropdown-item"
-                        >Procedures</a
-                      ></router-link
-                    >
-                  </li>
-                  <li>
-                    <router-link
-                      :to="{
-                        name: 'Reglements',
-                        params: { id: '5f585a81b1398d47641a5ec8' },
-                      }"
-                      ><a href="#" class="dropdown-item"
-                        >Reglements</a
                       ></router-link
                     >
                   </li>
@@ -983,8 +983,30 @@
                   <li>
                     <router-link
                       :to="{
+                        name: 'Reglements',
+                        params: { id: '5f5b37ab638e43228cf0a56e' },
+                      }"
+                      ><a href="#" class="dropdown-item"
+                        >Reglements</a
+                      ></router-link
+                    >
+                  </li>
+                  <li>
+                    <router-link
+                      :to="{
+                        name: 'Procedures',
+                        params: { id: '5f5b37ab638e43228cf0a56d' },
+                      }"
+                      ><a href="#" class="dropdown-item"
+                        >Procedures</a
+                      ></router-link
+                    >
+                  </li>
+                  <li>
+                    <router-link
+                      :to="{
                         name: 'Formulaires',
-                        params: { id: '5f585a81b1398d47641a5ec4' },
+                        params: { id: '5f5b37ab638e43228cf0a56a' },
                       }"
                       ><a href="#" class="dropdown-item"
                         >Formulaires</a
@@ -995,7 +1017,7 @@
                     <router-link
                       :to="{
                         name: 'Guides',
-                        params: { id: '5f585a81b1398d47641a5ec5' },
+                        params: { id: '5f5b37ab638e43228cf0a56b' },
                       }"
                       ><a href="#" class="dropdown-item">Guides</a></router-link
                     >
@@ -1004,32 +1026,10 @@
                     <router-link
                       :to="{
                         name: 'Manuels',
-                        params: { id: '5f585a81b1398d47641a5ec6' },
+                        params: { id: '5f5b37ab638e43228cf0a56c' },
                       }"
                       ><a href="#" class="dropdown-item"
                         >Manuels</a
-                      ></router-link
-                    >
-                  </li>
-                  <li>
-                    <router-link
-                      :to="{
-                        name: 'Procedures',
-                        params: { id: '5f585a81b1398d47641a5ec7' },
-                      }"
-                      ><a href="#" class="dropdown-item"
-                        >Procedures</a
-                      ></router-link
-                    >
-                  </li>
-                  <li>
-                    <router-link
-                      :to="{
-                        name: 'Reglements',
-                        params: { id: '5f585a81b1398d47641a5ec8' },
-                      }"
-                      ><a href="#" class="dropdown-item"
-                        >Reglements</a
                       ></router-link
                     >
                   </li>
@@ -1048,6 +1048,28 @@
                   >Facilitation
                 </a>
                 <ul aria-labelledby="dropdownMenu2" class="dropdown-menu ">
+                  <li>
+                    <router-link
+                      :to="{
+                        name: 'Reglements',
+                        params: { id: '5f5b409c638e43228cf0a573' },
+                      }"
+                      ><a href="#" class="dropdown-item"
+                        >Reglements</a
+                      ></router-link
+                    >
+                  </li>
+                  <li>
+                    <router-link
+                      :to="{
+                        name: 'Procedures',
+                        params: { id: '5f5b409c638e43228cf0a572' },
+                      }"
+                      ><a href="#" class="dropdown-item"
+                        >Procedures</a
+                      ></router-link
+                    >
+                  </li>
                   <li>
                     <router-link
                       :to="{
@@ -1076,28 +1098,6 @@
                       }"
                       ><a href="#" class="dropdown-item"
                         >Manuels</a
-                      ></router-link
-                    >
-                  </li>
-                  <li>
-                    <router-link
-                      :to="{
-                        name: 'Procedures',
-                        params: { id: '5f5b409c638e43228cf0a572' },
-                      }"
-                      ><a href="#" class="dropdown-item"
-                        >Procedures</a
-                      ></router-link
-                    >
-                  </li>
-                  <li>
-                    <router-link
-                      :to="{
-                        name: 'Reglements',
-                        params: { id: '5f5b409c638e43228cf0a573' },
-                      }"
-                      ><a href="#" class="dropdown-item"
-                        >Reglements</a
                       ></router-link
                     >
                   </li>
@@ -1345,7 +1345,7 @@ export default {
     switchLang(lang) {
       this.$store.dispatch("setLang", lang);
     },
-  }
+  },
 };
 </script>
 
