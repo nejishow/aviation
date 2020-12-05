@@ -251,6 +251,7 @@ export default {
   mounted() {
     this.fetchBreadCrumb();
     this.fetchMenu();
+
   },
 };
 </script>

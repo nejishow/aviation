@@ -1,8 +1,7 @@
 import axios from "axios";
 const auth = axios.create({
-  baseURL: "https://aviation-backend.herokuapp.com", // https://aviation-backend.herokuapp.com
+  baseURL:process.env.VUE_APP_BACKEND
 
-  // baseURL: "http://localhost:3000", // https://aviation-backend.herokuapp.com
 
 });
 auth.interceptors.request.use((config) => {
@@ -20,10 +19,6 @@ export default {
     });
   },
   logout() {
-    return auth.post("/logout").then(() => {
-      this.$router.push({ path: '/' })
-    }).catch(() => {
-      this.$router.push({ path: '/' })
-    });
+    return auth.post("/logout")
   },
 };

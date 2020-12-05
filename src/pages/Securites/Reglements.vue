@@ -213,7 +213,6 @@ export default {
         this.sortedDocuments.forEach((doc) => {
           const docName = doc.name.toLowerCase().trim();
           if (docName.includes(nameFile)) {
-            console.log(docName, nameFile);
             this.searchResults.push(doc);
           }
         });

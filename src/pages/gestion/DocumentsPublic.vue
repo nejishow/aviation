@@ -217,7 +217,6 @@ export default {
         .delete()
         .then(() => {
           // File deleted successfully
-          console.log(item);
           this.$store.dispatch("deleteOneDocument", item._id);
         })
         .catch(function () {

@@ -129,12 +129,8 @@
     </div>
     <div class="row">
       <div class="col-12 social">
-        <a class="social_language" @click="switchLang('french')"
-          >Francais</a
-        >/
-        <a class="social_language" @click="switchLang('eng')"
-          >English</a
-        >
+        <a class="social_language" @click="switchLang('french')">Francais</a>/
+        <a class="social_language" @click="switchLang('eng')">English</a>
       </div>
     </div>
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
@@ -214,9 +210,7 @@
               <!-- Level two dropdown-->
               <li class="dropdown-submenu">
                 <a
-                  @click="
-                    goTo('5f53706c838ed6002be47d36', 'Legislations')
-                  "
+                  @click="goTo('5f53706c838ed6002be47d36', 'Legislations')"
                   id="dropdownMenu2"
                   href="#"
                   role="button"
@@ -1199,6 +1193,7 @@
 </template>
 
 <script>
+import auth from "../services/auth.service";
 export default {
   data() {
     return {
@@ -1328,17 +1323,21 @@ export default {
     user() {
       return this.$store.state.user;
     },
-    loading() {
-      if (localStorage.getItem("token")) {
-        return false;
-      } else {
-        return true;
-      }
-    },
   },
   methods: {
     logout() {
-      this.$store.dispatch("logout");
+      auth
+        .logout()
+        .then(() => {
+          this.$store.dispatch("logout");
+
+          if (this.$router.history.current.path !== "/") {
+            this.$router.push("/");
+          }
+        })
+        .catch(() => {
+          console.log("deconnexion error");
+        });
     },
     goTo(id, name) {
       this.$router.push({ path: "/" + name, query: { id } });
@@ -1346,7 +1345,7 @@ export default {
     switchLang(lang) {
       this.$store.dispatch("setLang", lang);
     },
-  },
+  }
 };
 </script>
 

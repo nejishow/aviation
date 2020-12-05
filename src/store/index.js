@@ -4,6 +4,7 @@ import documents from './documents';
 import category from './categoryMenu';
 import media from './media';
 import auth from '../services/auth.service';
+import user from './user';
 Vue.use(Vuex)
 
 export default new Vuex.Store({
@@ -47,19 +48,20 @@ export default new Vuex.Store({
         }
       });
     },
-    logout({ commit }) {
-      localStorage.clear()
+  //   logout({ commit }) {
+  //     localStorage.clear()
 
-      auth.logout().then(() => {
-        commit('SET_USER', {})
-      }).catch(() => {
-        commit('SET_USER', {})
-      })
-    }
-  },
+  //     auth.logout().then(() => {
+  //       commit('SET_USER', {})
+  //     }).catch(() => {
+  //       commit('SET_USER', {})
+  //     })
+  //   }
+   },
   modules: {
     documents,
     category,
-    media
+    media,
+    user
   }
 })

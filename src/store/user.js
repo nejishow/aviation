@@ -1,4 +1,4 @@
-import UserService from '~/services/userService.js'
+import UserService from '../services/auth.service'
 export const state = () => ({
   id: null,
   token: null,
@@ -24,12 +24,6 @@ export const mutations = {
   },
   SET_USER(state, user) {
     state.user = user
-  },
-  LOGOUT: (state) => {
-    localStorage.clear()
-    state.id = null
-    state.token = null
-    state.user = []
   }
 }
 export const actions = {
@@ -37,12 +31,13 @@ export const actions = {
     commit('SET_USER', payload.user)
     commit('SET_ID', payload.user._id)
     commit('SET_TOKEN', payload.token)
-    return true
   },
   logout({ commit }) {
-    return UserService.logoutUser().then(async () => {
-      await commit('LOGOUT')
-    })
+    commit('SET_USER', [])
+    commit('SET_ID', null)
+    commit('SET_TOKEN', null)
+    localStorage.clear()
+
   },
   getUser({ commit }) {
     return UserService.getUser().then(async (response) => {
@@ -56,4 +51,11 @@ export const actions = {
       commit('SET_USER', response.data)
     })
   }
+}
+export default {
+
+  getters,
+  actions,
+  mutations,
+  state
 }

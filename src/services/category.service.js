@@ -1,8 +1,7 @@
 import axios from "axios";
 const category = axios.create({
-  baseURL: "https://aviation-backend.herokuapp.com", // https://aviation-backend.herokuapp.com
+  baseURL:process.env.VUE_APP_BACKEND
 
-  // baseURL: "http://localhost:3000", // https://aviation-backend.herokuapp.com
 });
 category.interceptors.request.use((config) => {
   config.headers.common.Authorization =

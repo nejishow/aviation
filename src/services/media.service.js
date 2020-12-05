@@ -1,9 +1,8 @@
 import axios from "axios";
 const media = axios.create({
-    baseURL: "https://aviation-backend.herokuapp.com", // https://aviation-backend.herokuapp.com
+    baseURL:process.env.VUE_APP_BACKEND
 
-    // baseURL: "http://localhost:3000", // https://aviation-backend.herokuapp.com
-});
+  });
 media.interceptors.request.use((config) => {
     config.headers.common.Authorization =
         "Bearer " + localStorage.getItem("token");

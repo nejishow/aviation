@@ -4,8 +4,8 @@
         <h4 class="mr-auto ml-auto mb-5">Connection</h4>
         <div class="form-group">
             <div class="form-group">
-                <label class="form-check-label small font-italic font-weight-bold">Votre email</label>
-                <input id="email" v-model="email" type="text" class="form-control" placeholder="email" />
+                <label class="form-check-label small font-italic font-weight-bold">Votre pseudo</label>
+                <input id="pseudo" v-model="pseudo" type="text" class="form-control" placeholder="pseudo" />
             </div>
             <div class="form-group">
                 <label class="form-check-label small font-italic font-weight-bold">Votre mot de passe</label>
@@ -48,7 +48,7 @@ export default {
     },
     data() {
         return {
-            email: "",
+            pseudo: "",
             password: "",
             error: "",
             loading: false,
@@ -57,11 +57,11 @@ export default {
     methods: {
         submit() {
             this.loading = true;
-            var email = this.email;
+            var pseudo = this.pseudo;
             var password = this.password;
             return authService
                 .signIn({
-                    email,
+                    pseudo,
                     password
                 })
                 .then((data) => {

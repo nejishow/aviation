@@ -135,10 +135,7 @@ export default {
           return element._id === this.$route.query.id;
         }
       );
-              console.log("subOne ", subOne);
-
       if (subOne.length === 0) {
-        console.log("vide");
         this.$router.push({name:"Error"});
       } else {
         this.$store.state.category.subCategoryOne.forEach((sub) => {
