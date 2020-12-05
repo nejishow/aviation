@@ -225,7 +225,7 @@ const routes = [
     component: AuditInspection,
   },
   {
-    path: "/:name",
+    path: "/Categorie/:name",
     name: "SubMenu",
     component: SubMenu,
   },

@@ -60,10 +60,11 @@ export default {
     Menu,
   },
   metaInfo() {
-    const description = this.subone.description;
+    const description = this.subOne.description;
+    const name = this.subOne.name;
     return {
       title() {
-        return "Manuels";
+        return name;
       },
       meta: [
         {
@@ -77,7 +78,7 @@ export default {
   data() {
     return {
       menu: [],
-      subone: {},
+      subOne: {},
       sub: [],
     };
   },
@@ -113,7 +114,6 @@ export default {
   methods: {
     fetchBreadCrumb() {
       this.$store.state.category.subCategoryOne.forEach((subOne) => {
-        if (subOne !== undefined) {
           if (subOne._id === this.$route.query.id) {
             this.subOne = subOne;
             this.$store.dispatch("fetchB2", subOne.name);
@@ -123,9 +123,7 @@ export default {
               }
             });
           }
-        } else {
-          this.$router.push("*");
-        }
+        
       });
     },
     fetchMenu() {
@@ -135,24 +133,18 @@ export default {
           return element._id === this.$route.query.id;
         }
       );
-      if (subOne.length === 0) {
-        this.$router.push({name:"Error"});
-      } else {
+
         this.$store.state.category.subCategoryOne.forEach((sub) => {
           if (sub.idParent == subOne[0].idParent && sub.name !== "Accords") {
             this.menu.push(sub);
           }
         });
-      }
     },
   },
 
   mounted() {
     this.fetchBreadCrumb();
     this.fetchMenu();
-    this.sub = this.subCategory.filter((sub) => {
-      return (sub.idParent = this.$route.query.id);
-    });
   },
 };
 </script>

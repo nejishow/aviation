@@ -1340,7 +1340,7 @@ export default {
         });
     },
     goTo(id, name) {
-      this.$router.push({ path: "/" + name, query: { id } });
+      this.$router.push({ path: "/Categorie/" + name, query: { id } });
     },
     switchLang(lang) {
       this.$store.dispatch("setLang", lang);

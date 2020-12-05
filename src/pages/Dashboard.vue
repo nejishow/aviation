@@ -87,7 +87,7 @@ import Partenaire from "../components/Partenaire.vue";
 export default {
   metaInfo: {
     // if no subcomponents specify a metaInfo.title, this title will be used
-    title: "Aviation Civile de Djibouti",
+    title: "Acceuil",
     meta: [
       {
         vmid: "description",
