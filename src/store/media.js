@@ -73,6 +73,12 @@ export const actions = {
     return mediaService.postnews(news).then(async () => {
       await dispatch('getNews')
     });
+    
+  },
+  modifyNews({ dispatch }, news) {
+    return mediaService.modifyNews(news).then(async () => {
+      await dispatch('getNews')
+    });
   },
   deleteOneNews({ dispatch }, id) {
     mediaService.deleteNews(id).then(async () => {

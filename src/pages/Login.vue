@@ -65,7 +65,11 @@ export default {
                     password
                 })
                 .then((data) => {
-                    this.$store.dispatch("setUser", data.data.user)
+                    const result = {
+                        user: data.data.user,
+                        token: data.data.token
+                    }
+                    this.$store.dispatch("login", result)
                     localStorage.setItem("token", data.data.token);
                     localStorage.setItem("id", data.data.user._id);
                     this.$router.push({

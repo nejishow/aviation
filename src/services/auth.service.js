@@ -18,7 +18,15 @@ export default {
       params: { token, id }
     });
   },
+  getAllUsers() {
+    return auth.get("/allUsers");
+  },
   logout() {
     return auth.post("/logout")
   },
-};
+  postStaff(staff) {
+    return auth.post("/newUser", {
+      params: staff
+    });
+}
+}

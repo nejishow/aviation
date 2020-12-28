@@ -24,17 +24,14 @@ export default {
     getBanner() {
         return media.get("/banners");
     },
-
-
-
     postnews(news) {
         return media.post("/news", { params: news });
     },
     deleteNews(id) {
         return media.post("/deleteNews/" + id);
     },
-    disableNews(id) {
-        return media.post("/disableNews/" + id);
+    modifyNews(news) {
+        return media.post("/modifyNews", { params: news });
     },
     enableNews(id) {
         return media.post("/enableNews/" + id);

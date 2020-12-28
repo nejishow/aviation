@@ -1,8 +1,12 @@
 import UserService from '../services/auth.service'
+import auth from '../services/auth.service';
+
 export const state = () => ({
   id: null,
   token: null,
-  user: []
+  staff: [],
+  user: {},
+
 })
 export const getters = {
   getId(state) {
@@ -24,6 +28,9 @@ export const mutations = {
   },
   SET_USER(state, user) {
     state.user = user
+  },
+  SET_STAFF(state, staff) {
+    state.staff = staff
   }
 }
 export const actions = {
@@ -32,6 +39,25 @@ export const actions = {
     commit('SET_ID', payload.user._id)
     commit('SET_TOKEN', payload.token)
   },
+  getUser({ commit }) {
+    const id = localStorage.getItem('id')
+    const token = localStorage.getItem('token')
+    return auth.getUser(token, id).then((data) => {
+      const user = data.data
+      if (user._id) {
+        commit('SET_USER', user)
+      } else {
+        commit('SET_USER', {})
+        localStorage.clear()
+      }
+    });
+  },
+  getStaffs({ commit }) {
+    return auth.getAllUsers().then((data) => {
+      const staff = data.data
+        commit('SET_STAFF', staff)
+    });
+  },
   logout({ commit }) {
     commit('SET_USER', [])
     commit('SET_ID', null)
@@ -39,13 +65,7 @@ export const actions = {
     localStorage.clear()
 
   },
-  getUser({ commit }) {
-    return UserService.getUser().then(async (response) => {
-      await commit('SET_USER', response.data)
-      await commit('SET_ID', localStorage.getItem('id'))
-      await commit('SET_TOKEN', localStorage.getItem('token'))
-    })
-  },
+
   patchUser({ commit }, payload) {
     return UserService.modifyUser(payload).then((response) => {
       commit('SET_USER', response.data)

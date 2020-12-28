@@ -24,7 +24,7 @@ import Public from "../gestion/DocumentsPublic";
 export default {
   computed: {
     isAdmin() {
-      return this.$store.state.user.isAdmin;
+      return this.$store.state.user.user.isAdmin;
     },
   },
   metaInfo() {

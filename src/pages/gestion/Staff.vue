@@ -19,14 +19,14 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(staff, index) in staffs" :key="index">
-            <td>{{staff.pseudo}}</td>
-            <td v-if="staff.isAdmin">Oui</td>
-            <td v-if="!staff.isAdmin">Non</td>
+          <tr v-for="(staf, index) in staffs" :key="index">
+            <td>{{staf.pseudo}}</td>
+            <td v-if="staf.isAdmin">Oui</td>
+            <td v-if="!staf.isAdmin">Non</td>
           </tr>
         </tbody>
       </table>
-    </div>
+      </div>
   </div>
 </template>
 
@@ -43,17 +43,17 @@ export default {
     };
   },
   mounted() {
-    this.$store.dispatch("getUser");
+    this.$store.dispatch("getStaffs");
   },
   computed: {
     staffs() {
-      return this.$store.state.staff;
+      return this.$store.state.user.staff;
     },
   },
   methods: {
     postUser() {
       authS.postStaff(this.staff).then(() => {
-        this.$store.dispatch("getUser");
+        this.$store.dispatch("getStaffs");
         this.staff = {
         pseudo: "",
         password: "",

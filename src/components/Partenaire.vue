@@ -2,29 +2,32 @@
     <div class="col-12">
         <VueSlickCarousel v-bind="settings" class="carousel" ref="carousel">
             <div class="carousel-box">
-                <img :src="require('../assets/air djibouti.png')" class="image" alt="la poste de djibouti" />
+                <img :src="require('../assets/airport.jpg')" class="image" alt="Aéroport de Djibouti" />
+            </div>
+                        <div class="carousel-box">
+                <img :src="require('../assets/air djibouti.png')" class="image" alt="Air Djibouti" />
             </div>
             <div class="carousel-box">
-                <img :src="require('../assets/air france.png')" class="image" alt="la poste de djibouti" />
+                <img :src="require('../assets/air france.png')" class="image" alt="Air France" />
             </div>
             <div class="carousel-box">
                 <div class="carousel-box-content">
-                    <img :src="require('../assets/ethiopian.png')" class="image" alt="la poste de djibouti" />
+                    <img :src="require('../assets/ethiopian.png')" class="image" alt="Ethiopian Airlines" />
                 </div>
             </div>
             <div class="carousel-box">
                 <div class="carousel-box-content">
-                    <img :src="require('../assets/turkish-airlines-logo.jpg')" class="image" alt="la poste de djibouti" />
+                    <img :src="require('../assets/turkish-airlines-logo.jpg')" class="image" alt="Turkish Airlines" />
                 </div>
             </div>
             <div class="carousel-box">
                 <div class="carousel-box-content">
-                    <img :src="require('../assets/emirates.png')" class="image" alt="la poste de djibouti" />
+                    <img :src="require('../assets/emirates.png')" class="image" alt="Emirates Airlines" />
                 </div>
             </div>
             <div class="carousel-box">
                 <div class="carousel-box-content">
-                    <img :src="require('../assets/qatar.png')" class="image" alt="la poste de djibouti" />
+                    <img :src="require('../assets/qatar.png')" class="image" alt="Qatar Airways" />
                 </div>
             </div>
         </VueSlickCarousel>

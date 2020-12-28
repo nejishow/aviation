@@ -65,7 +65,7 @@ const routes = [
     name: "Docs",
     component: Docs,
     beforeEnter: (to, from, next) => {
-      if (to.name === "Docs" && !store.state.user.isAdmin) {
+      if (to.name === "Docs" && !store.state.user.user.isAdmin) {
         next({ alias: ["/ceciestuntest"], name: "Login" });
       } else {
         next();
@@ -77,7 +77,7 @@ const routes = [
     name: "DocIntern",
     component: DocIntern,
     beforeEnter: (to, from, next) => {
-      if (to.name === "DocIntern" && !store.state.user._id) {
+      if (to.name === "DocIntern" && !store.state.user.user._id) {
         next({ alias: ["/ceciestuntest"], name: "Login" });
       } else {
         next();
@@ -89,7 +89,7 @@ const routes = [
     name: "Media",
     component: Media,
     beforeEnter: (to, from, next) => {
-      if (to.name === "Media" && !store.state.user.isAdmin) {
+      if (to.name === "Media" && !store.state.user.user.isAdmin) {
         next({ alias: ["/ceciestuntest"], name: "Login" });
       } else {
         next();
