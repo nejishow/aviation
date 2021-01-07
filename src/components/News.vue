@@ -1,14 +1,12 @@
 <template>
   <div class="md_card" v-if="news" @click="goTo(news._id)">
     <div class="header">
-      <div class="small">{{ news.title }}</div>
-      <div class="small">{{ news.createdAt }}</div>
+      <div class="header_title">{{ news.title }}</div>
+      <div class="header_date">{{ news.createdAt }}</div>
     </div>
 
     <div class="media">
-      <img :src="news.url" :alt="news.title" class="newsImage" />
-
-      <div v-html="news.content" class="small description"></div>
+      <img :src="news.url" :alt="news.title" class="media_image" />
     </div>
   </div>
 </template>
@@ -28,38 +26,56 @@ export default {
 @import "../sass/main.scss";
 
 .md_card {
-  max-height: 30vh;
   max-width: 100%;
   border: 0.4px solid rgba(163, 160, 160, 0.63);
   cursor: pointer;
+  @include respond(big-desk) {
+  }
+
+  @include respond(tablet-land) {
+  }
   .header {
-    max-height: 20%;
+    
     padding-left: 1rem;
+    padding-right: 1rem;
+    font-weight: 800;
+    text-transform: capitalize;
+    @include respond(big-desk) {
+          height: 6vh !important;
+
+    }
+    @include respond(desk) {
+                    height: 10vh !important;
+
+    }
+        @include respond(tablet-land) {
+                    height: 6vh !important;
+
+    }
+        @include respond(tablet) {
+              height: 15vh !important;
+
+    }
   }
 
   .media {
     padding-top: 0.5rem;
     max-height: 100%;
-
-    .newsImage {
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    &_image {
       max-height: 20vh;
-      width: 50%;
-    }
+      @include respond(big-desk) {
+      max-height: 30vh;
+      }
+      @include respond(tablet-land) {
+              max-height: 20vh !important;
 
-    .description {
-      padding-top: 0.5rem;
-      padding-bottom: 5rem;
-      padding-left: 0.5rem;
-      max-width: 100%;
-      max-height: 20vh !important;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      overflow: hidden;
+      }
+            @include respond(tablet) {
+              max-height: 40vh !important;
 
-      &_text {
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        overflow: hidden;
       }
     }
   }

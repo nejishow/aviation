@@ -28,7 +28,6 @@
                 >
                   <md-icon>delete</md-icon>
                 </button>
-                {{banner}}
               </td>            </tr>
         </tbody>
       </table>

@@ -53,7 +53,16 @@ export const actions = {
     });
   },
   getStaffs({ commit }) {
-    return auth.getAllUsers().then((data) => {
+    return auth.getAllUsers().then(async (data) => {
+      await data.data.sort((a, b) => {
+        if (a.pseudo > b.pseudo) {
+          return 1;
+        }
+        if (a.pseudo < b.pseudo) {
+          return -1;
+        }
+        return 0;
+      });
       const staff = data.data
         commit('SET_STAFF', staff)
     });

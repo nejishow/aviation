@@ -29,4 +29,15 @@ export default {
       params: staff
     });
 }
+,
+modifyStaff(staff) {
+  return auth.post("/modifyStaff/"+ staff._id, {
+    params: staff
+  });
+},
+deleteStaff(staff) {
+  return auth.post("/deleteStaff/"+ staff._id, {
+    params: staff
+  });
+}
 }

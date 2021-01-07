@@ -49,6 +49,12 @@ breakpoints arguments choices
       @content;
     }
   }
+  @if $breakpoint==desk {
+    @media (max-width: 112.4em) {
+      //1800px
+      @content;
+    }
+  }
   @if $breakpoint==big-desk {
     @media (min-width: 112.5em) {
       //1800px

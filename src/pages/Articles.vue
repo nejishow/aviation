@@ -10,13 +10,15 @@
     <div class="row">
       <div class="col-12" v-if="news">
         <div class="news-box">
-          <img :src="news.url" :alt="news.title" class="news-box_image" />
+          <div class="news-box_image">
+            <img :src="news.url" :alt="news.title" class="news-box_image_img" />
+          </div>
           <div class="news-box_content">
             <div class="news-box_title d-flex flex-column">
-              <h1 class="h1">{{ news.title }}</h1>
+              <h1 class="h2">{{ news.title }}</h1>
               <strong>{{ news.createdAt }}</strong>
             </div>
-            <div v-html="news.content"></div>
+            <div v-html="news.content" class="content"></div>
           </div>
         </div>
       </div>
@@ -49,7 +51,6 @@ export default {
         return x._id === this.$route.params.id;
       });
       if (article.length === 0) {
-        this.goError()
         return article[0];
       } else {
         return article[0];
@@ -76,23 +77,38 @@ export default {
   },
   methods: {
     goError() {
-      this.$router.push({name:"404"})
-    }
+      this.$router.push({ name: "404" });
+    },
   },
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import "../sass/main.scss";
 .news-box {
   width: 100%;
   &_image {
+    @include respond(big-desk) {
+      height: 40vh !important;
+          margin-right: 2rem;
+    margin-bottom: 2rem;
+    }
+        @include respond(tablet-land) {
+      height: 20vh !important;
+          margin-right: 2rem;
+    margin-bottom: 2rem;
+    }
     float: left;
     width: 40%;
-    height: 50vh;
+    height: 100vh !important;
+    display: flex;
+    justify-content: center;
+    &_img {
+      height: 100% !important;
+      width: auto;
+    }
+
     @include respond(tablet-land) {
-      float: left;
-      width: 40%;
       height: 30vh;
     }
     @include respond(tablet) {
@@ -106,7 +122,15 @@ export default {
     margin-bottom: 5rem;
   }
 }
+ span {
+    @include respond(big-desk){
+      font-size: 2rem !important;
+    }
+        @include respond(tablet-land){
+      font-size: 1.5rem !important;
+    }
 
+}
 .title-box {
   position: relative;
   height: 40vh;

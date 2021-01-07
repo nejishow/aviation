@@ -33,13 +33,13 @@ import FCR from "../pages/eService/formulaire_cr.vue";
 import AuditInspection from "../pages/inspection/audit_inspection.vue";
 import SubMenu from "../pages/SubMenu.vue";
 import Article from "../pages/Articles.vue";
+import StaffDetails from "../pages/gestion/StaffDetails.vue";
 import PageNotFound from '../pages/PageNotFound.vue';
 Vue.use(VueRouter);
 
 const routes = [
   {
     path: "/contact",
-    alias: ["/ceciestuntest"],
     name: "Contact",
     component: Contact,
   },
@@ -54,7 +54,19 @@ const routes = [
     component: Login,
     beforeEnter: (to, from, next) => {
       if (to.name === "Login" && localStorage.getItem("token")) {
-        next({ alias: ["/ceciestuntest"], name: "Dashboard" });
+        next({ alias: ["/"], name: "Dashboard" });
+      } else {
+        next();
+      }
+    },
+  },
+  {
+    path: "/staff",
+    name: "Staff",
+    component: StaffDetails,
+    beforeEnter: (to, from, next) => {
+      if (to.name === "Staff" && !store.state.user.user.isAdmin) {
+        next({ alias: ["/"], name: "Login" });
       } else {
         next();
       }
@@ -66,7 +78,7 @@ const routes = [
     component: Docs,
     beforeEnter: (to, from, next) => {
       if (to.name === "Docs" && !store.state.user.user.isAdmin) {
-        next({ alias: ["/ceciestuntest"], name: "Login" });
+        next({ alias: ["/"], name: "Login" });
       } else {
         next();
       }
@@ -78,7 +90,7 @@ const routes = [
     component: DocIntern,
     beforeEnter: (to, from, next) => {
       if (to.name === "DocIntern" && !store.state.user.user._id) {
-        next({ alias: ["/ceciestuntest"], name: "Login" });
+        next({ alias: ["/"], name: "Login" });
       } else {
         next();
       }
@@ -90,7 +102,7 @@ const routes = [
     component: Media,
     beforeEnter: (to, from, next) => {
       if (to.name === "Media" && !store.state.user.user.isAdmin) {
-        next({ alias: ["/ceciestuntest"], name: "Login" });
+        next({ alias: ["/"], name: "Login" });
       } else {
         next();
       }
