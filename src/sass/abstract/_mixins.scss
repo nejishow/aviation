@@ -44,8 +44,8 @@ breakpoints arguments choices
     }
   }
   @if $breakpoint==tablet-land {
-    @media (max-width: 75em) {
-      //1200px
+    @media (max-width: 68.75em) {
+      //1100px
       @content;
     }
   }

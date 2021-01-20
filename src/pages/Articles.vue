@@ -90,17 +90,16 @@ export default {
   &_image {
     @include respond(big-desk) {
       height: 40vh !important;
-          margin-right: 2rem;
-    margin-bottom: 2rem;
+      margin-right: 2rem;
+      margin-bottom: 2rem;
     }
-        @include respond(tablet-land) {
-      height: 20vh !important;
-          margin-right: 2rem;
-    margin-bottom: 2rem;
+        @include respond(desk) {
+      height: 50vh !important;
+      margin-right: 2rem;
+      margin-bottom: 2rem;
     }
     float: left;
-    width: 40%;
-    height: 100vh !important;
+    width: 30%;
     display: flex;
     justify-content: center;
     &_img {
@@ -109,7 +108,9 @@ export default {
     }
 
     @include respond(tablet-land) {
-      height: 30vh;
+      height: 30vh !important;
+            margin-right: 2rem;
+      margin-bottom: 2rem;
     }
     @include respond(tablet) {
       float: none;
@@ -117,19 +118,43 @@ export default {
       height: 50vh;
     }
   }
-
+  &_content {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
   &_title {
-    margin-bottom: 5rem;
+      @include respond(big-desk) {
+    font-size: 1.5rem !important;
+    margin-bottom: 2rem;
+  }
+        @include respond(desk) {
+    font-size: 1rem !important;
+    margin-bottom: 2rem;
+  }
+  @include respond(tablet-land) {
+    font-size: 1.5rem !important;
+        margin-bottom: 2rem;
+
+  }
+
+    @include respond(tablet) {
+    font-size: 1rem !important;
+        margin-bottom: 1rem;
+
+  }
   }
 }
- span {
-    @include respond(big-desk){
-      font-size: 2rem !important;
-    }
-        @include respond(tablet-land){
-      font-size: 1.5rem !important;
-    }
+span {
+  @include respond(big-desk) {
+    font-size: 2rem !important;
+  }
+  @include respond(tablet-land) {
+    font-size: 1.5rem !important;
+  }
 
+    @include respond(tablet) {
+    font-size: 1rem !important;
+  }
 }
 .title-box {
   position: relative;
