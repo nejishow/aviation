@@ -1,59 +1,111 @@
 <template>
-<div>
+  <div>
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-12 ">
-                <div class="title-box">
-                    <h1 class="title">Presentation</h1>
-                </div>
-            </div>
+      <div class="row">
+        <div class="col-12 ">
+          <div class="title-box">
+            <h1 class="title">Presentation</h1>
+          </div>
         </div>
+      </div>
     </div>
     <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <span>A propos de nous</span>
-                <span> / Presentation</span>
-            </div>
-            <div class="col-md-4 sideMenu">
-                <Menu :apropo="apropo"></Menu>
-            </div>
-            <div class="col-12 col-md-8 justify">
-                <h5 class=" mt-5 font-weight-bold">Our Vision:</h5>
-                Building internationally competent and secured civil aviation by 2025.
-
-                <h5 class=" mt-5 font-weight-bold">Our Mission:</h5>
-
-                To enable the public get access to reliable Air transport service by
-                ensuring Aviation safety and security through effective regulatory
-                function, environmental protection, provision of Air navigation
-                services, by strengthening global cooperation and partnership.
-
-                <h5 class=" mt-5 font-weight-bold">
-                    The objective of the Authority shall be:
-                </h5>
-
-                To promote and maintain an efficient and economical civil air service
-                and general aviation service system and to ensure the provision of
-                highly secure and safe air service; To develop domestic and
-                international air transportation networks and to ensure a reliable and
-                sustainable air transport system; To implement and enforce laws,
-                regulations and directives relating to civil aviation as well as reaties
-                to which Ethiopia is a party.
-
-                <h5 class=" mt-5 font-weight-bold">Our Value:</h5>
-
-                <ol class="list-group">
-                    <li class="ml-5">Safety First</li>
-                    <li class="ml-5">Team Work</li>
-                    <li class="ml-5">Think Globally Act Locally</li>
-                    <li class="ml-5">Committed to Excellence</li>
-                    <li class="ml-5">Our Efforts our Achievement</li>
-                </ol>
-            </div>
+      <div class="row">
+        <div class="col-12">
+          <span>A propos de nous</span>
+          <span> / Presentation</span>
         </div>
+        <div class="col-md-4 sideMenu">
+          <Menu :apropo="apropo"></Menu>
+        </div>
+        <div class="col-12 col-md-8 justify">
+          <h1 class="h3 title">Presentation</h1>
+          <p>
+            L'Autorité de l'Aviation Civile (AAC), créée conformément à la Loi
+            n°108/AN/10/6èmeL du 10 janvier 2011, est un établissement public administratif, rattaché au Ministère de l’Equipement et des Transports en
+            République de Djibouti. Elle est chargée de la mise en œuvre de la
+            politique aéronautique nationale, notamment de la règlementation et
+            de la supervision de l'aviation civile, en matière de sécurité, de
+            sûreté, de la protection de l’environnement et d'économie. Son
+            objectif est de veiller au développement sûr, ordonné et efficient
+            de l'aviation civile en République de Djibouti.
+          </p>
+          <p>
+            Cette création a répondu au souci du gouvernement Djiboutien de
+            mettre son aviation civile au standard de l’Organisation de
+            l’Aviation Civile Internationale (OACI) qui préconise la cession de
+            la gestion de l’aviation civile à des organismes autonomes à l’image
+            de ce qui se fait déjà dans plusieurs pays environnants.
+          </p>
+          À cet effet, l'Autorité de l'Aviation Civile (AAC) est chargée :
+          <ul class=" one">
+            <li class="">
+              d’assister le Gouvernement dans la définition et la conduite de la
+              politique aéronautique nationale en tenant compte des besoins du
+              pays mais aussi des normes et des conventions internationales ;
+            </li>
+            <li class="">
+              d’exécuter la politique de l’Etat en matière d’aviation civile ;
+            </li>
+            <li class="">
+              d’élaborer et de gérer le programme national de sécurité et le
+              programme national de sureté de l’aviation civile, en
+              collaboration et en coordination avec les parties concernées,
+            </li>
+            <li class="">
+              d'établir la réglementation, en suivre l'exécution et l'évolution
+              en élaborant les amendements appropriés; comme responsable du
+              contrôle et de la coordination de l'application de la
+              réglementation nationale et des conventions internationales
+              ratifiées par la République de Djibouti quant à la sécurité
+              aérienne et à la sureté de l’aviation civile et de l'efficacité du
+              transport aérien ;
+            </li>
+            <li class="">
+              de définir des doctrines concernant le recrutement, la formation
+              et l'emploi des personnels techniques, chargés d'assurer la
+              régularité et la sécurité du trafic aérien, d'organiser et
+              d'assumer la formation aéronautique ;
+            </li>
+            <li class="">
+              d’assurer la supervision et la certification des organes et du
+              personnel aéronautique de la navigation aérienne, notamment :
+              <ul class=" two">
+                <li class="">des exploitants aériens,</li>
+                <li class="">
+                  des organismes de sûreté et de sécurité aérienne,
+                </li>
+                <li class="">
+                  des organismes de gestion des espaces aériens et des
+                  aéroports,
+                </li>
+                <li class="">
+                  des organismes de maintenance des avions,
+                </li>
+                <li class="">des aéronefs,</li>
+                <li class="">
+                  des personnels techniques d’entretien et des navigants
+                  aériens.
+                </li>
+              </ul>
+            </li>
+            <li class="">
+              de superviser la fourniture de l'assistance météorologique;
+            </li>
+            <li class="">
+              de superviser la fourniture de service de la navigation aérienne;
+            </li>
+            <li class="">
+              de participer à tous travaux et négociations à caractère
+              international concernant l'aviation civile, d'assister et
+              conseiller le Gouvernement dans la négociation des accords
+              internationaux;
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
-</div>
+  </div>
 </template>
 
 <script>
@@ -78,7 +130,8 @@ export default {
       searchResults: [],
       idDirectives: "",
       menu: [],
-      errorSearch: "",      sortDesc: false,
+      errorSearch: "",
+      sortDesc: false,
       page: 1,
       sortBy: "name",
       itemsPerPage: 6,
@@ -87,7 +140,7 @@ export default {
     };
   },
   computed: {
-        numberOfPages() {
+    numberOfPages() {
       return Math.ceil(this.sortedDocuments.length / this.itemsPerPage);
     },
     b1() {
@@ -133,7 +186,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.justify{
+.justify {
   text-align: justify;
 }
 @media (min-width: 500px) and (max-width: 769px) {
@@ -146,7 +199,7 @@ export default {
       font-size: 1.5rem !important;
     }
   }
-      .sideMenu {
+  .sideMenu {
     display: none;
   }
 }
@@ -201,23 +254,16 @@ export default {
     min-width: 100%;
   }
 }
+p {
+  margin-bottom: 2rem;
+}
+.one{
+  list-style: square;
+  list-style-type: disc;
+}
+.two{
+  list-style: circle;
+  margin-left: 1rem;
+  }
 
-.search {
-  border-radius: 100px;
-  /* mozilla */
-  -moz-border-radius: 100px;
-  /* webkit */
-  -webkit-border-radius: 100px;
-}
-.table-footer {
-  border-top: solid 1px grey;
-  padding-top: 2rem;
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-}
-
-.ceo {
-  width: 500px;
-}
 </style>

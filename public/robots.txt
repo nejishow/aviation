@@ -10,3 +10,4 @@ Disallow: /Reglements/
 Disallow: /Guides/
 Disallow: /docIntern
 Disallow: /404
+Disallow: /Legislations

@@ -1,43 +1,29 @@
 <template>
-<div>
+  <div>
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-12 ">
-                <div class="title-box">
-                    <h1 class="title">Organisation</h1>
-                </div>
-            </div>
+      <div class="row">
+        <div class="col-12 ">
+          <div class="title-box">
+            <h1 class="title">Organisation</h1>
+          </div>
         </div>
+      </div>
     </div>
     <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <span>A propos de nous</span>
-                <span> / Organisation</span>
-            </div>
-            <div class="col-md-4 sideMenu">
-                <Menu :apropo="apropo"></Menu>
-            </div>
-            <div class="col-12 col-md-8 justify">
-                <p>
-                    n, air traffic control and safety, ensuring international standards of
-                    air navigation equipment and controlling airports service delivery as
-                    well as putting in place principles and standards of the International
-                    Civil Aviation Organization (ICAO). The Ethiopian Civil Aviation
-                    Authority Regulatory Division has also been showing commendable
-                    progress in updating its status approved by the US Federal Aviation
-                    Administration (AFA) and ICAO USOAP Audit while implementing Quality
-                    Management System (ISO 9001/2015) and capacity building program. The
-                    Ethiopian Government sees the aviation sector as integral to securing
-                    that future growth of this country, the Eastern Africa region and
-                    Africa in general. Our airports, airlines and associate industries
-                    facilitate to generate the required financial resource. Currently ECAA
-                    is revamping its training center, ECATA, which has recent
-                </p>
-            </div>
+      <div class="row">
+        <div class="col-12">
+          <span>A propos de nous</span>
+          <span> / Organisation</span>
         </div>
+        <div class="col-md-4 sideMenu">
+          <Menu :apropo="apropo"></Menu>
+        </div>
+        <div class="col-12 col-md-8 justify">
+
+        </div>
+      </div>
     </div>
-</div>
+  </div>
 </template>
 
 <script>
@@ -62,7 +48,8 @@ export default {
       searchResults: [],
       idDirectives: "",
       menu: [],
-      errorSearch: "",      sortDesc: false,
+      errorSearch: "",
+      sortDesc: false,
       page: 1,
       sortBy: "name",
       itemsPerPage: 6,
@@ -71,7 +58,7 @@ export default {
     };
   },
   computed: {
-        numberOfPages() {
+    numberOfPages() {
       return Math.ceil(this.sortedDocuments.length / this.itemsPerPage);
     },
     b1() {
@@ -117,7 +104,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.justify{
+.justify {
   text-align: justify;
 }
 @media (min-width: 500px) and (max-width: 769px) {
@@ -130,7 +117,7 @@ export default {
       font-size: 1.5rem !important;
     }
   }
-      .sideMenu {
+  .sideMenu {
     display: none;
   }
 }
