@@ -1,89 +1,127 @@
 <template>
-<div>
+  <div>
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-12 ">
-                <div class="title-box">
-                    <h1 class="title">Mot du directeur</h1>
-                </div>
-            </div>
+      <div class="row">
+        <div class="col-12 ">
+          <div class="title-box">
+            <h1 class="title">Mot du directeur</h1>
+          </div>
         </div>
+      </div>
     </div>
     <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <span>A propos de nous</span>
-                <span> / Mot du directeur</span>
-            </div>
-            <div class="col-md-4 sideMenu">
-                <Menu :apropo="apropo"></Menu>
-            </div>
-            <div class="col-12 col-md-8">
-                <md-card class="ceo">
-                    <md-card-media-cover md-solid>
-                        <md-card-media md-ratio="4:3">
-                            <img src="../../assets/ceo.jpg" class="img-fluid" alt="photo directeur Daoud Ali Abdou" />
-                        </md-card-media>
-
-                        <md-card-area>
-                            <md-card-header>
-                                <span class="md-title font-weight-bold">Daoud Ali Abdou</span>
-                                <span class="md-subhead font-weight-bold">Directeur de l'Autorité de l'aviation civile de
-                                    Djibouti</span>
-                            </md-card-header>
-                        </md-card-area>
-                    </md-card-media-cover>
-                </md-card>
-                <md-card>
-                    <md-card-content class="justify">
-                        It is a particular honor for me to welcome you all-ECAA website
-                        visitors, to take a look at our recently revised website that
-                        displays the overall picture of the Authority. Ethiopia is one of
-                        the countries which commenced air transport service earlier in the
-                        world. In addition to the National carrier, private air operators
-                        are currently engaged in aviation consulting, training and flight
-                        services. Thus, it’s now time, more than ever, to embark on critical
-                        regulation of the growing huge industry through knowledge and skills
-                        as well as producing sufficient and quality aviation personnel.
-                        Established in 1944, the Ethiopian Civil Aviation Authority (ECAA)
-                        is bestowed upon the responsibility to administer and handle all
-                        airports and aviation matters while signing the convention of the
-                        International Civil Aviation Organization (ICAO) and became founding
-                        member of the Organization same year. Since then ECAA has registered
-                        remarkable achievements in scaling up standards of international and
-                        local destinations, flight route inspection, air traffic control and
-                        safety, ensuring international standards of air navigation equipment
-                        and controlling airports service delivery as well as putting in
-                        place principles and standards of the International Civil Aviation
-                        Organization (ICAO). The Ethiopian Civil Aviation Authority
-                        Regulatory Division has also been showing commendable progress in
-                        updating its status approved by the US Federal Aviation
-                        Administration (AFA) and ICAO USOAP Audit while implementing Quality
-                        Management System (ISO 9001/2015) and capacity building program. The
-                        Ethiopian Government sees the aviation sector as integral to
-                        securing that future growth of this country, the Eastern Africa
-                        region and Africa in general. Our airports, airlines and associate
-                        industries facilitate to generate the required financial resource.
-                        Currently ECAA is revamping its training center, ECATA, which has
-                        recently earned ICAO TRAINAIR PLUS membership to create more
-                        opportunities for youth to train in aviation and related areas. Dear
-                        visitors, we, professionals in the aviation sector are always
-                        chasing the perfect, the utmost care, safety and security in air
-                        transport service. This communication channel, therefore, helps look
-                        into standards, requirement, rules, regulations, principles and
-                        related issues as well as latest developments in our aviation
-                        sector. Together, we need to reach as many social media followers as
-                        possible with information on how to ensure aviation safety, and I
-                        once again would like to welcome you to our website, hoping that you
-                        have significant, adequate and contemporary information on ECAA and
-                        latest development on the country’s aviation sector. Thank you for
-                        visiting !
-                    </md-card-content>
-                </md-card>
-            </div>
+      <div class="row">
+        <div class="col-12">
+          <span>A propos de nous</span>
+          <span> / Mot du directeur</span>
         </div>
+        <div class="col-md-4 sideMenu">
+          <Menu :apropo="apropo"></Menu>
+        </div>
+        <div class="col-12 col-md-8">
+          <md-card class="ceo">
+            <md-card-media-cover md-solid>
+              <md-card-media md-ratio="4:3">
+                <img
+                  src="../../assets/ceo.jpg"
+                  class="img-fluid"
+                  alt="photo directeur Daoud Ali Abdou"
+                />
+              </md-card-media>
+
+              <md-card-area>
+                <md-card-header>
+                  <span class="md-title font-weight-bold">Daoud Ali Abdou</span>
+                  <span class="md-subhead font-weight-bold"
+                    >Directeur de l'Autorité de l'aviation civile de
+                    Djibouti</span
+                  >
+                </md-card-header>
+              </md-card-area>
+            </md-card-media-cover>
+          </md-card>
+          <md-card>
+            <md-card-content class="justify">
+              <p>
+                La barre des 4 milliards de passagers transportés dans le monde
+                a été atteinte pour la première fois en 2017, soit 127 passagers
+                qui prennent un avion chaque seconde. Face à la croissance
+                exponentielle du transport aérien considéré comme le mode de
+                transport le plus sûr au monde, les Etats doivent mettre en
+                place une législation aéronautique de base et des règlements
+                aéronautiques avec des procédures qui en découlent les plus
+                exhaustives possible afin d’assurer la sécurité et la sûreté de
+                l’aviation civile.
+              </p>
+              <p>
+                A Djibouti, l'Autorité de l'Aviation Civile (AAC) est chargée de
+                la mise œuvre de la politique aéronautique nationale, notamment
+                de la règlementation et du contrôle de l'aviation civile, en
+                matière de sécurité et de sûreté. Son objectif est de veiller à
+                une utilisation sûre et ordonnée de l'aviation civile en
+                République de Djibouti.
+              </p>
+              <p>
+                C’est dans cette optique que l’AAC a mis en place un système
+                national d’aviation civile viable et efficient afin de maintenir
+                un haut niveau de sécurité et de sûreté du transport aérien qui
+                constitue la préoccupation majeure de cette institution. L’AAC a
+                mis en place la règlementation aéronautique nationale et assure
+                la surveillance de l’ensemble de l’industrie aéronautique
+                (opérateurs, personnels navigants, contrôleurs aériens,
+                industriels, etc.).
+              </p>
+              <p>
+                Pour atteindre ses objectifs et ses missions liés à la
+                supervision de la sécurité et de la sûreté de l’aviation civile,
+                l’AAC s’est dotée de moyens humains et financiers en adéquation
+                avec ses activités. Elle s’est dotée aujourd’hui d’un arsenal
+                juridique en phase avec les normes et pratiques recommandées de
+                l’Organisation de l’Aviation Civile Internationale (OACI).
+                Ainsi, elle est régie par le Code de l’Aviation Civile renforcé
+                par la règlementation aéronautique de Djibouti (RAD) et des
+                procédures sur lesquelles sont réalisées toutes les activités au
+                quotidien.
+              </p>
+              <p>
+                Dans la droite lignée de ses objectifs, l’AAC a donné une
+                priorité au recrutement de jeunes cadres et a entrepris un vaste
+                programme de formation de son personnel technique avec la
+                définition de plans de formation qui permet de savoir le profil,
+                le niveau et l’évolution future du personnel de l’AAC et même de
+                prévoir des éventuelles nécessités de recrutements.
+              </p>
+              <p>
+                Afin d’assurer de manière continue la supervision de la sécurité
+                et de la sûreté, L’AAC a mis en place un calendrier programmé
+                d’audit, d’inspections de son industrie mais également fixé un
+                nombre important d’inspections inopinées des exploitants
+                nationaux et étrangers présents sur notre plateforme pour
+                apprécier si le travail est réalisé tel que dicté par la
+                règlementation nationale.
+              </p>
+              <p>
+                Le secteur du transport aérien étant très concurrentiel, l’AAC
+                traite aussi de questions d’ordre économique et sociale en
+                assurant également des fonctions de régulateur du transport
+                aérien. Elle se retrouve ainsi être l’interlocuteur privilégié
+                des compagnies aériennes et des aéroports.
+              </p>
+              <p>
+                Ce site web va permettre de faire connaitre nos missions, de
+                faciliter l’accès à la règlementation à l’industrie et aux
+                particuliers qui souhaitent connaitre les pré-requis pour
+                obtenir des privilèges liés à la certification ou à la
+                délivrance des licences et même initier les plus jeunes au
+                secteur du transport aérien.
+              </p>
+              Je vous souhaite une bonne navigation sur notre page !
+            </md-card-content>
+          </md-card>
+        </div>
+      </div>
     </div>
-</div>
+  </div>
 </template>
 
 <script>
@@ -112,7 +150,8 @@ export default {
       searchResults: [],
       idDirectives: "",
       menu: [],
-      errorSearch: "",      sortDesc: false,
+      errorSearch: "",
+      sortDesc: false,
       page: 1,
       sortBy: "name",
       itemsPerPage: 6,
@@ -121,7 +160,7 @@ export default {
     };
   },
   computed: {
-        numberOfPages() {
+    numberOfPages() {
       return Math.ceil(this.sortedDocuments.length / this.itemsPerPage);
     },
     b1() {
@@ -167,7 +206,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.justify{
+@import "../../sass/main.scss";
+
+.justify {
   text-align: justify;
 }
 @media (min-width: 500px) and (max-width: 769px) {
@@ -180,7 +221,7 @@ export default {
       font-size: 1.5rem !important;
     }
   }
-    .sideMenu {
+  .sideMenu {
     display: none;
   }
 }
@@ -205,8 +246,8 @@ export default {
     }
   }
   .ceo {
-  max-width: 100% !important;
-}
+    max-width: 100% !important;
+  }
   .sideMenu {
     display: none;
   }
@@ -238,22 +279,15 @@ export default {
   }
 }
 
-.search {
-  border-radius: 100px;
-  /* mozilla */
-  -moz-border-radius: 100px;
-  /* webkit */
-  -webkit-border-radius: 100px;
-}
-.table-footer {
-  border-top: solid 1px grey;
-  padding-top: 2rem;
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-}
-
 .ceo {
   width: 500px;
+}
+
+p {
+  margin-bottom: 1rem;
+
+  @include respond(big-desk){
+    font-size: 1.5rem;
+  }
 }
 </style>
