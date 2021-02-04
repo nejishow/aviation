@@ -265,5 +265,7 @@ p {
   list-style: circle;
   margin-left: 1rem;
   }
-
+li {
+  margin-left: 3rem;
+}
 </style>

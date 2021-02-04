@@ -1,6 +1,11 @@
 <template>
 <div class="container">
-    <div class="row">
+  <div class="row loading" v-if="loading">
+            
+              <p class="spinner">Suppresion <b-spinner variant="danger" type="grow"  label="Spinning"></b-spinner></p>
+
+  </div>
+    <div class="row" v-else>
     <div class="col-6">
         <FirebaseUpload :isBanner="bannier"></FirebaseUpload>
     </div>
@@ -46,6 +51,7 @@ export default {
   data() {
     return {
       bannier: true,
+      loading: false
     };
   },
   mounted() {},
@@ -56,6 +62,7 @@ export default {
   },
   methods: {
         deleteBanner(item) {
+          this.loading = true;
       // Create a reference to the file to delete
       var desertRef = firebase.storage().ref(item.ref);
 
@@ -65,12 +72,27 @@ export default {
         .then(() => {
           // File deleted successfully
           this.$store.dispatch("deleteOneBanner", item._id);
+        }).then(()=>{
+          setTimeout(() => {
+            this.loading = false;
+          }, 3000);
         })
         .catch(function() {
           // Uh-oh, an error occurred!
-          console.log(item);
+          this.loading = false
         });
     },
   },
 };
 </script>
+<style lang="scss" scoped>
+  @import '../../sass/main.scss';
+  .loading {
+    width: 100%;
+    height: 100vh;
+    background: rgb(102, 146, 160);
+  }
+  .spinner {
+    @include centerElement;
+  }
+</style>

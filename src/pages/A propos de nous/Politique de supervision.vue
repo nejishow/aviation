@@ -272,4 +272,7 @@ ul {
   line-height: 1.7;
   margin-bottom: 2rem;
 }
+li {
+  margin-left: 3rem;
+}
 </style>

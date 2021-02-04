@@ -19,6 +19,19 @@
           <Menu :apropo="apropo"></Menu>
         </div>
         <div class="col-12 col-md-8 justify">
+<p>L'Autorité de l'Aviation Civile est dirigée par un Directeur Général qui a sous son autorité un Directeur General Adjoint, un Service et Trois Directions :
+
+</p>
+<ul>
+  <li>
+    Le Directeur General  Adjoint </li>
+<li>Le Service des Affaires Juridiques </li>
+<li>La Direction Administrative et Financière </li><li>
+La Direction Normes et Sécurité des vols </li>
+<li>La Direction de la Navigation Aérienne </li>
+  
+</ul>
+<img src="../../assets/orga.png" class="orga" alt="">
 
         </div>
       </div>
@@ -188,7 +201,18 @@ export default {
   width: 100%;
 }
 
-.ceo {
-  width: 500px;
+p {
+  margin-bottom: 1.5rem;
+}
+ul {
+  list-style: square;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+li {
+  margin-left: 3rem;
+}
+.orga {
+  width: 100%;
 }
 </style>

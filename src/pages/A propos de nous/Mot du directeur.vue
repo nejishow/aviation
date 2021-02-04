@@ -40,8 +40,7 @@
               </md-card-area>
             </md-card-media-cover>
           </md-card>
-          <md-card>
-            <md-card-content class="justify">
+            <div class="justify">
               <p>
                 La barre des 4 milliards de passagers transportés dans le monde
                 a été atteinte pour la première fois en 2017, soit 127 passagers
@@ -116,8 +115,7 @@
                 secteur du transport aérien.
               </p>
               Je vous souhaite une bonne navigation sur notre page !
-            </md-card-content>
-          </md-card>
+            </div>
         </div>
       </div>
     </div>
@@ -210,6 +208,7 @@ export default {
 
 .justify {
   text-align: justify;
+  margin-top: 2rem;
 }
 @media (min-width: 500px) and (max-width: 769px) {
   .title-box {
