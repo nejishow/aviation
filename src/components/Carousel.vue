@@ -1,27 +1,42 @@
 <template>
-    <div class="row mb-5">
-        <div v-if="banners.length>0" class="col-12">
-            <div @click="prev" class="carousel_arrow carousel_arrow_prev ml-2">&lang; </div>
-            <VueSlickCarousel v-bind="settings" class="carousel" ref="carousel">
-                <div class="carousel_div" v-for="(banner, index) in banners" :key="index">
-                    <img :src="banner.url" alt="" class="carousel_img">
-                    <div class="carousel_text pl-2">
-                        <h4>{{banner.title}}</h4>
-                        <p>{{banner.description}}</p>
-                    </div>
-                </div>
-                <template #customPaging="page">
-                    <div class="custom-dot">
-                        <span class="custom-dot_number">{{ page }}</span>
-                    </div>
-                </template>
-            </VueSlickCarousel>
-            <div @click="next" class="carousel_arrow carousel_arrow_next mr-2">&rang;</div>
+  <div class="row mb-5">
+    <div v-if="banners.length > 0" class="col-12">
+      <div class="carou">
+        <div @click="prev" class="carousel_arrow carousel_arrow_prev ml-2">
+          &lang;
         </div>
-        <div v-else class="col-12">
-            <v-skeleton-loader class="mx-auto skeleton" max-height="500px" max-width="1000px" type="card"></v-skeleton-loader>
+        <VueSlickCarousel v-bind="settings" class="carousel" ref="carousel">
+          <div
+            class="carousel_div"
+            :style="{ 'background-image': 'url(' + banner.url + ')' }"
+            v-for="(banner, index) in banners"
+            :key="index"
+          >
+            <div class="carousel_text pl-2">
+              <h4>{{ banner.title }}</h4>
+              <p>{{ banner.description }}</p>
+            </div>
+          </div>
+          <template #customPaging="page">
+            <div class="custom-dot">
+              <span class="custom-dot_number">{{ page }}</span>
+            </div>
+          </template>
+        </VueSlickCarousel>
+        <div @click="next" class="carousel_arrow carousel_arrow_next mr-2">
+          &rang;
         </div>
+      </div>
     </div>
+    <div v-else class="col-12">
+      <v-skeleton-loader
+        class="mx-auto skeleton"
+        max-height="500px"
+        max-width="1000px"
+        type="card"
+      ></v-skeleton-loader>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -103,11 +118,32 @@ export default {
   }
 }
 
+.carou {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  @include respond(big-desk) {
+    width: 70%;
+  }
+    @include respond(desk) {
+    width: 70%;
+  }
+  @include respond(tablet) {
+    width: 100%;
+  }
+}
 .carousel {
   height: 50vh;
   padding-right: 1rem;
   padding-left: 1rem;
   margin-top: 2rem;
+  border-color: yellow;
+
+  @include respond(big-desk) {
+    height: 30vh;
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
   @include respond(tablet) {
     height: 30vh;
     padding-right: 1rem;
@@ -115,14 +151,28 @@ export default {
   }
 
   &_div {
+
     position: relative;
     text-align: center;
+    max-height: 47vh;
+    min-height: 47vh;
+    width: auto;
+    background-size: cover;
+    background-position: center;
+    @include respond(big-desk) {
+      max-height: 27vh;
+      min-height: 27vh;
+    }
+    @include respond(tablet) {
+      max-height: 27vh;
+      min-height: 27vh;
+    }
   }
 
   &_img {
     max-height: 47vh;
     min-height: 47vh;
-    width: 100%;
+    width: auto;
     @include respond(tablet) {
       max-height: 27vh;
       min-height: 27vh;
