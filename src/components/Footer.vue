@@ -44,7 +44,7 @@
     </div>
     <div class="row bg-success">
       <div class="col-12 text-center medium text-light pb-3">
-        Autorité de l'Aviation Civile de Djibouti © 2020
+        Autorité de l'Aviation Civile de Djibouti © 2021
       </div>
     </div>
   </div>

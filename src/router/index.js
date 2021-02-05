@@ -157,12 +157,14 @@ const routes = [
   },
   {
     path: "/Organisation",
+    alias: ["/Organization"],
+
     name: "Organisation",
     component: Organisation,
   },
   {
     path: "/Politique de Formation",
-    alias: ["/Training policy"],
+    alias: ["/Oversight policy"],
     name: "PdeF",
     component: PdeF,
   },

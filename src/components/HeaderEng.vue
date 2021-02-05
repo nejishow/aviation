@@ -188,7 +188,7 @@
                 >
               </li>
               <li>
-                <router-link to="/Supervision policy"
+                <router-link to="/Oversight policy"
                   ><a href="#" class="dropdown-item"
                     >Oversight policy
                   </a></router-link
@@ -226,7 +226,7 @@
                 >
                 <ul aria-labelledby="dropdownMenu2" class="dropdown-menu ">
                   <li>
-                    <router-link to="/Textes legislatifs/Lois"
+                    <router-link to="/Legislations/Lois"
                       ><a href="#" class="dropdown-item">Laws</a></router-link
                     >
                   </li>
@@ -1194,11 +1194,11 @@ export default {
         },
         {
           title: "Organization",
-          router: "/Organisation",
+          router: "/Organization",
         },
         {
-          title: "Supervision policy",
-          router: "/Supervision policy",
+          title: "Oversight policy",
+          router: "/Oversight policy",
         },
         {
           title: "Training policy",
@@ -1317,7 +1317,7 @@ export default {
       this.$store.dispatch("setLang", lang);
     },
     goTo(id, name) {
-      this.$router.push({ path: "/" + name, query: { id } });
+      this.$router.push({ path:  "/Categorie/" + name, query: { id } });
     },
   },
 };

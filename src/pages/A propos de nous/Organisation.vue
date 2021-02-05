@@ -19,6 +19,7 @@
           <Menu :apropo="apropo"></Menu>
         </div>
         <div class="col-12 col-md-8 justify">
+                    <h1 class="h3 title">Organisation          </h1>
 <p>L'Autorité de l'Aviation Civile est dirigée par un Directeur Général qui a sous son autorité un Directeur General Adjoint, un Service et Trois Directions :
 
 </p>
@@ -120,54 +121,33 @@ export default {
 .justify {
   text-align: justify;
 }
-@media (min-width: 500px) and (max-width: 769px) {
-  .title-box {
-    max-height: 25vh;
-
-    .title {
-      bottom: 5vh;
-      left: 5vh;
-      font-size: 1.5rem !important;
-    }
-  }
-  .sideMenu {
-    display: none;
-  }
-}
-
-@media (min-width: 1020px) and (max-width: 1500px) {
-  .title-box {
-    max-height: 25vh;
-
-    .title {
-      bottom: 5vh;
-      left: 5vh;
-    }
-  }
-}
-
-@media (max-width: 499px) {
-  .title-box {
-    max-height: 15vh;
-
-    .title {
-      font-size: 1rem !important;
-    }
-  }
-
-  .sideMenu {
-    display: none;
-  }
-}
-
+@import '../../sass/main.scss';
 .title-box {
   position: relative;
-  height: 40vh;
+  height: 40vh!important;
   background-image: url("../../assets/article.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 
+  @include respond(big-desk){
+        max-height: 25vh;
+
+  }
+   @include respond(tablet-land){
+        max-height: 25vh;
+ .sideMenu {
+    display: none;
+  }
+  }
+
+   @include respond(tablet){
+        max-height: 25vh;
+  }
+  @include respond(phone) {
+        max-height: 15vh;
+
+  }
   .title {
     position: absolute;
     bottom: 1vh;
@@ -175,6 +155,26 @@ export default {
     font-size: 2rem;
     text-transform: uppercase;
     color: white;
+
+     @include respond(big-desk){
+      bottom: 5vh;
+      left: 5vh;
+  }
+   @include respond(tablet-land){
+        max-height: 25vh;
+ .sideMenu {
+    display: none;
+  }
+  }
+
+   @include respond(tablet){
+      bottom: 5vh;
+      left: 5vh;
+      font-size: 1.5rem !important;  }
+  @include respond(phone) {
+      font-size: 1rem !important;
+
+  }
   }
 
   .title-img {
@@ -185,7 +185,6 @@ export default {
     min-width: 100%;
   }
 }
-
 .search {
   border-radius: 100px;
   /* mozilla */

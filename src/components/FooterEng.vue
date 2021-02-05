@@ -39,7 +39,7 @@
     </div>
     <div class="row bg-success">
       <div class="col-12 text-center medium text-light pb-3">
-        Djibouti Civil Aviation Authority © 2020
+        Djibouti Civil Aviation Authority © 2021
       </div>
     </div>
   </div>
