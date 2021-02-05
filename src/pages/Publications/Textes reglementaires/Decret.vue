@@ -20,7 +20,6 @@
             <Menu :menu="menu"></Menu>
         </div>
         <div class="col-12 col-md-8">
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat illum nulla, nisi quam soluta odio earum reprehenderit animi veritatis ipsam, rerum eligendi facilis quo atque assumenda ducimus voluptatum deserunt esse?</p>
             <div class=" m-5 p5 d-flex flex-column align-items-center">
                 <input type="text" class=" border-danger w-100 search input" placeholder="Search" v-on:keyup.enter="search" v-on:keyup.delete="enleve" />
                 <div class="card result mt-2" v-show="searchResults.length > 0">
@@ -251,45 +250,34 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@media (min-width: 500px) and (max-width: 769px) {
-  .title-box {
-    max-height: 25vh;
-    .title {
-      bottom: 5vh;
-      left: 5vh;
-      font-size: 1.5rem !important;
-    }
-  }  .sideMenu {
-    display: none;
-  }
-}
-@media (min-width: 1020px) and (max-width: 1500px) {
-  .title-box {
-    max-height: 25vh;
-    .title {
-      bottom: 5vh;
-      left: 5vh;
-    }
-  }
-}
-@media (max-width: 499px) {
-  .title-box {
-    max-height: 15vh;
-    .title {
-      font-size: 1rem !important;
-    }
-  }
-  .sideMenu {
-    display: none;
-  }
-}
+
+@import '../../../sass/main.scss';
 .title-box {
   position: relative;
-  height: 40vh;
-  background-image: url("https://i.twic.pics/v1/https://www.explo.com/media/catalog/product/cache/1/thumbnail/9df78eab33525d08d6e5fb8d27136e95/a/1/a144-djibouti-pcp.jpg");
+  height: 40vh!important;
+  background-image: url("../../../assets/article.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+
+  @include respond(big-desk){
+        max-height: 25vh;
+
+  }
+   @include respond(tablet-land){
+        max-height: 25vh;
+ .sideMenu {
+    display: none;
+  }
+  }
+
+   @include respond(tablet){
+        max-height: 25vh;
+  }
+  @include respond(phone) {
+        max-height: 15vh;
+
+  }
   .title {
     position: absolute;
     bottom: 1vh;
@@ -297,6 +285,26 @@ export default {
     font-size: 2rem;
     text-transform: uppercase;
     color: white;
+
+     @include respond(big-desk){
+      bottom: 5vh;
+      left: 5vh;
+  }
+   @include respond(tablet-land){
+        max-height: 25vh;
+ .sideMenu {
+    display: none;
+  }
+  }
+
+   @include respond(tablet){
+      bottom: 5vh;
+      left: 5vh;
+      font-size: 1.5rem !important;  }
+  @include respond(phone) {
+      font-size: 1rem !important;
+
+  }
   }
 
   .title-img {

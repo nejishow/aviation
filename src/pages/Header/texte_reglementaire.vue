@@ -2,11 +2,11 @@
 <div class="container">
     <div class="row">
     <div class="col-12 col-md-4">
-        <router-link to="/Textes reglementaires/Reglementation aerotique de Djibouti">
+        <router-link to="/Textes reglementaires/Reglementation aeronautique de Djibouti">
             <div class="card text-left">
                 <img class="card-img-top" src="../../assets/safety.png" alt="">
                 <div class="card-body">
-                    <h4 class="card-title">Réglementation aérotique de Djibouti</h4>
+                    <h4 class="card-title">Réglementation aéronautique de Djibouti</h4>
                 </div>
             </div>
         </router-link>

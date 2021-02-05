@@ -245,7 +245,7 @@
                 <ul aria-labelledby="dropdownMenu2" class="dropdown-menu ">
                   <li>
                     <router-link
-                      to="/Textes reglementaires/Reglementation aerotique de Djibouti"
+                      to="/Textes reglementaires/Reglementation aeronautique de Djibouti"
                     >
                       <a tabindex="-1" href="#" class="dropdown-item"
                         >Réglementation aéronautique de Djibouti</a
@@ -1149,7 +1149,7 @@
                 >
               </li>
               <li>
-                <router-link to="/Demande autorisation"
+                <router-link to="/Demande d'autorisation de vol"
                   ><a href="#" class="dropdown-item"
                     >Demande d'autorisation de vol
                   </a></router-link
@@ -1230,11 +1230,11 @@ export default {
       sub3: [
         {
           title: "Legislations",
-          router: "/Legislations?id=5f53706c838ed6002be47d36",
+          router: "/Categorie/Legislations?id=5f53706c838ed6002be47d36",
         },
         {
           title: "Textes reglementaires",
-          router: "/Textes reglementaires?id=5f53707658ac040039a1a6c0",
+          router: "/Categorie/Textes reglementaires?id=5f53707658ac040039a1a6c0",
         },
         {
           title: "Directives",
@@ -1252,53 +1252,53 @@ export default {
       sub4: [
         {
           title: "Navigabilité",
-          router: "/Navigabilité?id=5f3aa3413c2c433e946dcca6",
+          router: "/Categorie/Navigabilité?id=5f3aa3413c2c433e946dcca6",
         },
         {
           title: "Exploitation technique des aeronefs",
           router:
-            "/Exploitation technique des aéronefs?id=5f3aa7e234512340cc2b8253",
+            "/Categorie/Exploitation technique des aéronefs?id=5f3aa7e234512340cc2b8253",
         },
         {
           title: "License du personel",
-          router: "/License du personel?id=5f3aa7f034512340cc2b8254",
+          router: "/Categorie/License du personel?id=5f3aa7f034512340cc2b8254",
         },
         {
           title: "Aérodrome et infrastructures aéroportuaires",
           router:
-            "/Aérodrome et infrastructures aéroportuaires?id=5f3aa7fe34512340cc2b8255",
+            "/Categorie/Aérodrome et infrastructures aéroportuaires?id=5f3aa7fe34512340cc2b8255",
         },
         {
           title: "Service de l'information aéronautique et de la cartographie",
           router:
-            "/Service de l'information aéronautique et de la cartographie?id=5f3aa80a34512340cc2b8256",
+            "/Categorie/Service de l'information aéronautique et de la cartographie?id=5f3aa80a34512340cc2b8256",
         },
         {
           title: "Communication, navigation et surveillance",
           router:
-            "/Communication, navigation et surveillance?id=5f535bbc1dc9dc44eceead5c",
+            "/Categorie/Communication, navigation et surveillance?id=5f535bbc1dc9dc44eceead5c",
         },
         {
           title: "Gestion de l'espace aérien",
-          router: "/Gestion de l'espace aérien?id=5f535bcd1dc9dc44eceead5d",
+          router: "/Categorie/Gestion de l'espace aérien?id=5f535bcd1dc9dc44eceead5d",
         },
         {
           title: "Service metéorologique",
-          router: "/Service metéorologique?id=5f535bd91dc9dc44eceead5e",
+          router: "/Categorie/Service metéorologique?id=5f535bd91dc9dc44eceead5e",
         },
         {
           title: "Recherches et sauvetages",
-          router: "/Recherches et sauvetages?id=5f57966756cc341290c683d2",
+          router: "/Categorie/Recherches et sauvetages?id=5f57966756cc341290c683d2",
         },
       ],
       sub5: [
         {
           title: "Sureté",
-          router: "/Sureté?id=5f535d6433d82b0034f95ee8",
+          router: "/Categorie/Sureté?id=5f535d6433d82b0034f95ee8",
         },
         {
           title: "Facilitation",
-          router: "/Facilitation?id=5f535d69c0161b0045e05444",
+          router: "/Categorie/Facilitation?id=5f535d69c0161b0045e05444",
         },
       ],
       sub6: [

@@ -10,7 +10,7 @@ import PdeS from "../pages/A propos de nous/Politique de supervision.vue";
 import Arretes from "../pages/Publications/Textes reglementaires/Arretes.vue";
 import Decrets from "../pages/Publications/Textes reglementaires/Decret.vue";
 import Lois from "../pages/Publications/Textes legislatifs/Lois.vue";
-import RAD from "../pages/Publications/Textes reglementaires/Reglementation aerotique de Djibouti.vue";
+import RAD from "../pages/Publications/Textes reglementaires/Reglementation aeronautique de Djibouti.vue";
 import AI from "../pages/Publications/Accords/Accords Internationaux.vue";
 import AB from "../pages/Publications/Accords/Accords bilaterales.vue";
 import DirectiveS from "../pages/Publications/Directives.vue";
@@ -184,8 +184,8 @@ const routes = [
   },
   {
     path: "/Textes reglementaires/Djibouti aeronautical regulations",
-    alias: ["/Textes reglementaires/Reglementation aerotique de Djibouti"],
-    name: "Reglementation aérotique de Djibouti",
+    alias: ["/Textes reglementaires/Reglementation aeronautique de Djibouti"],
+    name: "Reglementation aéronautique de Djibouti",
     component: RAD,
   },
   {
@@ -221,14 +221,16 @@ const routes = [
     component: Decisions,
   },
   {
-    path: "/Demande autorisation",
-    name: "Autorisation",
+    path: "/Demande d'autorisation de vol",
+    name: "Demande d'autorisation de vol",
+    alias: ["/Flight permit request"],
+
     component: DA,
   },
   {
     path: "/Formulaire de compte rendu",
     alias: ["/Occurrence report"],
-    name: "Formulaire CR",
+    name: "Formulaire de compte rendu",
     component: FCR,
   },
   {

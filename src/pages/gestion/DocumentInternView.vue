@@ -145,7 +145,7 @@ export default {
       this.allsubCategoryTwo.forEach((element) => {
         if (
           element.idParent === item._id &&
-          element.name !== "Reglementation aérotique de Djibouti"
+          element.name !== "Reglementation aéronautique de Djibouti"
         ) {
           this.subCategoryTwo.push(element);
         }

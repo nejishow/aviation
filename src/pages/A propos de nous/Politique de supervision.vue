@@ -241,7 +241,7 @@ export default {
 .title-box {
   position: relative;
   height: 40vh;
-  background-image: url("https://i.twic.pics/v1/https://www.explo.com/media/catalog/product/cache/1/thumbnail/9df78eab33525d08d6e5fb8d27136e95/a/1/a144-djibouti-pcp.jpg");
+  background-image: url("../../assets/article.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

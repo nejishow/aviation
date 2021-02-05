@@ -20,8 +20,7 @@
             <Menu :menu="menu"></Menu>
         </div>
         <div class="col-12 col-md-8">
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat illum nulla, nisi quam soluta odio earum reprehenderit animi veritatis ipsam, rerum eligendi facilis quo atque assumenda ducimus voluptatum deserunt esse?</p>
-
+          
             <div class=" m-5 p5 d-flex flex-column align-items-center">
                 <input type="text" class=" border-danger w-100 search input" placeholder="Search" v-on:keyup.enter="search" v-on:keyup.delete="enleve" />
                 <div class="card result mt-2" v-show="searchResults.length > 0">
@@ -288,7 +287,7 @@ export default {
 .title-box {
   position: relative;
   height: 40vh;
-  background-image: url("https://i.twic.pics/v1/https://www.explo.com/media/catalog/product/cache/1/thumbnail/9df78eab33525d08d6e5fb8d27136e95/a/1/a144-djibouti-pcp.jpg");
+  background-image: url("../../assets/article.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

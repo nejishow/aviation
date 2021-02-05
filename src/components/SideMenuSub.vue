@@ -3,7 +3,9 @@
 
     <ul class="list-group text-left" v-if="!apropo">
         <li class="list-group-item" v-for="(item, index) in menu" :key="index">
-            <router-link :to="{path:'/'+item.name, query: {id:item._id}}" class="path">
+            <router-link v-if="item.name=='Directives'||item.name=='Circulaires'||item.name=='Decisions'" :to="{path:'/'+item.name, query: {id:item._id}}" class="path">
+                {{item.name}}</router-link>
+                            <router-link v-else  :to="{path:'/Categorie/'+item.name, query: {id:item._id}}" class="path">
                 {{item.name}}</router-link>
         </li>
     </ul>

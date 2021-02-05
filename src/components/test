@@ -67,8 +67,8 @@
                             <a id="dropdownMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">Texte reglementaires</a>
                             <ul aria-labelledby="dropdownMenu2" class="dropdown-menu border-0 shadow">
                                 <li>
-                                    <router-link to="/Textes reglementaires/Reglementation aerotique de Djibouti">
-                                        <a tabindex="-1" href="#" class="dropdown-item">Réglementation aérotique de Djibouti</a></router-link>
+                                    <router-link to="/Textes reglementaires/Reglementation aeronautique de Djibouti">
+                                        <a tabindex="-1" href="#" class="dropdown-item">Réglementation aéronautique de Djibouti</a></router-link>
                                 </li>
                             </ul>
                         </li>

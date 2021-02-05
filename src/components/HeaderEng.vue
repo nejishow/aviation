@@ -1128,7 +1128,7 @@
                 >
               </li>
               <li>
-                <router-link to="/Demande autorisation"
+                <router-link to="/Flight permit request"
                   ><a href="#" class="dropdown-item"
                     >Flight permit request
                   </a></router-link

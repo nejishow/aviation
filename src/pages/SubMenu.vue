@@ -17,15 +17,10 @@
           <span> / {{ b2 }}</span>
         </div>
         <div class="col-md-4 sideMenu border">
-          <Menu :menu="menu" :apropo="false">0"></Menu>
+          <Menu :menu="menu" :apropo="false"></Menu>
         </div>
         <div class="col">
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore
-            quisquam reprehenderit modi debitis repellendus, obcaecati cumque
-            temporibus doloremque illo magnam mollitia voluptatum quidem
-            praesentium sed excepturi commodi quis veniam perspiciatis.
-          </p>
+          
           <div class="row">
             <div
               class="col-12 col-md-4"
@@ -186,7 +181,7 @@ export default {
 .title-box {
   position: relative;
   height: 40vh;
-  background-image: url("https://i.twic.pics/v1/https://www.explo.com/media/catalog/product/cache/1/thumbnail/9df78eab33525d08d6e5fb8d27136e95/a/1/a144-djibouti-pcp.jpg");
+  background-image: url("../assets/article.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
