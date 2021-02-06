@@ -114,7 +114,8 @@
                 délivrance des licences et même initier les plus jeunes au
                 secteur du transport aérien.
               </p>
-              Je vous souhaite une bonne navigation sur notre page !
+              <p>              Je vous souhaite une bonne navigation sur notre page !
+</p>
             </div>
         </div>
       </div>

@@ -12,6 +12,9 @@ export default {
     postbanner(banner) {
         return media.post("/banner", { params: banner });
     },
+    saveNewBanner(banner) {
+        return media.post("/newBanner", { params: banner });
+    },
     deletebanner(id) {
         return media.post("/deleteBanner/" + id);
     },

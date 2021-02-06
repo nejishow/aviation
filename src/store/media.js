@@ -24,6 +24,28 @@ export const mutations = {
     }
     state.news = filter;
   },
+  TOP_BANNER(state, index) {
+    if (index !== 0) {
+      let temp = state.banner[index]
+      state.banner[index] = state.banner[index - 1]
+      state.banner[index - 1] = temp
+      let arr = state.banner;
+      state.banner = []
+      state.banner = arr
+
+    }
+  },
+  DOWN_BANNER(state, index) {
+    let length = state.banner.length
+    if (index < (length-1)) {
+      let temp = state.banner[index]
+      state.banner[index] = state.banner[index + 1]
+      state.banner[index + 1] = temp
+      let arr = state.banner;
+      state.banner = []
+      state.banner = arr
+    }
+  },
 
 }
 export const actions = {
@@ -73,7 +95,7 @@ export const actions = {
     return mediaService.postnews(news).then(async () => {
       await dispatch('getNews')
     });
-    
+
   },
   modifyNews({ dispatch }, news) {
     return mediaService.modifyNews(news).then(async () => {
@@ -85,6 +107,15 @@ export const actions = {
       await dispatch('getNews')
     })
   },
+  topBanner({ commit }, index) {
+    commit('TOP_BANNER', index)
+  },
+  downBanner({ commit }, index) {
+    commit('DOWN_BANNER', index)
+  },
+  saveNewBanner({state}) {
+    return mediaService.saveNewBanner(state.banner)
+  }
 }
 
 export default {
