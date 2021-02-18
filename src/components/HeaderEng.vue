@@ -1172,6 +1172,8 @@
 </template>
 
 <script>
+import auth from "../services/auth.service";
+
 export default {
   data() {
     return {
@@ -1311,7 +1313,22 @@ export default {
   },
   methods: {
     logout() {
-      this.$store.dispatch("logout");
+      auth
+        .logout()
+        .then(() => {
+          this.$store.dispatch("logout");
+
+          if (this.$router.history.current.path !== "/") {
+            this.$router.push("/");
+          }
+        })
+        .catch(() => {
+          this.$store.dispatch("logout");
+
+          if (this.$router.history.current.path !== "/") {
+            this.$router.push("/");
+          }
+        });
     },
     switchLang(lang) {
       this.$store.dispatch("setLang", lang);

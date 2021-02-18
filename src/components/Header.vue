@@ -1234,7 +1234,8 @@ export default {
         },
         {
           title: "Textes reglementaires",
-          router: "/Categorie/Textes reglementaires?id=5f53707658ac040039a1a6c0",
+          router:
+            "/Categorie/Textes reglementaires?id=5f53707658ac040039a1a6c0",
         },
         {
           title: "Directives",
@@ -1280,15 +1281,18 @@ export default {
         },
         {
           title: "Gestion de l'espace aérien",
-          router: "/Categorie/Gestion de l'espace aérien?id=5f535bcd1dc9dc44eceead5d",
+          router:
+            "/Categorie/Gestion de l'espace aérien?id=5f535bcd1dc9dc44eceead5d",
         },
         {
           title: "Service metéorologique",
-          router: "/Categorie/Service metéorologique?id=5f535bd91dc9dc44eceead5e",
+          router:
+            "/Categorie/Service metéorologique?id=5f535bd91dc9dc44eceead5e",
         },
         {
           title: "Recherches et sauvetages",
-          router: "/Categorie/Recherches et sauvetages?id=5f57966756cc341290c683d2",
+          router:
+            "/Categorie/Recherches et sauvetages?id=5f57966756cc341290c683d2",
         },
       ],
       sub5: [
@@ -1336,7 +1340,11 @@ export default {
           }
         })
         .catch(() => {
-          console.log("deconnexion error");
+          this.$store.dispatch("logout");
+
+          if (this.$router.history.current.path !== "/") {
+            this.$router.push("/");
+          }
         });
     },
     goTo(id, name) {
