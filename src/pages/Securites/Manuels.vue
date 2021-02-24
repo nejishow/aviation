@@ -172,7 +172,7 @@ export default {
       return docs;
     },
     sortedDocuments() {
-      if (this.documents.lenght > 0) {
+      if (this.documents.length > 0) {
         let sorted = this.documents.filter((doc) => {
           return doc.idParent === this.$route.params.id;
         });

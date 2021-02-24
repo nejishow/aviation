@@ -171,7 +171,7 @@ export default {
       return docs;
     },
     sortedDocuments() {
-      if (this.documents.lenght > 0) {
+      if (this.documents.length > 0) {
         let sorted = this.documents.filter((doc) => {
           return doc.idParent === "5f537242daa6914e7c573562";
         });

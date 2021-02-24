@@ -1129,6 +1129,105 @@
             </ul>
           </li>
 
+          
+          <!-- Juridiques -->
+          <li class="nav-item dropdown">
+            <a
+              id="dropdownMenu1"
+              href="#"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+              class="nav-link dropdown-toggle"
+              >Affaires juridiques</a
+            >
+            <ul aria-labelledby="dropdownMenu1" class="dropdown-menu ">
+              <li>
+                <router-link
+                :to="{
+                        path: '/Juridiques/Lois',
+                        query: { id: '6035f30ea713263cf8a98c51' },
+                      }"
+                  ><a href="#" class="dropdown-item"
+                    >Lois
+                  </a></router-link
+                >
+              </li>
+                   <li>
+                <router-link :to="{
+                  path: '/Juridiques/Décrets',
+                  query: { id: '6035f317a713263cf8a98c52'},
+                  }"
+                  ><a href="#" class="dropdown-item"
+                    >Décrets
+                  </a></router-link
+                >
+              </li>
+                   <li>
+                <router-link :to="{
+                  path: '/Juridiques/Arrêtés',
+                  query: {id:'6035f32ca713263cf8a98c53'},
+                  }"
+                  ><a href="#" class="dropdown-item"
+                    >Arrêtés
+                  </a></router-link
+                >
+              </li>
+                   <li>
+                <router-link :to="{
+                  path: '/Juridiques/Règlements',
+                  query: {id:'6035f337a713263cf8a98c54'},
+                  }"
+                  ><a href="#" class="dropdown-item"
+                    >Règlements
+                  </a></router-link
+                >
+              </li>
+            
+                   <li>
+                <router-link :to="{
+                  path: '/Juridiques/Procédures',
+                  query: {id:'6035f350a713263cf8a98c57'},
+                  }"
+                  ><a href="#" class="dropdown-item"
+                    >Procédures
+                  </a></router-link
+                >
+              </li>
+              
+                   <li>
+                <router-link :to="{
+                  path: '/Juridiques/Directives',
+                  query: {id:'6035f35da713263cf8a98c59'},
+                  }"
+                  ><a href="#" class="dropdown-item"
+                    >Directives
+                  </a></router-link
+                >
+              </li>
+                   <li>
+                <router-link :to="{
+                  path: '/Juridiques/Circulaires',
+                  query: {id:'6035f362a713263cf8a98c5a'},}"
+                  ><a href="#" class="dropdown-item"
+                    >Circulaires
+                  </a></router-link
+                >
+              </li>
+                   <li>
+                <router-link :to="{
+                  path: '/Juridiques/Politiques',
+                  query: {id:'6035f347a713263cf8a98c56'},}"
+                  ><a href="#" class="dropdown-item"
+                    >Politiques
+                  </a></router-link
+                >
+              </li>
+
+              <!-- End Level two -->
+            </ul>
+          </li>
+
           <!-- e-services -->
           <li class="nav-item dropdown">
             <a

@@ -28,6 +28,14 @@ import Media from "../pages/gestion/GestionMedia.vue";
 import DocIntern from "../pages/gestion/DocumentInternView.vue";
 import Contact from "../pages/Contact.vue";
 import Securite from "../pages/Header/securité.vue";
+import JurLoi from "../pages/Juridiques/Lois.vue";
+import JurDecre from "../pages/Juridiques/Decres.vue";
+import JurArre from "../pages/Juridiques/Arretes.vue";
+import JurRegle from "../pages/Juridiques/Reglements.vue";
+import JurProce from "../pages/Juridiques/Procedures.vue";
+import JurDire from "../pages/Juridiques/Directives.vue";
+import JurCir from "../pages/Juridiques/Circulaires.vue";
+import JurPoli from "../pages/Juridiques/Politiques.vue";
 import DA from "../pages/eService/demande_autorisation.vue";
 import FCR from "../pages/eService/formulaire_cr.vue";
 import AuditInspection from "../pages/inspection/audit_inspection.vue";
@@ -245,6 +253,47 @@ const routes = [
     name: "SubMenu",
     component: SubMenu,
   },
+  {
+    path: "/Juridiques/Lois",
+    alias: ["/Legal/Law"],
+    component: JurLoi,
+  },
+  {
+    path: "/Juridiques/Décrets",
+    alias: ["/Legal/Decrees"],
+    component: JurDecre,
+  },
+  {
+    path: "/Juridiques/Arrêtés",
+    alias: ["/Legal/orders"],
+    component: JurArre,
+  },
+  {
+    path: "/Juridiques/Règlements",
+    alias: ["/Legal/regulations"],
+    component: JurRegle,
+  },
+  {
+    path: "/Juridiques/Procédures",
+    alias: ["/Legal/Law/"],
+    component: JurProce,
+  },
+  {
+    path: "/Juridiques/Directives",
+    alias: ["/Legal/directives"],
+    component: JurDire,
+  },
+  {
+    path: "/Juridiques/Circulaires",
+    alias: ["/Legal/circulars"],
+    component: JurCir,
+  },
+  {
+    path: "/Juridiques/Politiques",
+    alias: ["/Legal/policies"],
+    component: JurPoli,
+  },
+  
   {
     path: "/Article/:id",
     name: "Article",
