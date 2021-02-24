@@ -1,92 +1,120 @@
 <template>
-<div class="container-fluid">
+  <div class="container-fluid">
     <div class="row mt-5">
-        <div class="col-12">
-            <h1>Liste des documents publiques</h1>
-        </div>
-        <div class="col-12">
-            <strong>Categories:</strong>
-            <b-form-radio-group id="radio-group-1" name="radio-options">
-                <b-form-radio @change="getSubCategoryOne(category)" v-for="(category, index) in categories" :key="index" :value="category._id">{{ category.name }}</b-form-radio>
-            </b-form-radio-group>
-        </div>
+      <div class="col-12">
+        <h1>Liste des documents publiques</h1>
+      </div>
+      <div class="col-12">
+        <strong>Categories:</strong>
+        <b-form-radio-group id="radio-group-1" name="radio-options">
+          <b-form-radio
+            @change="getSubCategoryOne(category)"
+            v-for="(category, index) in categories"
+            :key="index"
+            :value="category._id"
+            >{{ category.name }}</b-form-radio
+          >
+        </b-form-radio-group>
+      </div>
     </div>
     <div class="row mt-5">
-        <div class="col-12 col-md-4 mt-5" v-show="subCategoryOne.length>0">
-            <strong>Sous-Categories de niveau 1:</strong>
+      <div class="col-12 col-md-4 mt-5" v-show="subCategoryOne.length > 0">
+        <strong>Sous-Categories de niveau 1:</strong>
 
-            <div class="nav flex-column nav-pills" role="tablist" aria-orientation="vertical">
-                <a class="nav-link subOne text-dark btn-group btn-outline-info" :id="item._id" role="tab" @click="getSubCategoryTwo(item)" v-for="(item, index) in subCategoryOne" :key="index">{{ item.name }}</a>
-            </div>
+        <div
+          class="nav flex-column nav-pills"
+          role="tablist"
+          aria-orientation="vertical"
+        >
+          <a
+            class="nav-link subOne text-dark btn-group btn-outline-info"
+            :id="item._id"
+            role="tab"
+            @click="getSubCategoryTwo(item)"
+            v-for="(item, index) in subCategoryOne"
+            :key="index"
+            >{{ item.name }}</a
+          >
         </div>
-        <div class="col-12 col-md-8 mt-5" v-if="subOneDoc.length > 0">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Fichier</th>
-                        <th scope="col">Nom</th>
-                        <th scope="col">Suspendre</th>
-                        <th scope="col">Re-Publier</th>
-                        <th scope="col">Supprimer</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr v-for="(doc, index) in subOneDoc" :key="index">
-                        <th scope="row">{{ index + 1 }}</th>
-                        <td>
-                            <img src="../../assets/pdf.png" class="img-fluid" width="30" alt="" />
-                        </td>
-                        <td>{{ doc.name }}</td>
-                        <td>
-                            <md-icon>menu</md-icon>
-                        </td>
-                        <td>
-                            <md-icon>menu</md-icon>
-                        </td>
-                        <td>
-                            <md-icon>menu</md-icon>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+      </div>
+      <div class="col-12 col-md-8 mt-5" v-if="isSubOne">
+          <table class="table mb-5">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Fichier</th>
+                <th scope="col" class="w-50">Nom</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="(doc, index) in subOneDoc" :key="index">
+                <th scope="row">{{ index + 1 }}</th>
+                <td>
+                  <a :href="doc.src" target="_blank">
+                    <img
+                      src="../../assets/pdf.png"
+                      class="img-fluid"
+                      width="30"
+                      alt=""
+                    />
+                  </a>
+                </td>
+                <td>{{ doc.name }}</td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
     </div>
     <div class="row">
-        <div class="col-12 mt-5" v-show="subCategoryTwo.length>0">
-            <strong>Sous-Categories de niveau 2:</strong>
+      <div class="col-12 mt-5" v-show="subCategoryTwo.length > 0">
+        <strong>Sous-Categories de niveau 2:</strong>
 
-            <nav>
-                <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                    <a v-for="(subTwo, index) in subCategoryTwo" :key="index" :id="subTwo._id" @click="getSubTwoName(subTwo)" class="nav-item subTwo nav-link" role="tab" :aria-controls="subTwo.name" aria-selected="false">
-                        {{ subTwo.name }}</a>
-                </div>
-            </nav>
-            <div class="" v-if="subTwo !== ''">
-                <table class="table mb-5">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Fichier</th>
-                            <th scope="col" class="w-50">Nom</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr v-for="(doc, index) in subTwoDoc" :key="index">
-                            <th scope="row">{{ index + 1 }}</th>
-                            <td>
-                                <a :href="doc.src" target="_blank">
-                                    <img src="../../assets/pdf.png" class="img-fluid" width="30" alt="" />
-                                </a>
-                            </td>
-                            <td>{{ doc.name }}</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+        <nav>
+          <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <a
+              v-for="(subTwo, index) in subCategoryTwo"
+              :key="index"
+              :id="subTwo._id"
+              @click="getSubTwoName(subTwo)"
+              class="nav-item subTwo nav-link"
+              role="tab"
+              :aria-controls="subTwo.name"
+              aria-selected="false"
+            >
+              {{ subTwo.name }}</a
+            >
+          </div>
+        </nav>
+        <div class="" v-if="subTwo !== ''">
+          <table class="table mb-5">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Fichier</th>
+                <th scope="col" class="w-50">Nom</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="(doc, index) in subTwoDoc" :key="index">
+                <th scope="row">{{ index + 1 }}</th>
+                <td>
+                  <a :href="doc.src" target="_blank">
+                    <img
+                      src="../../assets/pdf.png"
+                      class="img-fluid"
+                      width="30"
+                      alt=""
+                    />
+                  </a>
+                </td>
+                <td>{{ doc.name }}</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
+      </div>
     </div>
-</div>
+  </div>
 </template>
 
 <script>
@@ -117,6 +145,7 @@ export default {
       category: "",
       subOne: "",
       subTwo: "",
+      isSubOne: false,
     };
   },
   methods: {
@@ -127,6 +156,7 @@ export default {
       this.category = item;
       this.subOne = "";
       this.subTwo = "";
+      this.isSubOne = false;
 
       await this.allsubCategoryOne.forEach((element) => {
         if (element.idParent === item._id) {
@@ -135,12 +165,15 @@ export default {
       });
     },
     getSubCategoryTwo(item) {
-      $(".subOne").removeClass("bg-info text-light").addClass("text-dark");
+      $(".subOne")
+        .removeClass("bg-info text-light")
+        .addClass("text-dark");
       $("#" + item._id)
         .addClass("bg-info text-light")
         .removeClass("text-dark");
       this.subOne = item;
       this.subTwo = "";
+      this.getSubOneDoc(item);
       this.subCategoryTwo = [];
       this.allsubCategoryTwo.forEach((element) => {
         if (
@@ -150,6 +183,11 @@ export default {
           this.subCategoryTwo.push(element);
         }
       });
+      if (this.subCategoryTwo.length > 0) {
+        this.isSubOne = false;
+      } else {
+        this.isSubOne = true;
+      }
     },
     async getSubTwoName(item) {
       $(".subTwo").removeClass("active border-danger");
@@ -160,6 +198,16 @@ export default {
       await this.allDocuments.forEach((element) => {
         if (element.idParent === this.subTwo._id) {
           this.subTwoDoc.push(element);
+        }
+      });
+    },
+    async getSubOneDoc(item) {
+      this.subOne = item;
+      this.subOneDoc = [];
+
+      await this.allDocuments.forEach((element) => {
+        if (element.idParent === this.subOne._id) {
+          this.subOneDoc.push(element);
         }
       });
     },
@@ -186,4 +234,3 @@ export default {
   },
 };
 </script>
-

@@ -152,7 +152,10 @@ export default {
       this.subTwo = "";
 
       await this.allsubCategoryOne.forEach((element) => {
-        if (element.idParent === item._id) {
+        if (element.idParent === item._id  &&
+          element._id !== "6035f340a713263cf8a98c55"
+          &&
+          element._id !== "6035f357a713263cf8a98c58") {
           this.subCategoryOne.push(element);
         }
       });
