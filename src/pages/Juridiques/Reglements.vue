@@ -129,16 +129,15 @@
 import Menu from "../../components/SideMenuJuridique";
 export default {
   metaInfo() {
-    const subTwo = this.subTwo;
     return {
       title() {
-        return subTwo.name;
+        return "Réglements";
       },
       meta: [
         {
           vmid: "description",
           name: "description",
-          content: subTwo.description,
+          content: "Tous les réglements relatifs aux affaires juridiques ",
         },
       ],
     };

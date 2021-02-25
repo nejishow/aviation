@@ -18,6 +18,9 @@
           <b-list-group-item v-b-toggle.sidebar-5>{{
             menu5
           }}</b-list-group-item>
+          <b-list-group-item v-b-toggle.sidebar-8>{{
+            menu8
+          }}</b-list-group-item>
           <b-list-group-item v-b-toggle.sidebar-6>{{
             menu6
           }}</b-list-group-item>
@@ -126,12 +129,27 @@
           </b-list-group-item>
         </b-list-group>
       </b-sidebar>
+      <b-sidebar
+        class="sidebar text-dark bg-dark"
+        id="sidebar-8"
+        :title="menu8"
+        shadow
+        text-variant="dark"
+      >
+        <b-list-group class="bg-light">
+          <b-list-group-item
+            v-for="(item, index) in sub8"
+            :key="index"
+            href="#"
+          >
+            <router-link :to="item.router">{{ item.title }}</router-link>
+          </b-list-group-item>
+        </b-list-group>
+      </b-sidebar>
     </div>
     <div class="row">
       <div class="col-12 social">
-        <a class="social_language" @click="switchLang('french')"
-          >Francais</a
-        >/
+        <a class="social_language" @click="switchLang('french')">Francais</a>/
         <a class="social_language" @click="switchLang('eng')">English</a>
       </div>
     </div>
@@ -161,9 +179,7 @@
             <ul aria-labelledby="dropdownMenu1" class="dropdown-menu ">
               <li>
                 <router-link to="/Presentation"
-                  ><a href="#" class="dropdown-item"
-                    >About us
-                  </a></router-link
+                  ><a href="#" class="dropdown-item">About us </a></router-link
                 >
               </li>
               <li>
@@ -376,10 +392,7 @@
               <li class="dropdown-submenu">
                 <a
                   @click="
-                    goTo(
-                      '5f3aa7e234512340cc2b8253',
-                      'Aircraft operations'
-                    )
+                    goTo('5f3aa7e234512340cc2b8253', 'Aircraft operations')
                   "
                   id="dropdownMenu2"
                   href="#"
@@ -1185,6 +1198,8 @@ export default {
       menu5: "Safety",
       menu6: "Inspection",
       menu7: "e-Services",
+      menu8: "Legal affairs",
+
       sub2: [
         {
           title: "About us",
@@ -1236,8 +1251,7 @@ export default {
         },
         {
           title: "Aircraft operations",
-          router:
-            "/Aircraft operations?id=5f3aa7e234512340cc2b8253",
+          router: "/Aircraft operations?id=5f3aa7e234512340cc2b8253",
         },
         {
           title: "Personnel licensing",
@@ -1245,8 +1259,7 @@ export default {
         },
         {
           title: "Aerdromes and ground aid",
-          router:
-            "/Aerdromes and ground aid?id=5f3aa7fe34512340cc2b8255",
+          router: "/Aerdromes and ground aid?id=5f3aa7fe34512340cc2b8255",
         },
         {
           title: "Aeronautical information service and cartography",
@@ -1297,6 +1310,40 @@ export default {
           router: "/Demande autorisation",
         },
       ],
+      sub8: [
+        {
+          title: "Laws",
+          router: "/Juridiques/Lois?id=6035f30ea713263cf8a98c51",
+        },
+        {
+          title: "Decrees",
+          router: "/Juridiques/Décrets?id=6035f317a713263cf8a98c52",
+        },
+        {
+          title: "Orders",
+          router: "/Juridiques/Arrêtés?id=6035f32ca713263cf8a98c53",
+        },
+        {
+          title: "Regulations",
+          router: "/Juridiques/Règlements?id=6035f337a713263cf8a98c54",
+        },
+        {
+          title: "Procedures",
+          router: "/Juridiques/Procédures?id=6035f350a713263cf8a98c57",
+        },
+        {
+          title: "Directives",
+          router: "/Juridiques/Directives?id=6035f35da713263cf8a98c59",
+        },
+        {
+          title: "Circulars",
+          router: "/Juridiques/Circulaires?id=6035f362a713263cf8a98c5a",
+        },
+        {
+          title: "Policies",
+          router: "/Juridiques/Politiques?id=6035f347a713263cf8a98c56",
+        },
+      ],
     };
   },
   computed: {
@@ -1334,7 +1381,7 @@ export default {
       this.$store.dispatch("setLang", lang);
     },
     goTo(id, name) {
-      this.$router.push({ path:  "/Categorie/" + name, query: { id } });
+      this.$router.push({ path: "/Categorie/" + name, query: { id } });
     },
   },
 };
