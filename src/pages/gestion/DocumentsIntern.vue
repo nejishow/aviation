@@ -44,15 +44,12 @@
           :category="category"
           :subOne="subOne"
         ></FirebaseUpload>
-
         <table class="table">
           <thead>
             <tr>
               <th scope="col">#</th>
               <th scope="col">Fichier</th>
               <th scope="col">Nom</th>
-              <th scope="col">Suspendre</th>
-              <th scope="col">Re-Publier</th>
               <th scope="col">Supprimer</th>
             </tr>
           </thead>
@@ -70,24 +67,6 @@
                 </a>
               </td>
               <td>{{ doc.name }}</td>
-              <td>
-                <button
-                  @click="disableDocument(doc._id)"
-                  class="btn btn-group btn-outline-warning"
-                  :disabled="!doc.enabled"
-                >
-                  <md-icon>visibility_off</md-icon>
-                </button>
-              </td>
-              <td>
-                <button
-                  @click="enableDocument(doc._id)"
-                  class="btn btn-group btn-outline-success"
-                  :disabled="doc.enabled"
-                >
-                  <md-icon>visibility</md-icon>
-                </button>
-              </td>
               <td>
                 <button
                   @click="deleteDocument(doc)"
@@ -129,14 +108,13 @@
             :subOne="subOne"
             :subTwo="subTwo"
           ></FirebaseUpload>
+
           <table class="table mb-5">
             <thead>
               <tr>
                 <th scope="col">#</th>
                 <th scope="col">Fichier</th>
                 <th scope="col" class="w-50">Nom</th>
-                <th scope="col" class="small">Suspendre</th>
-                <th scope="col" class="small">Re-Publier</th>
                 <th scope="col" class="small">Supprimer</th>
               </tr>
             </thead>
@@ -156,25 +134,7 @@
                 <td>{{ doc.name }}</td>
                 <td>
                   <button
-                    @click="disableDocument(doc._id)"
-                    class="btn btn-group btn-outline-warning"
-                    :disabled="!doc.enabled"
-                  >
-                    <md-icon>visibility_off</md-icon>
-                  </button>
-                </td>
-                <td>
-                  <button
-                    @click="enableDocument(doc._id)"
-                    class="btn btn-group btn-outline-success"
-                    :disabled="doc.enabled"
-                  >
-                    <md-icon>visibility</md-icon>
-                  </button>
-                </td>
-                <td>
-                  <button
-                    @click="deleteDocument(doc._id)"
+                    @click="deleteDocument(doc)"
                     class="btn btn-group btn-outline-danger"
                   >
                     <md-icon>delete</md-icon>
@@ -193,6 +153,8 @@
 //import documentService from "../../services/document.service";
 import FirebaseUpload from "../../components/FirebaseUpload";
 import $ from "jquery";
+const firebase = require("../../firebaseConfig.js");
+
 export default {
   metaInfo() {
     // if no subcomponents specify a metaInfo.title, this title will be used
@@ -249,6 +211,7 @@ export default {
         .removeClass("text-dark");
       this.subOne = item;
       this.subTwo = "";
+       this.subOneDoc= [];
       this.subCategoryTwo = [];
       this.allsubCategoryTwo.forEach((element) => {
         if (
@@ -256,6 +219,11 @@ export default {
           element.name !== "Reglementation aéronautique de Djibouti"
         ) {
           this.subCategoryTwo.push(element);
+        }
+      });
+      this.allDocuments.forEach((element) => {
+        if (element.idParent === item._id) {
+          this.subOneDoc.push(element);
         }
       });
       if (this.subCategoryTwo.length > 0) {
@@ -282,8 +250,21 @@ export default {
     enableDocument(id) {
       this.$store.dispatch("enableOneDocument", id);
     },
-    deleteDocument(id) {
-      this.$store.dispatch("deleteOneDocument", id);
+    deleteDocument(item) {
+      // Create a reference to the file to delete
+      var desertRef = firebase.storage().ref(item.ref);
+
+      // Delete the file
+      desertRef
+        .delete()
+        .then(() => {
+          // File deleted successfully
+          this.$store.dispatch("deleteOneDocument", item._id);
+        })
+        .catch(function () {
+          // Uh-oh, an error occurred!
+          console.log(item);
+        });
     },
   },
   computed: {
