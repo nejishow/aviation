@@ -29,7 +29,9 @@
         civilaviation@intnet.dj
       </div>
       <div class="col-12 col-md-4 d-flex flex-column text-light">
-        <h4 class="h4">Liens rapide</h4>
+        <h4 class="h4">Liens rapides
+          
+        </h4>
        <a href="https://www.presidence.dj/" target="_blank" class="text-light">Presidence de la République</a>
         <a href="https://primature.gouv.dj/" target="_blank" class="text-light">Primature</a>
         <a href="http://www.met.dj/" target="_blank" class="text-light">Ministere de l'equipements et des transports</a>
