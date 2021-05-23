@@ -139,13 +139,14 @@ export const actions = {
     commit('TOP_NEWS', index)
   },
   downNews({ commit }, index) {
+    console.log('ok');
     commit('DOWN_NEWS', index)
   },
   saveNewBanner({state}) {
     return mediaService.saveNewBanner(state.banner)
   },
   saveNewNews({state}) {
-    return mediaService.saveNewNews(state.news)
+    return mediaService.saveNewNews(state.allNews)
   }
 }
 

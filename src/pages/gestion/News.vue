@@ -12,7 +12,7 @@
               <th scope="col">Image</th>
               <th scope="col">Titre</th>
               <th scope="col">Contenu</th>
-                            <th scope="col">Position</th>
+              <th scope="col">Position</th>
               <th scope="col">Supprimer</th>
             </tr>
           </thead>
@@ -29,7 +29,7 @@
                   :value="news.content"
                 />
               </td>
-                            <td>
+              <td>
                 <div class="div-icon">
                   <v-icon @click="top(index)" class="icon icon-up">
                     mdi-chevron-up
@@ -46,11 +46,11 @@
                 >
                   <md-icon>delete</md-icon>
                 </button>
-
-              </td>            </tr>
+              </td>
+            </tr>
           </tbody>
         </table>
-                <v-btn small class="saveButton" @click="save">
+        <v-btn small class="saveButton" @click="save">
           Enregistrer
         </v-btn>
       </div>
@@ -99,13 +99,13 @@ export default {
           console.log(item);
         });
     },
-        top(index) {
-      this.$store.dispatch("topBanner", index);
+    top(index) {
+      this.$store.dispatch("topNews", index);
     },
     down(index) {
-      this.$store.dispatch("downBanner", index);
+      this.$store.dispatch("downNews", index);
     },
-        save() {
+    save() {
       this.$store.dispatch("saveNewNews");
     },
   },
@@ -113,13 +113,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../../sass/main.scss';
+@import "../../sass/main.scss";
 
 .div-icon {
   display: flex;
   flex-direction: column;
   justify-content: center;
-    .icon {
+  .icon {
     cursor: pointer;
     &:hover {
       transform: scale(1.5);
