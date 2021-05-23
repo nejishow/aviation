@@ -1,7 +1,7 @@
 <template>
-  <div class="row mb-5">
-    <div v-if="banners.length > 0" class="col-12">
-      <div class="carou">
+  <div class="row  mb-5">
+    <div v-if="banners.length > 0" class="col-12  ">
+      <div class="carou mr-auto ml-auto">
         <div @click="prev" class="carousel_arrow carousel_arrow_prev ml-2">
           &lang;
         </div>
@@ -120,31 +120,33 @@ export default {
 
 .carou {
   position: relative;
-  margin-left: auto;
-  margin-right: auto;
+
   @include respond(big-desk) {
     width: 70%;
   }
     @include respond(desk) {
-    width: 70%;
+    width: 100%;
   }
   @include respond(tablet) {
     width: 100%;
   }
 }
 .carousel {
-  height: 50vh;
-  padding-right: 1rem;
-  padding-left: 1rem;
-  margin-top: 2rem;
+  height: 70vh;
+  padding-right: 0;
+  padding-left: 0;
   border-color: yellow;
-
   @include respond(big-desk) {
-    height: 30vh;
+    height: 40vh;
     padding-right: 1rem;
     padding-left: 1rem;
   }
-  @include respond(tablet) {
+  @include respond(tablet-land) {
+    height: 40vh;
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+    @include respond(tablet) {
     height: 30vh;
     padding-right: 1rem;
     padding-left: 1rem;
@@ -154,16 +156,20 @@ export default {
 
     position: relative;
     text-align: center;
-    max-height: 47vh;
-    min-height: 47vh;
+    max-height: 65vh;
+    min-height: 65vh;
     width: auto;
     background-size: cover;
     background-position: center;
     @include respond(big-desk) {
-      max-height: 27vh;
-      min-height: 27vh;
+      max-height: 40vh;
+      min-height: 40vh;
     }
-    @include respond(tablet) {
+    @include respond(tablet-land) {
+      max-height: 37vh;
+      min-height: 37vh;
+    }
+        @include respond(tablet) {
       max-height: 27vh;
       min-height: 27vh;
     }

@@ -13,41 +13,11 @@
               v-for="(item, index) in news"
               :key="index"
             >
-              <News :news="item"></News>
+              <News :news="item" :dashboard="true"></News>
             </div>
           </div>
           <div v-else class="row">
-            <div class="col-12 col-md-6 p-5">
-              <v-skeleton-loader
-                class="mx-auto skeleton"
-                max-height="500px"
-                max-width="1000px"
-                tile
-                filled
-                type="article"
-              ></v-skeleton-loader>
-            </div>
-            <div class="col-12 col-md-6 p-5">
-              <v-skeleton-loader
-                class="mx-auto skeleton"
-                max-height="500px"
-                max-width="1000px"
-                tile
-                filled
-                type="article"
-              ></v-skeleton-loader>
-            </div>
-            <div class="col-12 col-md-6 p-5">
-              <v-skeleton-loader
-                class="mx-auto skeleton"
-                max-height="500px"
-                max-width="1000px"
-                tile
-                filled
-                type="article"
-              ></v-skeleton-loader>
-            </div>
-            <div class="col-12 col-md-6 p-5">
+            <div v-for="(item, index) in 4" :key="index" class="col-12 col-md-6 p-5">
               <v-skeleton-loader
                 class="mx-auto skeleton"
                 max-height="500px"

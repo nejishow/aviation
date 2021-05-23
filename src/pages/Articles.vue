@@ -26,11 +26,11 @@
     <div class="row mt-5">
       <div class="col-12 col-md-6" v-if="prev">
         <h1 class="h5">Article precèdent</h1>
-        <News :news="prev"></News>
+        <News :news="prev" :dashboard="false"></News>
       </div>
       <div class="col-12 col-md-6" v-if="next">
         <h1 class="h5">Article suivant</h1>
-        <News :news="next"></News>
+        <News :news="next" :dashboard="false"></News>
       </div>
     </div>
   </div>

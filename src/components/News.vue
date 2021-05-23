@@ -1,5 +1,5 @@
 <template>
-  <div class="md_card" v-if="news" @click="goTo(news._id)">
+  <!-- <div class="md_card" v-if="news" @click="goTo(news._id)">
     <div class="header">
       <div class="header_title">{{ news.title }}</div>
       <div class="header_date">{{ news.createdAt }}</div>
@@ -8,12 +8,38 @@
     <div class="media">
       <img :src="news.url" :alt="news.title" class="media_image" />
     </div>
+  </div> -->
+
+<div>
+    <div v-if="news && dashboard">
+    <div class="single-blog-post">
+      <div class="blog-image">
+          <img class="blog-image-img" :src="news.url" :alt="news.title" @click="goTo(news._id)" />
+
+        <div class="date">
+        {{ news.createdAt }}
+        </div>
+      </div>
+
+      <div class="blog-post-content">
+        <h3>
+          {{ news.title }}
+        </h3>
+      </div>
+    </div>
   </div>
+  <div v-else class="blog" >
+      <img class="blog-image" @click="goTo(news._id)" :src="news.url" alt="">
+    <div class="blog-title" @click="goTo(news._id)">
+      {{news.title}}
+    </div>
+  </div>
+</div>
 </template>
 
 <script>
 export default {
-  props: ["news"],
+  props: ["news","dashboard"],
   methods: {
     goTo(id) {
       this.$router.push({ path: "/Article/" + id });
@@ -25,75 +51,84 @@ export default {
 <style lang="scss" scoped>
 @import "../sass/main.scss";
 
-.md_card {
-  max-width: 100%;
-  border: 0.4px solid rgba(163, 160, 160, 0.63);
+
+.single-blog-post {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  margin-bottom: 30px;
+  position: relative;
+  height: 30rem;
+
+}
+.single-blog-post .blog-image {
+  position: relative;
+  height: 20rem;
+  overflow: hidden;
+  @include respond(tablet){
+    height: 15rem;
+  }
+  &-img{
+    width: 100%;
+    cursor: pointer;
+  }
+
+}
+
+.single-blog-post .blog-image .date {
+  position: absolute;
+  left: 20px;
+  bottom: 1rem;
+  background: $color-primary;
+  color: #ffffff;
+  padding: 8px 16px;
+  font-size: 13px;
+  border-radius: 50px;
+  z-index: 999;
+}
+
+.single-blog-post .blog-post-content {
+  background: #f7fafd;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  padding-top: 40px;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  padding-right: 20px;
   cursor: pointer;
-  @include respond(big-desk) {
-  }
-
-  @include respond(tablet-land) {
-  }
-  .header {
-    
-    padding-left: 1rem;
-    padding-right: 1rem;
-    font-weight: 800;
-    text-transform: capitalize;
-    @include respond(big-desk) {
-          height: 6vh !important;
-
-    }
-    @include respond(desk) {
-                    height: 10vh !important;
-
-    }
-        @include respond(tablet-land) {
-                    height: 6vh !important;
-
-    }
-        @include respond(tablet) {
-              height: 15vh !important;
-
-    }
-  }
-
-  .media {
-    padding-top: 0.5rem;
-    max-height: 100%;
-    min-width: 100%;
-    display: flex;
-    justify-content: center;
-    &_image {
-      max-height: 20vh;
-      @include respond(big-desk) {
-      max-height: 30vh;
-      }
-      @include respond(tablet-land) {
-              max-height: 20vh !important;
-
-      }
-            @include respond(tablet) {
-              max-height: 40vh !important;
-
-      }
-    }
-  }
+}
+.single-blog-post .blog-post-content h3 {
+  font-size: 20px;
+  line-height: 30px;
+  margin-bottom: 0;
+    @include respond(tablet){
+  font-size: 1rem;
+  line-height: 30px;  }
 }
 
-.popular {
-  .list {
-    list-style: none;
-
-    &-news {
-      list-style: none;
-      border-bottom: 2px solid black;
-      padding: 2rem;
-    }
-  }
+.single-blog-post:hover {
+  -webkit-box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.08);
+          box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.08);
 }
 
-.card-header {
-  color: white;
+.single-blog-post:hover .blog-post-content {
+  background: #ffffff;
+}
+
+.blog{
+  display: flex;
+  padding: 0 2rem 0 2rem;
+  margin-top: 3rem;
+  align-items: center;
+  cursor: pointer;
+&:hover {
+  -webkit-box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.08);
+          box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.08);
+}  &-image{
+    height: 5rem;
+  }
+  &-title{
+    padding: 0 1rem 0 1rem;
+    align-items: baseline;
+  }
 }
 </style>
