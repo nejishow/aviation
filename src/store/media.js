@@ -1,8 +1,8 @@
 import mediaService from '../services/media.service'
 export const state = () => ({
   banner: [],
-  news: [],
-  allNews: []
+  news: [], // les news que l'on presente sur le dashboard
+  allNews: [] // tous ls news
 })
 export const getters = {
   getBanner(state) {
@@ -44,6 +44,28 @@ export const mutations = {
       let arr = state.banner;
       state.banner = []
       state.banner = arr
+    }
+  },
+  TOP_NEWS(state, index) {
+    if (index !== 0) {
+      let temp = state.allNews[index]
+      state.allNews[index] = state.allNews[index - 1]
+      state.allNews[index - 1] = temp
+      let arr = state.allNews;
+      state.allNews = []
+      state.allNews = arr
+
+    }
+  },
+  DOWN_NEWS(state, index) {
+    let length = state.allNews.length
+    if (index < (length-1)) {
+      let temp = state.allNews[index]
+      state.allNews[index] = state.allNews[index + 1]
+      state.allNews[index + 1] = temp
+      let arr = state.allNews;
+      state.allNews = []
+      state.allNews = arr
     }
   },
 
@@ -113,8 +135,17 @@ export const actions = {
   downBanner({ commit }, index) {
     commit('DOWN_BANNER', index)
   },
+  topNews({ commit }, index) {
+    commit('TOP_NEWS', index)
+  },
+  downNews({ commit }, index) {
+    commit('DOWN_NEWS', index)
+  },
   saveNewBanner({state}) {
     return mediaService.saveNewBanner(state.banner)
+  },
+  saveNewNews({state}) {
+    return mediaService.saveNewNews(state.news)
   }
 }
 

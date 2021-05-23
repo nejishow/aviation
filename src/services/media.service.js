@@ -30,6 +30,9 @@ export default {
     postnews(news) {
         return media.post("/news", { params: news });
     },
+    saveNewNews(news) {
+        return media.post("/newNews", { params: news });
+    },
     deleteNews(id) {
         return media.post("/deleteNews/" + id);
     },
