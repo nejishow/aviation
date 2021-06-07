@@ -8,7 +8,6 @@ import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
 import axios from "axios";
 import VueAxios from "vue-axios";
-import Buefy from "buefy";
 import { LMap, LTileLayer, LMarker } from "vue2-leaflet";
 import "leaflet/dist/leaflet.css";
 import { MdCard, MdContent, MdTabs, MdButton, MdIcon, MdProgress } from "vue-material/dist/components";
@@ -23,7 +22,6 @@ import {
   faFax, faInbox
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-import "buefy/dist/buefy.css";
 import PortalVue from 'portal-vue'
 import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
 import VueMeta from 'vue-meta'
@@ -51,7 +49,6 @@ Vue.component("l-map", LMap);
 Vue.component("l-tile-layer", LTileLayer);
 Vue.component("l-marker", LMarker);
 
-Vue.use(Buefy);
 Vue.use(BootstrapVue);
 
 Vue.use(VueAxios, axios);

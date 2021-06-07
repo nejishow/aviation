@@ -8,13 +8,17 @@
         <VueSlickCarousel v-bind="settings" class="carousel" ref="carousel">
           <div
             class="carousel_div"
-            :style="{ 'background-image': 'url(' + banner.url + ')' }"
             v-for="(banner, index) in banners"
             :key="index"
           >
-            <div class="carousel_text pl-2">
-              <h4>{{ banner.title }}</h4>
-              <p>{{ banner.description }}</p>
+            <img class="carousel_div_img" :src="banner.url" alt="" />
+
+            <div
+              class="carousel_text pl-2"
+              v-show="banner.title || banner.description"
+            >
+              <p class="carousel_text_title">{{ banner.title }}</p>
+              <p class="carousel_text_desc">{{ banner.description }}</p>
             </div>
           </div>
           <template #customPaging="page">
@@ -90,98 +94,43 @@ export default {
 
 <style lang="scss" scoped>
 @import "../sass/main.scss";
-.custom-arrow {
-  opacity: 0.8;
-  background-blend-mode: screen;
-  border-radius: 50%;
-  overflow: hidden;
-  border: solid black 1px;
-  @include respond(tablet) {
-    display: none;
-  }
-}
 
 .slick-active {
-  background-color: blue;
+  background-color: rgb(70, 161, 204);
 
   .custom-dot {
-    background-color: blue;
+    background-color: rgb(70, 161, 204);
   }
 }
 
 .custom-dot {
   background-color: grey;
-  height: 2px;
-
+  height: 0.7rem;
+  width: 0.7rem;
+  border-radius: 50%;
+  margin-top: -1.5rem;
+  border: solid 1px white;
   .custom-dot_number {
     display: none;
   }
 }
 
-.carou {
-  position: relative;
-
-  @include respond(big-desk) {
-    width: 70%;
-  }
-    @include respond(desk) {
-    width: 100%;
-  }
-  @include respond(tablet) {
-    width: 100%;
-  }
-}
 .carousel {
-  height: 70vh;
-  padding-right: 0;
-  padding-left: 0;
-  border-color: yellow;
-  @include respond(big-desk) {
-    height: 40vh;
-    padding-right: 1rem;
-    padding-left: 1rem;
-  }
-  @include respond(tablet-land) {
-    height: 40vh;
-    padding-right: 1rem;
-    padding-left: 1rem;
-  }
-    @include respond(tablet) {
-    height: 30vh;
-    padding-right: 1rem;
-    padding-left: 1rem;
-  }
-
+  position: relative;
   &_div {
-
     position: relative;
-    text-align: center;
-    max-height: 65vh;
-    min-height: 65vh;
-    width: auto;
-    background-size: cover;
-    background-position: center;
+    height: 80vh;
     @include respond(big-desk) {
-      max-height: 40vh;
-      min-height: 40vh;
+      height: 40vh;
     }
     @include respond(tablet-land) {
-      max-height: 37vh;
-      min-height: 37vh;
+      height: 37vh;
     }
-        @include respond(tablet) {
-      max-height: 27vh;
-      min-height: 27vh;
-    }
-  }
-
-  &_img {
-    max-height: 47vh;
-    min-height: 47vh;
-    width: auto;
     @include respond(tablet) {
-      max-height: 27vh;
-      min-height: 27vh;
+      height: 27vh;
+    }
+    &_img {
+      width: 100%;
     }
   }
 
@@ -195,15 +144,23 @@ export default {
     width: 100%;
     color: white;
     text-align: left;
-    font-size: 1rem;
+    &_title {
+      font-size: 1rem;
+      margin-bottom: 0;
+    }
+    &_desc {
+      font-size: 0.7rem;
+      margin-top: 0;
+    }
   }
 
   &_arrow {
     position: absolute;
     top: 40%;
     display: inline-block;
-    font-size: 3rem;
+    font-size: 2.5rem;
     cursor: pointer;
+
     z-index: 1;
     color: white;
     @include respond(tablet) {
@@ -211,7 +168,7 @@ export default {
     }
 
     &:hover {
-      color: rgb(25, 104, 206);
+      color: rgb(70, 161, 204);
     }
 
     &_next {
