@@ -16,7 +16,7 @@
                     </div>
                 </div>
                 <div class="card result w-100" v-show="searchResults.length>0">
-                    <table class="table table-striped table-dark">
+                    <table class="table table-striped">
                         <thead>
                             <tr>
                                 <th scope="col">Titre</th>
@@ -34,7 +34,7 @@
             </div>
 
             <div class="table card">
-                <table class="table table-striped table-dark">
+                <table class="table table-striped">
                     <thead>
                         <tr>
                             <th scope="col">#</th>

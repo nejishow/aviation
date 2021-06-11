@@ -32,14 +32,19 @@
         <div class="col-12 col-md-3">
           <h4 class="card-header bg-info">Points fréquents</h4>
           <div class="popular">
-            <ul class="list">
-              <li class="list-item">Article 1</li>
-              <li class="list-item">Article 2</li>
-              <li class="list-item">Article 3</li>
-              <li class="list-item">Article 4</li>
-              <li class="list-item">Article 5</li>
-              <li class="list-item">Article 6</li>
-              <li class="list-item">Article 7</li>
+            <ul class="list-group">
+              <li class="list-group-item">
+                <router-link class="router" to="/Categorie/Textes reglementaires?id=5f53707658ac040039a1a6c0">
+                Textes reglementaires</router-link>
+              </li>
+                            <li class="list-group-item">
+                <router-link class="router" to="/Legislations/Lois">
+                Lois</router-link>
+              </li>
+                                          <li class="list-group-item">
+                <router-link class="router" to="/Demande d'autorisation de vol">
+                Demande d'autorisation de vol</router-link>
+              </li>
             </ul>
           </div>
         </div>
@@ -80,7 +85,8 @@ export default {
 };
 </script>
 
-<style lang="css">
+<style lang="scss">
+@import '../sass/main.scss';
 .map {
   /* Full height */
   height: 100%;
@@ -102,4 +108,25 @@ export default {
 .links {
   padding-top: 15px;
 }
+.list-group-item{
+cursor: pointer;
+&:hover{
+  background: #526488;
+  color: white !important;
+  .router{
+        color: white !important;
+
+  }
+}
+
+.router{
+  text-decoration: none;
+  color: black !important;
+  &:hover{
+    text-decoration: none;
+  
+  }
+}
+}
+
 </style>

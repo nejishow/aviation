@@ -22,8 +22,8 @@
             hide-default-footer
           >
             <template v-slot:default="props">
-              <table class="table table-striped table-dark">
-                <thead>
+              <table class="table table-striped">
+                <thead class="table-dark">
                   <tr>
                     <th scope="col">Pseudo</th>
                     <th scope="col">Admin</th>

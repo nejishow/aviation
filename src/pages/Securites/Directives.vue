@@ -15,7 +15,7 @@
             <div class=" m-5 p5 d-flex flex-column align-items-center">
                 <input type="text" class=" border-danger w-50 search input" placeholder="Search" v-on:keyup.enter="search" v-on:keyup.delete="enleve" />
                 <div class="card result w-100 mt-2" v-show="searchResults.length > 0">
-                    <table class="table table-striped table-dark">
+                    <table class="table table-striped">
                         <thead>
                             <tr>
                                 <th scope="col">Titre</th>
@@ -32,7 +32,7 @@
             </div>
 
             <div class="table card">
-                <table class="table table-striped table-dark">
+                <table class="table table-striped">
                     <thead>
                         <tr>
                             <th scope="col">#</th>

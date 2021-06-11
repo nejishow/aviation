@@ -24,14 +24,14 @@
           <div class=" m-5 p5 d-flex flex-column align-items-center">
             <input
               type="text"
-              class=" border-danger w-100 search input"
+              class=" form-control border-danger w-100 search input"
               placeholder="Search"
               v-on:keyup.enter="search"
               v-on:keyup.delete="enleve"
             />
             <div class="card result mt-2" v-show="searchResults.length > 0">
-              <table class="table table-striped table-dark">
-                <thead>
+              <table class="table table-striped">
+                <thead class="table-dark">
                   <tr>
                     <th scope="col">Titre</th>
                   </tr>
@@ -65,7 +65,7 @@
                 hide-default-footer
               >
                 <template v-slot:default="props">
-                  <table class="table table-striped table-dark">
+                  <table class="table table-striped">
                     <thead>
                       <tr>
                         <th scope="col">Titre</th>
